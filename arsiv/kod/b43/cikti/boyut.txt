@@ -1,0 +1,7 @@
+app -O0     464	      0	      4	    468	    1d4	app_O0.elf
+app -O2     320	      0	      4	    324	    144	app_O2.elf
+app -Os     300	      0	      4	    304	    130	app_Os.elf
+app -Os gc     192	      0	      4	    196	     c4	app_gc.elf
+printf_yok nano -Os     192	      0	      4	    196	     c4	pyok.elf
+printf nano -Os    5688	     92	    344	   6124	   17ec	pnano.elf
+printf nano -Os gc    4152	     92	    340	   4584	   11e8	pnano_gc.elf

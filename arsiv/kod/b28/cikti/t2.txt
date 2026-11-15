@@ -1,0 +1,3 @@
+tek read: istenen=8000, dönen=1000
+tam_oku kalan=7000 bayt okudu
+EOF sonrası tam_oku=0

@@ -1,0 +1,2 @@
+taban_yok  varyans: it0=2.917e+00 it200=4.399e+03
+taban_var  varyans: it0=1.886e+00 it200=9.590e+02

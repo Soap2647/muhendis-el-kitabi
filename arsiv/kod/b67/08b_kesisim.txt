@@ -1,0 +1,7 @@
+20 video: kesisen cift (GT 0, 1) ve diger IDSW toplami:
+acgozlu_iou   GT0= 6  GT1= 4  diger=36
+macar_iou     GT0= 6  GT1= 4  diger=34
+macar_mesafe  GT0= 5  GT1= 6  diger=28
+macar_tum     GT0= 3  GT1= 2  diger=26
+byte          GT0= 4  GT1= 1  diger=29
+kaydedildi: b67_kesisim_ozet.csv, b67_kesisim.csv

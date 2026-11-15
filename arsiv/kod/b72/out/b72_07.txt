@@ -1,0 +1,16 @@
+== DCGAN (digits, 8x8), 60 epoch ==
+epoch  D_kayip  G_kayip  D(gercek)  D(sahte)
+    1   0.7810   1.5809      0.665     0.298
+   10   0.9789   1.2750      0.630     0.368
+   20   1.0266   1.1388      0.616     0.385
+   30   1.0043   1.2024      0.640     0.370
+   40   0.9120   1.2263      0.655     0.354
+   50   0.9099   1.2936      0.662     0.345
+   60   0.9056   1.2395      0.661     0.340
+Egitim suresi: 20.2 s
+Ornekleme suresi (CPU, ornek basina): 0.0083 ms
+Uretilen ornek: (1000, 64), aralik [0.000, 1.000]
+
+real	0m30.248s
+user	0m0.000s
+sys	0m0.015s

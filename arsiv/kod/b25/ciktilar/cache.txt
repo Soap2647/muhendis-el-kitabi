@@ -1,0 +1,14 @@
+L1 Data size=32K ways=8 sets=64 line=64 shared=0-1
+L1 Instruction size=32K ways=8 sets=64 line=64 shared=0-1
+L2 Unified size=512K ways=8 sets=1024 line=64 shared=0-1
+L3 Unified size=16384K ways=16 sets=16384 line=64 shared=0-15
+PAGESIZE                           4096
+LEVEL1_DCACHE_SIZE                 32768
+LEVEL1_DCACHE_ASSOC                8
+LEVEL1_DCACHE_LINESIZE             64
+LEVEL2_CACHE_SIZE                  524288
+LEVEL2_CACHE_ASSOC                 8
+LEVEL2_CACHE_LINESIZE              64
+LEVEL3_CACHE_SIZE                  16777216
+LEVEL3_CACHE_ASSOC                 16
+LEVEL3_CACHE_LINESIZE              64

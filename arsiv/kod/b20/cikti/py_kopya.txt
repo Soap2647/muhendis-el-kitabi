@@ -1,0 +1,4 @@
+$ python py_kopya.py
+ic: [[1, 2, 3], [1, 2, 3]]
+s: [[1, 9], [2]]
+s (derin sonrasi): [[1, 9], [2]]  derin: [[1, 9, 7], [2]]

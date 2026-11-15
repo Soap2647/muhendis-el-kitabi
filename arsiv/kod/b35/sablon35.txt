@@ -1,0 +1,569 @@
+%% kisim_no: VIII
+%% kisim_ad: Veritabanı
+%% bolum_no: 35
+%% baslik: NoSQL
+
+## Giriş: Tek bir sunucuya sığmayan veri
+
+Bölüm 33'te ilişkisel modelin neden bu kadar yaygın olduğunu gördün: tablolar, anahtarlar, JOIN ve ACID birlikte güçlü bir sözleşme veriyor. Bölüm 34'te bu sözleşmeyi SQL ile konuşmayı ve indekslerin işlem maliyetini öğrendin. Peki veri tek bir disk ve tek bir makineye sığmıyorsa, her saniyede yüz binlerce yazma geliyorsa, şema her hafta değişiyorsa ne olur? İşte NoSQL bu sorunun cevabı olarak doğdu. "NoSQL" adı tam bir tanım değildir; "SQL değil" yerine daha doğru bir okuma "SQL'in tek çözüm olmadığı" demektir.
+
+Bu bölümün bakış açısı şu: her NoSQL sistemi, bir şeyi kazanmak için başka bir şeyi bırakır. Anahtar-değer deposu hızlı nokta okuma verir ama sorgu dilini bırakır. Geniş sütun deposu yoğun yazmayı kaldırır ama esnek JOIN'i yok eder. Bu değiş-tokuşları anlamadan bir veritabanı seçmek, kulağa hoş gelen bir isme bakarak karar vermeye benzer. Bu yüzden bölüm, veritabanı "marka"larını değil, arkalarındaki iki şeyi anlatır: **verinin diske nasıl yazıldığı** (depolama motoru) ve **verinin birden çok makinede nasıl tutulduğu** (dağıtık sistem).
+
+Savunma sanayiinde ve gömülü sistemlerde bu konu somuttur. Bir İHA'nın uçuş telemetrisi saniyede yüzlerce ölçüm üretir; bu veriyi yerde bir sunucuya yazmak, ağ kesilse de kaybetmemek, sonra da belirli bir zaman aralığını hızla sorgulamak gerekir. Mert'in EV Dashboard projesinde STM32'den gelen sensör akışını düşün: o akışın bir zaman serisi olduğunu fark ettiğin anda, bu bölümdeki kararların neden gerekli olduğu kendiliğinden ortaya çıkar.
+
+Bölüm boyunca küçük bir LSM anahtar-değer deposunu sıfırdan yazacak, bir Bloom filtresinin yanlış pozitif oranını ölçecek, tutarlı hash halkasında düğüm eklemenin bedelini sayacak ve quorum okumalarında bayat veri olasılığını simülasyonla göreceksin. Her sayının üretildiği kod kitapta, çıktısı da metinde.
+
+::: not
+Bu bölümdeki sayılar Windows 11 Pro üzerinde, Python 3.12.10 ile alındı. SQLite sürümü 3.49.1'dir. Makinede Redis kurulu değildir; Redis ile ilgili kısımlar kavramsaldır ve "genel bilgi" olarak işaretlidir. Tüm rastgele deneyler sabit tohumla (seed) çalıştı: tohum değeri 35. Sayılar makineye bağlı değildir ama farklı bir tohum ya da farklı bir hash fonksiyonu oranları değiştirir; neden o yönde çıktıklarını anlamak asıl kazanımdır.
+:::
+
+## 35.1 İlişkisel modelin sınırları
+
+İlişkisel veritabanının iki büyük gücü vardır. Birincisi, veriyi **normalize** ederek tekrarı azaltır ve her gerçeği tek bir yerde tutar (Bölüm 33). İkincisi, **JOIN** ile bu parçaları sorgu anında birleştirir ve bunu bir optimize edici yapar (Bölüm 34). Bu iki güç, tek bir makinede çalışırken çok değerlidir. Ama üç yerde sürtünme çıkar.
+
+**Şema değişimi.** Bir tablonun şemasını değiştirmek, tabloda milyarlarca satır varsa basit bir iş değildir. Yeni bir sütun eklemek bazı sistemlerde tabloyu yeniden yazmayı gerektirir; bu, bakım penceresi ve kilit demektir. Üstelik her satırın aynı şekle sahip olmasını zorlar. Oysa bir telemetri paketi her firmware sürümünde biraz farklı alanlar taşıyabilir.
+
+**Yatay ölçekleme.** Dikey ölçeklemek, yani daha güçlü bir makine almak, bir noktada ekonomik ve fiziksel olarak biter. Yatay ölçekleme, yani veriyi birkaç makineye bölmek, ilişkisel modelin varsayımlarını bozar. İki tabloyu JOIN etmek için veri iki makinede de olabilir ve sorgu bir ağ turu gerektirir. Bu gecikme, mikrosaniyelerden milisaniyelere çıkar; her JOIN'de bu cezayı ödemek zorunda kalırsın.
+
+**Birleştirme maliyeti dağıtık ortamda.** Tek makinede bir işlemi tamamlamak için diskteki bir sayfayı kilitlemek yeterlidir. Dağıtık bir işlemde ise iki makine "birlikte evet" demelidir. Bu, iki aşamalı işlem (two-phase commit) gibi protokollerle yapılır ve bir makine yanıt vermezse herkes bekler. Bölüm 41'de bu protokolün ve alternatiflerinin sistem tasarımına etkisini göreceksin.
+
+Bu üç sürtünme NoSQL'in doğuş nedenidir, ama bir noktayı netleştirmek gerekir: NoSQL, ilişkisel modelin bu sorunlarını **çözmez**, belirli bir yönde **ertelemeyi** seçer. Şema esnekliği için tutarlılık kuralını uygulamaya bırakırsın. Yatay ölçekleme için çoğu zaman JOIN'i bırakır ve veriyi sorguya göre önceden birleştirirsin (denormalizasyon, 35.9). Dağıtık işlem yerine tek bir anahtarın üzerinde atomik işlem verirsin.
+
+## 35.2 Dört artı bir aile: karar tablosu
+
+NoSQL, tek bir teknoloji değil beş yaygın veri modelinin ailesidir. Her ailenin varsayımı, hangi erişim deseninde iyi olduğunu belirler.
+
+**Anahtar-değer (key-value)** en basit modeldir: bir anahtar verilir, bir değer (bayt dizisi) döner. Önbellek, oturum, sayaç ve yapılandırma için idealdir. Redis (bellek içi, isteğe bağlı kalıcılık) ve RocksDB (LSM tabanlı gömülü depo) bu ailedendir. Bölüm 4'te Redis'in Makefile'ını okumuştun; o projenin asıl işi bu ailenin bir örneğidir.
+
+**Belge (document)** değeri bir JSON benzeri yapı olarak saklar ve belgenin içini sorgulamaya izin verir. Şema her belgede farklı olabilir. MongoDB bu ailenin en bilinen örneğidir. Birlikte okunan, iç içe ve değişken yapılı veride güçlüdür; birden çok belge arasında JOIN gerektiren sorgularda zayıftır.
+
+**Geniş sütun (wide-column)** satır anahtarı ve sütun aileleri üzerine kuruludur. Her satırın farklı sütunları olabilir ve veriler satır anahtarına göre fiziksel olarak sıralı tutulur. Cassandra ve HBase bu ailendendir. Yoğun yazma ve belirli bir anahtar aralığını okuma için tasarlanmıştır (genel bilgi).
+
+**Graf (graph)** düğümleri ve kenarları birinci sınıf veri olarak tutar. "Arkadaşımın arkadaşları" ya da "bu parçanın tedarik zinciri" gibi çok adımlı ilişki gezintisi, ilişkisel modelde her adımda bir JOIN ister ve derinleştikçe çöker. Neo4j bu ailenin bilinen örneğidir.
+
+**Zaman serisi (time series)** veriyi zaman damgası ile etiketlenmiş ölçümler olarak tutar. Yazmalar hemen hemen her zaman sondadır, sorgular da çoğunlukla bir zaman aralığı üzerindedir. Telemetri, metrik ve IoT verisi bu ailenin tipik işidir. InfluxDB ve TimescaleDB (PostgreSQL üzerine kurulu bir eklenti) bu ailendendir.
+
+[[SEKIL 1]]
+
+Şekil 35.1 karar mantığını özetliyor. Kararı tek bir soruya indirgemek gerekirse: **verinin ana erişim deseni nedir?** Sorgu bir anahtarla nokta okuma mı, belge içinde filtreleme mi, satır aralığı taraması mı, ilişki gezintisi mi, yoksa zaman aralığı mı? Bu cevap ailenin seçimini belirler.
+
+| Erişim deseni | Önerilen aile | Bedel |
+|---|---|---|
+| Anahtarla nokta okuma/yazma | Anahtar-değer | Değer içinde sorgu yok |
+| Değişken yapılı belgeyi bir arada okuma | Belge | Belgeler arası JOIN zor |
+| Yoğun yazma, anahtar aralığı tarama | Geniş sütun | Esnek sorgu ve JOIN yok |
+| Çok adımlı ilişki gezintisi | Graf | Toplu analiz ve yazma ölçeği ayrı sorun |
+| Zaman damgalı yazma, zaman aralığı sorgusu | Zaman serisi | Genel amaçlı ilişki modeli zayıf |
+| Tutarlılık, JOIN, karmaşık sorgu | İlişkisel | Yatay ölçekleme daha pahalı |
+
+Bu tablo bir kural değil, bir başlangıç noktasıdır. Gerçek bir sistemde çoğu zaman birden çok aile birlikte kullanılır: uygulama ilişkisel veritabanında iş verisini, Redis'te önbelleği, zaman serisi deposunda telemetriyi tutar. Her veri parçası kendi erişim desenine göre bir yere gider; buna **polyglot persistence** denir.
+
+## 35.3 Depolama motorunun içi: B+ ağacı ve LSM ağacı
+
+Veritabanını ailelere göre seçmek, arkasındaki depolama motoruna bakmayı gerektirir. Çünkü iki temel sorunun cevabı burada yatar: veri nasıl **okunur** ve nasıl **yazılır**. Bu sorunları çözmek için iki ana yaklaşım vardır.
+
+**B+ ağacı** (Bölüm 33'te derinleşir) veriyi diskte sabit boyutlu sayfalar halinde tutan bir ağaçtır. Bir anahtarı aramak kökten yaprağa kadar birkaç sayfa okumaktır; güncelleme ise ilgili yaprak sayfasını bulup **yerinde** değiştirmek ve gerekirse sayfayı bölmektir. Okuma çok hızlıdır çünkü ağaç dengelidir ve dallanma faktörü büyük olduğu için derinlik küçüktür. Bedeli, yazmanın **rastgele** sayfalara dokunmasıdır: her yazma diskin farklı bir yerine gider ve bu, dönen disklerde ve hatta SSD'lerde kendi maliyetini getirir.
+
+**LSM ağacı** (Log-Structured Merge-tree) tam tersine yazmayı sıralı tutar. Her yazma önce bellekteki bir tabloya (memtable) girer ve günlüğe (WAL) eklenir. Memtable dolunca sıralı bir dosya (SSTable) olarak diske yazılır ve bu dosya bir daha değiştirilmez. Dosyalar zamanla birikir; arka planda **birleştirme** (compaction) ile bir araya getirilip temizlenir. Yazma hep dosyanın sonuna ekleme olduğu için sıralıdır ve hızlıdır. Bedeli, okumanın birden çok dosyaya bakmasıdır.
+
+[[SEKIL 2]]
+
+Şekil 35.2 iki yolu yan yana gösteriyor. Sol sütunda B+ ağacı her yazmada rastgele bir sayfayı okuyup yazar. Sağ sütunda LSM önce günlüğe sıralı bir ekleme yapar, sonra her şeyi belleğe koyar ve dolunca sıralı bir dosya üretir. Diskin rastgele erişimdeki yavaşlığı ile sıralı erişimdeki hızı arasındaki farkı, Bölüm 28'deki tampon ve `fsync` ölçümlerinde görmüştün; bu bölümün yazma tasarımı o farkın üzerine kurulu.
+
+Bu iki yaklaşımın hangisinin kazandığı iş yüküne bağlıdır. Okuma ağırlıklı, rastgele güncellemeli bir veri (bir ürün katalogu gibi) B+ ağacında daha iyi çalışır. Yazma ağırlıklı, sıralı akan bir veri (telemetri, günlük) LSM'de daha iyi çalışır. Aradaki farkı sayıyla görmek için şimdi bir LSM'yi kendin yazacaksın.
+
+::: ipucu
+Sık yapılan bir hata, LSM'nin "her zaman daha hızlı" olduğunu düşünmektir. LSM yazmayı hızlandırır ama okumayı ve alanı bedel olarak öder. Hangi tarafı seçtiğin, veri akışının hangi tarafının daha pahalı olduğuna bağlıdır.
+:::
+
+## 35.4 Kendi LSM deponu: memtable, SSTable, birleştirme, mezar taşı
+
+Kavramı pekiştirmenin en iyi yolu, çalışan küçük bir sürümü yazmaktır. Aşağıdaki depo dört parçadan oluşur. **memtable** RAM'de bir sözlüktür. **SSTable** diskte, anahtara göre sıralı bir dosyadır; dosyalar bloklara bölünmüştür ve bellekte her bloğun ilk anahtarını gösteren bir **seyrek indeks** tutulur. Her SSTable'ın bir **Bloom filtresi** vardır (35.6). **Birleştirme**, birden çok SSTable'ı tek bir tabloda toplar. Silme ise anahtarı hemen diskten silmek yerine bir **mezar taşı** (tombstone) yazmakla yapılır.
+
+Bu depo için önemli bir sadeleştirme yapıyoruz: WAL bu sürümde yok. Günlük ve kalıcılık, Kendin Yap Projesi 1'in konusu. Şimdilik memtable'ın RAM'de kaldığını ve dolunca dosyaya yazıldığını varsay.
+
+LSM her SSTable için bir Bloom filtresi kullanır; filtrenin kodu ve formülü 35.6'da. Şimdilik onu "kesinlikle yok" diyebilen bir kutu olarak bil.
+
+Aşağıdaki kod LSM'nin tamamını içerir. Önce `SSTable` sınıfına bakalım. Kurucu, sıralı kayıtları bloklara bölerek yazar ve her bloğun başlangıç ve bitiş ofsetini seyrek indekse koyar. Sorgu sırasında bir anahtar aranırken önce Bloom filtresine sorulur; "kesinlikle yok" cevabı gelirse dosyaya hiç dokunulmaz.
+
+[[KOD lsm.py 1 40]]
+
+Bu ilk parçada iki şey önemli. Birincisi, `SSTable` dosyayı `wb` (ikili yazma) kipinde açar; böylece `tell()` ile aldığımız ofsetler diskteki gerçek bayt konumlarıdır. Metin kipinde Windows'ta satır sonu dönüşümü ofsetleri kaydırabilir. İkincisi, her kayıt bir JSON dizisi olarak `[anahtar, değer]` biçiminde yazılır; değer `None` ise bu bir mezar taşıdır. Silinmiş bir anahtar ile hiç var olmamış bir anahtar, diskte farklı bir ize sahiptir; bu ayrım birleştirmede önemlidir.
+
+[[KOD lsm.py 41 80]]
+
+`oku` metodu, LSM'nin okuma yolunun özüdür. Bloom filtresi `False` derse işlem burada biter ve `bloom_red` sayacı artar. Filtre `True` derse seyrek indeksten doğru bloğu bulur ve yalnızca o bloğu okur. Bloğun içinde bulunamazsa bu bir **yanlış pozitiftir**: filtre "var" dedi ama yoktu. Bu sayaç, Bloom filtresinin gerçekten işe yarayıp yaramadığını ölçmemizi sağlar.
+
+[[KOD lsm.py 81 120]]
+
+`LSM` sınıfının `get` metodu, en yeni veriyi önce arar. Önce memtable'a bakar; yoksa tabloları en yeniden en eskiye doğru dolaşır. İlk eşleşme kazanır. Bu sıralama, aynı anahtarın birden çok tabloda bulunabileceği gerçeğinden gelir: bir anahtar önce 1 değeriyle, sonra 3 değeriyle yazılmış olabilir ve eski tablo hâlâ diskte duruyordur. Bu yüzden en yeni kayıt her zaman en önce gelir.
+
+Silme de bir yazmadır. `sil` metodu anahtarı memtable'a `None` olarak koyar. `get` bu `None` değerini bulduğunda "silinmiş" olarak yorumlanır ve eski tablolardaki değer gizlenir. Mezar taşı, eski kopyayı hemen silemediğimiz için gerekli bir yer tutucudur.
+
+[[KOD lsm.py 121 140]]
+
+Birleştirme metodu, tüm tabloları eskiden yeniye sırayla okur ve bir sözlüğe yazar. Aynı anahtar birden çok kez gelirse sonraki (daha yeni) değer önceki değerin üstüne yazılır. Böylece en yeni kayıt kazanır. Son adımda `None` değerli kayıtlar filtrelenir: birleştirme tüm tabloları kapsadığı için, mezar taşının gizleyeceği eski bir kopya artık yoktur ve mezar taşı atılabilir. Bu koşulu bir kez daha düşün: eğer tüm tablolar birleştirilmemişse, mezar taşı atılamaz; çünkü onun gizlediği bir kopya hâlâ daha eski bir tabloda duruyor olabilir.
+
+[[SEKIL 3]]
+
+Şekil 35.3, bu üç katmanı (memtable, seviye 0, seviye 1) ve birleştirmenin yönünü gösteriyor. Seviye 0'daki tablolar birbirinin aralığına girebilir; bu yüzden okuma hepsine bakmak zorundadır. Seviye 1'deki tablolar ise ayrık ve sıralıdır. Birleştirme, seviye 0'ı sıralı ve ayrık bir hâle getirir.
+
+Şimdi bu kodun doğru çalışıp çalışmadığını sınamalıyız. Bir veritabanını test etmenin en sağlam yolu, **kendi yavaş ama doğru referansıyla** karşılaştırmaktır. Referans bir Python `dict`idir: her işlemi hem LSM'ye hem sözlüğe uygularız ve her okumada iki cevabın eşit olup olmadığına bakarız. Rastgele işlemler sabit bir tohumla üretilir; böylece aynı dizi her çalıştırmada aynı olur.
+
+[[KOD lsm_test.py 1 30]]
+
+Test fonksiyonu, 20 000 rastgele işlemden oluşan bir dizi üretir: %55 yazma, %20 silme, %25 okuma. Anahtar uzayı yalnızca 400 anahtardır, böylece aynı anahtarlar sık sık yeniden yazılır ve silinir; bu, yeniden yazma ve mezar taşı mantığını zorlar.
+
+[[KOD lsm_test.py 31 60]]
+
+Bu parçada iki kritik ayrıntı var. Küçük bir eşik (`esik=50`) sık sık flush yapar, böylece birçok SSTable oluşur. Her 2500 işlemde bir birleştirme yapılır, ama son işlemde yapılmaz: böylece test sonunda birden çok tablo varken de tüm anahtarlar kontrol edilir. Son döngü her anahtarı bir kez daha karşılaştırır.
+
+[[CIKTI lsm_cikti.txt]]
+
+Çıktı, beş farklı tohumun her birinde 0 hata verdiğini gösteriyor. Toplam kontrol sayısı 26 855: bu, okuma işlemleri ile son tam taramanın toplamıdır. Son tablo sayısının 35-36 olması, test sonunda çok sayıda tablo olduğunu, yani okuma yolunun gerçekten birden çok dosyaya baktığını gösterir.
+
+Bu test tek başına bir "kanıt" değildir; hata bulamamak, hata olmadığını göstermez. Testin gerçekten hata yakalayıp yakalamadığını görmek için bilerek hatalı bir birleştirme yazdık: birleştirmede eskiden yeniye değil, yeniden eskiye okuyan ve böylece eski değeri tutan bir sürüm. Bu hatalı sürümde test **4 377** hata buldu. Testin hatayı yakalayabildiğini bu sayı gösteriyor. Mutasyon betiği arşivdedir (`mutasyon.py`).
+
+## 35.5 Yükseltme (amplification) ve kendi deponda ölçüm
+
+Depolama motorlarını karşılaştırmanın standart dili **yükseltme** (amplification) kavramıdır. Bir kullanıcı işlemi, diskte olması gerekenden fazla iş üretebilir. Bu fazlalığın oranına yükseltme denir ve üç türü vardır.
+
+**Yazma yükseltmesi (write amplification)**: kullanıcının yazdığı bayt başına diske yazılan toplam bayt. Flush, birleştirme ve günlük yazmaları hepsi bu toplama girer. **Okuma yükseltmesi (read amplification)**: bir okuma için diskte kaç sayfa ya da dosya okunduğu. **Alan yükseltmesi (space amplification)**: diskte tutulan toplam bayt ile kullanıcının fiilen tuttuğu verinin oranı; eski kopyalar ve mezar taşları bu alanı şişirir.
+
+Bu üç yükseltme birbirinin karşısındadır. Birleştirmeyi sık yaparsan okuma yükseltmesi düşer (az dosya okursun) ama yazma yükseltmesi artar (aynı veriyi tekrar tekrar yazarsın). Birleştirmeyi seyrek yaparsan yazma ucuzlar ama okuma ve alan pahalılaşır. Genel bir sonuç olarak bu üç ölçütü aynı anda en iyi yapan bir ayar yoktur (genel bilgi: bu, RUM konjektürü olarak bilinir).
+
+Şimdi bunu kendi deponda ölç. Ölçüm için 20 000 yazma yapıyoruz; anahtarlar 0 ile 4999 arasında rastgele seçiliyor ve her değer 20 baytlık. Eşik 256 kayıt. Önce flush sonrasındaki yazma toplamını, sonra tam birleştirmeden sonrakini alıyoruz.
+
+[[KOD lsm_test.py 61 90]]
+
+Okuma yükseltmesini ölçmek için ayrı bir deneme yapıyoruz: 20 000 yazmadan sonra, **yalnızca var olmayan** 2000 anahtar sorguluyoruz. Burada her sorgunun diskte kaç tablo bloğu okuduğunu sayıyoruz. Bloom filtresini iki kez çalıştırıyoruz: bir kez açık, bir kez kapalı.
+
+[[KOD lsm_test.py 91 119]]
+
+[[CIKTI lsm_cikti.txt]]
+
+Son üç satır ölçümlerin özüdür. Yazma yükseltmesi, birleştirme öncesinde 1,31 (680 960 / 520 000) iken birleştirmeden sonra 1,64 (855 295 / 520 000) oluyor: birleştirme, yazılan toplam bayt sayısını artırıyor çünkü her tabloyu yeniden yazıyor. Bu, LSM'nin temel bedelidir. Kullanıcı tek bir bayt yazsa da birleştirmeler bu baytı defalarca diske taşır.
+
+Okuma yükseltmesi ise çarpıcı. Bloom filtresi kapalıyken her "yok" sorgusu 77 tablo okuyor (birleştirme öncesinde 77 tablo vardı). Filtre açıkken aynı sorgu ortalama 1,683 disk okuması yapıyor. Bu, filtrenin 77 tablodan yalnızca birkaçına gitmek zorunda kaldığı anlamına gelir. Sayının neden 1,66 civarında olması gerektiğini bir sonraki bölümde, Bloom formülüyle hesaplayacağız.
+
+Bu ölçümlerin ne gösterdiğini dürüstçe söylemek gerekir: sayılar Python ile yazılmış ve disk yerine dosya işletim sisteminin önbelleğinden okunan küçük bir depodan geliyor. Gerçek bir veritabanında mutlak süreler çok farklı olur. Ama **oranlar ve yön** (birleştirme yazmayı artırır, filtre okumayı azaltır) her LSM'de geçerlidir.
+
+## 35.6 Bloom filtresi: formül ve ölçüm
+
+Bloom filtresi, 1970'te Burton Bloom'un tanıttığı olasılıksal bir üyelik yapısıdır (genel bilgi). Bir kümenin elemanlarını bir bit dizisinde tutar ve bir sorguya iki türlü cevap verir: "**kesinlikle yok**" ya da "**muhtemelen var**". Bu asimetri her şeydir: "yok" cevabı kesindir, "var" cevabı yanlış olabilir. Yanlış negatif (var olan bir şeyi yok demek) hiç olmaz; yalnızca yanlış pozitif (yok olan bir şeye var demek) olabilir.
+
+Mekanizma basittir. Bir dizi `m` bit, `k` tane bağımsız hash fonksiyonu. Bir eleman eklendiğinde `k` hash değeri hesaplanır ve her biri bir bit olarak açılır. Bir eleman sorulduğunda aynı `k` konuma bakılır: hepsi 1 ise "muhtemelen var", herhangi biri 0 ise "kesinlikle yok". Bit silinemez, çünkü aynı bit başka elemanlar için de açık olabilir.
+
+[[SEKIL 4]]
+
+Şekil 35.4'te bu mekanizma bir dizi üzerinde görülüyor. A ve B eklenmiş; A'nın bitleri 1, 6, 13, B'ninki 3, 6, 11. Sorgu C'nin 2. biti 0: C kesinlikle yok. Sorgu D'nin bitleri 3, 6, 13 ve üçü de 1: D muhtemelen var, ama aslında yok. Bit 6 iki elemanın ortak bitidir; bu paylaşım yanlış pozitifin kaynağıdır.
+
+Yanlış pozitif oranı için standart formül şudur (`n` eklenen eleman sayısı):
+
+`p = (1 - e^(-k n / m))^k`
+
+Bu formülün arkasındaki sezgi şudur: bir bit tek bir eleman için **açılmamış** kalma olasılığı `1 - 1/m`'dir; `k` hash ve `n` eleman için bu `(1 - 1/m)^(kn)` yaklaşık `e^(-kn/m)` olur. Bir sorgunun yanlış pozitif olması için `k` bitin **hepsinin** açık olması gerekir; bu da `(1 - e^(-kn/m))^k` verir.
+
+Bu formülden iki sonuç çıkar. Birincisi, `k` için bir optimum vardır. Çok az hash fonksiyonu bitleri yeterince doldurmaz; çok fazlası bit dizisini aşırı doldurur. Optimum `k = (m/n) ln 2` civarındadır (ayrıntısı için ilerideki Kod Okuma'ya bak). İkincisi, belirli bir hedef yanlış pozitif oranı için gereken bit sayısı şuna eşittir: `m = -n ln p / (ln 2)^2`. Bu, eleman başına yaklaşık 9,6 bit demektir; %1 hedef için.
+
+Formülü kendi filtremizle sınamak için, `n = 10 000` elemanı ekleyip `100 000` var olmayan anahtarı sorguluyoruz. `m/n` oranını 4, 8, 10 ve 16 olarak, `k`'yı 1'den 10'a kadar değiştiriyoruz. Teorik değerle ölçülen değeri yan yana koyuyoruz.
+
+[[KOD bloom.py 1 39]]
+
+Bu sınıf LSM'deki ile aynı; burada yalnızca `teorik_yanlis_pozitif` ve `optimal_k` yardımcıları var. Hash olarak BLAKE2b kullanıyoruz ve tek bir 128 bitlik özetten iki hash üretip `h1 + i * h2` ile `k` konum türetiyoruz. Bu çift hash tekniği Kirsch ve Mitzenmacher'in 2006 analizine dayanır; böylece her eleman için tek bir hash hesabı yeter.
+
+[[KOD exp_bloom.py 1 28]]
+
+[[KOD exp_bloom.py 29 50]]
+
+[[CIKTI bloom_cikti.txt]]
+
+Çıktıda her `m/n` için teorik ve ölçülen değerler yan yana. Örneğin `m/n = 10` ve `k = 7` (optimum) için teorik 0,008194, ölçülen 0,008210; fark binde birin altında. `m/n = 8` ve `k = 6` için 0,021577'ye karşı 0,021560. Tabloda yalnızca optimum ve `k = 1, 4, 10` satırları yazılıyor; tam tablo `engine/veri/b35_bloom.csv` dosyasında 40 satır olarak duruyor ve Şekil 35.5'te çizildi.
+
+[[SEKIL 5]]
+
+Şekil 35.5, yanlış pozitif oranının `k` ile nasıl değiştiğini gösteriyor. Her eğri bir `m/n` oranına ait; düz çizgi teori, nokta ölçüm. Eğriler önce düşüyor, sonra yükseliyor: bu, optimumun varlığının görsel kanıtı. Ayrıca `m/n` büyüdükçe tüm eğrilerin aşağı indiğini görüyorsun: birim eleman başına daha fazla bit, daha az hata demek.
+
+Bu bölümde bir dengeyi bilinçli olarak gördük: Bloom filtresi **bellek** karşılığında **sorgu süresi** verir. LSM örneğinde bunun karşılığı, 77 tablodan 1,7 okumaya inmekti. Ters yönde ise bir filtrenin hafızada tutulması gerekir; bu da büyük kümelerde bellek bütçesini belirler.
+
+::: baglanti
+Bloom filtresi hash tekniğinin bir uygulamasıdır. Hash tablosunda çakışmayı zincirle ya da açık adresleme ile çözdüğün Bölüm 9'daki kavramlar burada da geçerli: iyi bir hash fonksiyonu, bitlerin düzgün dağılmasını sağlar. Farkı ise Bloom filtresinin eleman saklamamasıdır; bu yüzden hem daha az bellek kullanır hem de silinemez.
+:::
+
+## 35.7 Dağıtık temeller: çoğaltma, bölümleme ve tutarlı hash
+
+Tek bir makinedeki depo, makinenin çökmesiyle birlikte çöker. Dağıtık sistemde iki soru kaçınılmaz olur: aynı veri birden çok makinede **kopyalansın mı** (çoğaltma, replication) ve veri makineler arasında **bölünsün mü** (bölümleme, partitioning)? Üç çoğaltma modeli ve iki bölümleme yöntemi vardır.
+
+**Lider-takipçi** (leader-follower, master-slave): tüm yazmalar tek bir lider üzerinden geçer; lider değişikliği takipçilere iletir. Okumalar takipçilerden yapılabilir. Basittir ve yazma sırası nettir, ama lider tek nokta hatasıdır ve okumalar takipçinin gerisinde kalabilir.
+
+**Çok lider** (multi-leader): birden çok veri merkezinde her biri yazma kabul eder. Coğrafi gecikmeyi azaltır, ama aynı anahtara iki yerde farklı değer yazılabilir ve bu bir **çakışma** (conflict) yaratır. Çakışma çözümü (son yazma kazanır, birleştirme, uygulamaya bırakma) ayrı ve zor bir konudur.
+
+**Lidersiz** (leaderless): hiçbir kopya özel değildir; istemci yazmayı `W` kopyaya, okumayı `R` kopyaya gönderir. Dynamo (2007) ve ondan esinlenen sistemler bu modeli kullanır (genel bilgi). Tutarlılık, `R` ve `W` sayılarının seçimiyle ayarlanır (35.8).
+
+[[SEKIL 6]]
+
+Şekil 35.6 üç modeli yan yana gösteriyor. Lider-takipçide yazmanın tek kapıdan geçtiğine, çok liderde iki lider arasında çakışma riskinin doğduğuna, lidersizde ise istemcinin birden çok kopyaya doğrudan yazdığına dikkat et.
+
+Bölümleme, veriyi makinelere dağıtmaktır. Anahtar aralığına göre bölümlemede (örneğin A-F, G-M, N-Z) aralık sorguları verimlidir, ama sıcak bir anahtar aralığı bir makineyi boğabilir. Hash ile bölümlemede anahtar bir hash fonksiyonundan geçer ve yük düzgün dağılır, ama aralık sorgusu tüm makinelere dağılır.
+
+Burada bir sorun doğar. Düğümler arasında `hash(anahtar) % N` ile bölümleme yaparsan, `N` değiştiğinde (bir düğüm eklersin ya da çıkarırsın) neredeyse her anahtar başka bir düğüme gider. Bu, büyük bir veri taşıma demektir. **Tutarlı hash** (consistent hashing) bu sorunu çözer: hash değerlerini bir halkaya yerleştirir, her anahtarı saat yönünde ilk düğüme atar. Düğüm eklendiğinde yalnızca yeni düğümün halkadaki komşusundan bazı anahtarlar taşınır.
+
+[[SEKIL 7]]
+
+Şekil 35.7'de halka görülüyor. Her düğüm halkada birden çok **sanal düğüm** (virtual node) olarak yer alır: A'nın iki sanal kopyası A1 ve A2. Sanal düğümler, birkaç fiziksel düğümün halkada daha düzgün dağılmasını sağlar. Anahtar `k1` halkada A1'in biraz altında; saat yönünde ilk sanal düğüm A1 olduğu için sahibi A. `k2` D2'nin önünde; sahibi D. Bu kural her anahtar için aynıdır ve halkada yalnızca yerel bir değişiklik düğüm eklemeyi etkiler.
+
+Bu fikri sınamak için 100 000 anahtarı 10 düğüme dağıttık, sonra 11. düğüm ekledik ve kaç anahtarın taşındığını saydık. Karşılaştırma: naif `hash % N` ve tutarlı halka, sanal düğüm sayısı `v` ∈ {1, 10, 40, 100, 200}. İdeal taşınma oranı, yeni düğümün payı olan `1/11 ≈ 0,0909`'dur: düğümler eşit yükte olsaydı yeni düğüm bu kadar anahtar alırdı ve başka hiçbir anahtar taşınmazdı.
+
+[[KOD exp_tutarli.py 1 40]]
+
+Halka sınıfı `dugum_ekle` ile her fiziksel düğüm için `v` sanal konum hesaplar ve listeyi sıralı tutar. `sahip` metodu bir anahtarın hash değerini alır ve `bisect` ile listedeki ilk büyük konumu bulur; listenin sonundaysa halkayı sarar (en küçük konuma döner). Bu, bir arama işlemidir ve `O(log n)` sürer; `n` burada toplam sanal düğüm sayısıdır.
+
+[[KOD exp_tutarli.py 41 80]]
+
+`tasinan_halka` fonksiyonu iki halka kurar: biri 10, biri 11 düğümle. Her anahtarın sahibi değiştiyse taşınmış sayılır. Bir `assert` de koyduk: taşınan her anahtarın **yeni** düğüme gittiğini doğruluyoruz. Eğer yeni düğüm dışında bir yere gidiyorsa halka mantığı bozulmuş demektir.
+
+[[KOD exp_tutarli.py 81 112]]
+
+[[CIKTI tutarli_cikti.txt]]
+
+Sonuçlar çarpıcı. Naif `hash % N` yönteminde anahtarların **%91,03**'ü taşınıyor; ideal oran %9,09 iken bu, on kattan fazla. Tutarlı halkada `v = 1` ile taşınma 0,0074, `v = 10` ile 0,0788, `v = 100` ile 0,0925, `v = 200` ile 0,0890. Yani sanal düğüm sayısı yeterince büyüdüğünde taşınma ideal orana yaklaşıyor.
+
+Ama yük dengesi ayrı bir hikâye. Sütunlardaki yük CV'si (standart sapma / ortalama; düşük iyi) `v = 1` için 0,7693: tek konumlu düğümler halkada büyük bir yay alabiliyor, bazıları neredeyse hiç anahtar almıyor. `v` arttıkça CV 0,0509'a iniyor (`v = 200`). Naif `hash % N` yönteminin CV'si ise 0,0123: en dengeli yöntem o, ama en çok taşıyan da o. Tutarlı hash bu iki sorunu sanal düğüm sayısıyla dengeler: `v` büyük seçilirse hem taşınma hem yük dengesi iyi olur; bedeli halkanın daha büyük olması ve arama maliyetinin biraz artmasıdır.
+
+[[SEKIL 8]]
+
+Şekil 35.8 aynı sonucu iki panelde veriyor: solda taşınan oran (kesikli çizgi ideal), sağda yük CV'si. Naif yöntemin solda devasa, sağda ise en küçük çubuk olduğunu görüyorsun.
+
+Gerçek sistemlerde bu tekniği kullanan bir sistem düğüm çıkarma ve yük dengesi için de aynı mantığa dayanır; burada yalnızca ekleme ölçtük, çıkarma simetriktir: yalnızca çıkarılan düğümün anahtarları komşulara taşınır (genel bilgi). Bölüm 41'de bu bileşenin büyük bir sistemin tasarımında nasıl yer aldığını göreceksin.
+
+## 35.8 Tutarlılık: CAP, PACELC, quorum ve Raft'a bakış
+
+Çoğaltma ve bölümleme dağıtık bir sistemi kurar; ama kopyalar arasında veri tutarlı mı? Bu, dağıtık sistemlerde en çok yanlış anlaşılan konudur. Önce bir terim netleştirelim: **tutarlılık** (consistency) bu bağlamda, bir okumanın hangi yazmayı görebileceğini tanımlayan bir sözleşmedir; ACID'deki C ile aynı şey değildir.
+
+**CAP teoremi.** Brewer 2000'de bir konferansta, Gilbert ve Lynch da 2002'de bir kanıtla bunu formalize etti (genel bilgi). Teoremin doğru ifadesi şudur: bir ağ **bölünmesi** (partition) olduğunda, bir sistem ya **tutarlılık** (her okuma en son yazmayı görür) ya da **erişilebilirlik** (her istek bir yanıt alır) seçmek zorundadır; ikisini birden garanti edemez. Sık yapılan yanlış yorumlar: "CAP'te her zaman C ya da A seçersin" (hayır; bölünme yoksa ikisi birlikte olabilir), "P bir seçimdir" (hayır; ağ bölünmesi gerçekte olur, yalnızca nasıl davranacağını seçersin), "CA sistemler vardır" (dağıtık bir sistemde bölünme olduğunda CA diye bir şey yoktur).
+
+**PACELC.** Abadi'nin önerisi CAP'in eksik kısmını tamamlar (genel bilgi): bölünme yokken (Else) bile bir **gecikme** (Latency) ile **tutarlılık** (Consistency) arasında bir seçim vardır. Bir yazmayı üç kopyaya kadar bekletmek tutarlılığı artırır ama gecikmeyi büyütür. Pratikte çoğu zaman sorun bu ikinci dengedir.
+
+**Tutarlılık modelleri.** Güçlü tutarlılık (linearizability) her okumanın en son yazmayı görmesini ister: sistem tek bir kopya gibi davranır. Nihai tutarlılık (eventual consistency) ise yazmalar durduğunda kopyaların zamanla aynı değere yakınsayacağını söyler, ama anlık okumada bayat değer görebilirsin. Oku-yazdığını-oku (read-your-writes) tutarlılığı, bir kullanıcının kendi yazdığını hemen görmesini garanti eder ama diğer kullanıcıların bayat görmesine izin verir. Bu modeller bir hiyerarşi oluşturur ve her biri farklı bir gecikme-doğruluk dengesidir.
+
+**Quorum: R + W > N.** Lidersiz bir sistemde `N` kopya olsun. Bir yazma `W` kopyaya ulaşınca tamam sayılır, bir okuma `R` kopyadan veri alır ve en yeni sürümü döndürür. Eğer `R + W > N` ise okuma kümesi ile yazma kümesi **en az bir kopyada kesişir** (kutu ilkesi): okuma en az bir tane en yeni kopyayı görür. Bu, bayat okumayı engeller; ama önemli bir uyarı var: bu yalnızca kopyalar sürümü doğru tutuyorsa işe yarar. Kesişim garantisi, sürüm çatışmasını (vektör saatleri) ya da kopyaların onarımını çözmez.
+
+Şimdi bunu sayıyla görelim. `N = 3` kopya, farklı `(R, W)` çiftleri için bir yazma tamamlandıktan **hemen sonra** yapılan bir okumanın bayat olma olasılığını hesaplıyoruz. Model şöyle: yazma `W` kopyaya gider; okuma `R` rastgele kopyadan okur; okunan kopyaların hiçbiri yazılmış kopyalardan biri değilse bayat okuma olur. Bu durumda olasılık `C(N-W, R) / C(N, R)`'dir. Simülasyon bunu 200 000 denemeyle doğruluyor.
+
+[[KOD exp_kuorum.py 1 34]]
+
+[[KOD exp_kuorum.py 35 51]]
+
+[[CIKTI kuorum_cikti.txt]]
+
+Sonuçlar teoriyle uyumlu: `(R, W) = (1, 1)` için bayat okuma olasılığı 2/3 ≈ 0,667 (simülasyon 0,666), `(1, 2)` ve `(2, 1)` için 1/3 ≈ 0,333. `R + W > N` olan `(2, 2)`, `(1, 3)` ve `(3, 1)` durumlarında olasılık tam olarak sıfır. Bu sıfır bir kesişim garantisi, yani matematiksel bir kesinlik; diğer satırlar ise olasılık.
+
+[[SEKIL 9]]
+
+Şekil 35.9 bu sonucu görselleştiriyor. Bir okuma ile yazma kümesinin kesişmemesi, yalnızca `R + W ≤ N` iken mümkün. Ama dikkat: bu tablo "yazma tamamlandıktan hemen sonra" durumunu gösteriyor. Gerçek sistemde asıl sorun, takipçilerin güncellemeyi ne kadar geç aldığıdır.
+
+**Vektör saatleri ve sürüm çatışması.** Lidersiz ve çok liderli sistemlerde iki yazma birbirinden habersiz gerçekleşebilir. Hangisinin "daha yeni" olduğu zaman damgasıyla belirlenirse, saatlerin senkron olmaması bir yazmayı sessizce kaybettirebilir. **Vektör saati**, her düğüm için bir sayaç taşıyan bir vektördür (genel bilgi). İki sürüm, birinin vektörü diğerinin her bileşeninden büyük ya da eşitse sırayla gelmiş (birbirinin devamı) sayılır; hiçbiri diğerini kapsamıyorsa **eşzamanlı** (concurrent) ve bir **çatışma**dır. Bu durumda sistemin çatışmayı kullanıcıya ya da bir birleştirme kuralına bırakması gerekir. Hesabı elle görmek için: düğüm A'nın yazdığı sürüm `[A=2, B=0]`, düğüm B'nin yazdığı `[A=1, B=1]`. İlki ikinciyi kapsamıyor (`B` bileşeninde 0 < 1), ikincisi de ilkini kapsamıyor (`A` bileşeninde 1 < 2): bunlar eşzamanlı, yani bir çatışma.
+
+**Konsensüs ve Raft.** Quorum, bir değerin "kabul edildiğini" bir çoğunlukla belirler; ama birden çok düğümün **aynı sırada** aynı kararı vermesi (örneğin hangi düğüm lider olacak, hangi işlem önce gelecek) ayrı bir problemdir: konsensüs. Raft (2014, Ongaro ve Ousterhout) bu problemi anlaşılır biçimde çözer: lider seçimi, bir günlüğün (log) lider üzerinden takipçilere çoğaltılması ve güvenlik kuralları. Bu bölümde yalnızca kavramını görmen yeterli; algoritmanın ayrıntılı işleyişi ve bir sistem tasarımında nasıl kullanıldığı Bölüm 41'in konusu.
+
+## 35.9 Belge modeli: gömme mi, referans mı?
+
+Belge veritabanında asıl tasarım sorusu, ilişkili verinin **aynı belgeye gömülüp gömülmeyeceğidir**. Bir siparişin kalemlerini sipariş belgesinin içine mi koyarsın, yoksa ayrı bir koleksiyonda tutup kimliğe göre mi bağlarsın? Bu soru, Bölüm 33'teki normalizasyon kararının belge dünyasındaki karşılığıdır.
+
+**Gömme (embedding)** ilgili veriyi belgenin içine koyar. Bir sorguda tek belgeyi okuyup her şeyi alırsın; bu, okuma hızını artırır. Bedeli tekrardır: aynı ürün birden çok belgede yazılıysa, ürün adı değiştiğinde hepsini güncellemek zorundasın. Bu bilinçli bir **denormalizasyon** kararıdır.
+
+**Referans (reference)** ilgili veriyi ayrı bir belgede tutar ve kimliğiyle bağlar. Güncelleme tek yerde yapılır, tutarlılık korunur; ama okumak için birden çok sorgu, yani bir tür JOIN gerekir. Kural kabaca şudur: birlikte okunan ve birlikte değişen veri gömülür; birçok yerden paylaşılan ve sık değişen veri referanslanır.
+
+**Şema evrimi.** Belge veritabanlarının çekici yanı, şemanın belgeye özgü olmasıdır. Yeni bir alan ekleyince eski belgeler güncellenmek zorunda değildir; uygulama eksik alanı varsayılan kabul eder. Bu esneklik, sıkı şemanın tersi bir sorumluluk doğurur: şema artık uygulama kodunda yaşar ve belgelerin hangi sürümde yazıldığını takip etmek senin işindir.
+
+Bu fikirleri, bir SQLite veritabanında JSON1 fonksiyonlarıyla deneyeceğiz. SQLite, sürüm 3.38'den beri JSON işlevlerini çekirdekte bulundurur; bu makinedeki sürüm 3.49.1'dir. Kullanılacak iki fonksiyon: `json_extract`, bir JSON belgesinden bir yolu okur; `json_each`, bir JSON dizisini satırlara açar.
+
+[[KOD belge.py 1 30]]
+
+[[KOD belge.py 31 59]]
+
+[[CIKTI belge_cikti.txt]]
+
+İlk iki bölümde belgeler sorgulanabiliyor. Üçüncü bölüm şema evrimini gösteriyor: `telefon` alanı yalnızca Ayşe'de var; diğerleri için `json_extract` hata vermeden `None` dönüyor. Dördüncü bölümde `kablo` ürününü içeren iki belge var; ürün adı değişirse iki belgeyi güncellemen gerekir. Aynı veriyi ayrı bir `urun` tablosunda tutsaydın tek satır yeterdi. Bu sayı, gömmenin bedelini somut hâle getiriyor.
+
+::: dikkat
+Belge veritabanı ilk bakışta "şema yok" gibi görünür, ama bu bir yanılsamadır. Şema vardır; yalnızca yanlış yere, uygulama koduna taşınmıştır. Uygulamanın okuduğu her alanın varlığını ve türünü kendin doğrulamalı, eski belge sürümlerini ele almalısın.
+:::
+
+## 35.10 Zaman serisi: telemetri ve delta-of-delta sıkıştırma
+
+Zaman serisi, zaman damgası ile etiketlenmiş ölçümlerin dizisidir ve diğer verilerden belirgin biçimde farklıdır. Bu farkların her biri bir tasarım kararı doğurur.
+
+**Ekle-yaz.** Telemetri neredeyse yalnızca eklenir; bir ölçüm geçmişini değiştirmek nadirdir. Bu, bölüm 35.3'teki LSM'nin doğal alanıdır: sıralı yazma ve değişmez dosyalar.
+
+**Zaman aralığı sorgusu.** Tipik soru "son bir saatteki sıcaklık ortalaması" gibidir. Veri zamana göre sıralıysa, bir aralığı bulmak bir ikili aramadır; sıkıştırma ve bloklama bu aramayı hızlandırır.
+
+**Örnekleme azaltma (downsampling).** Bir yıllık 1 Hz veri çok büyüktür. Eski veriyi dakikalık ortalamalara indirgeyerek saklarsın; yeni veri ham hâlinde kalır. Bu, yakın geçmişte ayrıntı, uzak geçmişte özet tutan bir **saklama politikasıdır** (retention policy).
+
+**Saklama süresi.** Eski veriyi belirli bir süreden sonra silmek, disk maliyetini sınırlar. Bu bir silme işlemidir ama LSM'de bu, tüm bir dosyayı atmak gibi ucuz olabilir; çünkü zamana göre bölümlenmiş dosyalar kolayca düşürülür.
+
+**Delta-of-delta sıkıştırma.** Zaman damgaları genellikle sabit bir periyoda yakındır. Ardışık farkları (delta) almak onları küçültür; ama her farkın kendisi de yakın değerler aldığı için **farkın farkını** (delta-of-delta) tutmak daha da küçük sayılar üretir. Gorilla (Facebook, 2015) bu fikri, değişken uzunluklu önek kodlarıyla birleştirdi (genel bilgi). Aşağıdaki kodda bu kodlamayı yazıp ölçüyoruz.
+
+Kodlama kuralı şöyle: ilk zaman damgası 64 bit ham; ilk fark 32 bit ham; sonraki her nokta için `dod = (t_i - t_{i-1}) - (t_{i-1} - t_{i-2})`. `dod = 0` ise yalnızca `0` biti yazılır (1 bit). `dod` küçükse önek `10` ve 7 bit, daha büyükse `110` ve 9 bit, sonra `1110` ve 12 bit, en sonunda `1111` ve 32 bit kullanılır. Negatif sayılar iki tümleyenle yazılır.
+
+[[KOD zaman_sikistir.py 1 40]]
+
+[[KOD zaman_sikistir.py 41 80]]
+
+[[KOD zaman_sikistir.py 81 120]]
+
+[[KOD zaman_sikistir.py 121 131]]
+
+Bu kod üç şey yapar: sıkıştırır, çözer ve sonucu doğrular. `senaryo` fonksiyonu gerçek telemetriye yakın örnekler üretir: sabit periyot, titreme (jitter) ve arada kayıp nedeniyle oluşan boşluklar. `coz` fonksiyonu bit dizisini tekrar zaman damgalarına çevirir ve `assert` ile orijinalle birebir eşleştiğini doğrular. Bu doğrulama, sıkıştırmanın kayıpsız olduğunun kanıtıdır.
+
+[[CIKTI zaman_cikti.txt]]
+
+Sonuçlar kuralın gücünü gösteriyor. Mükemmel periyodik bir akışta her nokta yalnızca 1 bit tutuyor (64 bitlik ham değere karşı yaklaşık 64 kat küçük). Titreme ±3 ms olduğunda nokta başına 7,88 bit; titreme ±40 ms olduğunda 9,04 bit; yani titreme büyüdükçe `dod` değerleri 7 bitlik aralığı aşıyor ve daha pahalı önekler kullanılıyor. Boşluklu (kayıplı) akışlarda da 8 bit civarında kalıyor, çünkü bir boşluk tek bir büyük `dod` üretir ama sonraki noktalar tekrar düzene girer.
+
+Bu sayılar, zaman damgası **dizisinin düzenliliğine** bağlıdır; veri değerlerinin (sıcaklık, basınç) sıkıştırması ayrıdır. Gorilla makalesi değerler için de XOR tabanlı bir kodlama önerir; bu bölümde yalnızca zaman damgasını sıkıştırdık.
+
+[[SEKIL 10]]
+
+Şekil 35.10 bit oranlarını ve ham 64 bit çizgisini gösteriyor. Sıkıştırmanın kazancı, veriniz ne kadar düzenli olursa o kadar büyüyor. Telemetri sistemlerinde bu nedenle örnekleme hızının ve zamanlayıcı kararlılığının bile depolama maliyetini etkilediğini unutma.
+
+## 35.11 Önbellek ve Redis: kullanım kalıpları
+
+Önbellek (cache), yavaş ama doğru bir kaynağın (veritabanı, ağ servisi) sonucunu daha hızlı bir yerde tutmaktır. Bölüm 9'da hash tablosunun bu işe nasıl uyduğunu gördün; Bölüm 9'daki LRU önbelleği örneği, sınırlı bellekte hangi kaydın atılacağını belirleyen bir politikaydı. Burada asıl sorun, önbelleği **kaynakla senkron tutmaktır**.
+
+**Cache-aside (yan önbellek).** En yaygın kalıp: uygulama önce önbelleğe bakar; yoksa kaynağı okur ve önbelleğe yazar. Yazmada ise kaynağı günceller ve önbelleği siler (ya da günceller). Basittir ve kaynak ile önbellek arasında bağımlılık yaratmaz; bedeli, bir süre bayat veri görebilmendir.
+
+**Write-through.** Yazmada hem önbelleğe hem kaynağa yazılır. Okuma hep tutarlıdır ama her yazma iki kat iştir ve önbellek şişebilir.
+
+**Write-back (write-behind).** Yazma önce önbelleğe yapılır, kaynağa sonradan toplu olarak yazılır. En hızlı yazmadır, ama önbellek çökerse kaybolan yazmalar olabilir. Bu, Bölüm 28'deki `fsync` ve sıralama tartışmasının önbellek düzeyindeki karşılığıdır.
+
+**TTL (yaşam süresi).** Her önbellek kaydına bir süre verilir; süre dolunca kayıt atılır. TTL, bayatlık süresini sınırlar ama kesinlikle sıfırlamaz. Doğru TTL, verinin ne sıklıkta değiştiğine bağlıdır.
+
+**Önbellek damgası ve stampede.** Popüler bir anahtarın TTL'i aynı anda dolduğunda binlerce istek aynı anda kaynağa gider; buna **cache stampede** (önbellek sel baskını) denir. Çözümler: TTL'e rastgele bir sapma eklemek, bir anahtar için yalnızca bir isteğin kaynağa gitmesine izin veren bir kilit (single-flight) kullanmak, ya da değer dolmadan önce arka planda yenilemek (genel bilgi).
+
+Redis, bu kalıpların bellek içi bir sunucuda uygulandığı en yaygın sistemdir. Veri yapıları kullanım amacına göre seçilir: sayaçlar için `INCR`, oturum ve önbellek için `SET` ile `EX` (saniye cinsinden TTL), sıralı bir lider tablosu için sıralı küme (sorted set) ve `ZADD`/`ZREVRANGE`. Aşağıdaki komutlar genel bilgi olarak verilmiştir; bu makinede Redis kurulu olmadığı için çalıştırılmadı.
+
+[[TERM redis]]
+
+Bu komutların anlamı: `SET` anahtarı değerle yazar; `EX 60` 60 saniyelik bir TTL verir; `NX` yalnızca anahtar yoksa yazar, yani bir kilidi taklit etmek için kullanılır. `INCR` atomik bir artırmadır. `ZADD` bir üyeyi bir puanla ekler; `ZREVRANGE` puan sırasına göre tersten bir aralık döner (genel bilgi).
+
+## 35.12 Gerçek dünya: İHA telemetrisi, uçta ve merkezde
+
+Bir İHA telemetri sistemini düşün. Uçaktaki bir bilgisayar IMU, GPS, motor sıcaklığı ve batarya gibi onlarca sensörden saniyede yüzlerce ölçüm toplar. Bu veri üç farklı yerde üç farklı işi görür.
+
+**Uçta (edge).** Uçaktaki bilgisayar, veriyi kısa süreli bir tampona alır ve sıkıştırarak kaydeder. Bağlantı yoksa bile veri kaybolmaz; bu, Bölüm 28'deki ekle-yaz günlüğünün ve Bölüm 35.4'teki WAL'in doğrudan uygulamasıdır. Uçaktaki işlemci sınırlıdır; bu yüzden sıkıştırma ve örnekleme kararları burada verilir.
+
+**Yer istasyonu.** Yer istasyonu, uçtan gelen parçaları birleştirir ve gerçek zamanlı izleme için bir önbellekte son değerleri tutar. Burada önbellek kalıpları (35.11) ve TTL kararları devreye girer: operatör yalnızca son birkaç saniyeye bakar.
+
+**Merkez.** Uzun süreli saklama, analiz ve model eğitimi için veri merkezde bir zaman serisi deposunda tutulur. Burada downsampling ve saklama politikası kullanılır: uçuşun ham verisi bir süre saklanır, sonra dakikalık özetlere indirgenir. Bölüm 68'de bu zaman serisi verisi üzerinde modeller kuracaksın.
+
+Bu üç katmanın her biri, bu bölümde gördüğün bir kararın uygulamasıdır: uçta sıralı yazma ve sıkıştırma, yer istasyonunda önbellek ve TTL, merkezde zaman serisi deposu ve saklama politikası. Tek bir "doğru veritabanı" yoktur; her katman kendi erişim deseniyle seçilir.
+
+Bu düzenin bir bedeli var: uçtan merkeze veri taşınırken ağ kesintisi olabilir. Veri sırasız gelebilir, tekrarlanabilir. Bu, çoğaltma ve tutarlılık konularının (35.7-35.8) gerçek karşılığıdır. Bölüm 46'da kenar (edge) çıkarımının donanım tarafını, Bölüm 41'de bu tür bir dağıtık mimarinin tasarımını göreceksin.
+
+## Çözümlü Örnekler
+
+### Örnek 1 (★): Bloom filtresi için m ve k seçimi
+
+**Adım 1 — Anla.** Bir sensör kimliği kümesi var: `n = 10 000` kimlik. Yeni gelen bir kimliğin kümede olup olmadığını sormak istiyoruz; yanlış pozitif oranının en fazla `%1` olması gerekiyor. Bellek bütçesi bilinmiyor; `m` (bit sayısı) ve `k` (hash sayısı) seçmemiz isteniyor.
+
+**Adım 2 — Örnekle.** Diyelim ki hedef `p = 0,01`. Önce kaç bit gerektiğini hesaplayalım: `m = -n ln p / (ln 2)^2`. `ln 0,01 = -4,605` ve `(ln 2)^2 = 0,4805`. Bu durumda `m ≈ 10 000 · 4,605 / 0,4805 ≈ 95 851` bit. Eleman başına `m/n ≈ 9,585` bit.
+
+**Adım 3 — Kaba çöz.** En basit yol: `m`'yi yukarı yuvarla (96 000 bit, yani `m/n = 9,6`) ve `k`'yı optimum formülüyle seç: `k = (m/n) ln 2 ≈ 9,6 · 0,693 ≈ 6,65`. Tam sayıya yuvarlarsak `k = 7`.
+
+**Adım 4 — Örüntü.** Örüntü: `k` tam sayıya yuvarlanırken hedef oranın altında kalmak için `m/n` yeterince büyük olmalı; `k` optimumdan sapınca oran yükselir. Bu, Bölüm 35.6'daki formülün iki ucunun (az hash / çok hash) dengelenmesidir.
+
+**Adım 5 — İyileştir.** Teorik değer `m/n = 9,6` ve `k = 7` için: `(1 - e^(-7/9,6))^7`. Bu, `1 - e^(-0,729) = 0,5176` ve `0,5176^7 ≈ 0,00997` verir: `%0,997`, hedefin altında. `k = 6` ile aynı `m`'de `%1,008` çıkar; yani bu durumda `k = 7` daha iyi. Gerçek sistemde `m` bayt'a yuvarlanır ve bu küçük fark önemsizdir.
+
+**Adım 6 — Doğrula.** Aşağıdaki tablo, deneyimizden (`bloom_cikti.txt`) alınan `m/n = 8` ve `m/n = 10` değerlerini gösteriyor. Elle hesapladığımız `m/n = 9,6, k = 7` için değer 0,00997; ölçümü `m/n = 10` ile karşılaştır.
+
+| m/n | k | Teorik p | Ölçülen p |
+|---|---|---|---|
+| 8 | 6 (optimum) | 0,021577 | 0,021560 |
+| 10 | 7 (optimum) | 0,008194 | 0,008210 |
+| 10 | 4 | 0,011813 | 0,012100 |
+
+Ölçüm teoriye yakın; `m/n = 9,6` için elle hesaplanan `0,00997` ile `m/n = 10` için `0,00819` arasında, hedefin altında bir değer beklenir ve ölçüm bunu doğrular.
+
+**Bunu AI'sız yazabilir misin?** `n = 50 000` kimlik ve `p = 0,001` hedefi için `m/n` ve optimum `k`'yı kâğıtta hesapla. Sonra `k`'yı bir tam sayıya yuvarla ve teorik `p`'yi yeniden çıkar.
+
+### Örnek 2 (★★): Tutarlı hash halkasında taşınan anahtarlar
+
+**Adım 1 — Anla.** Üç düğüm (A, B, C) bir halkada. Düğüm D eklendiğinde hangi anahtarların taşınacağını bulmak istiyoruz. Halka `0` ile `100` arasında sarılı; her düğüm bir konumda (`v = 1`). Anahtar, konumundan saat yönünde (değer artan yönde) bulunan ilk düğüme gider.
+
+**Adım 2 — Örnekle.** Varsayımsal konumlar: `A = 10`, `B = 40`, `C = 70`. Dört anahtar: `k1 = 25`, `k2 = 55`, `k3 = 80`, `k4 = 5`. Bu konumlar gerçek hash değerleri değil; mantığı görmek için seçilmiş küçük sayılardır.
+
+**Adım 3 — Kaba çöz.** Her anahtar için, konumundan büyük ilk düğümü bul; yoksa halkayı sar ve en küçük düğümü al. `k1 = 25` → `B(40)`. `k2 = 55` → `C(70)`. `k3 = 80` → yoksa sarılır → `A(10)`. `k4 = 5` → `A(10)`.
+
+**Adım 4 — Örüntü.** Düğüm eklenince yalnızca yeni düğümün halkadaki **öncesindeki** arkasına düşen anahtarlar etkilenir. D konumu `60`: `C(70)`'ten önce ve `B(40)`'tan sonra. Yani sahibi C olan ve konumu 40 ile 60 arasında kalan anahtarlar D'ye geçer; konumu 60 ile 70 arasında olanlar C'de kalır.
+
+**Adım 5 — İyileştir.** Bu sayıdan genel kural çıkar: `n` düğümlü bir halkaya bir düğüm eklendiğinde taşınan anahtar oranı yaklaşık `1/(n+1)`'dir. Düğüm sayısı az olduğunda bu oran sapabilir; sanal düğümler bu sapmayı azaltır (Bölüm 35.7'deki `v = 1` sonucu bunu gösteriyor).
+
+**Adım 6 — Doğrula.** Her anahtar için sahibi, eklemeden önce ve sonra:
+
+| Anahtar | Konum | Eklemeden önce | D eklenince | Taşındı mı? |
+|---|---|---|---|---|
+| k1 | 25 | B (40) | B (40) | Hayır |
+| k2 | 55 | C (70) | D (60) | **Evet** |
+| k3 | 80 | A (10) | A (10) | Hayır |
+| k4 | 5 | A (10) | A (10) | Hayır |
+
+Tabloda yalnızca `k2` taşındı ve yeni düğüme gitti. Bu, kodda `assert b == yeni` ile doğruladığımız kuralın elle izidir: taşınan her anahtar yeni düğüme gider.
+
+**Bunu AI'sız yazabilir misin?** `A = 15`, `B = 45`, `C = 80` ve `D = 30` olsun; anahtarlar `10, 50, 85, 20`. Eklemeden önce ve sonra sahipleri tablo hâlinde yaz; kaç anahtarın taşındığını ve hepsinin D'ye gidip gitmediğini söyle.
+
+### Örnek 3 (★★): LSM'de put, delete ve get dizisinin durum izi
+
+**Adım 1 — Anla.** Bir LSM deposunda `put a=1`, `put b=2`, `put a=3`, `delete b`, `get b`, `get a` ve sonra birleştirme yapılıyor. Her adımdan sonra bellekte ve diskte ne olduğunu izlemek istiyoruz. Eşik `2`: bellek iki kayda ulaşınca dosyaya yazılır.
+
+**Adım 2 — Örnekle.** `put a=1` belleğe girer (1 kayıt). `put b=2` belleği 2 kayda çıkarır; eşik dolduğu için `000000.sst` yazılır ve bellek boşalır. `put a=3` yeni bir değerdir ve belleğe girer. `delete b` bir mezar taşıdır: bellekte `b = None` olarak yazılır, bellek 2 kayda ulaşınca `000001.sst` oluşur.
+
+**Adım 3 — Kaba çöz.** `get b`: bellekte yok, sonra en yeni tablo `000001.sst`'de `b = None` bulunur; bu bir silinmiş anahtardır, `None` döner. `get a`: bellekte yok, `000001.sst`'de `a = 3` bulunur; döner.
+
+**Adım 4 — Örüntü.** Örüntü: en yeni kayıt her zaman önce bulunur; `None` bir gizleyicidir. Eski tablo (`000000.sst`) hâlâ `b = 2` tutuyor ama `000001.sst`'deki mezar taşı onu gizliyor.
+
+**Adım 5 — İyileştir.** Birleştirme tüm tabloları eskiden yeniye okur, sözlükte en yeni değer kazanır ve `None` kayıtlar atılır. Sonuç tek bir tablo olur. Bu sayede disk alanı geri kazanılır ve okuma tek dosyaya düşer.
+
+**Adım 6 — Doğrula.** Betik (`iz.py`), aynı işlemleri yapıp her adımda durumu yazdırır:
+
+[[KOD iz.py 1 33]]
+
+Gerçek çıktı (`iz_cikti.txt`):
+
+```term
+put a=1        bellek={'a': '1'} tablolar=[]
+put b=2        bellek={} tablolar=['000000.sst']
+put a=3        bellek={'a': '3'} tablolar=['000000.sst']
+sil b          bellek={} tablolar=['000000.sst', '000001.sst']
+get b -> None | get a -> 3
+birlestir      bellek={} tablolar=['000002.sst']
+get a -> 3 | get b -> None
+000002.sst: ["a", "3"]
+```
+
+Elle izimizle karşılaştırırsak: `put b=2`'den sonra tablo sayısı 1, mezar taşından sonra 2, birleştirmeden sonra 1. `000002.sst` içinde yalnızca `a` var; `b` hem eski değeriyle hem mezar taşıyla birlikte atılmış. Bu, beklediğimiz birleştirme davranışıdır.
+
+**Bunu AI'sız yazabilir misin?** Aynı işlemleri `esik = 2` ile yap, ancak son sırada `put b=5` ekle ve birleştirmeden önce `get b`'nin ne döndüreceğini tahmin et. Sonra birleştirmeden sonra `000002.sst`'nin içeriğini yaz.
+
+### Örnek 4 (★★★): Quorum ile bayat okumanın izlenmesi
+
+**Adım 1 — Anla.** `N = 3` kopya (r1, r2, r3). Bir istemci `v1` değerini yazıyor; sonra başka bir istemci okuyor. Hangi `(R, W)` seçimlerinde okuma `v0` (bayat) değerini görebilir? Yazma tamamlandıktan sonra okumanın olduğunu varsayıyoruz.
+
+**Adım 2 — Örnekle.** Başlangıçta üç kopyada da `v0` var. Sonra `W = 1` ile `v1` yalnızca `r1`'e yazılır. Okuma `R = 1` ile yalnızca `r2`'den yapılır: `r2` hâlâ `v0` tutuyor, yani bayat.
+
+**Adım 3 — Kaba çöz.** Bayat okuma, okunan kopyaların hiçbirinin yazılmış kümede olmamasıdır. Kesişim boşsa bayat. Kesişim boş olasılığı `C(N-W, R) / C(N, R)`.
+
+**Adım 4 — Örüntü.** `R + W > N` ise iki küme kesişmek zorundadır: kutu ilkesi. Kesişim kopyası yeni değeri taşır, okuma onu seçer. Bu yalnızca `R + W ≤ N` için bayat okumaya izin verir.
+
+**Adım 5 — İyileştir.** Tasarım seçimi: `(R, W) = (2, 2)` `N = 3` için `R + W = 4 > 3`; garanti verir ama her okuma ve yazma iki kopyaya gider. `(1, 3)` okumayı ucuzlatır, yazmayı pahalılaştırır ve tek bir kopya çökünce yazma durur. Hangisini seçeceğin, okuma-yazma oranına ve hata toleransı gereksinimine bağlı.
+
+**Adım 6 — Doğrula.** Bir senaryonun iz tablosu (sürümler: r1, r2, r3 üzerinde):
+
+| Adım | İşlem | r1 | r2 | r3 | Sonuç |
+|---|---|---|---|---|---|
+| 0 | Başlangıç | v0 | v0 | v0 | - |
+| 1 | Yazma `v1`, W=1 (yalnızca r1) | v1 | v0 | v0 | Tamamlandı |
+| 2 | Okuma R=1 (r2) | v1 | v0 | v0 | **v0 (bayat)** |
+| 3 | Okuma R=2 (r1, r2) | v1 | v0 | v0 | v1 (en yeni) |
+| 4 | Yazma `v1`, W=2 (r2, r3 de) | v1 | v1 | v1 | Tamamlandı |
+| 5 | Okuma R=1 (r3) | v1 | v1 | v1 | v1 |
+
+Adım 2'deki bayat okuma, `R + W = 2 ≤ 3` olduğu için mümkün. Adım 3'teki `R = 2` okuması, `r1`'i içerdiği için en yeni değeri alır. `W = 2`'ye çıkardığımızda ise Adım 5'teki okuma artık bayat olamaz.
+
+**Bunu AI'sız yazabilir misin?** `N = 5` için `(R, W) = (2, 3)` ve `(2, 2)` durumlarında bayat okuma olasılığını `C(N-W,R)/C(N,R)` ile hesapla. Hangisi `R + W > N` kuralıyla sıfır olur?
+
+## Kendin Yap Projeleri
+
+::: dikkat
+Bu projelerde yapay zekâ araçları **yasak**. Amaç çalışan bir veritabanı üretmek değil; yazma yolunu, kalıcılığı ve ölçüm yapmayı kendi kafanla kurmak. Takıl, kâğıda çiz, küçük testler yaz; çözümü dışarıdan alma.
+:::
+
+### Proje 1 (★★): Kalıcı LSM deposu: WAL ve çökme kurtarma
+
+**Amaç:** Bölüm 35.4'teki LSM deposuna bir yazma öncesi günlük (WAL) ekle; böylece memtable'da olup da dosyaya inmemiş kayıtlar, süreç aniden kapansa bile açılışta geri kazanılsın.
+
+**Beklenen davranış:** Her `put` ve `sil` önce günlüğe eklenir ve `fsync` ile diske iner; sonra memtable'a yazılır. Açılışta günlük baştan okunur ve memtable yeniden kurulur. Flush sonrası günlük sıfırlanır. Günlüğün sonundaki yarım bir kayıt (kesilmiş yazma) fark edilip atılmalıdır.
+
+**Önerilen yaklaşım (ipucu, tam çözüm değil):** Kayıt biçimini `[uzunluk][CRC][tür][anahtar][değer]` olarak tasarla; Bölüm 28'deki telemetri kaydedici projesindeki kalıbı kullan. Flush'ın sırasına dikkat et: önce SSTable'ı yaz ve `fsync` et, sonra günlüğü sıfırla. Ters sıra, kayıtların hiçbir yerde kalmadığı bir pencere yaratır. Testi Bölüm 28'deki `kill -9` kalıbıyla yap: bir süreç rastgele bir anda öldürülsün, sonra açılıp dict modeliyle karşılaştırılsın. Windows'ta `kill -9` yerine `taskkill /F` ya da Python'da `os._exit` kullanabilirsin; gerçek `kill -9` davranışı için WSL'de test etmek daha güvenilirdir.
+
+**Başarı kriterleri:**
+- 300 rastgele öldürme denemesinin hiçbirinde açılış çökmüyor.
+- Yazma döndükten sonra `fsync` edilmiş her kayıt açılışta mevcut.
+- Yarım kalmış son kayıt atılıyor ve ortadaki bozuk bir kayıt hata olarak raporlanıyor.
+
+### Proje 2 (★★★): İHA telemetrisi için mini zaman serisi deposu
+
+**Amaç:** Zaman damgalı ölçümleri blok bazlı, sıkıştırılmış dosyalarda saklayan ve zaman aralığı sorgusu yapan küçük bir depo yaz. Depo downsampling ve saklama süresi de desteklesin.
+
+**Beklenen davranış:** Ölçümler, belirli bir süre penceresine (örneğin bir dakika) düşen bloklarda tutulur. Her blokta zaman damgaları delta-of-delta ile sıkıştırılır (35.10). `sorgu(baslangic, bitis)` yalnızca ilgili blokları açar. `azalt(pencere)` eski blokları dakikalık ortalamalara indirger. `temizle(sure)` saklama süresinden eski blokları siler.
+
+**Önerilen yaklaşım (ipucu):** Blok başlığında blok başlangıç ve bitiş zamanını tut; sorguda yalnızca kesişen blokları aç. Değerler için şimdilik ham `float` kullan ve sıkıştırmayı yalnızca zaman damgalarına uygula. Sorgu sonucunu sıralı tut; blok sınırlarındaki örtüşmeyi (aynı zamanda iki blok) ele al. Saklama süresi için eski blok dosyalarını zaman adına göre bul ve sil.
+
+**Başarı kriterleri:**
+- Rastgele bir aralık sorgusunun sonucu, tüm verinin düz taramasıyla birebir aynı.
+- Düzenli bir 1 Hz akışta nokta başına bit sayısı ölçülmüş ve raporlanmış.
+- Downsampling sonrası toplam dosya boyutu, ham hâle göre belirgin şekilde küçük.
+
+### Ek Alıştırmalar
+
+Aşağıdaki problemlerin çözümü bu kitapta yok. Önce kâğıda, sonra editöre geç; yapay zekâ yasak. Zorluk etiketine göre sırala.
+
+1. **★ — Mezar taşı neden gerekli?** Bir anahtar silinmiş ama eski bir SSTable'da hâlâ duruyor. Silme işlemi mezar taşı yazmasaydı `get` ne döndürürdü? Neden birleştirme öncesi mezar taşını atamazsın?
+2. **★ — Bloom'da silme.** Bir Bloom filtresinden bir elemanı silmek neden doğrudan mümkün değil? Her bit yerine bir sayaç koysaydın ne kazanır, ne kaybederdin?
+3. **★ — Tutarlı hash'te düğüm çıkarma.** Düğüm C halkadan çıkarılırsa taşınan anahtarlar nereye gider? Bu, ekleme işlemiyle simetrik mi?
+4. **★★ — Yazma yükseltmesi hesabı.** Bir LSM'de her kayıt 10 kez birleştirilerek yeniden yazılıyor (ortalama). Kullanıcı 1 GB yazarsa diske yaklaşık kaç GB yazılır? Bu sayı B+ ağacında neden farklı olur?
+5. **★★ — Mülakat: iki lider.** İki veri merkezinde aynı anahtara eş zamanlı iki farklı değer yazıldı. Son yazma kazanır kuralı hangi durumda veri kaybettirir? Bu kuralın yerine geçebilecek bir çakışma çözümü öner.
+6. **★★ — Mülakat: CAP'in yanlış yorumu.** "Bizim sistemimiz CA, yani CAP'i aşıyoruz" diyen bir ekip var. Bir ağ bölünmesi olduğunda ne olur? Bu iddiayı nasıl çürütürsün?
+7. **★★ — Mülakat: Bloom ve önbellek.** Bir önbellek önünde Bloom filtresi kullanmak yanlış pozitifleri nasıl etkiler? Yanlış pozitif olan bir sorgu önbellekte bulunmayan bir değeri veritabanından aramaya zorlar; bunun bedelini nasıl ölçersin?
+8. **★★ — Mülakat: belge mi, ilişkisel mi?** Bir e-ticaret sitesi ürün kataloğunu ve sipariş geçmişini nasıl modellemeli? Hangi kısmı belge, hangisini ilişkisel tutarsın ve neden?
+9. **★★ — Mülakat: zaman damgası sırası.** Telemetri paketleri ağda sırasız gelirse LSM tabanlı bir zaman serisi deposu bunu nasıl ele alır? Sırasız bir yazma, sıralı SSTable varsayımını nasıl bozar?
+10. **★★★ — Mülakat: quorum ve onarım.** `R + W > N` olsa bile bir kopya uzun süre eski değer tutabilir. Bu bayatlığı azaltmak için hangi mekanizmalar gerekir (okuma onarımı, arka plan karşılaştırması)? Bu mekanizmaların bedeli nedir?
+11. **★★★ — Mülakat: önbellek stampede'i.** Bir ürün sayfası saniyede 10 000 istek alıyor ve önbellek TTL'i dolduğunda hepsi veritabanına gidiyor. Tek bir isteğin veritabanına gitmesini sağlayan bir tasarım çiz; eşzamanlılık sorunlarını (kilit bekleme, zaman aşımı) tartış.
+12. **★★★ — Mülakat: LSM ve SSD.** SSD'lerde rastgele yazma pahalıdır ama sıralı yazma ucuzdur. LSM bu donanım gerçeğiyle nasıl uyumlu, ama aynı zamanda nasıl bir sorun yaratır (yazma yükseltmesi, aşınma)?
+
+## Kod Okuma Egzersizi
+
+Bu bölümde Bloom filtresinin **gerçek** bir gerçeklemesini okuyacaksın. Kaynak: LevelDB **1.23** sürümü, `util/bloom.cc` dosyası. Dosya, `google/leveldb` deposunun 1.23 etiketinden (raw.githubusercontent.com üzerinden) indirildi ve birebir alındı. **Sadeleştirme:** lisans başlığı (dosyanın ilk 4 satırı) ve `#include` satırları çıkarıldı; 70 karakteri aşan on satır, anlam değişmeden iki satıra bölündü (ya da yorum satırı yukarı alındı). Hiçbir kod satırı silinmedi veya değiştirilmedi.
+
+[[KOD kaynak/bloom_b35.cc 1 34]]
+
+[[KOD kaynak/bloom_b35.cc 35 68]]
+
+[[KOD kaynak/bloom_b35.cc 69 94]]
+
+**Sorular — cevaplamadan geçme:**
+
+1. `k_` bir `bits_per_key * 0.69` ile hesaplanıyor ve `static_cast<size_t>` ile kesiliyor. Bu, Bölüm 35.6'daki `k = (m/n) ln 2` optimumuna nasıl karşılık gelir? `bits_per_key = 10` için `k_` kaç olur ve bu değer neden yaklaşık 0,84% yanlış pozitif verir?
+2. `CreateFilter` içinde `bits` en az 64 olacak şekilde zorlanıyor. Yorumda neden "küçük n için çok yüksek yanlış pozitif" denmiş? Bölüm 35.6'daki formülle bu durumu kendin hesapla.
+3. Her eleman için tek bir `BloomHash` çağrısı yapılıyor ve `delta` ile bitler türetiliyor: `h += delta`. Bu, Bölüm 35.6'da kullandığımız çift hash tekniğinin hangi versiyonu? İki bağımsız hash yerine neden tek hash ve bir döndürme (rotate) yeterli?
+4. `KeyMayMatch` içinde `k > 30` ise `true` dönüyor ve "ayrılmış kodlama" yorumu var. Filtrenin son baytı neden `k`'yı tutuyor? Bu tasarım, farklı parametrelerle yazılmış filtrelerin okunmasını nasıl mümkün kılar?
+5. `bits = (len - 1) * 8` hesabı, filtrenin son baytının (`k`) dışında kalan kısmını bit sayısı olarak alıyor. Filtre dizisinin uzunluğu ile `bits` arasındaki ilişkiyi bir örnekle açıkla.
+6. Bu kod bir **bit silme** desteği sunmuyor. Bölüm 35.6'daki bit silinemezlik argümanı ile LevelDB'nin tercihi arasında bir bağ kur: LSM'de filtreler zaten değişmez SSTable'lara bağlı olduğu için silmeye neden ihtiyaç yok?
+
+## Bölüm Özeti
+
+- NoSQL, ilişkisel modelin ölçek, şema esnekliği ve dağıtık birleştirme sürtünmelerine karşı, her biri belirli bir erişim desenine göre optimize edilmiş ailelerden oluşur: anahtar-değer, belge, geniş sütun, graf, zaman serisi. Seçim, verinin ana erişim desenine göre yapılır.
+- Depolama motorunun iki ana yaklaşımı vardır: yerinde güncelleyen B+ ağacı (okuma güçlü, yazma rastgele) ve sıralı ekleyen LSM ağacı (yazma güçlü, okuma birden çok dosyaya bakar). Bunun bedeli yazma, okuma ve alan yükseltmesi arasında bir dengedir.
+- Bir LSM deposunda memtable, sıralı SSTable'lar, Bloom filtresi, mezar taşı ve birleştirme birlikte çalışır; testle doğrulanmayan bir LSM güvenilmez. Bilerek hatalı bir sürümün 4 377 hata üretmesi, testin gerçekten hata yakaladığını gösterir.
+- Bloom filtresi "kesinlikle yok" cevabını kesin, "muhtemelen var" cevabını olasılıksal verir. Yanlış pozitif oranı `(1 - e^(-kn/m))^k` ile hesaplanır; `k = (m/n) ln 2` civarında optimum vardır ve LSM'de okuma yükseltmesini 77 tablodan 1,7 okumaya indirdi.
+- Tutarlı hash, düğüm eklenince yalnızca yaklaşık `1/(n+1)` anahtarı taşır; naif `hash % N` ise çoğunu taşır. Sanal düğümler yük dengesini de iyileştirir.
+- CAP teoremi, bölünme anında tutarlılık ile erişilebilirlik arasında seçim zorunluluğunu söyler; PACELC bunu bölünme yokken de gecikme ile tutarlılık arasında bir seçim olarak genişletir. Quorum `R + W > N` bayat okumayı engeller, ama sürüm çatışmasını çözmez.
+- Belge modelinde gömme okumayı hızlandırır ve tekrar bedeli öder; referans tutarlılığı korur ama birden çok sorgu ister. Şema esnekliği, şemayı uygulama koduna taşır.
+- Zaman serisi verisi ekle-yaz ağırlıklıdır; delta-of-delta sıkıştırma düzenli zaman damgalarında nokta başına 1 bite kadar iner, titreme arttıkça bu artar. Downsampling ve saklama politikası uzun vadeli maliyeti sınırlar.
+- Önbellek kalıpları (cache-aside, write-through, write-back, TTL, stampede koruması) kaynakla tutarlılık ve gecikme arasındaki dengeyi yönetir.
+
+**Kısım VIII'in kapanışı.** Bu bölümle Kısım VIII, Veritabanı, tamamlandı. Bölüm 33'te verinin **yapısını** (ilişkisel model, normalizasyon, B+ ağacı, ACID teorisi), Bölüm 34'te bu yapıyı **sorgulamayı** (SQL, indeksler, işlemler pratikte) ve Bölüm 35'te verinin **ölçek ve dağıtım** altında nasıl tutulacağını gördün. Üçü birlikte tek bir resmi tamamlar: bir veritabanı, diskteki baytlardan başlayıp birden çok makineye yayılan bir tutarlılık sözleşmesine kadar uzanan bir yığındır. Bölüm 28'deki `fsync` ve yazma sırası kuralı, bu üç bölümde her katmanda yeniden ortaya çıktı.
+
+**Sonraki bölümde:** Bölüm 36 (Formal Diller) ile Kısım IX — Otomata & Derleme başlıyor. Bu bölümde gördüğün "bir kuralı kesin olarak tanımlama" fikri, sorgu dillerinden bir programlama dilinin söz dizimine kadar uzanan biçimsel dillerin temelini oluşturacak. Bir LSM'nin okuma sırasını tanımlayan kuralın ardında, düzenli ifadeler ve sonlu otomatlar gibi bir dil tanımının sezgisi var.
+
+::: mulakat
+Aşağıdaki sorular cevapsız bırakılmıştır. Hemen cevaplamaya çalışma; her birini birkaç dakika düşün, sonra kendi kelimelerinle yaz:
+
+1. Bir LSM deposunda silinmiş bir anahtar hâlâ diskte duruyorsa, okuma neden yine de doğru sonuç döner? Mezar taşı olmasaydı hangi tutarsızlık ortaya çıkardı?
+2. Bloom filtresinde yanlış pozitif oranı neden eleman sayısı arttıkça yükselir? Bit sayısını sabit tutup `n` iki katına çıkarsan oranın yaklaşık ne olacağını tahmin edebilir misin?
+3. Tutarlı hash halkasına tek bir sanal düğüm (`v = 1`) koymak neden yük dengesini bozar? Sanal düğüm sayısını artırmanın bir bedeli var mı?
+4. Bir sistem `R = 1, W = 1, N = 3` ile çalışıyor. Bayat okumayı azaltmak için hangi tek değişikliği yaparsın ve bu değişikliğin gecikmeye etkisi ne olur?
+5. CAP teoreminde "bölünme" ne demektir? Bir veri merkezi içindeki ağ kesintisi ile iki bölge arasındaki bağlantı kesintisi aynı sonuçları mı doğurur?
+6. Bir belge veritabanına sipariş ve müşteri verisini tek belgede mi, ayrı belgelerde mi koyarsın? Hangi okuma ve yazma desenleri bu kararı değiştirir?
+7. Zaman serisi verisinde tek bir büyük boşluk (ör. bir saatlik kesinti) delta-of-delta sıkıştırmasını nasıl etkiler? Sonraki noktalar neden hemen düzelmez?
+8. Bir önbellekte TTL kullanıyorsun ama veri değiştiğinde önbelleği hemen silmek istiyorsun. Cache-aside ile bunu nasıl tasarlarsın ve hangi yarış koşulu ortaya çıkabilir?
+:::

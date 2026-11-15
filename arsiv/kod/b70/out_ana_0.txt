@@ -1,0 +1,13 @@
+adım   250  eğitim kayıp=6.4448  doğrulama ppl=224.27  (9 sn)
+adım   500  eğitim kayıp=5.0561  doğrulama ppl=127.75  (19 sn)
+adım   750  eğitim kayıp=4.6769  doğrulama ppl=104.46  (28 sn)
+adım  1000  eğitim kayıp=4.4727  doğrulama ppl=90.15  (37 sn)
+adım  1250  eğitim kayıp=4.3242  doğrulama ppl=80.83  (46 sn)
+adım  1500  eğitim kayıp=4.2082  doğrulama ppl=74.56  (56 sn)
+adım  1750  eğitim kayıp=4.1169  doğrulama ppl=69.76  (65 sn)
+adım  2000  eğitim kayıp=4.0401  doğrulama ppl=66.36  (74 sn)
+adım  2250  eğitim kayıp=3.9814  doğrulama ppl=64.20  (84 sn)
+adım  2500  eğitim kayıp=3.9371  doğrulama ppl=62.69  (93 sn)
+adım  2750  eğitim kayıp=3.9058  doğrulama ppl=61.55  (102 sn)
+adım  3000  eğitim kayıp=3.8865  doğrulama ppl=60.77  (111 sn)
+parametre=1084800  en iyi adım=3000  doğrulama ppl=60.77  test ppl=62.83  süre=111 sn  adım başı=37.1 ms  cihaz=cuda

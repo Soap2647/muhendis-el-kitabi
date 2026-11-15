@@ -1,0 +1,12 @@
+karakter=3941242 sozluk=264 egitim=3547117 test=394125
+parametre sayisi: 461056
+adim    1 kayip 88.3003 sure 0 sn
+adim  250 kayip 2.7506 sure 75 sn
+adim  500 kayip 2.4391 sure 148 sn
+adim  750 kayip 2.2705 sure 221 sn
+adim 1000 kayip 2.0961 sure 293 sn
+adim 1250 kayip 1.9537 sure 367 sn
+adim 1500 kayip 1.9014 sure 445 sn
+kaydedildi: C:/Users/merty/AppData/Local/Temp/b71/lm71.pt
+
+[exited with code 0]

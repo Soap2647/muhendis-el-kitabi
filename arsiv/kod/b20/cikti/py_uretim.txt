@@ -1,0 +1,8 @@
+$ python py_uretim.py
+args : ['self', 'zaman:__dataclass_type_zaman__', 'deger:__dataclass_type_deger__=__dataclass_dflt_deger__']
+govde: self.zaman=zaman
+govde: self.deger=deger
+args : ['self', 'kod:__dataclass_type_kod__']
+govde: __dataclass_builtins_object__.__setattr__(self,'kod',kod)
+Olcum(zaman=1.5, deger=0.0)
+FrozenInstanceError: cannot assign to field 'kod'

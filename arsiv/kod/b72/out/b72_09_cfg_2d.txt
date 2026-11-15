@@ -1,0 +1,10 @@
+== Kosullu egitim: 15000 iterasyon, kosul dusurme = %10 ==
+kayip ort. ilk 500: 0.1400  son 500: 0.0357
+
+== Yonlendirme olcegi w: hedef moda uzaklik ==
+(veri: sigma=0.02; radyal ort. ~0,025, sd ~0,015)
+w     isabet        hq      r_ort (hedef)  r_sd (hedef)
+0.0   1.000 +- 0.000  1.000  0.0266         0.0116
+1.0   1.000 +- 0.000  1.000  0.0387         0.0090
+3.0   0.984 +- 0.026  0.984  0.0635         0.0274
+CSV yazildi.

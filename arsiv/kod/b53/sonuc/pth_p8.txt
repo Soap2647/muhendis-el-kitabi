@@ -1,0 +1,6 @@
+# thread=8 N=100000000
+olusturma_birlestirme_medyan_us=341.0
+surum,medyan_s,hizlanma,ayni_sonuc
+sirali,0.1426,1.00,-
+pthreads,0.0484,2.95,evet
+openmp,0.0355,4.02,evet

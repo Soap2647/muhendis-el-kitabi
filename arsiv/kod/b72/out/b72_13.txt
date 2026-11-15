@@ -1,0 +1,14 @@
+== Ornek 2: abar_1, abar_2 ==
+abar_1 = 0.9000   abar_2 = 0.7200
+t=1: kapali ort=1.8974 var=0.1000 | MC ort=1.8974 var=0.1003
+t=2: kapali ort=1.6971 var=0.2800 | MC ort=1.6971 var=0.2808
+
+== Ornek 4: U[-1,1] kuantizasyonu, bit basina MSE ==
+b=2: delta=0.50000 teorik=2.083e-02 MC=2.084e-02
+b=4: delta=0.12500 teorik=1.302e-03 MC=1.302e-03
+b=8: delta=0.00781 teorik=5.086e-06 MC=5.091e-06
+
+== Bit butcesi: d = 16 boyut ==
+b=2: R = d*b = 32 bit / ornek
+b=4: R = d*b = 64 bit / ornek
+b=8: R = d*b = 128 bit / ornek

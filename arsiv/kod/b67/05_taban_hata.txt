@@ -1,0 +1,16 @@
+Klasik taban: mAP@0.5 = 0.7144
+CNN (tohum 1): mAP@0.5 = 0.9272, mAP@[.5:.95] = 0.5758
+
+== Hata analizi (CNN skor >= 0.50; taban hepsi) ==
+CNN (toplam gercek kutu = 1265, yanlis pozitif = 26)
+   bulundu        kucuk= 646  buyuk= 404
+   yanlis_sinif   kucuk=  10  buyuk=   3
+   yerellestirme  kucuk=  16  buyuk=  14
+   kacirildi      kucuk=  65  buyuk= 107
+Taban (toplam gercek kutu = 1265, yanlis pozitif = 47)
+   bulundu        kucuk= 564  buyuk= 429
+   yanlis_sinif   kucuk=  52  buyuk=   2
+   yerellestirme  kucuk=  85  buyuk=  17
+   kacirildi      kucuk=  36  buyuk=  80
+
+kaydedildi: D:/Mevcut Projeler/Kitap/engine/veri\b67_hata_analizi.csv

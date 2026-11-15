@@ -1,0 +1,4 @@
+yontem,ms_per_hash
+sha256,0.001
+pbkdf2,216.069
+scrypt,58.000

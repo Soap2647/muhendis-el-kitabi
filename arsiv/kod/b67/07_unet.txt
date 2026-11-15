@@ -1,0 +1,13 @@
+GPU: NVIDIA GeForce RTX 3060 Laptop GPU
+atlamali   tohum 1: test mIoU=0.9860  Dice(on)=0.9906  sinir bandi=0.9977  [egitim mIoU=0.9969]  (47 s)
+           sinif IoU (arka, daire, kare, ucgen): [1.0, 0.98, 0.983, 0.981]
+atlamali   tohum 2: test mIoU=0.9871  Dice(on)=0.9913  sinir bandi=0.9979  [egitim mIoU=0.9942]  (49 s)
+           sinif IoU (arka, daire, kare, ucgen): [1.0, 0.981, 0.985, 0.983]
+atlamali   tohum 3: test mIoU=0.9866  Dice(on)=0.9910  sinir bandi=0.9979  [egitim mIoU=0.9945]  (50 s)
+           sinif IoU (arka, daire, kare, ucgen): [1.0, 0.982, 0.986, 0.979]
+atlamasiz  tohum 1: test mIoU=0.9731  Dice(on)=0.9818  sinir bandi=0.9944  [egitim mIoU=0.9918]  (45 s)
+           sinif IoU (arka, daire, kare, ucgen): [0.999, 0.956, 0.973, 0.964]
+atlamasiz  tohum 2: test mIoU=0.9711  Dice(on)=0.9805  sinir bandi=0.9938  [egitim mIoU=0.9906]  (45 s)
+           sinif IoU (arka, daire, kare, ucgen): [0.999, 0.951, 0.97, 0.965]
+atlamasiz  tohum 3: test mIoU=0.9729  Dice(on)=0.9817  sinir bandi=0.9943  [egitim mIoU=0.9922]  (47 s)
+           sinif IoU (arka, daire, kare, ucgen): [0.999, 0.954, 0.973, 0.965]

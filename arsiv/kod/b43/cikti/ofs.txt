@@ -1,0 +1,3 @@
+ofs_testi derlendi, rc=0
+   text	   data	    bss	    dec	    hex	filename
+     16	      0	      0	     16	     10	ofs_testi.o

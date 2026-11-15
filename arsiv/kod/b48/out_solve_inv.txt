@@ -1,0 +1,3 @@
+n= 200  solve:  0.0007 s, hata 5.0e-14 | inv@b:  0.1388 s, hata 1.3e-13
+n= 800  solve:  0.0129 s, hata 1.4e-12 | inv@b:  0.4139 s, hata 4.9e-12
+n=2000  solve:  0.1303 s, hata 1.0e-12 | inv@b:  0.4130 s, hata 7.8e-12

@@ -1,0 +1,8 @@
+  File: a.txt
+  Size: 14        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,48	Inode: 44341       Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/   merty)   Gid: ( 1000/   merty)
+Access: 2026-10-19 01:12:06.832347804 +0300
+Modify: 2026-10-19 01:12:06.832347804 +0300
+Change: 2026-10-19 01:12:06.832347804 +0300
+ Birth: 2026-10-19 01:12:06.832347804 +0300

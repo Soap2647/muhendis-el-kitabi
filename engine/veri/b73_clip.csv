@@ -1,0 +1,35 @@
+varyant,grup,olcut,deger
+naif,sekil_sablon,{s},0.8910
+naif,sekil_sablon,büyük {s},0.8925
+naif,sekil_sablon,{s} ortada,0.9030
+naif,sekil_sablon,küçük {s} sol üstte,0.8270
+naif,bilesim,renk_sekil_gorulen,0.9803
+naif,bilesim,renk_sekil_gorulmemis,0.5455
+naif,bilesim,tam_cumle_topluluk_gorulen,0.9808
+naif,bilesim,tam_cumle_topluluk_gorulmemis,0.5041
+naif,geri_getirme,gorsel_metin_R@1,0.9660
+naif,geri_getirme,metin_gorsel_R@1,1.0000
+naif,geri_getirme,gorsel_metin_R@5,0.9920
+naif,geri_getirme,metin_gorsel_R@5,1.0000
+naif,modalite,ort_vektor_farki,0.0844
+naif,modalite,eslesen_cos,0.9531
+naif,modalite,rastgele_cos,0.0000
+naif,yoklama,n100,0.9695
+naif,yoklama,n500,0.9805
+maskeli,sekil_sablon,{s},0.8990
+maskeli,sekil_sablon,büyük {s},0.8950
+maskeli,sekil_sablon,{s} ortada,0.9130
+maskeli,sekil_sablon,küçük {s} sol üstte,0.8440
+maskeli,bilesim,renk_sekil_gorulen,0.9899
+maskeli,bilesim,renk_sekil_gorulmemis,0.4711
+maskeli,bilesim,tam_cumle_topluluk_gorulen,0.9941
+maskeli,bilesim,tam_cumle_topluluk_gorulmemis,0.4463
+maskeli,geri_getirme,gorsel_metin_R@1,0.9740
+maskeli,geri_getirme,metin_gorsel_R@1,1.0000
+maskeli,geri_getirme,gorsel_metin_R@5,0.9940
+maskeli,geri_getirme,metin_gorsel_R@5,1.0000
+maskeli,modalite,ort_vektor_farki,0.0562
+maskeli,modalite,eslesen_cos,0.9625
+maskeli,modalite,rastgele_cos,-0.0027
+maskeli,yoklama,n100,0.9775
+maskeli,yoklama,n500,0.9830

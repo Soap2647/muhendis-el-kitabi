@@ -1,0 +1,7 @@
+asama,mb,bayt_per_param
+model parametreleri,256.19,4.002
++ gradyanlar,528.5,8.256
++ Adam m ve v (ilk adim),1040.63,16.256
+zero_grad(None) sonrasi,784.56,12.256
+tepe,1296.69,20.256
+P,67125248,

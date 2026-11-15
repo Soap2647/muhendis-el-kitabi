@@ -1,0 +1,27 @@
+--- 3 token, d_k = 2 ---
+QK^T =
+[[1. 0. 1.]
+ [0. 1. 1.]
+ [1. 1. 2.]]
+A =
+[[0.4011 0.1978 0.4011]
+ [0.1978 0.4011 0.4011]
+ [0.2483 0.2483 0.5035]]
+cikti =
+[[3.     4.    ]
+ [3.4067 4.4067]
+ [3.5105 4.5105]]
+--- boyutlar (B=2, T=3, d_k=4, d_v=5) ---
+Q (2, 3, 4) K (2, 3, 4) V (2, 3, 5)
+QK^T (2, 3, 3) A (2, 3, 3) cikti (2, 3, 5)
+her satirin toplami: True
+--- NumPy ile PyTorch eslesmesi (float64) ---
+maks fark (maskesiz): 4.44e-16
+maks fark (nedensel): 2.78e-16
+--- d_k'ye gore softmax doyması (T=16, 500 deneme) ---
+  d_k  std(ham)  maks_ham  maks_olcekli  H_olcekli/logT
+    2     1.404    0.2986        0.2225          0.8680
+    8     2.838    0.5635        0.2400          0.8547
+   32     5.669    0.7767        0.2451          0.8508
+  128    11.331    0.8922        0.2474          0.8498
+  512    22.677    0.9442        0.2482          0.8489

@@ -1,0 +1,21 @@
+== toplar (3 kume) (n=300, k=3)
+   single    ARI=0.5601  kume boyutlari=[200, 98, 2]
+   complete  ARI=0.9228  kume boyutlari=[108, 100, 92]
+   average   ARI=0.9414  kume boyutlari=[102, 100, 98]
+   ward      ARI=0.9410  kume boyutlari=[104, 98, 98]
+   k-means   ARI=0.9703
+   DBSCAN(eps=0.2) ARI=0.0076  gurultu=261
+== ay (2 kume) (n=300, k=2)
+   single    ARI=1.0000  kume boyutlari=[150, 150]
+   complete  ARI=0.3907  kume boyutlari=[174, 126]
+   average   ARI=0.4791  kume boyutlari=[196, 104]
+   ward      ARI=0.5363  kume boyutlari=[190, 110]
+   k-means   ARI=0.2408
+   DBSCAN(eps=0.2) ARI=1.0000  gurultu=0
+== kopru (2 kume + 30 ara nokta) (n=230, k=2)
+   single    ARI=0.0002  kume boyutlari=[228, 2]
+   complete  ARI=1.0000  kume boyutlari=[122, 108]
+   average   ARI=1.0000  kume boyutlari=[122, 108]
+   ward      ARI=1.0000  kume boyutlari=[122, 108]
+   k-means   ARI=1.0000
+   DBSCAN(eps=0.2) ARI=0.0997  gurultu=125

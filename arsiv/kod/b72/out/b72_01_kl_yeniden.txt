@@ -1,0 +1,19 @@
+== 1. KL: kapali form, MC ve torch ==
+mu=+1.50 s=0.50 kapali=1.443147 MC=1.442502 torch=1.443147
+mu=+0.00 s=1.00 kapali=0.000000 MC=0.000000 torch=0.000000
+mu=-0.80 s=2.00 kapali=1.126853 MC=1.124845 torch=1.126853
+
+== 2. Yeniden parametrelendirme: gradyan geciyor mu? ==
+sample():  z.requires_grad = False
+sample() ile geri yayilim: HATA -> RuntimeError
+rsample(): z.requires_grad = True
+d kayip/d mu  = -3.0075  (kapali: 2(mu-2) = -3)
+d kayip/d sig = +1.6124  (kapali: 2 sig = 1.6)
+
+== 3. ELBO <= log p(x): tek boyutlu dogrusal Gauss ==
+log p(x) kesin = -1.515512
+rec MC (0.3, 0.9) = -1.568702  kapali = -1.568939
+q: m=0.00 s=1.0000 ELBO=-1.918939 bosluk=0.403426
+q: m=0.30 s=0.9000 ELBO=-1.624299 bosluk=0.108787
+q: m=0.50 s=0.7071 ELBO=-1.515512 bosluk=0.000000
+q: m=0.80 s=0.5000 ELBO=-1.702086 bosluk=0.186574

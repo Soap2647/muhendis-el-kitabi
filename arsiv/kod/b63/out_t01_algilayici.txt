@@ -1,0 +1,10 @@
+AND, ilk epoch izi:
+  x=[0 0] t=0 s=+0.0 tah=1 g=-1 w=[0. 0.] b=+0.0
+  x=[0 1] t=0 s=-1.0 tah=0 g=+0 w=[0. 0.] b=-1.0
+  x=[1 0] t=0 s=-1.0 tah=0 g=+0 w=[0. 0.] b=-1.0
+  x=[1 1] t=1 s=-1.0 tah=0 g=+1 w=[0. 0.] b=-1.0
+AND: w=[2. 1.] b=-3.0, epoch sayısı=6, hatalar=[2, 3, 3, 2, 1, 0]
+XOR, 1000 epoch:
+XOR: son hata=4, en küçük epoch hatası=3
+XOR son epochların hataları: [4, 4, 4, 4, 4]
+XOR ızgara araması en az hata=1, w=(-2.0,-2.0) b=2.0

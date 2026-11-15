@@ -1,0 +1,13 @@
+max|h_numpy - h_torch| = 5.55e-17
+max|c_son - c_torch| = 5.55e-17
+parametre sayisi (I=5, H=32):
+  RNN  : 1248
+  GRU  : 3744
+  LSTM : 4992
+formul LSTM 4(HI+H^2+2H) = 4992
+formul GRU  3(HI+H^2+2H) = 3744
+cift yonlu cikti: (4, 20, 64)  h_n: (4, 4, 32)
+a = [0.7  0.95 1.4  0.65]
+i=0.6682 f=0.7211 g=0.8854 o=0.6570
+c1=0.8800 h1=0.4641
+torch: h1=0.4641 c1=0.8800

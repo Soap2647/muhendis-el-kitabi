@@ -1,0 +1,44 @@
+n = 20000
+
+Karsilastirma sayisi:
+                 rastgele      sirali        ters    10 deger
+kabarcik        199985535       19999   199990000   198014922
+secmeli         199990000   199990000   199990000   199990000
+eklemeli         99728691       19999   199990000    90021385
+birlestirme        260774      139216      148016      251870
+hizli-ilk          490248   200029998   200039998      337138
+hizli-medyan       443403      363291      363311      395314
+hizli-rast         402846      403381      403199      347242
+lomuto             353408   199990000   199990000    20110676
+yigin              510785      529074      493307      470817
+sayma                   0           0           0           0
+radix                   0           0           0           0
+
+Sure (ms):
+                 rastgele      sirali        ters    10 deger
+kabarcik           973.51        0.03     1531.17      898.92
+secmeli            358.19      354.03      359.48      376.47
+eklemeli           396.66        0.10      800.14      373.75
+birlestirme          2.70        1.85        1.80        2.51
+hizli-ilk            2.11      232.42      221.83        2.06
+hizli-medyan         2.12        1.09        1.12        2.58
+hizli-rast           2.06        1.24        1.30        2.06
+lomuto               2.27     1466.10      832.75       24.80
+yigin                2.66        2.70        2.47        2.70
+sayma               10.64        9.44       10.93       11.05
+radix                0.54        0.53        0.56        0.64
+
+Kararli mi (10 deger):
+kabarcik      evet
+secmeli       hayir
+eklemeli      evet
+birlestirme   evet
+hizli-ilk     hayir
+hizli-medyan  hayir
+hizli-rast    hayir
+lomuto        hayir
+yigin         hayir
+sayma         evet
+radix         evet
+
+dogrulama tamam

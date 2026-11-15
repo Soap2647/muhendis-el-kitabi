@@ -1,0 +1,9 @@
+$ g++ -O2 -Wall -Wextra -std=c++17 cpp_vtable.cpp -o cpp_vtable
+$ ./cpp_vtable
+Daire r=2.0
+Dikdortgen 3.0x4.0
+toplam alan = 24.566
+sizeof(Sekil)=8 sizeof(Daire)=16
+$ nm -C cpp_vtable | grep 'vtable for [DS]'
+0000000000003d38 V vtable for Dikdortgen
+0000000000003d08 V vtable for Daire

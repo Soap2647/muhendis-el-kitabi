@@ -1,0 +1,10 @@
+Bölme: eğitim 1078, doğrulama 359, test 360
+Gradyan kontrolü (ilk konvolüsyon, tüm ağ): göreli hata 7.30e-11
+tohum 0: doğrulama 0.964  test 0.947  epoch süresi 0.07 s
+tohum 1: doğrulama 0.964  test 0.936  epoch süresi 0.07 s
+tohum 2: doğrulama 0.983  test 0.967  epoch süresi 0.07 s
+tohum 3: doğrulama 0.972  test 0.967  epoch süresi 0.07 s
+tohum 4: doğrulama 0.986  test 0.967  epoch süresi 0.07 s
+CNN (NumPy) test ortalama ± sapma: 0.9567 ± 0.0142
+Lojistik regresyon (taban çizgisi) test: 0.9667
+NumPy CNN parametre sayısı: 1898

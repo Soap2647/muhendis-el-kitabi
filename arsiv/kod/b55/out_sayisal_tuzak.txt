@@ -1,0 +1,7 @@
+math.log(0.0): ValueError: math domain error
+np.log(0.0)  : -inf
+math.exp(1000): OverflowError: math range error
+naif softmax : [nan nan nan]
+kararli      : [0.665241 0.244728 0.090031]
+p (naif)     : [1. 0.]  -log p_y = inf
+lse tabanli  : L = 800.0

@@ -1,0 +1,19 @@
+A) J iterasyonlari: ['4626.74', '1423.69', '622.11', '609.63', '609.51']
+   J hic artmadi mi: True
+   yakinsama iterasyonu: 5
+B) rastgele  SSE min=306.57 medyan=306.57
+   maks=718.75 en iyi olmayan=%11.5 iter=8.8
+B) kmeanspp  SSE min=306.57 medyan=306.57
+   maks=688.74 en iyi olmayan=%1.0 iter=4.0
+   CSV yazildi
+C) k=1 inertia= 16383.80 siluet=  -   sifirdan=  -  
+C) k=2 inertia=  3171.22 siluet=0.6966 sifirdan=0.6966
+C) k=3 inertia=  1605.08 siluet=0.6615 sifirdan=0.6615
+C) k=4 inertia=   959.99 siluet=0.5631 sifirdan=0.5631
+C) k=5 inertia=   848.77 siluet=0.4987 sifirdan=0.4987
+C) k=6 inertia=   755.81 siluet=0.4192 sifirdan=0.4192
+C) k=7 inertia=   673.31 siluet=0.3418 sifirdan=0.3418
+C) k=8 inertia=   589.42 siluet=0.3335 sifirdan=0.3335
+   en buyuk fark = 1.1e-16
+   CSV yazildi
+D) halka: k-means ARI = -0.0009

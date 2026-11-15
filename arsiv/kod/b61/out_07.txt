@@ -1,0 +1,14 @@
+A) boyutun laneti: [0,1]^d'de 500 nokta, 20 sorgu
+   d=   1  (Dmaks-Dmin)/Dmin ortalama = 7306.8068
+   d=   2  (Dmaks-Dmin)/Dmin ortalama = 71.7524
+   d=   3  (Dmaks-Dmin)/Dmin ortalama = 24.4228
+   d=   5  (Dmaks-Dmin)/Dmin ortalama = 6.4360
+   d=  10  (Dmaks-Dmin)/Dmin ortalama = 2.4716
+   d=  20  (Dmaks-Dmin)/Dmin ortalama = 1.2622
+   d=  50  (Dmaks-Dmin)/Dmin ortalama = 0.6456
+   d= 100  (Dmaks-Dmin)/Dmin ortalama = 0.3985
+   d= 500  (Dmaks-Dmin)/Dmin ortalama = 0.1580
+   d=1000  (Dmaks-Dmin)/Dmin ortalama = 0.1154
+   CSV yazildi
+   iz: 4 iterasyonda yakinsadi
+   iz CSV yazildi

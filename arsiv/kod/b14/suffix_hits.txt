@@ -1,0 +1,49 @@
+p1.md 15 , en kötü `Θ(n)`dir; bulunam
+p1.md 19  `dogrusal` her turda iki karşılaştırma yapar: sınır (`i < n`) ve d
+p1.md 48 `a[i] >= x` olan ilk `i`. Dizi art
+p1.md 85  doğrudan `lo`dur ve bu ek
+p1.md 91 latformda `2147483647`dir; çünkü C
+p1.md 95  / 2` ise `-1`dir. Doğru f
+p1.md 97 ğru yazım `lo + (hi - lo) / 2`dir. `hi - l
+p1.md 100 nt` ya da `size_t`dir ve sonuç
+p1.md 105 `a[i] >= x` olan ilk `i`. **Üst sı
+p1.md 105  `a[i] > x` olan ilk `i`. Bu iki s
+p1.md 107 it aralık `[1, 4)`tür.
+
+p1.md 123 ` ve sayı `3`tür. Değer 4
+p1.md 152 dizisinde `5`i bulamadı, 
+p2.md 33 işir; ilk `T`nin bir eksi
+p2.md 33  ilk `k`, `floor(sqrt(n)) + 1`dir.
+
+p2.md 75 am olarak `n - 1`dir. Bunun n
+p2.md 115 r. Toplam `O(log p)`dir. Ayrıca 
+p2.md 159 ardı; bu, `log₂ n`nin doğal bü
+p2.md 183  ortalama `O(1)`i, Bölüm 9 v
+p2.md 201 üş değeri `-(ekleme noktası) - 1`dir: `{1, 3,
+p3.md 7 çin cevap `(3, 4)`tür.
+
+p3.md 15  a[i] >= x` olan ilk `i` ve `ust =
+p3.md 15 = a[i] > x` olan ilk `i`. Eşleşme 
+p3.md 15 son konum `ust - 1`dir. Aralık 
+p3.md 17 m maliyet `O(log n)`dir. Boş ara
+p3.md 42 çin cevap `5`tir ve bu, m
+p3.md 44 ise cevap `0`dır.
+
+p3.md 46 e minimum `3`tür ve 5. ko
+p3.md 68 er; cevap `5`tir ve progr
+p3.md 74 ul. Cevap `15`tir: `C = 15
+p3.md 76 ün sayısı `D`dir. Çıktı, 
+p3.md 98 Sonuç `lo = 15`tir. Doğrula
+p3.md 108 ve medyan `4`tür.
+
+p3.md 110 ştirme de `O(m + n)`dir ve ek be
+p3.md 112 1] <= a[i]`. Bu koşulu sağlayan `i`yi arayabi
+p3.md 112 ağlayan `i`yi arayabiliriz; `i` arttıkça 
+p3.md 112  arttıkça `a`nın sol küme
+p3.md 112 . Arama `i` üzerinde yapılır ve `i` en fazla 
+p3.md 114 m)`, yani `O(log min(m, n))`dir.
+
+p3.md 129 r, medyan `max(a_sol, b_sol) = max(3, 4) = 4`tür. Program
+p3.md 204 j) == true` ifadesi, 14.2'deki (I) ve (II) şartlarıyla nasıl eşleşir? Döngü bittiğinde `i == j` nede
+p3.md 215 l arama** `Θ(n)`dir; nöbetçi
+p3.md 222 dizilerde `O(log p)`dir; **inter

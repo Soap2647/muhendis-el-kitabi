@@ -1,0 +1,6 @@
+batch= 256 fp32  adım=   17.18 ms  tepe bellek=  280.6 MB
+batch= 256 fp16  adım=   14.41 ms  tepe bellek=  308.6 MB
+batch= 256 bf16  adım=   11.73 ms  tepe bellek=  308.6 MB
+batch=1024 fp32  adım=   55.59 ms  tepe bellek=  328.6 MB
+batch=1024 fp16  adım=   26.28 ms  tepe bellek=  320.6 MB
+batch=1024 bf16  adım=   24.46 ms  tepe bellek=  320.6 MB

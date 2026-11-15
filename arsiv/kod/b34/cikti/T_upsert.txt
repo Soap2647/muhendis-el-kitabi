@@ -1,0 +1,5 @@
+$ python b34_upsert.py iha.db
+parti satır sayısı: 291
+toplama       iki yükleme sonrası toplam uçuş = 652
+yerine koyma  iki yükleme sonrası toplam uçuş = 326
+kaynakta gerçek uçuş sayısı = 326

@@ -1,0 +1,5 @@
+index_add_ (GPU), 6 koşu, farklı sonuç sayısı: 6
+index_add_ deterministic=True, farklı sonuç: 1
+conv (deterministic=True) bit aynı mı: True
+fp32      eğitim=0.9928±0.0003  TEST=0.9685±0.0013
+fp16-AMP  eğitim=0.9928±0.0003  TEST=0.9685±0.0013

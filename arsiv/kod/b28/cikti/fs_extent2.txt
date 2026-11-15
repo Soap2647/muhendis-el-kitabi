@@ -1,0 +1,5 @@
+Filesystem type is: ef53
+File size of buyuk.bin is 1048576 (256 blocks of 4096 bytes)
+ ext: logical_offset: physical_offset: length: expected: flags:
+ 0: 0.. 255: 134169856.. 134170111: 256: last,eof
+buyuk.bin: 1 extent found

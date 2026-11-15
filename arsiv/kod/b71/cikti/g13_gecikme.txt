@@ -1,0 +1,5 @@
+istek=60, uretilen=32 belirtek/istek, P in [16,128], seed 71
+olcut (ms)                   p50       p95       p99
+TTFT                        1.14      2.03      2.92
+belirtek basi (TPOT)        0.59      0.77      1.14
+toplam istek               20.45     23.87     29.88

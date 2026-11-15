@@ -1,0 +1,3 @@
+$ g++ -O1 -g -Wall -Wextra -std=c++17 -fsanitize=address,undefined dizgi_test.cpp -o dizgi_test
+$ ./dizgi_test
+20000 islem, 4 dizgi: std::string ile birebir esit

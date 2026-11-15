@@ -1,0 +1,12 @@
+tek_skor: dogrulamada secilen tau = 0.3
+topluluk: dogrulamada secilen tau = 0.05
+
+Secilen esiklerle (test ve OOD):
+tek_skor  test  tau=0.30 kesinlik=0.917 kapsama=0.923 yanlis/gorsel=0.202
+tek_skor  drift tau=0.30 kesinlik=0.814 kapsama=0.849 yanlis/gorsel=0.472
+tek_skor  ood   tau=0.30 kesinlik=0.730 kapsama=0.899 yanlis/gorsel=0.824
+topluluk  test  tau=0.05 kesinlik=0.961 kapsama=0.878 yanlis/gorsel=0.086
+topluluk  drift tau=0.05 kesinlik=0.939 kapsama=0.775 yanlis/gorsel=0.122
+topluluk  ood   tau=0.05 kesinlik=0.939 kapsama=0.870 yanlis/gorsel=0.140
+korumasiz test  kesinlik=0.593 kapsama=0.955 yanlis/gorsel=1.588
+korumasiz ood   kesinlik=0.377 kapsama=0.948 yanlis/gorsel=3.886

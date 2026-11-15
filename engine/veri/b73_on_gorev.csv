@@ -1,0 +1,11 @@
+gorev,olcut,deger
+dondurme_dik,rotasyon_dogruluk,0.5815
+dondurme_dik,yoklama100,0.5045
+dondurme_dik,yoklama500,0.5705
+dondurme_rastgele,rotasyon_dogruluk,0.3922
+dondurme_rastgele,yoklama100,0.4245
+dondurme_rastgele,yoklama500,0.4920
+maske,yoklama100,0.3900
+maske,yoklama500,0.4500
+maske_rastgele,yoklama100,0.3535
+maske_rastgele,yoklama500,0.3810

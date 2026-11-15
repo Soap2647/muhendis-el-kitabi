@@ -1,0 +1,8 @@
+vaka,son_tr,son_va,son_va_acc,nan_epoch
+A_yuksek_lr,2.3211,2.3164,0.0975,
+B_dusuk_lr,2.3045,2.3039,0.0780,
+C_asiri_uydurma,0.01127,0.30316,0.8914,
+D_yetersiz,1.6935,1.7063,0.2423,
+E_sizinti,0.00016021,0.00038694,1.0000,
+F_etiket_karisik,0.97451,0.55437,0.9192,
+G_nan_adam_lr1e3,485.83,508.21,0.1003,

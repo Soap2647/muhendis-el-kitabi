@@ -1,0 +1,9 @@
+F^10 =
+[[89 55]
+ [55 34]]
+ozdegerler: [ 1.618034 -0.618034]
+(1+sqrt5)/2 = 1.618034
+kosegenlestirme F_10 = 55  F_30 = 832040
+matris uslu F_30   = 832040
+durağan dagilim pi = [0.833333 0.166667]
+50 adim sonra     = [0.833333 0.166667]

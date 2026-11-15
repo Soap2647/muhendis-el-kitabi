@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+    356	      4	      8	    368	    170	blink.elf

@@ -1,0 +1,11 @@
+senaryo,asama,p50_ms
+4_thread,on_isleme,0.019
+4_thread,cikarim,0.115
+4_thread,son_isleme,0.288
+4_thread,takip,0.300
+4_thread,guvence,0.002
+1_thread,on_isleme,0.019
+1_thread,cikarim,0.214
+1_thread,son_isleme,0.266
+1_thread,takip,0.286
+1_thread,guvence,0.002

@@ -1,0 +1,6 @@
+düğüm: 14 kenar: 16
+abb True True
+aabb True True
+abab False False
+ab False False
+sinanan dizge: 76200

@@ -1,0 +1,14 @@
+g01_parca.py 0 1 sn
+g02_geri_getirme.py 0 47 sn
+g03_bootstrap.py 0 9 sn
+g04_ivf.py 0 19 sn
+g06_kuantizasyon.py 0 44 sn
+g07_kv.py 0 5 sn
+g08_spekulatif.py 0 14 sn
+g09_kisit.py 0 38 sn
+g10_ajan.py 0 7 sn
+g11_pii.py 0 0 sn
+g12_servis.py 0 1 sn
+g13_gecikme.py 0 4 sn
+g14_eval.py 0 4 sn
+KOSU_BITTI

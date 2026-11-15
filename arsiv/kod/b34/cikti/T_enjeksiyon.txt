@@ -1,0 +1,9 @@
+$ python b34_enjeksiyon.py iha.db
+birleştirme, normal girdi: [(2, 'UA-002')]
+birleştirme, saldırı     : [(1, 'UA-001'), (2, 'UA-002'), (3, 'UA-003')]
+parametre, normal girdi  : [(2, 'UA-002')]
+parametre, saldırı       : []
+birden fazla deyim: ProgrammingError
+  mesaj: You can only execute one statement at a time.
+kayıt sayısı: 3
+salt okunur bağlantı: attempt to write a readonly database

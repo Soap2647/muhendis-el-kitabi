@@ -1,0 +1,17 @@
+n,yontem,dagitim,ms
+16384,etiketli,karisik,0.0130
+16384,etiketli,tek_tur,0.0110
+16384,sanal,karisik,0.0750
+16384,sanal,tek_tur,0.0440
+65536,etiketli,karisik,0.1660
+65536,etiketli,tek_tur,0.0440
+65536,sanal,karisik,0.3040
+65536,sanal,tek_tur,0.1750
+262144,etiketli,karisik,0.7840
+262144,etiketli,tek_tur,0.2200
+262144,sanal,karisik,1.2250
+262144,sanal,tek_tur,0.7120
+1048576,etiketli,karisik,3.1490
+1048576,etiketli,tek_tur,0.9350
+1048576,sanal,karisik,4.8710
+1048576,sanal,tek_tur,2.8510

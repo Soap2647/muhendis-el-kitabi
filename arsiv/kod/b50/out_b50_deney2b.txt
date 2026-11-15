@@ -1,0 +1,20 @@
+GD        adim(f<1e-8)=571  f(100)=1.777e+00
+Momentum  adim(f<1e-8)=65  f(100)=1.967e-15
+
+== Rosenbrock (x0 = [-1.2, 1.0] , N = 20000 )
+yontem    eta     f(sonuc)      adim(f<1e-6)
+GD        1e-03  1.938e-08     15068
+Momentum  3e-03  1.245e-30     450
+Nesterov  1e-03  7.704e-30     1426
+AdaGrad   3e-01  8.917e-14     8752
+RMSProp   3e-04  2.028e-05     None
+Adam      3e-04  4.462e-13     18399
+
+== kot (x0 = [1.0, 1.0] , N = 20000 )
+yontem    eta     f(sonuc)      adim(f<1e-6)
+GD        3e-03  2.853e-105    1148
+Momentum  3e-03  0.000e+00     174
+Nesterov  3e-03  0.000e+00     129
+AdaGrad   3e-01  0.000e+00     40
+RMSProp   1e-04  2.525e-07     10166
+Adam      1e-03  0.000e+00     3123

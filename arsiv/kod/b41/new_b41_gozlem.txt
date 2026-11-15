@@ -1,0 +1,8 @@
+ortalama = 43.0 ms
+p50      = 20 ms
+p90      = 20 ms
+p99      = 100 ms
+maks     = 2000 ms
+
+Analitik: P(en az biri > 100 ms) = 1 - 0,99^10 = 0.0956
+Simülasyon (200000 deneme)                : 0.0960

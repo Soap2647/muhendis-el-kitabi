@@ -1,0 +1,17 @@
+/* Minimum baglayici betigi: STM32F4 benzeri bellek haritasi. */
+ENTRY(_start)
+
+MEMORY
+{
+  FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 512K
+  RAM   (rwx): ORIGIN = 0x20000000, LENGTH = 128K
+}
+
+SECTIONS
+{
+  .isr_vector : { KEEP(*(.isr_vector)) } > FLASH
+  .text       : { *(.text*) *(.rodata*) } > FLASH
+  .data       : { *(.data*) } > RAM AT > FLASH
+  .bss        : { *(.bss*) *(COMMON) } > RAM
+}
+__stack_top = ORIGIN(RAM) + LENGTH(RAM);

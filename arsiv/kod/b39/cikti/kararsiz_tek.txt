@@ -1,0 +1,5 @@
+$ python -m pytest -q test_kararsiz.py::test_oku --tb=no -rf
+F                                                                [100%]
+======================= short test summary info =======================
+FAILED test_kararsiz.py::test_oku - AssertionError: assert [] == ['a']
+1 failed in 0.68s

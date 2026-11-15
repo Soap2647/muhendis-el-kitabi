@@ -1,0 +1,13 @@
+
+PID (Nelder-Mead): Kp=12.4109 Ki=5.4477 Kd=0.2082 J=0.10339
+  ISE=0.04213  kontrol cabasi=6.126
+sadece P (Kp=1.0): ISE=1.22334  kontrol cabasi=1.223
+
+IHA: v*(kisitsiz)=10.7722 m/s  v_min=13.3333 m/s
+IHA kisitli optimum: v=13.3333 E=14611.11 J (kisit aktif)
+E(v*) kisitsiz = 13924.77 J (ihlal eder: T=185.7 s)
+
+kalibrasyon dogrusal: b=113.5608 a=3.5009  RMS=3.2950
+kalibrasyon ikinci der.: c0=120.0079 c1=3.0973 c2=0.004036 RMS=0.5334
+kosul sayisi (A2): 1.280e+04
+olceklenmis (T/100) kosul sayisi: 2.126e+01

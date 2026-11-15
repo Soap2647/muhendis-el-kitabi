@@ -1,0 +1,20 @@
+test kümesi: 1000 görüntü, 4 sınıf, tohum 999
+ViT (yama 8)  N=  300 tohum=0 test=0.805 egitim=1.000 sure=22s
+ViT (yama 8)  N=  300 tohum=1 test=0.780 egitim=1.000 sure=20s
+ViT (yama 8)  N=  300 tohum=2 test=0.768 egitim=1.000 sure=19s
+CNN           N=  300 tohum=0 test=1.000 egitim=1.000 sure=31s
+CNN           N=  300 tohum=1 test=0.998 egitim=1.000 sure=31s
+CNN           N=  300 tohum=2 test=1.000 egitim=1.000 sure=23s
+ViT (yama 8)  N= 5000 tohum=0 test=0.999 egitim=1.000 sure=13s
+ViT (yama 8)  N= 5000 tohum=1 test=1.000 egitim=1.000 sure=13s
+ViT (yama 8)  N= 5000 tohum=2 test=0.997 egitim=1.000 sure=13s
+CNN           N= 5000 tohum=0 test=1.000 egitim=1.000 sure=22s
+CNN           N= 5000 tohum=1 test=1.000 egitim=1.000 sure=22s
+CNN           N= 5000 tohum=2 test=1.000 egitim=1.000 sure=22s
+
+Parametre sayısı: ViT 105796, CNN 56004
+Test doğruluğu (ortalama ± örnek sapması):
+N=  300 ViT (yama 8)  0.784 ± 0.019
+N=  300 CNN           0.999 ± 0.001
+N= 5000 ViT (yama 8)  0.999 ± 0.002
+N= 5000 CNN           1.000 ± 0.000

@@ -1,0 +1,8 @@
+ön durum: 4  minimal: 2
+(0, 0) (0, 1) denk
+(0, 0) (1, 0) AYRIK
+(0, 1) (1, 0) AYRIK
+(0, 0) (1, 1) AYRIK
+(0, 1) (1, 1) AYRIK
+(1, 0) (1, 1) denk
+dogrulanan DFA: 300

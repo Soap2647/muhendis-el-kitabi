@@ -1,0 +1,34 @@
+Katsayilar (sabit, egim): 0.991 1.988
+MAE  0.7432
+MSE  0.9669
+RMSE 0.9833
+R2   0.9230
+sklearn ile birebir eslesti (MAE, MSE, R2).
+
+Hata sabit ama hedef kuculunce APE artiyor:
+y=  100.00  tahmin=  105.00  |hata|=5.000  APE=    5.00%
+y=   50.00  tahmin=   45.00  |hata|=5.000  APE=   10.00%
+y=   10.00  tahmin=   11.00  |hata|=1.000  APE=   10.00%
+y=    1.00  tahmin=    1.50  |hata|=0.500  APE=   50.00%
+y=    0.10  tahmin=    0.20  |hata|=0.100  APE=  100.00%
+y=    0.01  tahmin=    0.06  |hata|=0.050  APE=  500.00%
+MAPE (ilk iki satir) = 7.50%
+MAPE (tum 6 satir)   = 112.50%
+
+Sabit tahmin (egitim ortalamasi = 3), test ortalamasi = 0:
+R2 = -8.7183
+R2 sabit tahmin icin ort(test) ile yapilsaydi: 0.0000
+
+corr(artik, x)     = 0.0000  (OLS artiklari x ile dik)
+corr(|artik|, |x|) = 0.4661  (pozitif: varyans x ile artiyor)
+x in [-3,-1): artik sd = 1.114  (gercek sd ort = 1.173)
+x in [-1, 1): artik sd = 0.498  (gercek sd ort = 0.457)
+x in [ 1, 3): artik sd = 1.188  (gercek sd ort = 1.207)
+
+q=0.9 pinball (bizim) = 0.3716  sklearn = 0.3716
+Her x icin sabit aralik [-1.168, 1.225]:
+test kapsama orani = 0.777 (hedef 0.80)
+Heteroskedastik oldugu icin x'e gore kapsama bozulur:
+  x in [-3,-1): kapsama = 0.674
+  x in [-1, 1): kapsama = 0.978
+  x in [ 1, 3): kapsama = 0.681

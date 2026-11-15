@@ -1,0 +1,11 @@
+q0   _1011_  kafa= 0
+q0   _1011_  kafa= 1
+q0   _1011_  kafa= 2
+q0   _1011_  kafa= 3
+q0   _1011_  kafa= 4
+q1   _1011_  kafa= 3
+q1   _1010_  kafa= 2
+q1   _1000_  kafa= 1
+dur  _1100_  kafa= 0
+1011 + 1 = ('1100', 8)
+dogrulanan: 1001

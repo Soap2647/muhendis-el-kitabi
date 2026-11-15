@@ -1,0 +1,20 @@
+08000044 <Reset_Handler>:
+ 8000044:	4a15      	ldr	r2, [pc, #84]	@ (800009c <Reset_Handler+0x58>)
+ 8000046:	4916      	ldr	r1, [pc, #88]	@ (80000a0 <Reset_Handler+0x5c>)
+ 8000048:	428a      	cmp	r2, r1
+ 800004a:	b508      	push	{r3, lr}
+ 800004c:	d20c      	bcs.n	8000068 <Reset_Handler+0x24>
+ 800004e:	3901      	subs	r1, #1
+ 8000050:	1a89      	subs	r1, r1, r2
+ 8000052:	4b14      	ldr	r3, [pc, #80]	@ (80000a4 <Reset_Handler+0x60>)
+ 8000054:	f021 0103 	bic.w	r1, r1, #3
+ 8000058:	3104      	adds	r1, #4
+ 800005a:	4419      	add	r1, r3
+ 800005c:	f853 0b04 	ldr.w	r0, [r3], #4
+ 8000060:	f842 0b04 	str.w	r0, [r2], #4
+ 8000064:	428b      	cmp	r3, r1
+ 8000066:	d1f9      	bne.n	800005c <Reset_Handler+0x18>
+ 8000068:	4b0f      	ldr	r3, [pc, #60]	@ (80000a8 <Reset_Handler+0x64>)
+ 800006a:	4a10      	ldr	r2, [pc, #64]	@ (80000ac <Reset_Handler+0x68>)
+ 800006c:	4293      	cmp	r3, r2
+ 800006e:	d20a      	bcs.n	8000086 <Reset_Handler+0x42>

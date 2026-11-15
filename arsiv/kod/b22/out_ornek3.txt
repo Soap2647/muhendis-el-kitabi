@@ -1,0 +1,10 @@
+olcum 40
+olcum 60
+  ALARM gecici 60
+olcum 85
+  ALARM kritik 85
+  ALARM gecici 85
+cikis sonrasi olcum 90
+  ALARM kritik 90
+gecici: [40, 60, 85] | kritik: [40, 60, 85, 90]
+abone sayisi: 1

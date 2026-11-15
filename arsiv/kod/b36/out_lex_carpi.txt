@@ -1,0 +1,3 @@
+1:1	TANIMLAYICI	[a×b]
+2:1	DOSYA_SONU	[]
+hata var mi: hayir

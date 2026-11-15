@@ -1,0 +1,4 @@
+yöntem                    tohum11  tohum12  tohum13
+grup                        0.980    0.429    0.997   ort=0.802
+rastgele                    0.986    0.992    0.992   ort=0.990
+fiziksel R eşiği (grup)     0.998    0.995    0.997   ort=0.997

@@ -1,0 +1,4 @@
+dairesel [2,3,2]: 3
+dairesel [1,2,3,1]: 4
+dogrusal [1,2,3,1]: 4
+300 rastgele ornek, hata: 0

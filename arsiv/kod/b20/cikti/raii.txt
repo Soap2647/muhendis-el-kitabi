@@ -1,0 +1,19 @@
+$ g++ -O1 -g -Wall -Wextra -std=c++17 -fsanitize=address,undefined raii.cpp -o raii
+$ ./raii
+-- basarili:
+  al    kilit-A
+  ac    raii_cikti.txt
+  al    kilit-B
+  is bitti
+  birak kilit-B
+  kapat
+  birak kilit-A
+-- istisnali:
+  al    kilit-A
+  ac    raii_cikti.txt
+  al    kilit-B
+  birak kilit-B
+  kapat
+  birak kilit-A
+  yakalandi: islem basarisiz
+acik kilit = 0

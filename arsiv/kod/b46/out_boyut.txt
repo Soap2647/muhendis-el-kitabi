@@ -1,0 +1,5 @@
+bilesen,hedef,duz_c_bayt,dsp_bayt
+model_parametreleri,flash,432,416
+kod_ve_sabitler,flash,796,852
+ornek_pencereler,flash,2048,2048
+durum_ve_tamponlar,ram,44,44

@@ -1,0 +1,12 @@
+$ python b34_join.py iha.db
+INNER: 8744
+LEFT : 8749
+RIGHT: 9000
+FULL : 9005
+CROSS: 144
+WHERE ile filtre: 672
+ON ile filtre   : 677
+öz birleşim (ekipman -> üst):
+  İHA        -> None
+  Pervane    -> Motor
+  Hücre A    -> Batarya

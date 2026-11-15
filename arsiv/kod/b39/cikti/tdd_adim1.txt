@@ -1,0 +1,10 @@
+$ python -m pytest -q test_halka.py | tail -9
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_halka.py:3: in <module>
+    from halka import HalkaTampon
+E   ModuleNotFoundError: No module named 'halka'
+======================= short test summary info =======================
+ERROR test_halka.py
+!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!
+1 error in 0.90s

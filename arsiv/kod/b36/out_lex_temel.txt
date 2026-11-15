@@ -1,0 +1,8 @@
+1:1	DEGISKEN	[değişken]
+1:12	TANIMLAYICI	[x]
+1:14	ESIT	[=]
+1:16	TAM_SAYI_LIT	[3]
+1:17	NOKTALI_VIRGUL	[;]
+2:1	TANIMLAYICI	[Eğer]
+3:1	DOSYA_SONU	[]
+hata var mi: hayir

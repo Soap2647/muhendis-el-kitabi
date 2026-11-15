@@ -1,0 +1,27 @@
+Metin uzunluğu: 130102 karakter, sözlük: 165
+Eğitim: 117091, doğrulama: 13011 karakter
+Bigram taban çizgisi (doğrulama perplexity): 15.472
+pre-norm + ısınma (ana)  t=0 ppl=6.637 kayip=1.632 63s
+pre-norm + ısınma (ana)  t=1 ppl=6.433 kayip=1.605 43s
+pre-norm + ısınma (ana)  t=2 ppl=6.590 kayip=1.610 44s
+>> pre-norm + ısınma (ana): ppl 6.553 ± 0.107
+pre-norm, ısınma yok     t=0 ppl=6.621 kayip=1.632 33s
+pre-norm, ısınma yok     t=1 ppl=6.539 kayip=1.601 27s
+pre-norm, ısınma yok     t=2 ppl=6.631 kayip=1.606 28s
+>> pre-norm, ısınma yok: ppl 6.597 ± 0.051
+post-norm + ısınma       t=0 ppl=6.537 kayip=1.609 31s
+post-norm + ısınma       t=1 ppl=6.410 kayip=1.600 29s
+post-norm + ısınma       t=2 ppl=6.498 kayip=1.584 29s
+>> post-norm + ısınma: ppl 6.482 ± 0.065
+post-norm, ısınma yok    t=0 ppl=6.448 kayip=1.596 29s
+post-norm, ısınma yok    t=1 ppl=6.473 kayip=1.586 29s
+post-norm, ısınma yok    t=2 ppl=6.593 kayip=1.580 28s
+>> post-norm, ısınma yok: ppl 6.505 ± 0.077
+Parametre sayısı (ana model): 121637
+--- Örnek üretim (ana model, tohum 0) ---
+sicaklik=0.7:
+kayıp ln 2 ≈ 0,69dan bir kursayların sayısı için arasındaki bulok matr
+is, çıkarı kısmı (yap fark verir ve güncü sözlemli geçipsi satır. Bu, 
+sicaklik=1.0:
+kayıp ln 2 ≈ 0,69dan yaklaşık für: uzunluk iᵢ⁵ en için mektilerde S ob
+u dene bir kısmız (condin bir formülüs oltudur, spayakları farklı nokt

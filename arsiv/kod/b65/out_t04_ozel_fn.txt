@@ -1,0 +1,7 @@
+kararlı ileri : ['3.92364e-44', '0.693147', '100']
+naif ileri    : [3.923635700109488e-44, 0.6931471824645996, inf]
+kararlı grad  : [0.0, 0.5, 1.0]
+naif grad      : [3.783505853677006e-44, 0.5, nan]
+
+gradcheck (float64, 9 nokta): True
+f'(3) = 27.0, f''(3) = 18.0

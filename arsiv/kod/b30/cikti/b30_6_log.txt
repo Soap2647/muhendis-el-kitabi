@@ -1,0 +1,6 @@
+dinleniyor 127.0.0.1:8101 kok=C:\Users\merty\AppData\Local\Temp\b30\site
+127.0.0.1 GET /index.html
+127.0.0.1 GET /index.html
+127.0.0.1 GET /ornek/not.txt
+127.0.0.1 GET /uc.txt
+127.0.0.1 GET /ornek/not.txt

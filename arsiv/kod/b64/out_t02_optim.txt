@@ -1,0 +1,24 @@
+Adim 1: lr secimi (yalnizca dogrulama, tohum 10-12)
+  SGD       en iyi lr = 0.1     dogrulama = 0.9712
+  Momentum  en iyi lr = 0.1     dogrulama = 0.9814
+  Nesterov  en iyi lr = 0.1     dogrulama = 0.9814
+  AdaGrad   en iyi lr = 0.03    dogrulama = 0.9777
+  RMSProp   en iyi lr = 0.001   dogrulama = 0.9814
+  Adam      en iyi lr = 0.003   dogrulama = 0.9842
+  AdamW     en iyi lr = 0.003   dogrulama = 0.9851
+
+Adim 2: secilen lr ile test (tohum 0-4)
+  SGD       lr=0.1     test=0.9633 +- 0.0036
+  Momentum  lr=0.1     test=0.9767 +- 0.0042
+  Nesterov  lr=0.1     test=0.9767 +- 0.0025
+  AdaGrad   lr=0.03    test=0.9789 +- 0.0015
+  RMSProp   lr=0.001   test=0.9611 +- 0.0252
+  Adam      lr=0.003   test=0.9739 +- 0.0025
+  AdamW     lr=0.003   test=0.9744 +- 0.0030
+secim SGD       lr=0.1
+secim Momentum  lr=0.1
+secim Nesterov  lr=0.1
+secim AdaGrad   lr=0.03
+secim RMSProp   lr=0.001
+secim Adam      lr=0.003
+secim AdamW     lr=0.003

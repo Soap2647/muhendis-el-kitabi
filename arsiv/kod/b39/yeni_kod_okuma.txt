@@ -1,0 +1,19 @@
+## Kod Okuma Egzersizi
+
+Bugünkü kesit, CPython 3.12.10'un `unittest.mock` modülünden: bir `patch` bağlamının bir özniteliği nasıl kaydedip geri koyduğunu gösteren `_patch` sınıfının parçaları. Kaynak, yerel kurulumdaki `C:\Users\merty\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py` dosyasından birebir alındı; satır numaraları bu dosyaya aittir: `get_original` 1419–1440, `__exit__` 1597–1619. Atlanan bölgeler `# ...` ile işaretlendi; kalan satırlar değiştirilmedi.
+
+```python
+@@KESIT@@
+```
+
+Bu kesit, Bölüm 39.5'te "patch hedefi" uyarısını verdiğimiz mekanizmanın içini gösterir. `_patch` nesnesinin `getter` ve `attribute` alanları, `patch("modul.ad")` yazdığında çözümlenen hedef nesneyi ve değiştirilecek adı tutar.
+
+**Sorular — cevaplamadan geçme:**
+
+- `get_original` önce `target.__dict__[name]` dener, olmazsa `getattr(target, name, DEFAULT)` çağırır. Bir sınıfın metodu bir alt sınıf üzerinden patch edildiğinde `local` neden `False` olur? Bu bilgi `__exit__` içinde hangi işlemi seçtirir?
+- `if name in _builtins and isinstance(target, ModuleType): self.create = True` satırı ne zaman devreye girer? Bir modülde tanımlı olmayan `open` gibi bir yerleşik adı neden patch edilebilir, oysa tanımlı olmayan `ad_yok` adı `AttributeError` verir?
+- `if not self.create and original is DEFAULT:` koşulu, Bölüm 39.5'teki hatalı hedef adının sonucunu gösterir. Hedefi `siparis.Depo` yerine tanımlandığı yerde (`depo.Depo`) yazarsan bu satır ne zaman tetiklenir, ne zaman sessizce hiçbir şey yapmaz?
+- `__exit__` içinde `if self.is_local and self.temp_original is not DEFAULT:` dalı `setattr` ile geri koyar, `else` dalı `delattr` ile siler. Miras alınan (yerel olmayan) bir özniteliği `setattr` ile geri koymak neden yanlış olurdu? Yerel olmayan bir öznitelik için `delattr` neyi geri getirmiş olur?
+- `__enter__` içindeki `is_started` kontrolü, aynı patch nesnesi ikinci kez başlatılırsa `RuntimeError` fırlatır. Bu, iç içe iki `with patch(...)` kullanımını nasıl etkiler? Aynı hedefi iki farklı `patch` ile değiştirmek neden durumu bozabilir?
+- Bu mekanizma test sırasında kaynak kodu geçici olarak değiştirir. Bölüm 21'deki DIP ile sahte nesne enjeksiyonu aynı problemi çözer ama bağımlılığı değiştirmek için hedef adına değil, bir parametreye bağlanır. Bölüm 39.5'teki `BellekDeposu` (fake) örneğini kullanarak, hangi durumda `patch` yerine enjeksiyonu tercih edersin ve neden?
+

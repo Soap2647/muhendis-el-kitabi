@@ -1,0 +1,16 @@
+yanlış (senkronsuz çağrı):  0.000048 s
+senkron sonrası toplam:     0.007535 s
+doğru (synchronize ile):    0.007569 s
+CUDA event (GPU süresi):    0.007573 s
+
+2000 küçük işlem, adım başına:
+  senkronsuz:            20.74 us
+  her adımda .item():    36.40 us
+  1 MB  pageable=0.00013 s  pinned=0.00009 s
+     GB/s: pageable=7.58  pinned=11.25
+  4 MB  pageable=0.00037 s  pinned=0.00032 s
+     GB/s: pageable=10.66  pinned=12.36
+ 16 MB  pageable=0.00139 s  pinned=0.00125 s
+     GB/s: pageable=11.27  pinned=12.49
+ 64 MB  pageable=0.00561 s  pinned=0.00500 s
+     GB/s: pageable=11.14  pinned=12.51

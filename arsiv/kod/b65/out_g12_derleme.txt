@@ -1,0 +1,13 @@
+torch.compile BAŞARISIZ: BackendCompilerFailed backend='inductor' raised:
+eager backend fark: 0.0
+
+torch.export grafiği (ilk düğümler):
+   placeholder p_fn_0_weight
+   placeholder p_fn_0_bias
+   placeholder p_fn_2_weight
+   placeholder p_fn_2_bias
+   placeholder input
+   call_function aten.linear.default
+export/eager fark: 0.0
+jit trace yükle farkı: 0.0
+model.pt bayt: 7755

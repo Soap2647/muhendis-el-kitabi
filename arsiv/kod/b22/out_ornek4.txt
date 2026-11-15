@@ -1,0 +1,4 @@
+A 1: deger=21.0 deneme=1 sure=0.005 s
+A 2: deger=23.0 deneme=3 sure=0.015 s
+B 1: deger=21.0 deneme=1 sure=0.005 s
+B 2: deger=21.0 deneme=1 sure=0.005 s

@@ -1,0 +1,5 @@
+LSTM, unutma kapisi sapmasi = 1, 8000 adim
+T    test dogrulugu (3 tohum)
+40   1.000 +- 0.000  [1.000 1.000 1.000]
+80   0.501 +- 0.012  [0.507 0.487 0.509]
+toplam sure: 1139 s

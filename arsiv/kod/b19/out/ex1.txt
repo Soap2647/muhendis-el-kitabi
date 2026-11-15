@@ -1,0 +1,7 @@
+3^13 mod 1000 (izli cagri):
+        n=0: sonuc = 1
+      n=1: yarim=1 kare=1 sonuc=3
+    n=3: yarim=3 kare=9 sonuc=27
+  n=6: yarim=27 kare=729 sonuc=729
+n=13: yarim=729 kare=441 sonuc=323
+sonuc = 323 | pow ile = 323

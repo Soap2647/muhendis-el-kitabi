@@ -1,0 +1,17 @@
+Butce = 9 deneme; ptk = en iyiden fark (kucuk iyi)
+Izgara (3x3): ptk = 0.04050
+Rastgele (9) : ort ptk = 0.00810, medyan = 0.00549
+Rastgele daha iyi olma orani: 0.988
+Izgarada x icin ayri deger: 3, rastgelede: 9
+
+Gercek skor 0.5. Dogrulama std = 0.0354
+M     secilen dogrulama skoru   secilenin test skoru
+   1  0.4989                    0.4996
+  10  0.5550                    0.4999
+ 100  0.5885                    0.5000
+1000  0.6145                    0.5003
+beklenen sapma (std cinsinden) M=10: 1.54, M=100: 2.51
+
+Tek deneme dogrulama skoru: 0.4892
+1000 denemede en iyi (dogrulama): 0.6179
+Asiri uyum verisi yazildi: b57_asiri_uyum.csv

@@ -1,0 +1,4 @@
+strateji  toplam  basarili  vazgecen  bekleyen  son_s  tepe  tepe_1s_sonra
+sabit        7970        12         0       988  91.00  1000     1000
+tam          4432      1000         0         0  37.00  1083       72
+ayrisik      3039      1000         0         0  26.42  1000       69

@@ -1,0 +1,5 @@
+politika  maliyet (ort +- ss)  AUC (ort)  yeniden
+hic           25161 +- 956         0.9417      0.0
+her_10        15098 +- 314         0.9500      11.0
+her_30        16953 +- 148         0.9483      3.0
+tetikli       22172 +- 4342        0.9440      0.7

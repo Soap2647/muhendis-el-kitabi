@@ -1,0 +1,6 @@
+kosul,batch,tepe_mb,sure_s,durum
+sinirsiz,16384,1803,0.501,sığdı
+sinirsiz,65536,6804,4.011,sığdı
+sinirsiz,131072,13492,35.230,sığdı
+sinir_25yuzde,4096,555,0.099,sığdı
+sinir_25yuzde,16384,,,OOM

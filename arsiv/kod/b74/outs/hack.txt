@@ -1,0 +1,12 @@
+yenilenir (hack): V(baslangic=0)=49.749
+  acgozlu iz:
+    sag->1(r=0) sag->2(r=1) sol->1(r=0) sag->2(r=1) sol->1(r=0)
+    sag->2(r=1) sol->1(r=0) sag->2(r=1) sol->1(r=0) sag->2(r=1)
+    sol->1(r=0) sag->2(r=1)
+  ilk 12 adimin indirimli toplam odulu: 5.652
+tuketilir (duzeltilmis): V(baslangic=0)=10.596
+  acgozlu iz:
+    sag->2(r=0) sag->5(r=1) sag->7(r=0) sag->9(r=0) sag->11(r=10)
+  ilk 12 adimin indirimli toplam odulu: 10.596
+Sinirsiz dongu (konum 2<->3, her 2 adimda +1) degeri: 49.251
+Hedefe gitme degeri (2 -> 5, +10): 9.801

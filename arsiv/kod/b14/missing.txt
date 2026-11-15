@@ -1,0 +1,29 @@
+p1.md 85 ürümde cevap doğrudan `lo`dur ve b
+p1.md 97 yazım `lo + (hi - lo) / 2`dir. `hi
+p1.md 100 2-bit `int` ya da `size_t`dir ve s
+p2.md 7 doğruysa ilk `T` ya `orta`dadır ya
+p2.md 7 . Hiç `T` yoksa döngü `hi`de biter
+p2.md 33 Bu yüklem `k` arttıkça `F`den `T`y
+p2.md 33 em `k` arttıkça `F`den `T`ye bir k
+p2.md 33 e bir kez değişir; ilk `T`nin bir
+p2.md 33  `k`, `floor(sqrt(n)) + 1`dir.
+p2.md 75  sayısı tam olarak `n - 1`dir. Bun
+p2.md 107 için adım sayısı `log₂ 12`ye yakın
+p2.md 115 u yapar. Toplam `O(log p)`dir. Ayr
+p2.md 143 emanı eler ve arama `O(n)`e düşer.
+p2.md 159 94'e çıkardı; bu, `log₂ n`nin doğa
+p2.md 159 rgin kılar. Küçük `n = 10`da ise i
+p2.md 183 tablosunun ortalama `O(1)`i, Bölüm
+p2.md 191 **`git bise
+p3.md 15 `alt`, son konum `ust - 1`dir. Ara
+p3.md 74 lerin toplamı kapasite `C`yi aşama
+p3.md 74 `C`yi aşamaz. En küçük `C`yi bul.
+p3.md 110  birleştirme de `O(m + n)`dir ve e
+p3.md 112  sol kümeye `i` eleman `a`dan, `j
+p3.md 112 `j = yarım - i` eleman `b`den gire
+p3.md 112 ]`. Bu koşulu sağlayan `i`yi araya
+p3.md 112 abiliriz; `i` arttıkça `a`nın sol
+p3.md 114 `, yani `O(log min(m, n))`dir.
+p3.md 129 l, b_sol) = max(3, 4) = 4`tür. Pro
+p3.md 219 .F T...T` üzerinde ilk `T`yi bulma
+p3.md 220 arken minimum bulma `O(n)`e düşebi

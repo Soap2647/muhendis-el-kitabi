@@ -1,0 +1,5 @@
+1. ilk istek      {'ag': 1, '200': 1, '304': 0, 'taze': 0}
+2. hemen tekrar   {'ag': 1, '200': 1, '304': 0, 'taze': 1}
+3. bayat, 304     {'ag': 2, '200': 1, '304': 1, 'taze': 1}
+   yollar: ['/index.html', '/uc.txt']
+4. LRU sonrasi    {'ag': 5, '200': 4, '304': 1, 'taze': 2}

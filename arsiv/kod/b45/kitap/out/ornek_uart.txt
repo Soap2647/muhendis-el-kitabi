@@ -1,0 +1,6 @@
+0x4B cerceve: 0110100101
+d=0 -> 0x4B: 4B
+d=+4% -> 0x4B: 4B
+tolerans +: +5.88 %
+tolerans -: -5.26 %
+teorik 0,5/9,5 = 5.26 %

@@ -1,0 +1,12 @@
+Parametre sayısı: 17226
+İleri geçiş FLOP (örnek başına, çarpma+toplama): 34048
+Geri geçiş yaklaşık 2x ileri: toplam ~ 102144
+ batch   epoch (ms)   örnek/saniye
+     1        251.2           4292
+     4         72.8          14800
+    16         22.4          48216
+    32         12.9          83412
+    64         13.2          81616
+   128         10.4         103894
+   256          8.3         129479
+  1078          7.4         146312

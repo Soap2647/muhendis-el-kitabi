@@ -1,0 +1,44 @@
+torch ile maske eslesmesi: True
+tohum 0 oran 0.00  budamasiz=0.9722  ince_ayar=0.9722  seyreklik=0.000
+tohum 0 oran 0.50  budamasiz=0.9685  ince_ayar=0.9704  seyreklik=0.500
+tohum 0 oran 0.80  budamasiz=0.7630  ince_ayar=0.9759  seyreklik=0.800
+tohum 0 oran 0.90  budamasiz=0.4852  ince_ayar=0.9759  seyreklik=0.900
+tohum 0 oran 0.95  budamasiz=0.1611  ince_ayar=0.9185  seyreklik=0.950
+tohum 0 oran 0.98  budamasiz=0.1000  ince_ayar=0.6037  seyreklik=0.980
+tohum 1 oran 0.00  budamasiz=0.9741  ince_ayar=0.9741  seyreklik=0.000
+tohum 1 oran 0.50  budamasiz=0.9593  ince_ayar=0.9704  seyreklik=0.500
+tohum 1 oran 0.80  budamasiz=0.8685  ince_ayar=0.9704  seyreklik=0.800
+tohum 1 oran 0.90  budamasiz=0.5074  ince_ayar=0.9593  seyreklik=0.900
+tohum 1 oran 0.95  budamasiz=0.1000  ince_ayar=0.8370  seyreklik=0.950
+tohum 1 oran 0.98  budamasiz=0.1000  ince_ayar=0.4204  seyreklik=0.980
+tohum 2 oran 0.00  budamasiz=0.9722  ince_ayar=0.9722  seyreklik=0.000
+tohum 2 oran 0.50  budamasiz=0.9537  ince_ayar=0.9704  seyreklik=0.500
+tohum 2 oran 0.80  budamasiz=0.8296  ince_ayar=0.9722  seyreklik=0.800
+tohum 2 oran 0.90  budamasiz=0.5611  ince_ayar=0.9574  seyreklik=0.900
+tohum 2 oran 0.95  budamasiz=0.1333  ince_ayar=0.9222  seyreklik=0.950
+tohum 2 oran 0.98  budamasiz=0.1259  ince_ayar=0.5130  seyreklik=0.980
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri\b75_seyreklik.csv
+tohum 0  tek_adim=0.9444  yinelemeli=0.9389  seyreklik=0.950/0.950
+tohum 1  tek_adim=0.9148  yinelemeli=0.9481  seyreklik=0.950/0.950
+tohum 2  tek_adim=0.9500  yinelemeli=0.9315  seyreklik=0.950/0.950
+tohum 0  bilet(geri sarma)=0.9741  rastgele=0.9796
+tohum 1  bilet(geri sarma)=0.9667  rastgele=0.9648
+tohum 2  bilet(geri sarma)=0.9630  rastgele=0.9630
+tohum 0  kanal %50: budamasiz=0.8796  ince_ayar=0.9704
+tohum 1  kanal %50: budamasiz=0.8889  ince_ayar=0.9722
+tohum 2  kanal %50: budamasiz=0.9167  ince_ayar=0.9759
+yogun_fp32                 etkin= 4349962 medyan=0.9791 ms  p95=1.4367 ms
+seyreklik 0.50  CSR dogrulama en buyuk fark: 1.10e-07
+yapilandirilmamis_50_yogun etkin= 2172928 medyan=0.9009 ms  p95=1.3132 ms
+yapilandirilmamis_50_csr   etkin= 2172928 medyan=2.0737 ms  p95=3.1716 ms
+seyreklik 0.80  CSR dogrulama en buyuk fark: 1.40e-08
+yapilandirilmamis_80_yogun etkin=  869171 medyan=1.0101 ms  p95=1.3508 ms
+yapilandirilmamis_80_csr   etkin=  869171 medyan=1.0632 ms  p95=1.8021 ms
+seyreklik 0.90  CSR dogrulama en buyuk fark: 7.45e-09
+yapilandirilmamis_90_yogun etkin=  434585 medyan=0.9660 ms  p95=1.2199 ms
+yapilandirilmamis_90_csr   etkin=  434585 medyan=0.5410 ms  p95=0.7837 ms
+seyreklik 0.95  CSR dogrulama en buyuk fark: 1.86e-09
+yapilandirilmamis_95_yogun etkin=  217293 medyan=1.0708 ms  p95=1.3916 ms
+yapilandirilmamis_95_csr   etkin=  217293 medyan=0.4589 ms  p95=1.4705 ms
+yapilandirilmis_kanal_50   etkin= 2186250 medyan=0.6405 ms  p95=0.8670 ms
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri\b75_hiz.csv

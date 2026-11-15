@@ -1,0 +1,6 @@
+  LR = 0.0005
+  HEDEF_GUNCELLE = 250
+  EPS_SURE = 5000
+  BASLAMA = 500
+  son (tohum 10, 11) = [500, 500]
+  en yuksek (tohum 10, 11) = [500, 500]

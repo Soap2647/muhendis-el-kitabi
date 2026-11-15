@@ -1,0 +1,20 @@
+$ python -m pytest -q test_kapsama_ozellik.py --tb=short
+F                                                                [100%]
+============================== FAILURES ===============================
+_______________________ test_ortalama_ozelligi ________________________
+test_kapsama_ozellik.py:10: in test_ortalama_ozelligi
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+                   ^^^
+test_kapsama_ozellik.py:12: in test_ortalama_ozelligi
+    assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E   assert 0 == 0.5 ± 5.0e-07
+E     
+E     comparison failed
+E     Obtained: 0
+E     Expected: 0.5 ± 5.0e-07
+E   Failing test case: test_ortalama_ozelligi(
+E       xs=[0, 1],
+E   )
+======================= short test summary info =======================
+FAILED test_kapsama_ozellik.py::test_ortalama_ozelligi - assert 0 == ...
+1 failed in 1.21s

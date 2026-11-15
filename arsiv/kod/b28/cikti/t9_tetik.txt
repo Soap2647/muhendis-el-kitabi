@@ -1,0 +1,3 @@
+LT: ikinci epoll_wait hazır=1 (1 bayt kaldı)
+ET: ikinci epoll_wait hazır=0 (1 bayt kaldı!)
+boş pipe read=-1 errno=EAGAIN

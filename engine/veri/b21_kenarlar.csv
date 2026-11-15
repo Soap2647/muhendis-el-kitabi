@@ -1,0 +1,11 @@
+surum,kaynak,hedef
+once,app,rapor
+once,rapor,olcum
+sonra,app,kayit
+sonra,app,rapor
+sonra,app,sensorler
+sonra,rapor,alarm
+sonra,rapor,bicim
+sonra,rapor,istatistik
+sonra,sensorler,kayit
+sonra,sensorler,sozlesme

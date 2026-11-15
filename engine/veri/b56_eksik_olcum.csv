@@ -1,0 +1,13 @@
+mekanizma,yontem,sd_orani,sapma,korelasyon
+MCAR,silme,1.0019,-0.0008,0.5874
+MCAR,ortalama,0.8966,-0.0008,0.5255
+MCAR,medyan,0.8986,-0.0309,0.5239
+MCAR,knn,0.9391,0.0036,0.5721
+MAR,silme,1.0164,-0.0251,0.5877
+MAR,ortalama,0.9097,-0.0251,0.5245
+MAR,medyan,0.9117,-0.0552,0.5195
+MAR,knn,0.9477,0.0040,0.5700
+MNAR,silme,0.9671,-0.1421,0.5793
+MNAR,ortalama,0.8646,-0.1421,0.5057
+MNAR,medyan,0.8664,-0.1693,0.4940
+MNAR,knn,0.9070,-0.0929,0.5610

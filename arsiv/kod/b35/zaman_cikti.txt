@@ -1,0 +1,7 @@
+senaryo                       bit/nokta      ham64     oran
+mükemmel periyodik (1 Hz)          1.00         64     63.7
+1 Hz, ±3 ms titreme                7.88         64      8.1
+1 Hz, ±40 ms titreme               9.04         64      7.1
+1 Hz, ±3 ms, %1 boşluk             8.45         64      7.6
+10 Hz, ±1 ms, %5 boşluk            8.24         64      7.8
+Geri çözme: tüm senaryolarda birebir eşleşti

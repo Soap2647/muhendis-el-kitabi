@@ -1,0 +1,2 @@
+fp32  süre=0.01821 s  göreli hata=5.741e-07  TFLOPS=7.55
+tf32  süre=0.00985 s  göreli hata=2.940e-04  TFLOPS=13.95

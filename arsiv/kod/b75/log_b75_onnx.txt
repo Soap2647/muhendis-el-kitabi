@@ -1,0 +1,12 @@
+== 1) MLP: PyTorch -> ONNX -> ONNX Runtime ==
+en buyuk mutlak fark: 1.144e-05
+cikti buyuklugu max|y|: 26.998  bagil fark: 4.239e-07
+ONNX dogruluk: 0.9722  PyTorch dogruluk: 0.9722
+op sayilari: {'Gemm': 3, 'Relu': 2}
+ORT dinamik int8 dogruluk: 0.9704  boyut: 203963 -> 55206 bayt
+== 2) Conv + BatchNorm katlama ==
+katlama oncesi/sonrasi en buyuk fark: 4.768e-07
+ONNX (katlanmamis): {'Conv': 1, 'BatchNormalization': 1}
+ONNX (katli)      : {'Conv': 1}
+ORT ENABLE_ALL sonrasi (katlanmamis): {'Conv': 1, 'ReorderOutput': 1}
+ORT: katlanmamis ile katli fark: 4.768e-07

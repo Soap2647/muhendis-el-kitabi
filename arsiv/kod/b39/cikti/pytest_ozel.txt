@@ -1,0 +1,10 @@
+$ python -m pytest -v test_pytest_ozellikleri.py
+========================= test session starts =========================
+collecting ... collected 4 items
+
+test_pytest_ozellikleri.py::test_kayan_nokta_yaklasik PASSED     [ 25%]
+test_pytest_ozellikleri.py::test_linux_ozel SKIPPED (yalnız ...) [ 50%]
+test_pytest_ozellikleri.py::test_bilinen_hata XFAIL (bilinen...) [ 75%]
+test_pytest_ozellikleri.py::BolumUnittest::test_alan PASSED      [100%]
+
+=============== 2 passed, 1 skipped, 1 xfailed in 0.83s ===============

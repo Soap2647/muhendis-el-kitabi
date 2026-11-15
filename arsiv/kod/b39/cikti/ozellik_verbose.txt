@@ -1,0 +1,176 @@
+============================= test session starts =============================
+collected 4 items / 3 deselected / 1 selected
+
+test_ozellik.py Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[],
+    hedef=0,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[0],
+    hedef=0,
+)
+xs = [0], hedef = 0
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(), unique=True).map(sorted),
+           st.integers())
+    def test_hatali_ikili_arama_ozelligi(xs, hedef):
+        i = ikili_arama_hatali(xs, hedef)
+        if i == -1:
+>           assert hedef not in xs
+E           assert 0 not in [0]
+
+test_ozellik.py:29: AssertionError
+
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-181096, -145912, -717, -486, -340, 226, 9846311968, 45948433331, 62761168041],
+    hedef=17245,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-905],
+    hedef=11093231,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-20809574829005004, -24662895430, -23406722, -495921, -6251, -2819, 5312, 1072025, 72057594037927935],
+    hedef=9983,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[17143, 92556395, 467703300],
+    hedef=-13,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-2882975643824, -43371766, -1241085, -9657, -1099, -825, -144, -135, 121645100408831999],
+    hedef=-17_568_539_968_670,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-281474976710656, -17898, 240],
+    hedef=-58154,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-614842650261523590491318255616, -585272024640, -3236, 325],
+    hedef=1944,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[0],
+    hedef=0,
+)
+xs = [0], hedef = 0
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(), unique=True).map(sorted),
+           st.integers())
+    def test_hatali_ikili_arama_ozelligi(xs, hedef):
+        i = ikili_arama_hatali(xs, hedef)
+        if i == -1:
+>           assert hedef not in xs
+E           assert 0 not in [0]
+
+test_ozellik.py:29: AssertionError
+
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[0],
+    hedef=306_387_152_411_827_883_737_088,
+)
+F
+
+================================== FAILURES ===================================
+______________________ test_hatali_ikili_arama_ozelligi _______________________
+
+    @settings(derandomize=True, max_examples=300)
+>   @given(st.lists(st.integers(), unique=True).map(sorted),
+                   ^^^
+           st.integers())
+
+test_ozellik.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+xs = [0], hedef = 0
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(), unique=True).map(sorted),
+           st.integers())
+    def test_hatali_ikili_arama_ozelligi(xs, hedef):
+        i = ikili_arama_hatali(xs, hedef)
+        if i == -1:
+>           assert hedef not in xs
+E           assert 0 not in [0]
+E           Failing test case: test_hatali_ikili_arama_ozelligi(
+E               xs=[0],
+E               hedef=0,
+E           )
+
+test_ozellik.py:29: AssertionError
+--------------------------------- Hypothesis ----------------------------------
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[],
+    hedef=0,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[0],
+    hedef=0,
+)
+xs = [0], hedef = 0
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(), unique=True).map(sorted),
+           st.integers())
+    def test_hatali_ikili_arama_ozelligi(xs, hedef):
+        i = ikili_arama_hatali(xs, hedef)
+        if i == -1:
+>           assert hedef not in xs
+E           assert 0 not in [0]
+
+test_ozellik.py:29: AssertionError
+
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-181096, -145912, -717, -486, -340, 226, 9846311968, 45948433331, 62761168041],
+    hedef=17245,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-905],
+    hedef=11093231,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-20809574829005004, -24662895430, -23406722, -495921, -6251, -2819, 5312, 1072025, 72057594037927935],
+    hedef=9983,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[17143, 92556395, 467703300],
+    hedef=-13,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-2882975643824, -43371766, -1241085, -9657, -1099, -825, -144, -135, 121645100408831999],
+    hedef=-17_568_539_968_670,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-281474976710656, -17898, 240],
+    hedef=-58154,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[-614842650261523590491318255616, -585272024640, -3236, 325],
+    hedef=1944,
+)
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[0],
+    hedef=0,
+)
+xs = [0], hedef = 0
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(), unique=True).map(sorted),
+           st.integers())
+    def test_hatali_ikili_arama_ozelligi(xs, hedef):
+        i = ikili_arama_hatali(xs, hedef)
+        if i == -1:
+>           assert hedef not in xs
+E           assert 0 not in [0]
+
+test_ozellik.py:29: AssertionError
+
+Test case: test_hatali_ikili_arama_ozelligi(
+    xs=[0],
+    hedef=306_387_152_411_827_883_737_088,
+)
+=========================== short test summary info ===========================
+FAILED test_ozellik.py::test_hatali_ikili_arama_ozelligi - assert 0 not in [0]
+======================= 1 failed, 3 deselected in 0.64s =======================

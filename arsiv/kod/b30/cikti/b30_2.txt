@@ -1,0 +1,16 @@
+Gonderilen (108 bayt):
+GET / HTTP/1.1\r\n
+Host: example.com\r\n
+User-Agent: b30-ham-istemci/1.0\r\n
+Accept: text/html\r\n
+Connection: close\r\n
+
+Yanit toplam 928 bayt
+Durum satiri: HTTP/1.1 200 OK
+  content-type      : text/html; charset=utf-8
+  transfer-encoding : chunked
+  age               : 6
+  cf-cache-status   : HIT
+Chunked govde cozuldu: 577 bayt (artan: 0)
+Ilk 60 karakter:
+<!doctype html><html lang=en><head><meta charset=utf-8><link

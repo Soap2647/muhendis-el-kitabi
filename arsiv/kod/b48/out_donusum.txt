@@ -1,0 +1,16 @@
+R det = 1.0
+S det = 2.0
+K det = 1.0
+P det = 0.0
+R kareyi dondurur (sutunlar kose):
+[[ 0.  0. -1. -1.  0.]
+ [ 0.  1.  1.  0.  0.]]
+R(S e1) = [0. 2.]   S(R e1) = [0. 1.]
+R @ S =
+[[ 0. -1.]
+ [ 2.  0.]]
+S @ R =
+[[ 0. -2.]
+ [ 1.  0.]]
+AB == BA ? False
+R e2 = [-1.  0.]

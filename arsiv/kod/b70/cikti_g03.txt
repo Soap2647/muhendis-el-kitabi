@@ -1,0 +1,4 @@
+sözlük boyutu (unk dahil): 2149
+egitim     token=782840  unk=0
+dogrulama  token=152185  unk=44
+test       token=157868  unk=5

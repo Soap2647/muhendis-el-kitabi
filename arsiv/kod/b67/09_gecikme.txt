@@ -1,0 +1,11 @@
+GPU durumu (olcum oncesi): 0 %, 0 MiB
+GPU adi: NVIDIA GeForce RTX 3060 Laptop GPU
+ 96 px  fp32  ag medyan=0.65 ms  p90=0.69 ms  (~1534 FPS)
+ 96 px  fp16  ag medyan=0.71 ms  p90=0.84 ms  (~1402 FPS)
+192 px  fp32  ag medyan=0.64 ms  p90=0.70 ms  (~1571 FPS)
+192 px  fp16  ag medyan=0.72 ms  p90=0.76 ms  (~1393 FPS)
+384 px  fp32  ag medyan=0.60 ms  p90=0.64 ms  (~1653 FPS)
+384 px  fp16  ag medyan=0.72 ms  p90=0.76 ms  (~1393 FPS)
+son isleme (96 px, NMS dahil) medyan = 0.397 ms
+takipci (macar_tum, CPU) kare basina = 0.571 ms
+GPU durumu (olcum sonrasi): 20 %, 149 MiB

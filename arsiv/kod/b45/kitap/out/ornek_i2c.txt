@@ -1,0 +1,5 @@
+Rmin = 967 ohm
+Rmax (hizli, 300 ns, 400 pF) = 885 ohm
+Rmax (standart, 1000 ns, 400 pF) = 2951 ohm
+R=4,7k C=100 pF: tr = 398.2 ns
+0,8473 RC        = 398.2 ns

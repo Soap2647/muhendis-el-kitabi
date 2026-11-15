@@ -1,0 +1,6 @@
+{'model': 'MLP_64_256_128_10', 'parametre': 50826, 'mac': 50432, 'giris': '(64,)', 'medyan_ms': 0.0458, 'p95_ms': 0.086}
+{'model': 'CNN_standart', 'parametre': 29066, 'mac': 1208320, 'giris': '(1, 8, 8)', 'medyan_ms': 0.1983, 'p95_ms': 0.3661}
+{'model': 'CNN_ayrilabilir', 'parametre': 13002, 'mac': 178176, 'giris': '(1, 8, 8)', 'medyan_ms': 0.3888, 'p95_ms': 0.9495}
+{'model': 'MobileNetV3_Small', 'parametre': 2542856, 'mac': 56510400, 'giris': '(3, 224, 224)', 'medyan_ms': 11.2533, 'p95_ms': 15.8166}
+{'model': 'ResNet18', 'parametre': 11689512, 'mac': 1814073344, 'giris': '(3, 224, 224)', 'medyan_ms': 37.5845, 'p95_ms': 42.8652}
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri\b75_mimari.csv

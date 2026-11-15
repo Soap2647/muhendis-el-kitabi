@@ -1,0 +1,12 @@
+$ python -m pytest -q test_siparis_kirilgan.py --tb=short -rN
+.F                                                               [100%]
+============================== FAILURES ===============================
+____________ test_cagri_sirasi_kirilgan[SiparisServisiV2] _____________
+test_siparis_kirilgan.py:21: in test_cagri_sirasi_kirilgan
+    assert ad == ["stok_al", "stok_dus"]
+E   AssertionError: assert ['stok_dus_dene'] == ['stok_al', 'stok_dus']
+E     
+E     At index 0 diff: 'stok_dus_dene' != 'stok_al'
+E     Right contains one more item: 'stok_dus'
+E     Use -v to get more diff
+1 failed, 1 passed in 0.88s

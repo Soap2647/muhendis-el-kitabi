@@ -1,0 +1,31 @@
+k    ort skor   std (30 bolme tohumu)
+ 2   0.9754     0.0045
+ 5   0.9785     0.0029
+10   0.9788     0.0026
+20   0.9792     0.0020
+LOO  0.9789     (deterministik, tek sonuc)
+
+5-kat x 10 tekrar: 50 skor, ort 0.9761, std 0.0154
+10 tekrarin kendi ortalamalarinin std = 0.0032
+Not: tekrarlar ayni veriyi kullanir; bagimsiz ornek degildir.
+
+Gurultu verisi, 20 tohum, 13 C degeri:
+ic ice OLMAYAN (best_score_) ort = 0.5375
+ic ice (dogru)               ort = 0.5180
+iyimserlik (fark)            ort = 0.0195
+ilk 5 tohum (olmayan / ic ice):
+  0   0.540   0.530
+  1   0.510   0.470
+  2   0.560   0.540
+  3   0.560   0.520
+  4   0.630   0.630
+
+TimeSeriesSplit(4) on 20 zaman adimi:
+egitim  0.. 3   test  4.. 7
+egitim  0.. 7   test  8..11
+egitim  0..11   test 12..15
+egitim  0..15   test 16..19
+Egitim her zaman testten once: assert gecti.
+Karistirilmis KFold'da gelecek egitime girer mi? [False, True, True, True]
+
+Ic ice CV verisi yazildi: b57_ic_ice_cv.csv

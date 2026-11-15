@@ -1,0 +1,9 @@
+parametre sayisi: 105
+donem   0  kayip 0.996547
+donem 100  kayip 0.206237
+donem 200  kayip 0.189168
+donem 300  kayip 0.165988
+donem 400  kayip 0.133932
+donem 500  kayip 0.093674
+donem 599  kayip 0.069071
+son kayip 0.069071, dogruluk 0.988

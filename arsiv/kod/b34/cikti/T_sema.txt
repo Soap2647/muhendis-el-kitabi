@@ -1,0 +1,9 @@
+$ python b34_sema.py iha.db
+ussler           12
+baglanti         29
+ucak             60
+gorev          9000
+ucus           8072
+telemetri    213992
+ekipman          20
+bakim           800

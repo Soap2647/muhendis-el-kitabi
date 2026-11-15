@@ -1,0 +1,24 @@
+dikdortgen (SLSQP): x=5.00000 y=5.00000 alan=25.00000
+Lagrange analitik: x=y=5, lambda=x/2=2.5
+
+butce (SLSQP): x=4.49989 y=3.00021 f=5.61084
+Lagrange analitik: x=4.5, y=3, lambda=1/3, f=5.61084
+
+KKT aktif (sinir 4): x=(2.5000, 1.5000) g=-0.0000 mu=1.0000
+  KKT kalani: [0. 0.]
+KKT pasif (sinir 6): x=(3.0000, 2.0000) g=1.0000 mu=0.0000
+  KKT kalani: [0. 0.]
+
+proj. GD kutu: x=[1. 0.]  adim=200
+
+Ceza yontemi  rho   x(rho)      x=rho/(1+rho)   ihlal 1-x
+                 1  0.50000000  0.50000000   5.00e-01
+                10  0.90909091  0.90909091   9.09e-02
+               100  0.99009901  0.99009901   9.90e-03
+              1000  0.99900100  0.99900100   9.99e-04
+
+Bariyer       mu    x(mu)       (1+sqrt(1+2mu))/2
+             1.0000  1.36602540  1.36602540
+             0.1000  1.04772255  1.04772256
+             0.0100  1.00497524  1.00497525
+             0.0001  1.00005000  1.00005000

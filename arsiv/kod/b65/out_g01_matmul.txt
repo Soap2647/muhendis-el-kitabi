@@ -1,0 +1,8 @@
+n=   32  cpu=  0.000017 s  gpu=  0.000026 s  gpu+kopya=  0.000062 s
+n=   64  cpu=  0.000018 s  gpu=  0.000032 s  gpu+kopya=  0.000066 s
+n=  128  cpu=  0.000038 s  gpu=  0.000031 s  gpu+kopya=  0.000081 s
+n=  256  cpu=  0.000099 s  gpu=  0.000034 s  gpu+kopya=  0.000102 s
+n=  512  cpu=  0.000569 s  gpu=  0.000062 s  gpu+kopya=  0.000236 s
+n= 1024  cpu=  0.003671 s  gpu=  0.000329 s  gpu+kopya=  0.000773 s
+n= 2048  cpu=  0.031270 s  gpu=  0.002330 s  gpu+kopya=  0.004097 s
+n= 3072  cpu=  0.102774 s  gpu=  0.007494 s  gpu+kopya=  0.010870 s

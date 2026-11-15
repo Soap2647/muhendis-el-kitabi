@@ -1,0 +1,6 @@
+ad alani ilk karakter izinleri: 58 adet
+ornek: A B C D E F G H I J K L
+harf sayisi: 58  rakam sayisi: 10
+kisitli=False ilk=  0/200 3deneme=  0/200 {'json': 200}
+kisitli=True  ilk=200/200 3deneme=200/200 {'tamam': 200}
+kisitli ornek: {"ad":"urflanırınık","yas":857} (True, 'tamam')

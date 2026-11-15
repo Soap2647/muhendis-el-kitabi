@@ -1,0 +1,9 @@
+400 rastgele cift: okul == karatsuba == tam sayi carpimi
+TABAN = 10000 | bit/basamak (CPython): 30
+
+limb  ondalik  okul(s)  karats(s)  yerlesik(s)
+ 128      512    0.002      0.002     0.000004
+ 256     1024    0.009      0.005     0.000012
+ 512     2048    0.039      0.015     0.000031
+1024     4096    0.160      0.046     0.000091
+2048     8192    0.711      0.144     0.000273

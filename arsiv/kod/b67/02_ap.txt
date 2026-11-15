@@ -1,0 +1,17 @@
+== Elle hesaplanmis ornek (5 tahmin, 4 gercek kutu) ==
+tahmin 1: skor=0.95 TP=1  P=1.0000  R=0.2500
+tahmin 2: skor=0.90 TP=0  P=0.5000  R=0.2500
+tahmin 3: skor=0.85 TP=1  P=0.6667  R=0.5000
+tahmin 4: skor=0.70 TP=1  P=0.7500  R=0.7500
+tahmin 5: skor=0.60 TP=0  P=0.6000  R=0.7500
+AP (11 nokta)   = 0.6136
+AP (tum)        = 0.6250
+zarfsiz basamak = 0.6042  (zarf yok, daha dusuk)
+
+== Sayisal integral dogrulamasi (rastgele, tohum 3) ==
+maks |AP_adim - AP_integral| = 3.47e-06
+
+== Kutu gurultusu arttikca mAP (300 gorsel) ==
+sigma=0.0 px  mAP@0.5=1.0000  mAP@[.5:.95]=1.0000
+sigma=2.0 px  mAP@0.5=0.7795  mAP@[.5:.95]=0.2722
+sigma=5.0 px  mAP@0.5=0.0792  mAP@[.5:.95]=0.0161

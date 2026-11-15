@@ -1,0 +1,523 @@
+============================= test session starts =============================
+collected 1 item
+
+test_kapsama_ozellik.py Test case: test_ortalama_ozelligi(
+    xs=[0],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[289],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[289, 433],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-347],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[452],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[125],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[1000],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[300],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[194],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[194, -85],
+)
+xs = [194, -85]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 54 == 54.5 ± 5.4e-05
+E         
+E         comparison failed
+E         Obtained: 54
+E         Expected: 54.5 ± 5.4e-05
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-85, -85],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[145, -987],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-987, -987],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -382, 219, 87, -261, -226],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -382, -382, 87, -261, -226],
+)
+xs = [-259, -382, -382, 87, -261, -226]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -238 == -237.16666666666666 ± 2.4e-04
+E         
+E         comparison failed
+E         Obtained: -238
+E         Expected: -237.16666666666666 ± 2.4e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -382, -382, -226, -261, -226],
+)
+xs = [-259, -382, -382, -226, -261, -226]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -290 == -289.3333333333333 ± 2.9e-04
+E         
+E         comparison failed
+E         Obtained: -290
+E         Expected: -289.3333333333333 ± 2.9e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -226, -382, -226, -261, -226],
+)
+xs = [-259, -226, -382, -226, -261, -226]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -264 == -263.3333333333333 ± 2.6e-04
+E         
+E         comparison failed
+E         Obtained: -264
+E         Expected: -263.3333333333333 ± 2.6e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -226, -382, -226, -261, -382],
+)
+xs = [-259, -226, -382, -226, -261, -382]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -290 == -289.3333333333333 ± 2.9e-04
+E         
+E         comparison failed
+E         Obtained: -290
+E         Expected: -289.3333333333333 ± 2.9e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -382, -382, -226, -261, -382],
+)
+xs = [-259, -382, -382, -226, -261, -382]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -316 == -315.3333333333333 ± 3.2e-04
+E         
+E         comparison failed
+E         Obtained: -316
+E         Expected: -315.3333333333333 ± 3.2e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-382, -382, -382, -226, -261, -382],
+)
+xs = [-382, -382, -382, -226, -261, -382]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -336 == -335.8333333333333 ± 3.4e-04
+E         
+E         comparison failed
+E         Obtained: -336
+E         Expected: -335.8333333333333 ± 3.4e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-687, -239],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-687, -687],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[194, -85],
+)
+xs = [194, -85]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 54 == 54.5 ± 5.4e-05
+E         
+E         comparison failed
+E         Obtained: 54
+E         Expected: 54.5 ± 5.4e-05
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[194, 0],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[0, -85],
+)
+xs = [0, -85]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -43 == -42.5 ± 4.2e-05
+E         
+E         comparison failed
+E         Obtained: -43
+E         Expected: -42.5 ± 4.2e-05
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[0, 0],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-85],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[0, 85],
+)
+xs = [0, 85]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 42 == 42.5 ± 4.2e-05
+E         
+E         comparison failed
+E         Obtained: 42
+E         Expected: 42.5 ± 4.2e-05
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[0, 1],
+)
+xs = [0, 1]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 0 == 0.5 ± 5.0e-07
+E         
+E         comparison failed
+E         Obtained: 0
+E         Expected: 0.5 ± 5.0e-07
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[1],
+)
+F
+
+================================== FAILURES ===================================
+___________________________ test_ortalama_ozelligi ____________________________
+
+    @settings(derandomize=True, max_examples=300)
+>   @given(st.lists(st.integers(-1000, 1000), min_size=1))
+                   ^^^
+
+test_kapsama_ozellik.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+xs = [0, 1]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 0 == 0.5 ± 5.0e-07
+E         
+E         comparison failed
+E         Obtained: 0
+E         Expected: 0.5 ± 5.0e-07
+E       Failing test case: test_ortalama_ozelligi(
+E           xs=[0, 1],
+E       )
+
+test_kapsama_ozellik.py:12: AssertionError
+--------------------------------- Hypothesis ----------------------------------
+Test case: test_ortalama_ozelligi(
+    xs=[0],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[289],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[289, 433],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-347],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[452],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[125],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[1000],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[300],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[194],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[194, -85],
+)
+xs = [194, -85]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 54 == 54.5 ± 5.4e-05
+E         
+E         comparison failed
+E         Obtained: 54
+E         Expected: 54.5 ± 5.4e-05
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-85, -85],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[145, -987],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-987, -987],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -382, 219, 87, -261, -226],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -382, -382, 87, -261, -226],
+)
+xs = [-259, -382, -382, 87, -261, -226]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -238 == -237.16666666666666 ± 2.4e-04
+E         
+E         comparison failed
+E         Obtained: -238
+E         Expected: -237.16666666666666 ± 2.4e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -382, -382, -226, -261, -226],
+)
+xs = [-259, -382, -382, -226, -261, -226]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -290 == -289.3333333333333 ± 2.9e-04
+E         
+E         comparison failed
+E         Obtained: -290
+E         Expected: -289.3333333333333 ± 2.9e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -226, -382, -226, -261, -226],
+)
+xs = [-259, -226, -382, -226, -261, -226]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -264 == -263.3333333333333 ± 2.6e-04
+E         
+E         comparison failed
+E         Obtained: -264
+E         Expected: -263.3333333333333 ± 2.6e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -226, -382, -226, -261, -382],
+)
+xs = [-259, -226, -382, -226, -261, -382]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -290 == -289.3333333333333 ± 2.9e-04
+E         
+E         comparison failed
+E         Obtained: -290
+E         Expected: -289.3333333333333 ± 2.9e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-259, -382, -382, -226, -261, -382],
+)
+xs = [-259, -382, -382, -226, -261, -382]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -316 == -315.3333333333333 ± 3.2e-04
+E         
+E         comparison failed
+E         Obtained: -316
+E         Expected: -315.3333333333333 ± 3.2e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-382, -382, -382, -226, -261, -382],
+)
+xs = [-382, -382, -382, -226, -261, -382]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -336 == -335.8333333333333 ± 3.4e-04
+E         
+E         comparison failed
+E         Obtained: -336
+E         Expected: -335.8333333333333 ± 3.4e-04
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[-687, -239],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-687, -687],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[194, -85],
+)
+xs = [194, -85]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 54 == 54.5 ± 5.4e-05
+E         
+E         comparison failed
+E         Obtained: 54
+E         Expected: 54.5 ± 5.4e-05
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[194, 0],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[0, -85],
+)
+xs = [0, -85]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert -43 == -42.5 ± 4.2e-05
+E         
+E         comparison failed
+E         Obtained: -43
+E         Expected: -42.5 ± 4.2e-05
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[0, 0],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[-85],
+)
+Test case: test_ortalama_ozelligi(
+    xs=[0, 85],
+)
+xs = [0, 85]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 42 == 42.5 ± 4.2e-05
+E         
+E         comparison failed
+E         Obtained: 42
+E         Expected: 42.5 ± 4.2e-05
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[0, 1],
+)
+xs = [0, 1]
+
+    @settings(derandomize=True, max_examples=300)
+    @given(st.lists(st.integers(-1000, 1000), min_size=1))
+    def test_ortalama_ozelligi(xs):
+>       assert ortalama(xs) == pytest.approx(statistics.fmean(xs))
+E       assert 0 == 0.5 ± 5.0e-07
+E         
+E         comparison failed
+E         Obtained: 0
+E         Expected: 0.5 ± 5.0e-07
+
+test_kapsama_ozellik.py:12: AssertionError
+
+Test case: test_ortalama_ozelligi(
+    xs=[1],
+)
+=========================== short test summary info ===========================
+FAILED test_kapsama_ozellik.py::test_ortalama_ozelligi - assert 0 == 0.5 ± 5....
+============================== 1 failed in 0.72s ==============================

@@ -1,0 +1,5 @@
+$ python b34_savepoint.py
+savepoint içinde kayıt: 3
+ROLLBACK TO sonrası   : 1
+COMMIT sonrası        : 1
+işlem açık mı         : False

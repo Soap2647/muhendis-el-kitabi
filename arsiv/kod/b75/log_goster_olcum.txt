@@ -1,0 +1,13 @@
+B     AI (FLOP/bayt)  olculen GFLOP/s  tavan  sinir
+1              0.5           12.12     12.54  bellek
+4            1.992            39.8     50.01  bellek
+16           7.877           97.14    178.75  hesap
+64          30.118          187.58    178.75  hesap
+256          102.4          217.05    178.75  hesap
+1024         256.0           216.9    178.75  hesap
+
+model          B   medyan (ms)  p95 (ms)
+fp32           1        0.7197    1.4847
+dinamik_int8   1        0.3735      0.61
+fp32           32       2.3002     3.647
+dinamik_int8   32       1.0812    1.6885

@@ -1,0 +1,13 @@
+{0}  a->{0,1}  b->{0}
+{0,1}  a->{0,1}  b->{0,2}
+{0,2}  a->{0,1}  b->{0,3}
+{0,3}  a->{0,1}  b->{0}  kabul
+sinanan dizge: 102200
+n=1 NFA=2 DFA=2
+n=2 NFA=3 DFA=4
+n=3 NFA=4 DFA=8
+n=4 NFA=5 DFA=16
+n=5 NFA=6 DFA=32
+n=6 NFA=7 DFA=64
+n=7 NFA=8 DFA=128
+n=8 NFA=9 DFA=256

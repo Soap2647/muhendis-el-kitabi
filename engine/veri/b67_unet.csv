@@ -1,0 +1,7 @@
+atlama,tohum,mIoU,dice_on_plan,sinir_bandi
+atlamali,1,0.9860,0.9906,0.9977
+atlamali,2,0.9871,0.9913,0.9979
+atlamali,3,0.9866,0.9910,0.9979
+atlamasiz,1,0.9731,0.9818,0.9944
+atlamasiz,2,0.9711,0.9805,0.9938
+atlamasiz,3,0.9729,0.9817,0.9943

@@ -1,0 +1,28 @@
+Pozitif orani (test): 0.3623
+
+Model              log-kayip   Brier    ECE    ROC-AUC
+gercek-lojistik      0.4892   0.1616  0.0153   0.8236
+gradyan-artirma      1.5051   0.2619  0.2385   0.7340
+platt                0.5926   0.1966  0.0303   0.7340
+izotonik             0.6209   0.1961  0.0192   0.7322
+
+Log-kayip ve Brier sklearn ile birebir eslesti.
+oracle (gercek p) log-kayip: 0.4881  Brier: 0.1613  ECE: 0.0054
+
+ROC-AUC Platt - ham: 1.80e-09
+ROC-AUC izotonik - ham: -1.80e-03
+Izotonik ciktida benzersiz olasilik sayisi: 344 (ham: 59844)
+
+Guvenilirlik (gradyan artirma): ort tahmin, gozlenen, sayi
+0.010   0.216    33165
+0.144   0.382     2553
+0.248   0.410     1682
+0.348   0.417     1313
+0.450   0.450     1144
+0.550   0.454     1156
+0.651   0.441     1216
+0.752   0.485     1397
+0.854   0.492     1974
+0.984   0.634    14400
+
+Kalibrasyon verisi yazildi: b57_kalibrasyon.csv

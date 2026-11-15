@@ -1,0 +1,2 @@
+N=1000 pipe, tur=20, toplam hazır olay=100
+yazılan=400 bayt, okunan=400 bayt, doğru=1

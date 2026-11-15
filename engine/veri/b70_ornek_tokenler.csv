@@ -1,0 +1,4 @@
+duzey,parca_sayisi,parcalar
+karakter,42,D|i|l| |m|o|d|e|l|i| |b|i|r| |s|o|n|r|a|k|i| |t|o|k|e|n|i| |t|a|h|m|i|n| |e|d|e|r|.
+sozcuk,8,Dil|modeli|bir|sonraki|tokeni|tahmin|eder|.
+alt-sozcuk(BPE),11,D|il| modeli| bir| sonraki| t|ok|eni| tahmin| eder|.

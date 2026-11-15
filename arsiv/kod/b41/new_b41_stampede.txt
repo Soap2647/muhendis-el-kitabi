@@ -1,0 +1,2 @@
+naif          : kaynak çağrısı = 1000, farklı yanıt = 1
+tekil uçuş    : kaynak çağrısı = 1, farklı yanıt = 1

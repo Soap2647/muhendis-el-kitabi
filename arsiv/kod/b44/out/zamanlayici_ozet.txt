@@ -1,0 +1,24 @@
+f_tim = 84 MHz
+
+== PWM 1 kHz, gorev %37.5 ==
+secilen PSC=1 ARR=41999 f=1000.000 Hz hata=0.000000 %
+CCR=15750  gercek gorev=37.5000 %
+
+== Aday tablosu: 333 Hz (tam bolunmez) ==
+PSC=    3 ARR= 63062 f=333.000333 Hz hata=0.000100 %
+PSC=    5 ARR= 42041 f=333.000333 Hz hata=0.000100 %
+PSC=    6 ARR= 36035 f=333.000333 Hz hata=0.000100 %
+PSC=    8 ARR= 28027 f=333.000333 Hz hata=0.000100 %
+PSC=   10 ARR= 22931 f=333.000333 Hz hata=0.000100 %
+
+== Servo: 50 Hz, darbe 1 ms ile 2 ms arasi ==
+PSC=27 ARR=59999 f=50.0000 Hz hata=0.000000 %
+bir sayim = 0.3333 us
+1 ms = 3000 sayim, 2 ms = 6000 sayim
+
+== Frekans - cozunurluk takasi ==
+f=    50 Hz PSC=   27 ARR= 59999 adim= 60000 ~15.9 bit
+f=  1000 Hz PSC=    1 ARR= 41999 adim= 42000 ~15.4 bit
+f=  5000 Hz PSC=    0 ARR= 16799 adim= 16800 ~14.0 bit
+f= 20000 Hz PSC=    0 ARR=  4199 adim=  4200 ~12.0 bit
+f= 50000 Hz PSC=    0 ARR=  1679 adim=  1680 ~10.7 bit

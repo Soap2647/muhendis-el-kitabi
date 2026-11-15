@@ -1,0 +1,6 @@
+durum   kalkis_emri   irtifa_ulasti inis_emri     pist_temas    
+YERDE   KALKIS        X             X             X             
+KALKIS  X             SEYIR         X             X             
+SEYIR   X             X             INIS          X             
+INIS    X             X             X             YERDE         
+gecerli gecis: 4 / 16

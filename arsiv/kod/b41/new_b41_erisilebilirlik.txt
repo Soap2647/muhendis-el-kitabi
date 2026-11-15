@@ -1,0 +1,15 @@
+SLO       yıllık kesinti      30 günlük kesinti
+0.99000   87.60 saat          7.20 saat
+0.99900   8.76 saat           43.20 dakika
+0.99950   4.38 saat           21.60 dakika
+0.99990   52.56 dakika        4.32 dakika
+0.99999   5.26 dakika         25.9 saniye
+%99.9 hata bütçesi (30 gün): 43.2 dakika
+
+seri (0,999 x 3)         = 0.997003
+paralel (0,99 x 2)       = 0.999900
+paralel (0,99 x 3)       = 0.999999
+
+iki seri + 2 kopyalı blok
+teorik = 0.997901
+olçülen (1e6 deneme) = 0.997836

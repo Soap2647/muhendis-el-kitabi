@@ -1,0 +1,8 @@
+$ g++ -O1 -g -std=c++17 -fsanitize=address dizgi_hata.cpp -o dizgi_hata
+$ ./dizgi_hata 2>&1 | head -n 6
+=================================================================
+==2127==ERROR: AddressSanitizer: attempting double-free on 0x502000000010 in thread T0:
+    #0 0x7a8aec6ff1f8 in operator delete[](void*) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:155
+    #1 0x5f553f00747b in Dizgi::~Dizgi() /mnt/c/Users/merty/AppData/Local/Temp/b20/dizgi_hata.cpp:11
+    #2 0x5f553f00747b in main /mnt/c/Users/merty/AppData/Local/Temp/b20/dizgi_hata.cpp:20
+    #3 0x7a8aebe2a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)

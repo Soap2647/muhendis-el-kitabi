@@ -1,0 +1,231 @@
+
+tinyml_dsp1.o:     file format elf32-littlearm
+
+
+Disassembly of section .text.tm_ozellik:
+
+00000000 <tm_ozellik>:
+   0:	ed9f 4a2c 	vldr	s8, [pc, #176]	@ b4 <tm_ozellik+0xb4>
+   4:	eddf 3a2c 	vldr	s7, [pc, #176]	@ b8 <tm_ozellik+0xb8>
+   8:	b510      	push	{r4, lr}
+   a:	eeb2 3a0f 	vmov.f32	s6, #47	@ 0x41780000  15.5
+   e:	f100 0410 	add.w	r4, r0, #16
+  12:	ed90 7a00 	vldr	s14, [r0]
+  16:	eddf 7a29 	vldr	s15, [pc, #164]	@ bc <tm_ozellik+0xbc>
+  1a:	4603      	mov	r3, r0
+  1c:	eeb0 5a47 	vmov.f32	s10, s14
+  20:	f500 7200 	add.w	r2, r0, #512	@ 0x200
+  24:	469c      	mov	ip, r3
+  26:	eddc 6a00 	vldr	s13, [ip]
+  2a:	eef4 6a47 	vcmp.f32	s13, s14
+  2e:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+  32:	eef4 6a45 	vcmp.f32	s13, s10
+  36:	f103 0310 	add.w	r3, r3, #16
+  3a:	bf48      	it	mi
+  3c:	eeb0 7a66 	vmovmi.f32	s14, s13
+  40:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+  44:	bfc8      	it	gt
+  46:	eeb0 5a66 	vmovgt.f32	s10, s13
+  4a:	429a      	cmp	r2, r3
+  4c:	ee77 7aa6 	vadd.f32	s15, s15, s13
+  50:	d1e8      	bne.n	24 <tm_ozellik+0x24>
+  52:	eddf 5a1a 	vldr	s11, [pc, #104]	@ bc <tm_ozellik+0xbc>
+  56:	ee67 7a84 	vmul.f32	s15, s15, s8
+  5a:	4602      	mov	r2, r0
+  5c:	2300      	movs	r3, #0
+  5e:	eef0 6a65 	vmov.f32	s13, s11
+  62:	ee04 3a90 	vmov	s9, r3
+  66:	4694      	mov	ip, r2
+  68:	ed9c 6a00 	vldr	s12, [ip]
+  6c:	eef8 4ae4 	vcvt.f32.s32	s9, s9
+  70:	ee36 6a67 	vsub.f32	s12, s12, s15
+  74:	ee74 4ac3 	vsub.f32	s9, s9, s6
+  78:	3301      	adds	r3, #1
+  7a:	2b20      	cmp	r3, #32
+  7c:	ee46 6a06 	vmla.f32	s13, s12, s12
+  80:	f102 0210 	add.w	r2, r2, #16
+  84:	ee44 5a86 	vmla.f32	s11, s9, s12
+  88:	d1eb      	bne.n	62 <tm_ozellik+0x62>
+  8a:	ee66 6a84 	vmul.f32	s13, s13, s8
+  8e:	ece1 7a01 	vstmia	r1!, {s15}
+  92:	eef1 7ae6 	vsqrt.f32	s15, s13
+  96:	3004      	adds	r0, #4
+  98:	4284      	cmp	r4, r0
+  9a:	ed81 7a07 	vstr	s14, [r1, #28]
+  9e:	edc1 7a03 	vstr	s15, [r1, #12]
+  a2:	eec5 7aa3 	vdiv.f32	s15, s11, s7
+  a6:	ed81 5a0b 	vstr	s10, [r1, #44]	@ 0x2c
+  aa:	edc1 7a0f 	vstr	s15, [r1, #60]	@ 0x3c
+  ae:	d1b0      	bne.n	12 <tm_ozellik+0x12>
+  b0:	bd10      	pop	{r4, pc}
+  b2:	bf00      	nop
+  b4:	3d000000 	.word	0x3d000000
+  b8:	452a8000 	.word	0x452a8000
+  bc:	00000000 	.word	0x00000000
+
+Disassembly of section .text.tm_girdi_kuantize:
+
+00000000 <tm_girdi_kuantize>:
+   0:	b570      	push	{r4, r5, r6, lr}
+   2:	4a19      	ldr	r2, [pc, #100]	@ (68 <tm_girdi_kuantize+0x68>)
+   4:	4c19      	ldr	r4, [pc, #100]	@ (6c <tm_girdi_kuantize+0x6c>)
+   6:	ed9f 7a1a 	vldr	s14, [pc, #104]	@ 70 <tm_girdi_kuantize+0x70>
+   a:	3901      	subs	r1, #1
+   c:	f100 0550 	add.w	r5, r0, #80	@ 0x50
+  10:	eef6 6a00 	vmov.f32	s13, #96	@ 0x3f000000  0.5
+  14:	f06f 067f 	mvn.w	r6, #127	@ 0x7f
+  18:	ecf0 7a01 	vldmia	r0!, {s15}
+  1c:	ecb4 6a01 	vldmia	r4!, {s12}
+  20:	ecf2 5a01 	vldmia	r2!, {s11}
+  24:	ee77 7ac6 	vsub.f32	s15, s15, s12
+  28:	ee87 6aa5 	vdiv.f32	s12, s15, s11
+  2c:	eec6 7a07 	vdiv.f32	s15, s12, s14
+  30:	ee77 7aa6 	vadd.f32	s15, s15, s13
+  34:	eebd 6ae7 	vcvt.s32.f32	s12, s15
+  38:	ee16 3a10 	vmov	r3, s12
+  3c:	eeb8 6ac6 	vcvt.f32.s32	s12, s12
+  40:	eeb4 6ae7 	vcmpe.f32	s12, s15
+  44:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+  48:	bfc8      	it	gt
+  4a:	f103 33ff 	addgt.w	r3, r3, #4294967295
+  4e:	3307      	adds	r3, #7
+  50:	2b7f      	cmp	r3, #127	@ 0x7f
+  52:	bfa8      	it	ge
+  54:	237f      	movge	r3, #127	@ 0x7f
+  56:	42b3      	cmp	r3, r6
+  58:	bfb8      	it	lt
+  5a:	4633      	movlt	r3, r6
+  5c:	4285      	cmp	r5, r0
+  5e:	f801 3f01 	strb.w	r3, [r1, #1]!
+  62:	d1d9      	bne.n	18 <tm_girdi_kuantize+0x18>
+  64:	bd70      	pop	{r4, r5, r6, pc}
+  66:	bf00      	nop
+	...
+  70:	3da7e1f5 	.word	0x3da7e1f5
+
+Disassembly of section .text.tm_ileri:
+
+00000000 <tm_ileri>:
+   0:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+   4:	b085      	sub	sp, #20
+   6:	f8df e13c 	ldr.w	lr, [pc, #316]	@ 144 <tm_ileri+0x144>
+   a:	f8df 813c 	ldr.w	r8, [pc, #316]	@ 148 <tm_ileri+0x148>
+   e:	f8df 913c 	ldr.w	r9, [pc, #316]	@ 14c <tm_ileri+0x14c>
+  12:	4e47      	ldr	r6, [pc, #284]	@ (130 <tm_ileri+0x130>)
+  14:	9001      	str	r0, [sp, #4]
+  16:	468b      	mov	fp, r1
+  18:	f10d 0c08 	add.w	ip, sp, #8
+  1c:	2500      	movs	r5, #0
+  1e:	2701      	movs	r7, #1
+  20:	f85e 3b04 	ldr.w	r3, [lr], #4
+  24:	9300      	str	r3, [sp, #0]
+  26:	2300      	movs	r3, #0
+  28:	461a      	mov	r2, r3
+  2a:	9c01      	ldr	r4, [sp, #4]
+  2c:	5990      	ldr	r0, [r2, r6]
+  2e:	58a4      	ldr	r4, [r4, r2]
+  30:	fa2f fa80 	sxtb16	sl, r0
+  34:	3204      	adds	r2, #4
+  36:	2a14      	cmp	r2, #20
+  38:	fa2f f184 	sxtb16	r1, r4
+  3c:	fa2f f090 	sxtb16	r0, r0, ror #8
+  40:	fb2a 3301 	smlad	r3, sl, r1, r3
+  44:	fa2f f494 	sxtb16	r4, r4, ror #8
+  48:	fb20 3304 	smlad	r3, r0, r4, r3
+  4c:	d1ed      	bne.n	2a <tm_ileri+0x2a>
+  4e:	f858 0b04 	ldr.w	r0, [r8], #4
+  52:	9900      	ldr	r1, [sp, #0]
+  54:	f859 4b04 	ldr.w	r4, [r9], #4
+  58:	f1a0 0a21 	sub.w	sl, r0, #33	@ 0x21
+  5c:	f1c0 0221 	rsb	r2, r0, #33	@ 0x21
+  60:	4419      	add	r1, r3
+  62:	fa07 fa0a 	lsl.w	sl, r7, sl
+  66:	1e43      	subs	r3, r0, #1
+  68:	fa27 f202 	lsr.w	r2, r7, r2
+  6c:	ea4a 0202 	orr.w	r2, sl, r2
+  70:	fa07 f303 	lsl.w	r3, r7, r3
+  74:	fbc1 3204 	smlal	r3, r2, r1, r4
+  78:	f1c0 0420 	rsb	r4, r0, #32
+  7c:	f1b0 0120 	subs.w	r1, r0, #32
+  80:	fa02 f404 	lsl.w	r4, r2, r4
+  84:	fa23 f300 	lsr.w	r3, r3, r0
+  88:	bf58      	it	pl
+  8a:	fa42 f101 	asrpl.w	r1, r2, r1
+  8e:	ea43 0304 	orr.w	r3, r3, r4
+  92:	bf58      	it	pl
+  94:	430b      	orrpl	r3, r1
+  96:	3b80      	subs	r3, #128	@ 0x80
+  98:	2b7f      	cmp	r3, #127	@ 0x7f
+  9a:	bfa8      	it	ge
+  9c:	237f      	movge	r3, #127	@ 0x7f
+  9e:	f06f 027f 	mvn.w	r2, #127	@ 0x7f
+  a2:	4293      	cmp	r3, r2
+  a4:	f105 0501 	add.w	r5, r5, #1
+  a8:	bfb8      	it	lt
+  aa:	4613      	movlt	r3, r2
+  ac:	2d08      	cmp	r5, #8
+  ae:	f80c 3b01 	strb.w	r3, [ip], #1
+  b2:	f106 0614 	add.w	r6, r6, #20
+  b6:	d1b3      	bne.n	20 <tm_ileri+0x20>
+  b8:	9802      	ldr	r0, [sp, #8]
+  ba:	9903      	ldr	r1, [sp, #12]
+  bc:	fa2f f580 	sxtb16	r5, r0
+  c0:	fa2f f481 	sxtb16	r4, r1
+  c4:	2600      	movs	r6, #0
+  c6:	fa2f f090 	sxtb16	r0, r0, ror #8
+  ca:	fa2f f191 	sxtb16	r1, r1, ror #8
+  ce:	4b19      	ldr	r3, [pc, #100]	@ (134 <tm_ileri+0x134>)
+  d0:	fa2f f283 	sxtb16	r2, r3
+  d4:	fa2f f393 	sxtb16	r3, r3, ror #8
+  d8:	fb22 6205 	smlad	r2, r2, r5, r6
+  dc:	fb23 2200 	smlad	r2, r3, r0, r2
+  e0:	4b15      	ldr	r3, [pc, #84]	@ (138 <tm_ileri+0x138>)
+  e2:	fa2f f783 	sxtb16	r7, r3
+  e6:	fa2f f393 	sxtb16	r3, r3, ror #8
+  ea:	fb27 2204 	smlad	r2, r7, r4, r2
+  ee:	fb23 2301 	smlad	r3, r3, r1, r2
+  f2:	f503 5302 	add.w	r3, r3, #8320	@ 0x2080
+  f6:	3313      	adds	r3, #19
+  f8:	f8cb 3000 	str.w	r3, [fp]
+  fc:	4b0f      	ldr	r3, [pc, #60]	@ (13c <tm_ileri+0x13c>)
+  fe:	fa2f f283 	sxtb16	r2, r3
+ 102:	fa2f f393 	sxtb16	r3, r3, ror #8
+ 106:	fb22 6205 	smlad	r2, r2, r5, r6
+ 10a:	fb23 2200 	smlad	r2, r3, r0, r2
+ 10e:	4b0c      	ldr	r3, [pc, #48]	@ (140 <tm_ileri+0x140>)
+ 110:	fa2f f083 	sxtb16	r0, r3
+ 114:	fa2f f393 	sxtb16	r3, r3, ror #8
+ 118:	fb20 2204 	smlad	r2, r0, r4, r2
+ 11c:	fb23 2301 	smlad	r3, r3, r1, r2
+ 120:	f503 439f 	add.w	r3, r3, #20352	@ 0x4f80
+ 124:	336d      	adds	r3, #109	@ 0x6d
+ 126:	f8cb 3004 	str.w	r3, [fp, #4]
+ 12a:	b005      	add	sp, #20
+ 12c:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+ 130:	00000000 	.word	0x00000000
+ 134:	7f852955 	.word	0x7f852955
+ 138:	fcb711ff 	.word	0xfcb711ff
+ 13c:	b86cffc3 	.word	0xb86cffc3
+ 140:	ef383b54 	.word	0xef383b54
+	...
+
+Disassembly of section .text.tm_siniflandir:
+
+00000000 <tm_siniflandir>:
+   0:	b500      	push	{lr}
+   2:	b09d      	sub	sp, #116	@ 0x74
+   4:	a908      	add	r1, sp, #32
+   6:	f7ff fffe 	bl	0 <tm_siniflandir>
+   a:	a903      	add	r1, sp, #12
+   c:	a808      	add	r0, sp, #32
+   e:	f7ff fffe 	bl	0 <tm_siniflandir>
+  12:	a803      	add	r0, sp, #12
+  14:	a901      	add	r1, sp, #4
+  16:	f7ff fffe 	bl	0 <tm_siniflandir>
+  1a:	e9dd 3001 	ldrd	r3, r0, [sp, #4]
+  1e:	4298      	cmp	r0, r3
+  20:	bfd4      	ite	le
+  22:	2000      	movle	r0, #0
+  24:	2001      	movgt	r0, #1
+  26:	b01d      	add	sp, #116	@ 0x74
+  28:	f85d fb04 	ldr.w	pc, [sp], #4

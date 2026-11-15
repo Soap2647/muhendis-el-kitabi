@@ -1,0 +1,5 @@
+init,test_ort,test_sd
+kucuk,0.1028,0.0000
+xavier,0.3306,0.1302
+he,0.7426,0.1998
+he+BN,0.9648,0.0042

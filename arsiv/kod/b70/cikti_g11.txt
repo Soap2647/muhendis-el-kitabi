@@ -1,0 +1,2 @@
+egri satir 36
+['D', 'il', ' modeli', ' bir', ' sonraki', ' t', 'ok', 'eni', ' tahmin', ' eder', '.']

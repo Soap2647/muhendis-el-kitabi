@@ -1,0 +1,14 @@
+adim 0  kayip=2.311190128326416  logit_maks=0.152
+adim 1  kayip=inf  logit_maks=4.61e+05
+adim 2  kayip=nan  logit_maks=nan
+adim 3  kayip=nan  logit_maks=nan
+adim 4  kayip=nan  logit_maks=nan
+adim 5  kayip=nan  logit_maks=nan
+
+Kararli: F.cross_entropy ayni veride:
+adim 0  kayip=2.311189889907837
+adim 1  kayip=205397.140625
+adim 2  kayip=4.678431854611661e+16
+adim 3  kayip=388077092864.0
+adim 4  kayip=491.6092224121094
+adim 5  kayip=457.5995178222656

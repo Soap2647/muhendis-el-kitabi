@@ -1,0 +1,8 @@
+Tablo: a=31 b=7 c=2 d=0, n=40
+Model 1 dogruluk = 0.9500
+Model 2 dogruluk = 0.8250
+Fark (1-2)       = 0.1250
+chi2 (sureklilik duzeltmeli) = 1.7778, p = 0.1824
+tam binom: X ~ Bin(9, 0.5), P(X<=2) = 46/512
+tam iki yonlu p = 0.1797
+scipy binomtest = 0.1797

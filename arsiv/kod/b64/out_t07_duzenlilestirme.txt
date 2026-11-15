@@ -1,0 +1,18 @@
+256x2 MLP, Adam lr=1e-3, batch 32, 60 epoch, 5 tohum
+(test kumesi: 360 ornek; egitim dogrulugu: cikarim modu)
+
+temel (dropout 0, wd 0)  egitim=1.0000+-0.0000
+                         test=0.9733+-0.0025 ECE=0.0195+-0.0030
+                         en iyi ep (val)=[45, 57, 59, 48, 43]
+dropout 0.2              egitim=0.9998+-0.0004
+                         test=0.9756+-0.0023 ECE=0.0164+-0.0011
+                         en iyi ep (val)=[33, 55, 51, 59, 53]
+dropout 0.5              egitim=1.0000+-0.0000
+                         test=0.9783+-0.0023 ECE=0.0152+-0.0021
+                         en iyi ep (val)=[45, 57, 59, 59, 43]
+AdamW wd=0.1             egitim=1.0000+-0.0000
+                         test=0.9722+-0.0020 ECE=0.0167+-0.0027
+                         en iyi ep (val)=[57, 56, 53, 48, 54]
+etiket yumusatma 0.1     egitim=1.0000+-0.0000
+                         test=0.9878+-0.0032 ECE=0.1136+-0.0053
+                         en iyi ep (val)=[55, 45, 44, 57, 55]

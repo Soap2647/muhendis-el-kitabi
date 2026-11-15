@@ -1,0 +1,9 @@
+Kosinus: torch ile max fark = 5.20e-18
+Isinma adim 0,29,30: 0.000333 0.010000 0.010000
+MLP sabit           test = 0.9728 +- 0.0046
+MLP kosinus         test = 0.9761 +- 0.0015
+MLP isinma+kosinus  test = 0.9767 +- 0.0015
+
+Derin ag (12 katman), Adam lr=1e-2, 10 epoch (~340 adim):
+  isinmasiz        tepe=2.309 son=1.669 test=0.346
+  isinma 200 adim  tepe=2.305 son=1.207 test=0.452

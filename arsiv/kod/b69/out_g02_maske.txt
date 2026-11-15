@@ -1,0 +1,19 @@
+--- Nedensel maske: gelecek degisince gecmis? ---
+maske (1 = gorulebilir):
+[[1 0 0 0 0 0]
+ [1 1 0 0 0 0]
+ [1 1 1 0 0 0]
+ [1 1 1 1 0 0]
+ [1 1 1 1 1 0]
+ [1 1 1 1 1 1]]
+t<4 satirlarinda fark: 0.0
+t>=4 satirlarinda fark: 0.5767878851858073
+3. satirin agirliklari: [0.133 0.582 0.151 0.133 0.    0.   ]
+maskesiz: t<4 fark: 0.8227768567947422
+--- Dolgu maskesi: 2 ornek, uzunluklar 5 ve 3 ---
+ornek 0: dolgu degisince cikti farki = 0.0e+00
+ornek 1: dolgu degisince cikti farki = 0.0e+00
+--- Tuzak: bir satirin tamamen maskelenmesi ---
+ilk satir: [nan nan nan]
+NaN sayisi: 2
+-1e9 ile satir: [0.333 0.333 0.333]

@@ -1,0 +1,4 @@
+kalan benzersiz aciklama: 150
+egitim cifti: 20000  (mavi ucgen yok: True )
+naif kaydedildi
+maskeli kaydedildi

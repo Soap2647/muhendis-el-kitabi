@@ -1,0 +1,7 @@
+ACF (seri), gecikme 1,5,10,25,50:
+  [0.963, 0.864, 0.727, 0.358, 0.693]
+ACF (beyaz gürültü), gecikme 1,5,10:
+  [-0.006, -0.019, 0.023]
+Yaklaşık %95 bant: +-0.080
+trend    ilk: ort=  2.66 sd= 2.77 | ikinci: ort=  8.65 sd= 2.73
+AR(1)    ilk: ort= -0.33 sd= 1.16 | ikinci: ort= -0.34 sd= 1.11

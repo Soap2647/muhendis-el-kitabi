@@ -1,0 +1,7 @@
+küçük LEFT JOIN : [(2,), (3,)]
+küçük NOT IN    : []
+küçük NOT EXISTS: [(2,), (3,)]
+veri LEFT JOIN : 5 uçak
+veri NOT IN    : 0 uçak
+veri NOT EXISTS: 5 uçak
+NULL'lu görev sayısı: 256

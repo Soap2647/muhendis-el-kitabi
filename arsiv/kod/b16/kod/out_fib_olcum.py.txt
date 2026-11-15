@@ -1,0 +1,8 @@
+Python 3.12.10
+n=10 fib=     55 naif_cagri=     177 memo_hesap= 11
+n=20 fib=   6765 naif_cagri=   21891 memo_hesap= 21
+n=30 fib= 832040 naif_cagri= 2692537 memo_hesap= 31
+memo n=900: tamam
+memo n=1200: RecursionError
+tablo n=1200 basamak: 251
+recursion limit: 1000

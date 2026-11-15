@@ -1,0 +1,25 @@
+== Kilitsiz: kesme her yerde girebilir ==
+son deger = 1 : 18 sira
+son deger = 2 : 2 sira
+kaybolan siralar:
+   MMIMII
+   MMIIMI
+   MMIIIM
+   MIMMII
+   MIMIMI
+   MIMIIM
+   MIIMMI
+   MIIMIM
+   MIIIMM
+   IMMMII
+   IMMIMI
+   IMMIIM
+   IMIMMI
+   IMIMIM
+   IMIIMM
+   IIMMMI
+   IIMMIM
+   IIMIMM
+== PRIMASK: ana kodun 3 adimi bolunmez ==
+MMMIII -> 2
+IIIMMM -> 2

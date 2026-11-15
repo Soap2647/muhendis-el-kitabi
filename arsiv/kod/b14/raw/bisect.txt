@@ -1,0 +1,7 @@
+$ git bisect run /tmp/bisect_test.sh
+Bisecting: 24 revisions left to test after this (roughly 5 steps)
+Bisecting: 12 revisions left to test after this (roughly 4 steps)
+Bisecting: 5 revisions left to test after this (roughly 3 steps)
+Bisecting: 2 revisions left to test after this (roughly 2 steps)
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+a025cc69cb5303c0613df08aaa7a22847b9c64c1 is the first bad commit

@@ -1,0 +1,6 @@
+model                 parametre        MAC  medyan  p95
+MLP_64_256_128_10         50826        50432  0.0399  0.0837
+CNN_standart              29066      1208320  0.1477  0.3178
+CNN_ayrilabilir           13002       178176  0.3376  0.5867
+MobileNetV3_Small       2542856     56510400 10.3836 12.7717
+ResNet18               11689512   1814073344  27.728  33.807

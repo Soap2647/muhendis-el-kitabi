@@ -1,0 +1,35 @@
+$ python b34_olcum.py ../engine/veri
+== indeks ==
+telemetri_ucus_zaman   yok                      10.5373 ms
+telemetri_ucus_zaman   ix_tel_uz                 0.0762 ms
+gorev_ucak_durum       yok                       0.3332 ms
+gorev_ucak_durum       ix_g_ud                   0.0632 ms
+gorev_ucak_tarih       yok                       0.3606 ms
+gorev_ucak_tarih       ix_g_ub                   0.0757 ms
+gorev_ucak_tarih       ix_g_bu                   0.1887 ms
+== yazma ==
+ekle_1000_satir    otomatik      2410.54 ms
+ekle_1000_satir    tek_islem        7.11 ms
+100k_0_indeks      tek_islem       81.98 ms
+100k_1_indeks      tek_islem      161.47 ms
+100k_2_indeks      tek_islem      196.74 ms
+100k_3_indeks      tek_islem      232.73 ms
+== N+1 ==
+ham_dongu_n1     n=10 sorgu= 10     5.858 ms
+ham_tek_join     n=10 sorgu=  1     0.852 ms
+orm_skaler_n1    n=10 sorgu= 10     5.093 ms
+orm_skaler_tek   n=10 sorgu=  1     0.929 ms
+orm_tembel_n1    n=10 sorgu= 11    13.588 ms
+orm_selectinload n=10 sorgu=  2    15.057 ms
+ham_dongu_n1     n=30 sorgu= 30    19.707 ms
+ham_tek_join     n=30 sorgu=  1     1.589 ms
+orm_skaler_n1    n=30 sorgu= 30    16.349 ms
+orm_skaler_tek   n=30 sorgu=  1     1.729 ms
+orm_tembel_n1    n=30 sorgu= 31    55.730 ms
+orm_selectinload n=30 sorgu=  2    62.642 ms
+ham_dongu_n1     n=60 sorgu= 60    38.684 ms
+ham_tek_join     n=60 sorgu=  1     2.144 ms
+orm_skaler_n1    n=60 sorgu= 60    41.298 ms
+orm_skaler_tek   n=60 sorgu=  1     3.063 ms
+orm_tembel_n1    n=60 sorgu= 61    93.810 ms
+orm_selectinload n=60 sorgu=  2   125.095 ms

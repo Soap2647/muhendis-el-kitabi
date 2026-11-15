@@ -1,0 +1,16 @@
+== Ornek 1: [(1, 4), (2, 6), (3, 12)]
+U = 0.8333  RM siniri = 0.7798
+RTA: [(1, 4, 1), (2, 6, 3), (3, 12, 10)]
+RM kacirilan: 0
+== Ornek 2: [(2, 5), (4, 7)] U = 0.9714
+RTA: [(2, 5, 2), (4, 7, None)]
+RM kacirilan: 1
+EDF kacirilan: 0
+== 1000 rastgele kume, n=3, tohum=44 ==
+RM siniri      390 / 1000
+RTA            811 / 1000
+EDF U<=1       932 / 1000
+sim RM         811 / 1000
+RTA-sim ters     0 / 1000
+EDF sim        932 / 1000
+EDF-U ters       0 / 1000

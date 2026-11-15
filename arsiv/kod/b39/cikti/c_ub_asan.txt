@@ -1,0 +1,8 @@
+$ gcc -O1 -g -std=c11 -fsanitize=address,undefined \
+      -o ub_demo_san ub_demo.c tarih.c
+$ ./ub_demo_san
+tarih.c:13:18: runtime error: index 12 out of bounds
+==431==ERROR: AddressSanitizer: global-buffer-overflow
+READ of size 4 at ... thread T0
+    #0 ... in gun_sayisi_ham tarih.c:13
+[... ASan'in geri kalan satırları kısaltıldı]

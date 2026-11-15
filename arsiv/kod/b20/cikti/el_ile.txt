@@ -1,0 +1,4 @@
+$ g++ -O1 -g -Wall -Wextra -std=c++17 -fsanitize=address,undefined el_ile.cpp -o el_ile
+$ ./el_ile
+yakalandi: hata
+acik kilit = 1

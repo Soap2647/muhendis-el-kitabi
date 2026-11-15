@@ -1,0 +1,5 @@
+adım                                                 test MAE
+0. hatalı: rastgele, tüm veri ölçek, gelecek özelliği   0.1797
+1. rastgele -> zamana göre bölme                       0.1923
+2. ölçek yalnızca eğitimden                            0.2149
+3. geleceği gören özelliği kaldır                      0.2344

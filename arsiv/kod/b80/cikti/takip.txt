@@ -1,0 +1,25 @@
+dogrulama cerceve=0 acgozlu_iou  MOTA=0.7549 FN=94 FP=309 IDSW=19
+dogrulama cerceve=0 macar_iou    MOTA=0.7561 FN=90 FP=310 IDSW=20
+dogrulama cerceve=0 macar_tum    MOTA=0.1190 FN=71 FP=1367 IDSW=79
+dogrulama cerceve=0 byte         MOTA=0.6086 FN=68 FP=578 IDSW=28
+dogrulama cerceve=1 acgozlu_iou  MOTA=0.7909 FN=94 FP=247 IDSW=19
+dogrulama cerceve=1 macar_iou    MOTA=0.7921 FN=90 FP=248 IDSW=20
+dogrulama cerceve=1 macar_tum    MOTA=0.1794 FN=71 FP=1263 IDSW=79
+dogrulama cerceve=1 byte         MOTA=0.6400 FN=68 FP=524 IDSW=28
+secilen (yalnizca dogrulama): mod=macar_iou cerceve=1
+test   cer=0 acgozlu_iou  MOTA=0.7700 FN=91 FP=283 IDSW=25 (GT=1735)
+test   cer=0 macar_iou    MOTA=0.7712 FN=94 FP=279 IDSW=24 (GT=1735)
+test   cer=0 macar_tum    MOTA=0.2617 FN=68 FP=1151 IDSW=62 (GT=1735)
+test   cer=0 byte         MOTA=0.6012 FN=69 FP=593 IDSW=30 (GT=1735)
+test   cer=1 acgozlu_iou  MOTA=0.8127 FN=91 FP=209 IDSW=25 (GT=1735)
+test   cer=1 macar_iou    MOTA=0.8138 FN=94 FP=205 IDSW=24 (GT=1735)
+test   cer=1 macar_tum    MOTA=0.3372 FN=68 FP=1020 IDSW=62 (GT=1735)
+test   cer=1 byte         MOTA=0.6553 FN=69 FP=499 IDSW=30 (GT=1735)
+drift  cer=0 acgozlu_iou  MOTA=0.6875 FN=149 FP=384 IDSW=26 (GT=1789)
+drift  cer=0 macar_iou    MOTA=0.7043 FN=139 FP=366 IDSW=24 (GT=1789)
+drift  cer=0 macar_tum    MOTA=-0.4980 FN=90 FP=2415 IDSW=175 (GT=1789)
+drift  cer=0 byte         MOTA=0.3220 FN=104 FP=1023 IDSW=86 (GT=1789)
+drift  cer=1 acgozlu_iou  MOTA=0.7132 FN=149 FP=338 IDSW=26 (GT=1789)
+drift  cer=1 macar_iou    MOTA=0.7255 FN=139 FP=328 IDSW=24 (GT=1789)
+drift  cer=1 macar_tum    MOTA=-0.4354 FN=90 FP=2303 IDSW=175 (GT=1789)
+drift  cer=1 byte         MOTA=0.3488 FN=104 FP=975 IDSW=86 (GT=1789)

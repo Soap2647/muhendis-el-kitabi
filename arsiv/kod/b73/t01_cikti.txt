@@ -1,0 +1,21 @@
+(a) vektorlestirilmis ve dongulu kayip (N = 8, D = 16)
+tau=0.1  vektor=0.0622822516  dongu=0.0622822516  fark=2.1e-17
+tau=0.5  vektor=1.4441975240  dongu=1.4441975240  fark=0.0e+00
+
+(b) el ornegi: N = 2, birim vektorler, tau = 0.5
+benzerlik matrisi (sira: a0 a1 b0 b1):
+[[1.   0.   0.8  0.6 ]
+ [0.   1.   0.6  0.8 ]
+ [0.8  0.6  1.   0.96]
+ [0.6  0.8  0.96 1.  ]]
+kayip (vektor) = 0.870714
+kayip (dongu)  = 0.870714
+
+(c) tau taramasi, N = 128, D = 64, sabit tohum
+log(2N-1) = 5.5413
+tau    hizali   rastgele
+0.05   0.0000   8.5615
+0.10   0.0264   6.3922
+0.20   1.1456   5.7794
+0.50   3.6091   5.5906
+1.00   4.5624   5.5582

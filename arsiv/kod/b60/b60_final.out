@@ -1,0 +1,68 @@
+[1] w= [1. 0.] b= -1.0
+[1] SV= [2 0] marj= 2.0
+[1] alpha*y= [-0.5  0.5]
+[2] w= [0.3707 0.49  ] b= -1.181
+[2] marj= 3.2551 SV= 3
+[3] C taramasi
+  C=0.01 SV=107.8 marj=2.924 egitim=0.876 test=0.873+-0.062
+  C=0.1 SV=53.8 marj=1.531 egitim=0.917 test=0.897+-0.078
+  C=1 SV=36.0 marj=1.122 egitim=0.926 test=0.903+-0.068
+  C=10 SV=32.8 marj=0.988 egitim=0.926 test=0.897+-0.074
+  C=100 SV=31.6 marj=0.960 egitim=0.926 test=0.897+-0.074
+[4] Pegasos (meme kanseri, olcekli, C=1, 5 tohum)
+  epoch=50 bosluk%=12.041+-3.086 test=0.9661+-0.0094 sure=0.09s
+  epoch=200 bosluk%=1.903+-0.494 test=0.9626+-0.0088 sure=0.34s
+  epoch=1000 bosluk%=0.727+-0.275 test=0.9626+-0.0088 sure=1.66s
+  epoch=3000 bosluk%=0.179+-0.019 test=0.9626+-0.0088 sure=5.05s
+[5] SMO vs SVC(rbf)
+  t0 dual SMO=-46.7033 sk=-46.7034 SV=64/63 isaret=1.000
+  t1 dual SMO=-42.2710 sk=-42.2720 SV=59/58 isaret=1.000
+  t2 dual SMO=-44.4446 sk=-44.4447 SV=58/58 isaret=1.000
+  t3 dual SMO=-38.6425 sk=-38.6440 SV=54/54 isaret=1.000
+  t4 dual SMO=-36.7747 sk=-36.7776 SV=51/50 isaret=1.000
+[6] 2B test=0.456  3B test=1.000
+[7] maks fark = 1.42e-14
+[7] k(x,z)= 4.0  phi(x).phi(z)= 4.0
+[8] RBF ozdegerler: [1.65869 1.35871 0.97558 0.62297 0.38404]
+[8] -(x-z)^2 ozdeger: [ 20.       3.0384   0.       0.     -23.0384]
+[8] iz = 0.0
+[9] RBF izgarasi (test: 5 tohum ortalamasi)
+  g=0.1 C=0.1 egitim=0.796 test=0.803+-0.046 SV=120
+  g=0.1 C=1 egitim=0.833 test=0.820+-0.041 SV=72
+  g=0.1 C=100 egitim=0.916 test=0.907+-0.040 SV=47
+  g=1 C=0.1 egitim=0.874 test=0.887+-0.049 SV=100
+  g=1 C=1 egitim=0.937 test=0.943+-0.027 SV=50
+  g=1 C=100 egitim=0.949 test=0.930+-0.024 SV=26
+  g=10 C=0.1 egitim=0.946 test=0.930+-0.027 SV=140
+  g=10 C=1 egitim=0.951 test=0.933+-0.021 SV=75
+  g=10 C=100 egitim=0.983 test=0.910+-0.020 SV=48
+[10] KRR max fark = 2.66e-15
+[11] SVC(rbf) egitim suresi
+  n=500 sure=0.0043s SV=299 Gram=2.0MB
+  n=1000 sure=0.0165s SV=528 Gram=8.0MB
+  n=2000 sure=0.0484s SV=760 Gram=32.0MB
+  n=4000 sure=0.1500s SV=1177 Gram=128.0MB
+  n=8000 sure=0.5621s SV=2208 Gram=512.0MB
+  egim(tum)=1.725 egim(n<=4000)=1.693
+[12] RFF yaklasim hatasi (en buyuk mutlak fark)
+  D=5 bizim=1.57119+-0.10559 sk=1.51674+-0.12634
+  D=10 bizim=1.15617+-0.09566 sk=1.11617+-0.12519
+  D=25 bizim=0.71087+-0.05451 sk=0.74316+-0.08997
+  D=50 bizim=0.53532+-0.04238 sk=0.49938+-0.03707
+  D=100 bizim=0.36005+-0.02637 sk=0.36381+-0.03047
+  D=250 bizim=0.24141+-0.03248 sk=0.24291+-0.02561
+  D=500 bizim=0.16438+-0.01716 sk=0.17200+-0.01556
+  D=1000 bizim=0.10617+-0.00626 sk=0.12189+-0.01107
+  D=2000 bizim=0.08803+-0.00981 sk=0.07902+-0.00809
+[12b] RFF ile siniflandirma (gamma=1/30)
+  D=10 test=0.8667+-0.0226
+  D=50 test=0.9392+-0.0218
+  D=200 test=0.9567+-0.0176
+  D=1000 test=0.9696+-0.0086
+  tam RBF SVC test=0.9661+-0.0094
+[13] olceksiz=0.9158+-0.0136 olcekli=0.9690+-0.0120
+[14] SVC(rbf) test=0.9815  LinearSVC(OvR) test=0.9481
+  ikili siniflandirici: OvO=45, OvR=10
+[15] dengesiz veri (95/5), lineer SVC, 5 tohum
+  agirliksiz dengeli=0.5786+-0.1337 geri-cagirma=0.1588
+  balanced   dengeli=0.8670+-0.0439 geri-cagirma=0.8837

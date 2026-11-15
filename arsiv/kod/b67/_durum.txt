@@ -1,0 +1,11 @@
+01_iou_nms rc=0
+02_ap rc=0
+03_anchor rc=0
+08_takip rc=0
+08b_kesisim rc=0
+04 rc=0
+05 rc=0
+06 rc=0
+07 rc=0
+09 rc=0
+BITTI

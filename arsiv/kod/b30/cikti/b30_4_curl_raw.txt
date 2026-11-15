@@ -1,0 +1,44 @@
+$ S=http://127.0.0.1:8100
+$ curl -i $S/ornek/not.txt
+HTTP/1.1 200 OK
+Connection: keep-alive
+ETag: "7932a007eaf77af7"
+Cache-Control: max-age=60
+Content-Type: text/plain
+Content-Length: 25
+
+Bu bir metin dosyasidir.
+
+$ curl -i -H 'If-None-Match: "7932a007eaf77af7"' $S/ornek/not.txt
+HTTP/1.1 304 Not Modified
+Connection: keep-alive
+ETag: "7932a007eaf77af7"
+Cache-Control: max-age=60
+
+
+$ curl -i $S/yok.html
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 15
+
+404 Bulunamadi
+
+$ curl -i -X POST $S/
+HTTP/1.1 405 Method Not Allowed
+Connection: keep-alive
+Allow: GET, HEAD
+Content-Length: 0
+
+
+$ curl -i --path-as-is $S/../b30_4_http_sunucu.py
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 15
+
+404 Bulunamadi
+
+$ curl -v $S/ornek/not.txt $S/index.html
+< HTTP/1.1 200 OK
+* Connection #0 to host 127.0.0.1:8100 left intact
+< HTTP/1.1 200 OK
+* Connection #0 to host 127.0.0.1:8100 left intact

@@ -1,0 +1,7 @@
+ornek sayisi      : 3000
+ortalama          : 1000.015 us
+standart sapma   : 46.422 us
+hedef periyot    : 1000.0 us
+medyan (p50)     : 999.084 us
+p99              : 1132.013 us
+en kucuk / buyuk : 449.743 / 1582.848 us

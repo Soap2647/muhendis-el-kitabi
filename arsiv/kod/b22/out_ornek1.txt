@@ -1,0 +1,9 @@
+ekle      metin='Merhaba'       geri=1 ileri=0
+ekle      metin='Merhaba dunya' geri=2 ileri=0
+sil 5     metin='Merhaba '      geri=3 ileri=0
+geri      metin='Merhaba dunya' geri=2 ileri=1
+geri      metin='Merhaba'       geri=1 ileri=2
+yinele    metin='Merhaba dunya' geri=2 ileri=1
+ekle      metin='Merhaba dunya!' geri=3 ileri=0
+yinele -> False
+son       metin='Merhaba dunya!' geri=3 ileri=0

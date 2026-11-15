@@ -1,0 +1,10 @@
+Yanit: 61 bayt
+Birinci yanit kaydinin adi (ofset 29):
+  ofset 29'den ad okunuyor
+  29: c0 0c  isaretci -> ofset 12
+  12: 07       etiket "example"
+  20: 03       etiket "com"
+  24: 00       ad sonu
+kimlik=0x1A2B rcode=0 kayit=2
+  example.com tip=1 TTL=87 -> 104.20.23.154
+  example.com tip=1 TTL=87 -> 172.66.147.243

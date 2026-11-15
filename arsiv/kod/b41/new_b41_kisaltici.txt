@@ -1,0 +1,21 @@
+Sayaç -> kod uzunluğu (base62)
+           1 -> 1        (1 karakter)
+          61 -> Z        (1 karakter)
+          62 -> 10       (2 karakter)
+        3843 -> ZZ       (2 karakter)
+        3844 -> 100      (3 karakter)
+     1000000 -> 4c92     (4 karakter)
+  1000000000 -> 15FTGg   (6 karakter)
+Kontrol: coz(kodla(n)) == n: True
+
+Kırpılmış hash, 32 bit, 1000000 URL
+ölçülen çakışan kayıt : 118
+beklenen (doğum günü) : 116.4
+
+Snowflake tarzı üretici (sabit saat, 4 makine)
+üretilen = 100000, tekil = 100000
+örnek ID : 20971528192
+base62   : mTgouI (6 karakter)
+zaman    : 5000 ms
+makine   : 2
+sıra     : 0

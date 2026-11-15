@@ -1,0 +1,14 @@
+Tek batch testi (32 ornek, Adam 1e-3, 500 adim):
+dogru         0:2.311 100:0.020 200:0.003 300:0.001 400:0.001 499:0.000
+              dogruluk=1.000
+cift_softmax  0:2.303 100:1.676 200:1.613 300:1.492 400:1.491 499:1.491
+              dogruluk=0.969
+etiket_kaydi  0:2.305 100:0.066 200:0.007 300:0.003 400:0.002 499:0.001
+              dogruluk=1.000
+zero_grad_yok 0:2.311 100:0.961 200:0.575 300:0.291 400:0.383 499:0.052
+              dogruluk=0.969
+
+Dropout acik (eval unutuldu): tahmin farki = 23 / 360
+Dogru eval modu: iki tahmin arasi fark = 0
+BN: train modunda ve eval modunda tahmin farki = 0 / 360
+BN dogrulama dogrulugu: train modunda=0.9833, eval modunda=0.9833

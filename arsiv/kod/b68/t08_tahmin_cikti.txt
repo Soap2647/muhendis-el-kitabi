@@ -1,0 +1,21 @@
+tohum 11 RNN   en iyi epoch= 7  sure= 58.8 s  param=1249
+tohum 11 LSTM  en iyi epoch=17  sure=157.3 s  param=4897
+tohum 11 GRU   en iyi epoch=10  sure=166.3 s  param=3681
+tohum 11 TCN   en iyi epoch= 6  sure= 62.3 s  param=22337
+tohum 12 RNN   en iyi epoch=14  sure=138.1 s  param=1249
+tohum 12 LSTM  en iyi epoch=14  sure=194.0 s  param=4897
+tohum 12 GRU   en iyi epoch=23  sure=264.8 s  param=3681
+tohum 12 TCN   en iyi epoch= 6  sure= 54.1 s  param=22337
+tohum 13 RNN   en iyi epoch=13  sure= 64.4 s  param=1249
+tohum 13 LSTM  en iyi epoch= 5  sure= 28.3 s  param=4897
+tohum 13 GRU   en iyi epoch=28  sure=255.2 s  param=3681
+tohum 13 TCN   en iyi epoch=13  sure= 82.7 s  param=22337
+
+Model                  MAE ort+-sd        RMSE ort+-sd      
+naif                   0.2345+-0.0024  0.2929+-0.0032
+hareketli ort. (10)    0.1819+-0.0003  0.2275+-0.0012
+AR(40)                 0.1777+-0.0002  0.2221+-0.0009
+RNN                    0.1789+-0.0055  0.2241+-0.0076
+LSTM                   0.1746+-0.0007  0.2183+-0.0008
+GRU                    0.1732+-0.0018  0.2167+-0.0030
+TCN                    0.1767+-0.0016  0.2205+-0.0015

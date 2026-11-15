@@ -1,0 +1,8 @@
+Yöntem                       bölme          MAE     RMSE
+kNN (k=5)                    zaman       0.2344   0.2940
+kNN (k=5)                    rastgele    0.1942   0.2424
+Doğrusal                     zaman       0.1793   0.2258
+Doğrusal                     rastgele    0.1835   0.2289
+Doğrusal+gelecek             zaman       0.1171   0.1469
+Doğrusal (tüm veriyle ölçek) zaman       0.1794   0.2259
+test boyutu zaman=4800 rastgele=4798

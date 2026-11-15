@@ -1,0 +1,13 @@
+$ python mutasyon.py tarih.py mutasyon/test_zayif.py | head -12
+satır 3: 31 -> 32            HAYATTA
+satır 3: 28 -> 29            ÖLDÜ
+satır 3: 31 -> 32            HAYATTA
+satır 3: 30 -> 31            HAYATTA
+satır 3: 31 -> 32            HAYATTA
+satır 3: 30 -> 31            HAYATTA
+satır 4: 31 -> 32            HAYATTA
+satır 4: 31 -> 32            HAYATTA
+satır 4: 30 -> 31            HAYATTA
+satır 4: 31 -> 32            HAYATTA
+satır 4: 30 -> 31            HAYATTA
+satır 4: 31 -> 32            HAYATTA

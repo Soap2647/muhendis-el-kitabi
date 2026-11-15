@@ -1,0 +1,13 @@
+
+=================================================================
+==661==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 4000 byte(s) in 1 object(s) allocated from:
+    #0 0x75b622cfe6c8 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:98
+    #1 0x5683da7834d7 in Tureyen::Tureyen() /mnt/c/Users/merty/AppData/Local/Temp/b20/yikici.cpp:23
+    #2 0x5683da7832d4 in main /mnt/c/Users/merty/AppData/Local/Temp/b20/yikici.cpp:32
+    #3 0x75b62242a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x75b62242a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x5683da7831e4 in _start (/mnt/c/Users/merty/AppData/Local/Temp/b20/yikici_yok_asan+0x11e4) (BuildId: 6b56f06e0dc2a614021a847ac382e3ca3696d447)
+
+SUMMARY: AddressSanitizer: 4000 byte(s) leaked in 1 allocation(s).

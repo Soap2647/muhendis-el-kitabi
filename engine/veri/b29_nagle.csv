@@ -1,0 +1,4 @@
+senaryo,medyan_ms,ortalama_ms
+A: tek yazı (Nagle fark etmez),0.067,0.067
+"B: iki yazı, Nagle AÇIK",43.999,44.009
+"C: iki yazı, TCP_NODELAY",0.054,0.075

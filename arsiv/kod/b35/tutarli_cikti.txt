@@ -1,0 +1,9 @@
+Anahtar sayısı: 100000, düğüm: 10 -> 11
+naif hash%N   taşınan oranı: 0.9103  (ideal 1/11 = 0.0909)
+halka v=1    taşınan=0.0074  yük_cv=0.7693
+halka v=10   taşınan=0.0788  yük_cv=0.2800
+halka v=40   taşınan=0.0813  yük_cv=0.1149
+halka v=100  taşınan=0.0925  yük_cv=0.0723
+halka v=200  taşınan=0.0890  yük_cv=0.0509
+naif yük_cv = 0.0123
+CSV yazildı

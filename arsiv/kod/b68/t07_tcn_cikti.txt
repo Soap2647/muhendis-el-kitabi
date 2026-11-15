@@ -1,0 +1,11 @@
+dilation=(1, 2, 4, 8)
+  formul alici alan = 1 + 2(k-1) sum(d) = 61
+  olculen en uzak etkili gecikme   = 60 (RF-1 = 60)
+  parametre sayisi (kanal=8)       = 1457
+dilation=(1, 2, 4, 8, 16)
+  formul alici alan = 1 + 2(k-1) sum(d) = 125
+  olculen en uzak etkili gecikme   = 124 (RF-1 = 124)
+  parametre sayisi (kanal=8)       = 1857
+nedensellik: t<60 için en büyük fark = 0.00e+00
+t>=60 için en büyük fark           = 6.18e+00
+LSTM (H=32, I=4) param = 4864, TCN (kanal=32, C=4) param = 22337

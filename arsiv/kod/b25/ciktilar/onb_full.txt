@@ -1,0 +1,1 @@
+N=128 sutun erisim=16384 isabet=15360 kacirma=1024 oran=0.062

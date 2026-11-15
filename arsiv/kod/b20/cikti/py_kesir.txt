@@ -1,0 +1,4 @@
+$ python py_kesir.py
+100000 islemde Fraction ile uyusmazlik: 0
+Kesir(-3, 2) Kesir(0, 1) Kesir(5, 6)
+kume: {Kesir(1, 2)}

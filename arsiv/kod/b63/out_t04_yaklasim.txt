@@ -1,0 +1,9 @@
+sifir_sapma h= 2  eğitim RMSE=0.6250  dizi RMSE=0.6393 +- 0.1130
+sifir_sapma h= 8  eğitim RMSE=0.3003  dizi RMSE=0.3098 +- 0.0036
+sifir_sapma h=32  eğitim RMSE=0.3120  dizi RMSE=0.3225 +- 0.0141
+yayilmis    h= 2  eğitim RMSE=0.5446  dizi RMSE=0.5473 +- 0.1332
+   tohum bazında dizi RMSE: 0.519 0.382 0.791 0.525 0.519
+yayilmis    h= 8  eğitim RMSE=0.2138  dizi RMSE=0.2243 +- 0.0848
+   tohum bazında dizi RMSE: 0.300 0.220 0.063 0.274 0.265
+yayilmis    h=32  eğitim RMSE=0.0674  dizi RMSE=0.0704 +- 0.0604
+   tohum bazında dizi RMSE: 0.033 0.049 0.029 0.190 0.050

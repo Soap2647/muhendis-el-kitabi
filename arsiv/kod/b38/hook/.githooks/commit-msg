@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python -I -X utf8 tools/mesaj.py "$1"

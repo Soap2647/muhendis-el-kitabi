@@ -1,0 +1,22 @@
+yontem         acc    ECE    AUROC(guven)  AUROC(epi)
+Tek model     0.947  0.0218  0.814            -     (tohum 0)
+Sicaklik      0.947  0.0334  0.817            -     (tohum 0)
+MC dropout    0.950  0.0276  0.822         0.826   (tohum 0)
+Topluluk      0.953  0.0253  0.843         0.910   (tohum 0)
+  sicaklik T = 0.78  test n = 360
+Tek model     0.950  0.0196  0.816            -     (tohum 1)
+Sicaklik      0.950  0.0236  0.819            -     (tohum 1)
+MC dropout    0.950  0.0357  0.820         0.819   (tohum 1)
+Topluluk      0.953  0.0161  0.836         0.877   (tohum 1)
+  sicaklik T = 0.804  test n = 360
+Tek model     0.956  0.0173  0.756            -     (tohum 2)
+Sicaklik      0.956  0.0294  0.761            -     (tohum 2)
+MC dropout    0.953  0.0384  0.794         0.825   (tohum 2)
+Topluluk      0.953  0.0171  0.862         0.938   (tohum 2)
+  sicaklik T = 0.671  test n = 360
+
+Ortalama +- sapma (3 tohum):
+Tek model   ECE 0.0196 +- 0.0018  AUROC 0.795 +- 0.028
+Sicaklik    ECE 0.0288 +- 0.0040  AUROC 0.799 +- 0.027
+MC dropout  ECE 0.0339 +- 0.0046  AUROC 0.812 +- 0.013  epi 0.823 +- 0.003
+Topluluk    ECE 0.0195 +- 0.0041  AUROC 0.847 +- 0.011  epi 0.908 +- 0.025

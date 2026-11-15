@@ -1,0 +1,23 @@
+shape: (3, 4) dtype: torch.float32
+device: cpu stride: (4, 1)
+offset: 0
+storage bayt: 48
+
+y = x.t()  shape: (4, 3) stride: (1, 4)
+aynı storage: True
+y.is_contiguous(): False
+view hatası: view size is not compatible with input tenso ...
+reshape(-1) aynı storage: False
+contiguous stride: (3, 1) aynı storage: False
+
+x[1:, ::2] shape: (2, 2) stride: (4, 2) offset: 4
+
+yayın (3,1)+(4,) -> (3, 4)
+tensor([[0., 1., 2., 3.],
+        [0., 1., 2., 3.],
+        [0., 1., 2., 3.]])
+
+finfo:
+torch.float16   max=6.5504e+04 eps=9.7656e-04 bit=16
+torch.bfloat16  max=3.3895e+38 eps=7.8125e-03 bit=16
+torch.float32   max=3.4028e+38 eps=1.1921e-07 bit=32

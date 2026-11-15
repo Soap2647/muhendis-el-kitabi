@@ -1,0 +1,6 @@
+Detektör                     esik   prec  recall  sicrama  kayma    FAR/s
+zamansal AR(5)              0.751  0.222   0.009     1.00   0.00    184.6
+zamansal AR(40)             0.725  0.368   0.010     1.00   0.00    105.5
+bağlamsal (v, |yuv|)        0.483  0.980   0.817     1.00   0.82    105.5
+bağlamsal + MA20            0.125  0.862   0.929     1.00   0.93    923.1
+bağlamsal katsayılar (sabit, v, |yuv|): [5.9753 0.3514 0.0502]

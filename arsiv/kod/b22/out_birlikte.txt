@@ -1,0 +1,6 @@
+reddedildi: inis_emri
+YERDE -kalkis_emri-> KALKIS
+KALKIS -irtifa_ulasti-> SEYIR
+SEYIR -inis_emri-> INIS
+INIS -geri-> SEYIR
+son durum: SEYIR

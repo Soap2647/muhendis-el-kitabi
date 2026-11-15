@@ -1,0 +1,3 @@
+$ ./kirik_test
+  BAŞARISIZ kirik_test.c:13: gun_sayisi(2024, 4) == 31 (30 != 31)
+9 geçti, 1 başarısız

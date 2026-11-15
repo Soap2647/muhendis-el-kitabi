@@ -1,0 +1,15 @@
+== cnn: sinif basina AP (tum noktalar) ==
+daire  AP = 0.9360  (son recall = 0.955)
+kare   AP = 0.9572  (son recall = 0.968)
+ucgen  AP = 0.8884  (son recall = 0.919)
+mAP@0.5 = 0.9272
+
+== taban: sinif basina AP (tum noktalar) ==
+daire  AP = 0.6747  (son recall = 0.783)
+kare   AP = 0.7179  (son recall = 0.718)
+ucgen  AP = 0.7506  (son recall = 0.836)
+mAP@0.5 = 0.7144
+
+ornek satir sayisi: 30
+kaydedildi: engine/veri/b67_pr_egri.csv,
+            engine/veri/b67_tespit_ornek.csv

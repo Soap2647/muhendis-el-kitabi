@@ -1,0 +1,3 @@
+tampon=  1 -> satır=3
+tampon=  4 -> satır=3
+tampon=100 -> satır=3

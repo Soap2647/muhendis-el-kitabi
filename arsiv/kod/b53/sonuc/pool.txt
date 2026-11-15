@@ -1,0 +1,14 @@
+kurulum      8 surec          0.5008 s
+seri         100000           0.0082 s
+chunksize    1               42.9431 s
+chunksize    10               1.8623 s
+chunksize    100              0.1958 s
+chunksize    1000             0.0400 s
+chunksize    10000            0.0244 s
+chunksize    3125             0.0258 s
+agir_seri    200x200000       2.3397 s
+agir_surec   200x200000       0.4066 s
+arg_dizi     50x8MB           0.3053 s
+surec_uret   50 tohum         0.0500 s
+dogruluk (arg): True  (uret): True
+CSV: b53_pool.csv

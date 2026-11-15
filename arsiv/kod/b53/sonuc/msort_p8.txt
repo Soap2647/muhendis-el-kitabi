@@ -1,0 +1,8 @@
+# N=16777216 thread=8 tekrar=3
+esik,medyan_s,hizlanma,dogru
+seri,1.4015,1.00,evet
+256,0.3655,3.83,evet
+4096,0.3473,4.04,evet
+65536,0.3376,4.15,evet
+1048576,0.3535,3.96,evet
+16777216,1.3684,1.02,evet

@@ -1,0 +1,10 @@
+# Derleme ve kapsama artefaktları git'e girmez (Bölüm 38)
+dist/
+__pycache__/
+*.o
+*.gcda
+*.gcno
+*.gcov
+crc32_kapsa
+crc32_test
+secrets/

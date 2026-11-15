@@ -1,0 +1,8 @@
+senaryo               n (formul)  guc (formul)  guc (sim)
+p0=0.050 p1=0.060   8158        0.800         0.801
+p0=0.050 p1=0.055   31234       0.800         0.801
+p0=0.050 p1=0.070   2213        0.800         0.802
+--- n yarisina inerse (p0=0.05, p1=0.06)
+n=4079 guc(sim)=0.508
+--- sahte alarm: p0=p1=0.05 (fark yok)
+alfa(sim)=0.049

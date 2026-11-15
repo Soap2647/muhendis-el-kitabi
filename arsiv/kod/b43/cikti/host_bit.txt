@@ -1,0 +1,8 @@
+bit islemleri: 100000 islem, hata = 0
+son r = 0x5DCE42E4
+bit-band: 96 kontrol, uyusmazlik = 0
+ODR bit 12 -> 0x424182B0
+ODR bit 0  -> 0x42418280
+uint8: a+b = 300, (uint8_t)(a+b) = 44
+a+b > 255 DOGRU (int karsilastirmasi)
+EXIT=0

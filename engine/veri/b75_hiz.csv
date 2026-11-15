@@ -1,0 +1,11 @@
+yontem,etkin_parametre,medyan_ms,p95_ms
+yogun_fp32,4349962,0.8692,1.7585
+yapilandirilmamis_50_yogun,2172928,0.9084,1.6651
+yapilandirilmamis_50_csr,2172928,1.7151,2.4219
+yapilandirilmamis_80_yogun,869171,0.7605,1.5093
+yapilandirilmamis_80_csr,869171,0.6992,1.1211
+yapilandirilmamis_90_yogun,434585,0.7413,1.4608
+yapilandirilmamis_90_csr,434585,0.3898,0.5248
+yapilandirilmamis_95_yogun,217293,0.788,1.6527
+yapilandirilmamis_95_csr,217293,0.2583,0.3494
+yapilandirilmis_kanal_50,2186250,0.3621,0.8091

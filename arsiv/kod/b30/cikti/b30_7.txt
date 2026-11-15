@@ -1,0 +1,15 @@
+Paket boyutu: 274 bayt
+Ilk 32 bayt:
+  00  02 01 06 00 39 03 f3 26 00 00 00 00 00 00 00 00
+  10  c0 a8 01 32 c0 a8 01 01 00 00 00 00 0a 1b 2c 3d
+  op        = 2
+  xid       = 0x3903F326
+  flags     = 0x0000
+  yiaddr    = 192.168.1.50
+  siaddr    = 192.168.1.1
+  chaddr    = 0a:1b:2c:3d:4e:5f
+  mesaj     = OFFER
+  maske     = 255.255.255.0
+  ag_gecidi = 192.168.1.1
+  dns       = 1.1.1.1
+  kira_s    = 86400

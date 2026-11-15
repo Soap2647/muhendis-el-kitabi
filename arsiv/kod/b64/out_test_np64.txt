@@ -1,0 +1,28 @@
+momentum (torch SGD)                   max fark = 0.000e+00   TAMAM
+nesterov (torch SGD)                   max fark = 0.000e+00   TAMAM
+adam (torch Adam)                      max fark = 1.110e-16   TAMAM
+adamw (torch AdamW)                    max fark = 2.220e-16   TAMAM
+adam_l2 (torch Adam+wd)                max fark = 2.220e-16   TAMAM
+
+Adam iz tablosu: theta0=1.0, lr=0.1, g=[0.5,-0.2,0.1]
+t=1 g=+0.50 m=0.05000 v=0.000250 mh=0.50000 vh=0.250000 theta=0.900000
+t=2 g=-0.20 m=0.02500 v=0.000290 mh=0.13158 vh=0.144947 theta=0.865439
+t=3 g=+0.10 m=0.03250 v=0.000299 mh=0.11993 vh=0.099920 theta=0.827500
+BN ileri (egitim) vs torch             max fark = 8.882e-16   TAMAM
+BN dx vs torch autograd                max fark = 6.661e-16   TAMAM
+BN dgamma vs torch                     max fark = 1.776e-15   TAMAM
+BN dbeta vs torch                      max fark = 8.882e-16   TAMAM
+BN dx sayisal gradyan (merkezi fark)   max fark = 1.440e-09   TAMAM
+BN running_mean vs torch               max fark = 6.939e-18   TAMAM
+BN running_var vs torch (N-1 duzeltmeli) max fark = 0.000e+00   TAMAM
+BN cikarim (eval) vs torch             max fark = 4.441e-16   TAMAM
+Dropout ters-olcek (ayni maske)        max fark = 0.000e+00   TAMAM
+Dropout cikarimda kimlik               max fark = 0.000e+00   TAMAM
+Dropout beklenen deger kontrolu: E[y]=0.0047, E[x]=0.0039
+Kosinus zamanlayici vs torch           max fark = 3.469e-17   TAMAM
+Basamakli (StepLR) vs torch            max fark = 0.000e+00   TAMAM
+Ustel (ExponentialLR) vs torch         max fark = 1.388e-17   TAMAM
+Gradyan kirpma vs torch clip_grad_norm_ max fark = 0.000e+00   TAMAM
+norm (onceki): 14.9651  torch: 14.9651
+
+TOPLAM: 19/19 kontrol gecti

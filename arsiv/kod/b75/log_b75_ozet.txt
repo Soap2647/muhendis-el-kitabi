@@ -1,0 +1,13 @@
+== Damitma (test dogrulugu) ==
+ogretmen_512_512         0.9759 +- 0.0030  (n=3)
+ogrenci_sifirdan         0.9611 +- 0.0030  (n=3)
+ogrenci_damitma_T2       0.9549 +- 0.0017  (n=3)
+ogrenci_damitma_T4       0.9537 +- 0.0030  (n=3)
+ogrenci_damitma_T8       0.9556 +- 0.0015  (n=3)
+== Seyreklik (budama sonrasi / ince ayarli) ==
+oran 0.0   budamasiz 0.9728+-0.0009 ince 0.9728+-0.0009
+oran 0.5   budamasiz 0.9605+-0.0061 ince 0.9704+-0.0000
+oran 0.8   budamasiz 0.8204+-0.0436 ince 0.9728+-0.0023
+oran 0.9   budamasiz 0.5179+-0.0319 ince 0.9642+-0.0083
+oran 0.95  budamasiz 0.1315+-0.0250 ince 0.8926+-0.0393
+oran 0.98  budamasiz 0.1086+-0.0122 ince 0.5124+-0.0748

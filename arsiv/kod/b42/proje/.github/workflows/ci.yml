@@ -1,0 +1,28 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  dogrula:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # git describe tüm etiketleri görmeli
+      - name: Lint
+        run: ./ci.sh lint
+      - name: Test
+        run: ./ci.sh testler
+      - name: Kapsama eşiği
+        run: KAPSAMA_ESIK=80 ./ci.sh kapsama
+      - name: Statik derleme
+        run: ./ci.sh derle
+      - name: İmaj derle (zorunlu)
+        env:
+          IMAJ_ZORUNLU: "1"
+        run: ./ci.sh imaj
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crc32-arac-${{ github.sha }}
+          path: dist/

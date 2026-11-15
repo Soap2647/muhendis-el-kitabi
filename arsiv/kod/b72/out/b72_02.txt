@@ -1,0 +1,7 @@
+== Dogrusal AE vs PCA (test MSE, en buyuk ana aci) ==
+k    PCA_mse    AE_mse(ort)  AE_sapma   aci_max(ort)
+2    0.053175  0.053175  0.000001   0.037+-0.025
+4    0.037942  0.037943  0.000002   0.069+-0.045
+8    0.024646  0.024822  0.000246   0.346+-0.284
+16   0.011609  0.011620  0.000007   0.190+-0.046
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri/b72_pca_ae.csv

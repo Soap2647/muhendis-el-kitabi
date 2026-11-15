@@ -1,0 +1,2 @@
+$ python kararsiz_say.py 40
+40 koşu: 3 başarısız, 37 başarılı

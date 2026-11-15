@@ -1,0 +1,26 @@
+Konvolüsyon sayısı: 25, parametre: 223204
+Eğitim 6000, test 1200, adım/epoch 94
+duz_BN       tohum 0  kayıp 0.0337  eğitim 0.997  test 0.997
+duz_BN       tohum 1  kayıp 0.0157  eğitim 0.997  test 0.998
+duz_BN       tohum 2  kayıp 0.0225  eğitim 1.000  test 0.991
+artik_BN     tohum 0  kayıp 0.0242  eğitim 0.985  test 0.998
+artik_BN     tohum 1  kayıp 0.0250  eğitim 0.963  test 0.901
+artik_BN     tohum 2  kayıp 0.0115  eğitim 0.999  test 0.974
+duz_BNsiz    tohum 0  kayıp 1.3864  eğitim 1.000  test 0.250
+duz_BNsiz    tohum 1  kayıp 1.3865  eğitim 0.000  test 0.250
+duz_BNsiz    tohum 2  kayıp 1.3864  eğitim 0.000  test 0.250
+artik_BNsiz  tohum 0  kayıp 0.0213  eğitim 0.997  test 0.994
+artik_BNsiz  tohum 1  kayıp 0.0312  eğitim 1.000  test 0.986
+artik_BNsiz  tohum 2  kayıp 0.0186  eğitim 0.995  test 0.992
+
+Epoch 1 / 5 / 20 ortalama eğitim kaybı (3 tohum):
+duz_BN       0.6371  0.0528  0.0239
+artik_BN     0.4687  0.0499  0.0202
+duz_BNsiz    1.3875  1.3865  1.3864
+artik_BNsiz  1.1548  0.3364  0.0237
+
+Test doğruluğu (ortalama ± sapma):
+duz_BN       0.9953 ± 0.0039
+artik_BN     0.9578 ± 0.0508
+duz_BNsiz    0.2500 ± 0.0000
+artik_BNsiz  0.9906 ± 0.0043

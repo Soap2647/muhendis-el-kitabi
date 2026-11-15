@@ -1,0 +1,4 @@
+termistor Termistor 23.5
+nem Nem 61.0
+hata: bilinmeyen sensor: basinc
+pathlib: WindowsPath

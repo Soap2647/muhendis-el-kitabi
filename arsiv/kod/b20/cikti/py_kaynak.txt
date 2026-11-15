@@ -1,0 +1,11 @@
+$ python py_kaynak.py
+edin: dosya
+birak: dosya (istisna: True )
+disariya cikti: kasitli hata
+-- dongu yok:
+__del__: tek
+-- dongu var, gc kapali:
+  del yapildi, __del__ henuz yok
+__del__: a
+__del__: b
+  gc.collect() sonrasi

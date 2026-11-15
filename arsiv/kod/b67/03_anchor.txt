@@ -1,0 +1,17 @@
+== Anchor tablosu: sekil IoU'su (ortak merkez) ==
+kutu    8x8     IoU(a1)=0.640  IoU(a2)=0.160  -> 1
+kutu   12x12    IoU(a1)=0.694  IoU(a2)=0.360  -> 1
+kutu   16x24    IoU(a1)=0.260  IoU(a2)=0.690  -> 2
+kutu   24x24    IoU(a1)=0.174  IoU(a2)=0.694  -> 2
+
+== Faster R-CNN kodlama gidis-donus (tohum 0) ==
+maks |fark| = 1.42e-14
+
+== YOLO tarzi kodlama gidis-donus ==
+maks |fark| = 7.11e-15
+
+== Hedef atamasi: gorsel basina pozitif ve cakisma ==
+ort. pozitif/gorsel = 2.28, nesne = 687, cakisma = 4
+
+== Atama dogrulamasi: en iyi anchor brute force ile ==
+yanlis anchor atamasi: 0

@@ -1,0 +1,1 @@
+yöntem=atomik deneme=500 eski=300 yeni=200 bozuk=0

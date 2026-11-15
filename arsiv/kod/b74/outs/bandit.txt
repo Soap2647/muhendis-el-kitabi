@@ -1,0 +1,3 @@
+eps-acgozlu (0,1)  R_T ort=92.24 sd=51.54
+UCB1               R_T ort=111.75 sd=18.60
+Thompson           R_T ort=30.43 sd=11.23

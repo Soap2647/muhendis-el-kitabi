@@ -1,0 +1,7 @@
+yontem,bolme,mae,rmse
+kNN (k=5),zaman,0.23444,0.29402
+kNN (k=5),rastgele,0.19416,0.24238
+Doğrusal,zaman,0.17934,0.22578
+Doğrusal,rastgele,0.18346,0.22889
+Doğrusal+gelecek,zaman,0.11714,0.14688
+Doğrusal (tüm veriyle ölçek),zaman,0.17943,0.22589

@@ -1,0 +1,42 @@
+== 1) Gauss NB ==
+[Gauss] en buyuk log-fark: 1.1368683772161603e-13
+[Gauss] dogruluk sifirdan: 0.9474
+[Gauss] dogruluk sklearn : 0.9474
+
+== 2) Multinomial NB (Turkce metin) ==
+[Metin] sozluk boyutu: 87
+[Metin] 'indirim' var mi: True
+[Metin] naive lower: ['i', 'ndi', 'ri', 'm']  dogru: ['indirim']
+[Metin] log theta farki (sifirdan - sklearn): 0.0
+[Metin] log-olasilik farki: 0.0
+[Metin] tahminler (sifirdan): [1, 1, 1, 1, 0, 0, 0, 0]
+[Metin] dogru etiketler     : [1, 1, 1, 1, 0, 0, 0, 0]
+[Metin] test dogrulugu: 1.0
+[Laplace] alpha=0  log theta(kredi|normal)=-inf
+[Laplace] alpha=1  log theta(kredi|normal)=-4.962844630259907
+[Log] carpim 0,1^500 = 0.0
+[Log] log toplam     = -1151.293
+
+== 3) Varsayim bozulmasi ==
+
+[Varsayim] 20 tohum, n_egitim=2000, n_test=4000
+rho=0.0 NB  dogruluk=0.8024  Brier=0.1379  ECE=0.0145  ort.guven=0.8021
+rho=0.0 LR  dogruluk=0.8028  Brier=0.1379  ECE=0.0156  ort.guven=0.8019
+rho=0.9 NB  dogruluk=0.7306  Brier=0.1895  ECE=0.0955  ort.guven=0.8254
+rho=0.9 LR  dogruluk=0.7303  Brier=0.1791  ECE=0.0174  ort.guven=0.7289
+
+[Kopya] bagimsiz veri (rho=0), x1 kac kez kopyalaniyor
+k=1  dogruluk=0.8033  Brier=0.1373  ECE=0.0153  guven=0.8041
+k=2  dogruluk=0.7920  Brier=0.1500  ECE=0.0713  guven=0.8611
+k=4  dogruluk=0.7683  Brier=0.1851  ECE=0.1483  guven=0.9163
+k=8  dogruluk=0.7502  Brier=0.2208  ECE=0.2052  guven=0.9547
+
+== 4) Ogrenme egrisi ==
+
+[Egri] n, NB ort (ss), LR ort (ss); 30 alt kume
+n= 10  NB 0.8828 (0.0897)   LR 0.9131 (0.0488)
+n= 20  NB 0.9448 (0.0151)   LR 0.9455 (0.0236)
+n= 40  NB 0.9480 (0.0095)   LR 0.9599 (0.0144)
+n= 80  NB 0.9464 (0.0068)   LR 0.9748 (0.0080)
+n=160  NB 0.9469 (0.0067)   LR 0.9762 (0.0071)
+n=320  NB 0.9499 (0.0065)   LR 0.9865 (0.0051)

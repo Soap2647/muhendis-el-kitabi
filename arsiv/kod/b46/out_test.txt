@@ -1,0 +1,7 @@
+ozellik en buyuk fark (C - Python): 2.29e-05
+girdi kuantizasyonu uyusmazlik    : 0 / 2000
+int8 logit uyusmazlik (bit-tam)   : 0 / 2000
+uctan uca dogruluk (C)            : 0.9930
+uctan uca ile Python argmax farki : 0
+rastgele tam aralik uyusmazlik    : 0 / 1000
+EXIT=0

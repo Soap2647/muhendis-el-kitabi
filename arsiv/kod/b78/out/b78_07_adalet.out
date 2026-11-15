@@ -1,0 +1,6 @@
+Kural            dogruluk      DP fark     EO fark     FPR fark
+tek esik 0.5     0.744+-0.003  0.169+-0.015  0.080+-0.044  0.062+-0.014
+EO esigi         0.737+-0.003  0.111+-0.032  0.001+-0.001  0.043+-0.005
+DP esigi         0.721+-0.003  0.000+-0.000  0.117+-0.043  0.090+-0.021
+
+(3 veri tohumu; test n = 3000 her tohumda)

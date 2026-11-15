@@ -1,0 +1,7 @@
+1.1.1.1  medyan=20.41 ms  min=18.53  maks=25.01
+8.8.8.8  medyan=44.19 ms  min=25.19  maks=48.83
+dns     medyan=0.0045 s
+tcp     medyan=0.0625 s
+tls     medyan=0.0715 s
+ttfb    medyan=0.0704 s
+toplam  medyan=0.2214 s

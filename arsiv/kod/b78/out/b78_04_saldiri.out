@@ -1,0 +1,28 @@
+1) Standart model: eps'a gore dogruluk (ce kaybi)
+tohum saldiri  0.00  0.02  0.05  0.10  0.15  0.20  0.30
+    0 FGSM   0.947  0.922  0.811  0.500  0.172  0.022  0.000
+    0 PGD    0.947  0.919  0.797  0.411  0.081  0.000  0.000
+    1 FGSM   0.950  0.936  0.819  0.494  0.178  0.019  0.000
+    1 PGD    0.950  0.936  0.814  0.422  0.089  0.000  0.000
+    2 FGSM   0.956  0.917  0.817  0.517  0.186  0.050  0.000
+    2 PGD    0.956  0.917  0.794  0.444  0.097  0.003  0.000
+
+2) Gradyan maskeleme ornegi (tohum 0, k = 10^4)
+  naif kaybin girdi gradyani tam sifir orani: 0.947
+  standart FGSM       eps=0.05  dogruluk=0.811
+  standart FGSM       eps=0.10  dogruluk=0.500
+  maskeli  FGSM-naif  eps=0.05  dogruluk=0.947
+  maskeli  FGSM-naif  eps=0.10  dogruluk=0.947
+  maskeli  PGD-naif   eps=0.05  dogruluk=0.950
+  maskeli  PGD-naif   eps=0.10  dogruluk=0.944
+  maskeli  PGD-marj   eps=0.05  dogruluk=0.803
+  maskeli  PGD-marj   eps=0.10  dogruluk=0.467
+
+3) PGD ile cekismeli egitim (eps = 0.10, 7 adim)
+tohum  model     temiz   eps=0.05  eps=0.10  eps=0.20
+    0  standart 0.947   0.797    0.411    0.000
+    0  PGD-AT   0.950   0.892    0.789    0.283
+    1  standart 0.950   0.814    0.422    0.000
+    1  PGD-AT   0.944   0.886    0.764    0.289
+    2  standart 0.956   0.794    0.444    0.003
+    2  PGD-AT   0.947   0.897    0.761    0.269

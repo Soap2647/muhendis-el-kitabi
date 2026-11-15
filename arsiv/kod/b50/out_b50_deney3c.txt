@@ -1,0 +1,8 @@
+
+Bisection (f'=x^3-1): x=1.00000000  f' cagrisi=29
+Altin oran: x=1.300000 degerlendirme=35
+Ucluk (ternary): x=1.300000 degerlendirme=78
+
+Armijo GD (Rosenbrock): adim=4999 f=9.105e-07 f-cagrisi=54587
+BFGS      x=[1. 1.] f=2.535e-15 nit=32 nfev=39
+L-BFGS-B  x=[0.999999 0.999998] f=2.808e-12 nit=36 nfev=44

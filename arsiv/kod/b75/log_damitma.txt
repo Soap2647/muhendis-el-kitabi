@@ -1,0 +1,16 @@
+{'yontem': 'ogretmen_512_512', 'tohum': 0, 'dogruluk': 0.9722, 'parametre': 301066}
+{'yontem': 'ogrenci_sifirdan', 'tohum': 0, 'dogruluk': 0.9648, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T2', 'tohum': 0, 'dogruluk': 0.9574, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T4', 'tohum': 0, 'dogruluk': 0.9574, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T8', 'tohum': 0, 'dogruluk': 0.9574, 'parametre': 2410}
+{'yontem': 'ogretmen_512_512', 'tohum': 1, 'dogruluk': 0.9759, 'parametre': 301066}
+{'yontem': 'ogrenci_sifirdan', 'tohum': 1, 'dogruluk': 0.9574, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T2', 'tohum': 1, 'dogruluk': 0.9537, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T4', 'tohum': 1, 'dogruluk': 0.9537, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T8', 'tohum': 1, 'dogruluk': 0.9537, 'parametre': 2410}
+{'yontem': 'ogretmen_512_512', 'tohum': 2, 'dogruluk': 0.9796, 'parametre': 301066}
+{'yontem': 'ogrenci_sifirdan', 'tohum': 2, 'dogruluk': 0.9611, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T2', 'tohum': 2, 'dogruluk': 0.9537, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T4', 'tohum': 2, 'dogruluk': 0.95, 'parametre': 2410}
+{'yontem': 'ogrenci_damitma_T8', 'tohum': 2, 'dogruluk': 0.9556, 'parametre': 2410}
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri\b75_damitma.csv

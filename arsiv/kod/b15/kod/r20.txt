@@ -1,0 +1,47 @@
+0000000000001169 <faktoriyel>:
+    1169:	endbr64
+    116d:	push   %rbp
+    116e:	mov    %rsp,%rbp
+    1171:	push   %rbx
+    1172:	sub    $0x38,%rsp
+    1176:	mov    %edi,-0x34(%rbp)
+    1179:	mov    %fs:0x28,%rax
+    1182:	mov    %rax,-0x18(%rbp)
+    1186:	xor    %eax,%eax
+    1188:	mov    -0x34(%rbp),%eax
+    118b:	mov    %eax,-0x24(%rbp)
+    118e:	lea    -0x24(%rbp),%rax
+    1192:	mov    %rax,-0x20(%rbp)
+    1196:	mov    0x2e7b(%rip),%rax        # 4018 <taban>
+    119d:	test   %rax,%rax
+    11a0:	jne    11ad <faktoriyel+0x44>
+    11a2:	mov    -0x20(%rbp),%rax
+    11a6:	mov    %rax,0x2e6b(%rip)        # 4018 <taban>
+    11ad:	mov    0x2e64(%rip),%rax        # 4018 <taban>
+    11b4:	sub    -0x20(%rbp),%rax
+    11b8:	mov    %rax,%rdx
+    11bb:	mov    -0x34(%rbp),%eax
+    11be:	mov    %eax,%esi
+    11c0:	lea    0xe41(%rip),%rax        # 2008 <_IO_stdin_used+0x8>
+    11c7:	mov    %rax,%rdi
+    11ca:	mov    $0x0,%eax
+    11cf:	call   1070 <printf@plt>
+    11d4:	cmpl   $0x1,-0x34(%rbp)
+    11d8:	jg     11e1 <faktoriyel+0x78>
+    11da:	mov    $0x1,%eax
+    11df:	jmp    11f8 <faktoriyel+0x8f>
+    11e1:	mov    -0x34(%rbp),%eax
+    11e4:	movslq %eax,%rbx
+    11e7:	mov    -0x34(%rbp),%eax
+    11ea:	sub    $0x1,%eax
+    11ed:	mov    %eax,%edi
+    11ef:	call   1169 <faktoriyel>
+    11f4:	imul   %rbx,%rax
+    11f8:	mov    -0x18(%rbp),%rdx
+    11fc:	sub    %fs:0x28,%rdx
+    1205:	je     120c <faktoriyel+0xa3>
+    1207:	call   1060 <__stack_chk_fail@plt>
+    120c:	mov    -0x8(%rbp),%rbx
+    1210:	leave
+    1211:	ret
+

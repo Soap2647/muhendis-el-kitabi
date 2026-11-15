@@ -1,0 +1,23 @@
+Pozitif orani: 0.0109
+Teorik esik t* = c_FP/(c_FP+c_FN) = 1/51 = 0.01961
+Gercek olasilikla taramada en iyi esik: 0.0199
+Bu esikteki maliyet: 0.32292
+t* = 0.0196'daki maliyet: 0.32356
+
+Modelin katsayilari: [ 1.196 -0.779  0.546] b=-5.603
+Model olasiliklariyla en iyi esik (test): 0.0212
+Bu esikteki maliyet: 0.32562
+t* = 0.0196'daki maliyet (test): 0.32666
+
+FPR <= 0.01 kisitinda en yuksek TPR = 0.1860
+Bu nokta icin esik = 0.1016 (FPR=0.00999)
+
+  esik    TPR     FPR    maliyet/ornek
+0.0050   0.902  0.4145      0.46375
+0.0100   0.788  0.2486      0.36167
+0.0196   0.636  0.1294      0.32670
+0.0500   0.368  0.0367      0.38174
+0.1000   0.190  0.0103      0.45315
+0.2000   0.061  0.0020      0.51535
+
+Maliyet verisi yazildi: b57_esik_maliyet.csv

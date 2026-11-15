@@ -1,0 +1,19 @@
+--- veri denetimi
+temiz parti     : gecti
+gerilim yok     : ['eksik sutun: gerilim']
+akim bozuk      : ['akim aralik disi: 10']
+eksik deger     : ['eksik orani 4.0%']
+--- kalite kapisi (3 tohum, B=1000)
+tohum aday            fark     alt    karar
+11    yeni_tohum        -0.0005 -0.0019  KABUL
+11    daha_fazla_veri   -0.0002 -0.0018  KABUL
+11    etiket_gurultulu  -0.0020 -0.0040  KABUL
+11    ozellik_eksik     -0.0653 -0.0819  RED
+22    yeni_tohum        +0.0001 -0.0037  KABUL
+22    daha_fazla_veri   +0.0009 -0.0012  KABUL
+22    etiket_gurultulu  -0.0225 -0.0325  RED
+22    ozellik_eksik     -0.0738 -0.0920  RED
+33    yeni_tohum        -0.0004 -0.0018  KABUL
+33    daha_fazla_veri   +0.0005 -0.0004  KABUL
+33    etiket_gurultulu  -0.0274 -0.0371  RED
+33    ozellik_eksik     -0.0551 -0.0700  RED

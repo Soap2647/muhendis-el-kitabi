@@ -1,0 +1,7 @@
+== Ailer karsilastirmasi (digits, N=1000; test icin N=360) ==
+aile            mini-FID  kesin.  geri-c.  entropi  ezber  ms/ornek
+VAE (d=8)          10.44  0.831   0.384   3.269  1.099  0.0009
+DCGAN               1.86  0.547   0.928   3.298  1.373  0.0106
+DDPM (T=200)        2.80  0.912   0.875   3.299  0.954  13.6615
+Gercek test         0.70  0.883   0.923   3.319  1.000  0.0000
+CSV ve izgara yazildi.

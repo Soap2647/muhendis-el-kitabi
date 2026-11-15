@@ -1,0 +1,6 @@
+$ g++ -O2 -Wall -Wextra -std=c++17 dilimleme.cpp -o dilimleme
+$ ./dilimleme
+deger  : Taban kimlik=7
+referans: Tureyen kimlik=7
+atama  : Taban
+sizeof(Taban)=16 sizeof(Tureyen)=16

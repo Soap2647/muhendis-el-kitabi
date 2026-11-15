@@ -1,0 +1,14 @@
+ayir           blok= 0  bos_bas= 1
+ayir           blok= 1  bos_bas= 2
+birak(B0)      blok= 0  bos_bas= 0
+ayir           blok= 0  bos_bas= 2
+birak(B1)      blok= 1  bos_bas= 1
+ayir           blok= 1  bos_bas= 2
+ayir           blok= 2  bos_bas= 3
+ayir           blok= 3  bos_bas=-1
+ayir (bos)     blok=-1  bos_bas=-1
+birak(B2)      blok= 2  bos_bas= 2
+birak(B2) 2.   blok= 2  bos_bas= 2
+ayir           blok= 2  bos_bas= 2
+ayir           blok= 2  bos_bas= 2
+ayni blok iki kez verildi mi? EVET

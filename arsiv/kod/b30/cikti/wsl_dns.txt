@@ -1,0 +1,10 @@
+/etc/resolv.conf:nameserver 10.255.255.254
+/etc/resolv.conf:search local
+/etc/hosts:127.0.0.1	localhost
+/etc/hosts:127.0.1.1	Mert.localdomain	Mert
+/etc/hosts:
+/etc/hosts:::1     ip6-localhost ip6-loopback
+/etc/hosts:fe00::0 ip6-localnet
+/etc/hosts:ff00::0 ip6-mcastprefix
+/etc/hosts:ff02::1 ip6-allnodes
+/etc/hosts:ff02::2 ip6-allrouters

@@ -1,0 +1,8 @@
+sarsa   son100 ort=-28.17 sd=4.89
+qlearn  son100 ort=-53.70 sd=5.41
+Q-learning max|Q-Q*|: 1000. bolum 1.059, 20000. bolum 0.2896
+Greedy V - V* (max, 5 tohum): [0.    0.014 0.014 0.021 0.014]
+RMSE(V, V^pi), 5 tohum ort (sd):
+     10 bolum  MC 3.483 (0.601)   TD(0) 4.596 (0.883)
+    100 bolum  MC 0.592 (0.237)   TD(0) 0.307 (0.131)
+   1000 bolum  MC 0.612 (0.067)   TD(0) 0.402 (0.153)

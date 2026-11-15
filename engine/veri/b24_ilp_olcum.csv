@@ -1,0 +1,9 @@
+derleme,kosu,fonksiyon,akumulator,en_az_ms,medyan_ms,ns_per_eleman
+kontrollu,1,topla1,1,114.78,115.69,0.5605
+kontrollu,1,topla2,2,60.71,61.25,0.2964
+kontrollu,1,topla4,4,30.31,31.74,0.1480
+kontrollu,1,topla8,8,21.30,21.54,0.1040
+kontrollu,2,topla1,1,118.82,119.94,0.5802
+kontrollu,2,topla2,2,61.39,62.62,0.2997
+kontrollu,2,topla4,4,31.95,32.88,0.1560
+kontrollu,2,topla8,8,21.64,21.87,0.1056

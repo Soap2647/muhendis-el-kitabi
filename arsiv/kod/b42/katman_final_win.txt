@@ -1,0 +1,26 @@
+A ilk derleme:
+  FROM gcc:13                  REBUILT  8212247907
+  WORKDIR /src                 REBUILT  331d86ee39
+  COPY . .                     REBUILT  4b8c111351
+  RUN apt-get install -y make  REBUILT  69d1253d30
+  RUN make                     REBUILT  db6426386f
+B ilk derleme:
+  FROM gcc:13                  CACHED   8212247907
+  WORKDIR /src                 CACHED   331d86ee39
+  COPY deps.txt .              REBUILT  89af631ec2
+  RUN apt-get install -y make  REBUILT  05982ff6eb
+  COPY . .                     REBUILT  7d4eb49c60
+  RUN make                     REBUILT  ed1ca41250
+A kaynak değişti:
+  FROM gcc:13                  CACHED   8212247907
+  WORKDIR /src                 CACHED   331d86ee39
+  COPY . .                     REBUILT  fed74c9e08
+  RUN apt-get install -y make  REBUILT  3d78964603
+  RUN make                     REBUILT  64c398d860
+B kaynak değişti:
+  FROM gcc:13                  CACHED   8212247907
+  WORKDIR /src                 CACHED   331d86ee39
+  COPY deps.txt .              CACHED   89af631ec2
+  RUN apt-get install -y make  CACHED   05982ff6eb
+  COPY . .                     REBUILT  e03c142262
+  RUN make                     REBUILT  30880d193a

@@ -1,0 +1,6 @@
+removing unused section '.text.menzil_hesapla' in file 'app.o'
+removing unused section '.text.crc_yardimci' in file 'app.o'
+removing unused section '.text.tablo_topla' in file 'app.o'
+removing unused section '.rodata.tablo' in file 'app.o'
+removing unused section '.rodata.kademe' in file 'app.o'
+    192	      0	      4	    196	     c4	app_gc2.elf

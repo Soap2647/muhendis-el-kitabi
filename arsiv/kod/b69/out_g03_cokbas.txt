@@ -1,0 +1,14 @@
+--- Bolme ve birlestirme (d=8, h=2) ---
+wq(x)          : (1, 3, 8)
+_bol(wq(x))    : (1, 2, 3, 4) (B, h, T, dh)
+tek tek baslar birlestirilince fark: 5.551115123125783e-17
+baslarin cikti boyutu: (1, 3, 8)
+--- nn.MultiheadAttention ile ayni agirliklarla eslesme ---
+maks farki (nedensel): 4.440892098500626e-16
+--- Parametre sayimi: 4 (d^2 + d) ---
+d= 64 h=1  gercek= 16640  formul= 16640
+d= 64 h=4  gercek= 16640  formul= 16640
+d= 64 h=8  gercek= 16640  formul= 16640
+d=128 h=8  gercek= 66048  formul= 66048
+--- Tam blok (pre-norm, capraz yok), d=64, h=4 ---
+dikkat=16640  MLP=33088  LayerNorm=384  toplam=50112

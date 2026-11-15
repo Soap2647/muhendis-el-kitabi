@@ -1,0 +1,9 @@
+Macar = kaba kuvvet (4x4, 300 deneme): 300 uyumlu
+acgozlu toplam = 1.0 | Macar toplam = 1.65
+
+== Iz ilişkilendirme karşılaştırması (20 video) ==
+acgozlu_iou   MOTA=0.920 +- 0.033  IDSW=2.3  FN=52.6  FP=15.3
+macar_iou     MOTA=0.920 +- 0.034  IDSW=2.2  FN=52.5  FP=15.2
+macar_mesafe  MOTA=0.926 +- 0.026  IDSW=1.9  FN=50.5  FP=12.6
+macar_tum     MOTA=0.955 +- 0.016  IDSW=1.6  FN=27.6  FP=9.8
+byte          MOTA=0.951 +- 0.020  IDSW=1.7  FN=32.9  FP=8.0

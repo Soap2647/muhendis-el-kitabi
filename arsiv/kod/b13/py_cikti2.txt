@@ -1,0 +1,6 @@
+n = 1000000
+rastgele      188.82 ms
+sirali         42.33 ms
+ters          125.07 ms
+10 deger       48.23 ms
+[('Ayse', 1), ('Zeynep', 1), ('Ali', 3), ('Mert', 3)]

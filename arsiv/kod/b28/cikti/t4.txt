@@ -1,0 +1,5 @@
+çocuk fd okudu: ABCDE
+ana fd okudu:   FGHIJ
+fd2 okudu:      ABCDE
+lseek(fd)  = 10
+lseek(fd2) = 5

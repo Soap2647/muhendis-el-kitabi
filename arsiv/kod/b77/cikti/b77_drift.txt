@@ -1,0 +1,14 @@
+tohum  AUC(0-59)  AUC(90-119)
+11     0.9521    0.9259
+22     0.9539    0.9160
+33     0.9523    0.9229
+yontem   yanlis-alarm  kayma-gecikme   kavram-gecikme
+a_psi    0.000         [0, 0, 0]       [0, 1, 0]
+a_ks     0.067         [0, 0, 0]       [0, 0, 0]
+a_alan   0.000         [0, 0, 0]       [0, 0, 0]
+a_perf   0.000         [None, None, None] [26, 6, None]
+PSI esigi  yanlis-alarm  kayma-gecikme (3 tohum)
+0.05       0.044         [0, 0, 0]
+0.10       0.000         [0, 0, 0]
+0.20       0.000         [0, 0, 0]
+0.30       0.000         [12, None, 15]

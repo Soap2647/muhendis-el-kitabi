@@ -1,0 +1,16 @@
+esdeger (120 belirtec, greedy): True
+uretilen: bir değildir. Bu bir değil, bir kaynı bir sonun bir sorumlar
+
+prefill ve decode suresi (ms, CPU, 4 is parcacigi)
+    P    prefill   decode_onb   decode_onbsz
+   32       1.44        0.938          1.097
+   64       1.92        1.018          1.338
+  128       2.22        0.848          2.049
+  192       2.75        0.912          2.520
+
+KV bellek formulu: 2 * L * kafa * d_bas * T * bayt
+kucuk model, T=256, fp32: 524288 bayt
+7B sinifi (L=32, H=32, d=128, fp16) T=  1024: MHA 0.50 GB  GQA(8) 0.12 GB
+7B sinifi (L=32, H=32, d=128, fp16) T=  4096: MHA 2.00 GB  GQA(8) 0.50 GB
+7B sinifi (L=32, H=32, d=128, fp16) T=  8192: MHA 4.00 GB  GQA(8) 1.00 GB
+7B sinifi (L=32, H=32, d=128, fp16) T= 32768: MHA 16.00 GB  GQA(8) 4.00 GB

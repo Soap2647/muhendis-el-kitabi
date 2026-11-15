@@ -1,0 +1,7 @@
+adim   0   lr = 0.000333
+adim   1   lr = 0.000667
+adim  15   lr = 0.005333
+adim  29   lr = 0.010000
+adim  30   lr = 0.010000
+adim 165   lr = 0.005000
+adim 299   lr = 0.000000

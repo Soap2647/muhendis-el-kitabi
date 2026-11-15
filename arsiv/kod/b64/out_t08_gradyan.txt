@@ -1,0 +1,10 @@
+Kirpmasiz: NaN adimi=None, son kayip=2.261
+  en buyuk norm=23.5
+Kirpmali (max_norm=1): NaN adimi=None
+  son kayip=1.329, en buyuk norm=51.1
+
+Ilk katman agirlik gradyan normu (init, 256 ornek):
+  varsayilan 30 katman   ilk katman=1.429e-12   son katman=2.132e-02
+  He 30 katman           ilk katman=3.173e-01   son katman=1.206e+00
+  artik He (30 katman)   ilk katman=3.949e+03   son katman=8.205e+03
+  artik, dal son=0 (30)  ilk katman=2.907e-01   son katman=4.136e-01

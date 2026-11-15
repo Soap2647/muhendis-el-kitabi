@@ -1,0 +1,21 @@
+Test ornegi: 171
+Model 1 (lojistik) dogruluk: 0.9591
+Model 2 (agac, derinlik 3) dogruluk: 0.9240
+
+McNemar: b = 9 (1 dogru, 2 yanlis), c = 3
+chi2 (sureklilik duzeltmeli) = 2.0833, p = 0.1489
+Tam binom p = 0.1460
+scipy binomtest p = 0.1460 (cross-check)
+
+Tablo: model1/model2 (dogru,yanlis):
+dogru-dogru 155  dogru-yanlis 9
+yanlis-dogru 3  yanlis-yanlis 4
+
+Dogruluk farki (1-2) = 0.0351
+Bootstrap %95 GA (eslestirilmis yeniden ornekleme): [0.0000, 0.0760]
+
+5x2 CV: t = -4.6936 (serbestlik 5)
+Kritik deger (iki yonlu, %5, df=5) = 2.571
+Karar: fark anlamli
+Not: 5x2 CV katlari bagimsiz degil; t-testi bu yuzden
+yaklasik. Ayrintilarini kaynaktan okuyun (Dietterich 1998).

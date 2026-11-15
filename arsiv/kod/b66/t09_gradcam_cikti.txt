@@ -1,0 +1,17 @@
+Test doğruluğu: 0.9392
+
+Karışıklık matrisi (satır: gerçek, sütun: tahmin):
+[[300   0   0   0]
+ [ 59 236   4   1]
+ [  0   6 293   1]
+ [  0   0   2 298]]
+
+İlk katman filtre şekli: (16, 3, 3)
+f1 (1, 16, 32, 32), f3 (1, 64, 8, 8)
+
+Grad-CAM: doğru örnekler (gerçek sınıflar [0 1 2 3])
+En kötü 4 hata (gerçek, tahmin, güven):
+  gerçek 1, tahmin 0, güven 0.993
+  gerçek 1, tahmin 0, güven 0.987
+  gerçek 1, tahmin 0, güven 0.983
+  gerçek 1, tahmin 0, güven 0.978

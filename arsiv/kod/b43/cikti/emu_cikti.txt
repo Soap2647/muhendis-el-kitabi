@@ -1,0 +1,24 @@
+Vektor[0] (SP)    = 0x20020000
+Vektor[1] (reset) = 0x08000045  (Thumb biti=1)
+
+[1] Startup: main'e varis, komut = 36
+  .data kaynagi (flash)  : 0xCAFE0001
+  acilis_degeri (RAM)    : 0xCAFE0001
+  .bss ilk kelime        : 0x00000000
+  .bss ikinci kelime     : 0x00000000
+  CPACR (0xE000ED88)     : 0x00F00000
+
+[2] main calisti, komut = 2500000
+  RCC AHB1ENR (0x40023830): 0x00000008
+  GPIOD MODER (0x40020C00): 0x01000000
+  sonuc_menzil (RAM)      : 82
+  dongu_sayaci (RAM)      : 3
+  GPIOD ODR (0x40020C14)  : 0x00000000
+  BSRR yazma sayisi       : 5
+
+BSRR yazmalari (komut sayisi, deger):
+  komut=30       0x40020C18  <- 0x00001000
+  komut=600034   0x40020C18  <- 0x10000000
+  komut=1200042  0x40020C18  <- 0x00001000
+  komut=1800046  0x40020C18  <- 0x10000000
+  komut=2400054  0x40020C18  <- 0x00001000

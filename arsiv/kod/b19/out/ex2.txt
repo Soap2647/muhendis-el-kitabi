@@ -1,0 +1,5 @@
+Iz (n=7):
+[1,3) sol=2 sag=1 cs=1 cg=1 -> 1
+[0,3) sol=2 sag=1 cs=2 cg=1 -> 2
+[3,7) sol=1 sag=2 cs=2 cg=2 -> 2
+300 rastgele dizi: D&C ve Boyer-Moore cogunlugu bulur

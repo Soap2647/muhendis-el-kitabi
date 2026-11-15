@@ -1,0 +1,8 @@
+python==3.12.10
+numpy==2.3.5
+pandas==2.3.3
+scikit-learn==1.8.0
+scipy==1.17.1
+pytest==9.0.3
+ortam parmak izi: 5b7316389d17d2de
+platform: Windows | win32

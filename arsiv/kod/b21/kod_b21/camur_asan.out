@@ -1,0 +1,25 @@
+ALARM termistor 114.90
+UART> T=114.90 V=0.807 P=61.85 B=1.820
+ALARM termistor 113.65
+UART> T=113.65 V=0.811 P=62.05 B=1.811
+ALARM termistor 112.93
+UART> T=112.93 V=0.816 P=62.03 B=1.806
+UART> RESET OK
+ALARM termistor 113.20
+UART> T=113.20 V=0.819 P=61.65 B=1.824
+ALARM termistor 113.65
+UART> T=113.65 V=0.825 P=61.35 B=1.828
+durum: dongu=5 alarm=5
+ALARM termistor 113.20
+UART> T=113.20 V=0.825 P=61.27 B=1.833
+kanal 0 min=113.200 maks=113.650
+kanal 1 min=0.819 maks=0.825
+kanal 2 min=61.267 maks=61.650
+kanal 3 min=1.824 maks=1.833
+alarm=6 pil=0 reset=1 watchdog=6 sd=198
+T=114.90 V=0.807 P=61.85 B=1.820
+T=113.65 V=0.811 P=62.05 B=1.811
+T=112.93 V=0.816 P=62.03 B=1.806
+T=113.20 V=0.819 P=61.65 B=1.824
+T=113.65 V=0.825 P=61.35 B=1.828
+T=113.20 V=0.825 P=61.27 B=1.833

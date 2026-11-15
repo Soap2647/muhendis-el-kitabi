@@ -1,0 +1,27 @@
+$ python b34_kilit.py
+== kayıp güncelleme (kilit yok) ==
+A okudu: 100
+B okudu: 100
+A yazdı (+10): 110
+B yazdı (+5): 105 -> beklenen 115
+son değer: 105
+== iyimser kilit (surum sütunu) ==
+A okudu: (100, 0)
+B okudu: (100, 0)
+A yazdı: satır = 1
+B yazdı: satır = 0 -> çakışma, yeniden okunuyor
+B yeniden okudu: (110, 1)
+B yazdı: satır = 1
+son değer: (115, 2)
+== kilitlenme (rollback journal) ==
+A BEGIN IMMEDIATE ve yazdı, commit yok
+B yazamadı: database is locked
+== kilitlenme: busy_timeout ile bekleme ==
+A commit ediyor
+B yazdı (bekledi)
+son değer: 102
+== WAL: okuyucu yazıcıyı engellemez ==
+journal_mode: wal
+B okudu (A commit etmedi): 100
+B yazamadı: database is locked
+A commit sonrası B okudu: 999

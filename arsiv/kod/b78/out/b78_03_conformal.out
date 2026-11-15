@@ -1,0 +1,23 @@
+Bolunme: egitim 898, dogrulama 269, kalibrasyon 270, test 360
+
+alfa  nominal  kapsama(ort+-sd)  kume_boyu  tekil
+0.01   0.99     0.9908 +- 0.0013    1.182      0.868
+0.05   0.95     0.9417 +- 0.0099    0.976      0.976
+0.10   0.90     0.8732 +- 0.0047    0.880      0.880
+0.20   0.80     0.7621 +- 0.0151    0.765      0.765
+0.30   0.70     0.6843 +- 0.0086    0.687      0.687
+
+200 yeniden bolme (alfa = 0.10, tohum 0):
+  kapsama ort = 0.8992  sd = 0.0258
+  en dusuk = 0.8139  %5 = 0.8554  %95 = 0.9390
+  nominal 0.90 altinda kalan bolme: 89 / 200
+
+Risk-kapsam (tohum 0, maks_olasilik ve kume_boyu):
+  maks_olasilik  kapsam 1.000  risk 0.0472
+  maks_olasilik  kapsam 0.800  risk 0.0035
+  maks_olasilik  kapsam 0.600  risk 0.0000
+  maks_olasilik  kapsam 0.400  risk 0.0000
+  kume_boyu      kapsam 1.000  risk 0.0472
+  kume_boyu      kapsam 0.800  risk 0.0556
+  kume_boyu      kapsam 0.600  risk 0.0694
+  kume_boyu      kapsam 0.400  risk 0.1042

@@ -1,0 +1,8 @@
+put a=1        bellek={'a': '1'} tablolar=[]
+put b=2        bellek={} tablolar=['000000.sst']
+put a=3        bellek={'a': '3'} tablolar=['000000.sst']
+sil b          bellek={} tablolar=['000000.sst', '000001.sst']
+get b -> None | get a -> 3
+birlestir      bellek={} tablolar=['000002.sst']
+get a -> 3 | get b -> None
+000002.sst: ["a", "3"]

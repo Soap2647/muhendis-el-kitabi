@@ -1,0 +1,33 @@
+== A. Uretici kaybi: dL/dl (l = ayirt edicinin logit'i) ==
+   l     D(G(z))   |dL_doyan|  |dL_doymayan|
+ -6.0    0.00247     0.00247       0.99753
+ -4.0    0.01799     0.01799       0.98201
+ -2.0    0.11920     0.11920       0.88080
+ +0.0    0.50000     0.50000       0.50000
+ +2.0    0.88080     0.88080       0.11920
+
+== B. Optimal ayirt edici D*(x) = p/(p+q) ve JS ==
+D* = [0.8333 0.4286 0.2857]
+V(D*)          = -1.167161
+-log4 + 2JS    = -1.167161  (JS = 0.109567)
+Rastgele 20000 D icinde en buyuk V = -1.167849 <= V(D*)
+[minimaks (doyan) tohum 0] son: modes=8 hq=0.615
+[minimaks (doyan) tohum 1] son: modes=8 hq=0.658
+[minimaks (doyan) tohum 2] son: modes=8 hq=0.656
+[doymayan tohum 0] son: modes=8 hq=0.274
+[doymayan tohum 1] son: modes=6 hq=0.794
+[doymayan tohum 2] son: modes=8 hq=0.754
+[doymayan, G lr=1e-3 tohum 0] son: modes=1 hq=0.027
+[doymayan, G lr=1e-3 tohum 1] son: modes=0 hq=0.000
+[doymayan, G lr=1e-3 tohum 2] son: modes=0 hq=0.000
+[WGAN-GP tohum 0] son: modes=8 hq=0.374
+[WGAN-GP tohum 1] son: modes=8 hq=0.363
+[WGAN-GP tohum 2] son: modes=7 hq=0.277
+
+== Son durum (4000 iterasyon, 3 tohum) ==
+varyant                  modes(ort+-sd)  min   hq(ort+-sd)
+minimaks (doyan)         8.00 +- 0.00   8     0.643 +- 0.020
+doymayan                 7.33 +- 0.94   6     0.608 +- 0.237
+doymayan, G lr=1e-3      0.33 +- 0.47   0     0.009 +- 0.013
+WGAN-GP                  7.67 +- 0.47   7     0.338 +- 0.043
+CSV ve ornekler yazildi.

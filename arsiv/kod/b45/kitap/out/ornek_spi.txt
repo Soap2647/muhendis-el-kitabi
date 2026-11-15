@@ -1,0 +1,5 @@
+ana (0,0) uydu (0, 0) -> ana alir, uydu alir: ('3C', 'A5')
+ana (0,0) uydu (0, 1) -> ana alir, uydu alir: ('X', 'X')
+ana (0,0) uydu (1, 0) -> ana alir, uydu alir: ('X', 'X')
+ana (0,0) uydu (1, 1) -> ana alir, uydu alir: ('1E', 'A5')
+ana (0,0), uydu (0,0): ('3C', 'A5')

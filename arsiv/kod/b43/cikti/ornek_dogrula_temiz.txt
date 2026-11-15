@@ -1,0 +1,6 @@
+ilk:  pin15=00 pin14=10 pin13=01 pin12=10 | 0x26000000
+temizle:  pin15=00 pin14=10 pin13=01 pin12=00 | 0x24000000
+set:  pin15=00 pin14=10 pin13=01 pin12=01 | 0x25000000
+SRAM 0x20000004 bit3 -> 0x2200008C
+ODR bit 31 -> 0x424182FC
+ODR bit 0  -> 0x42418280

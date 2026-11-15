@@ -1,0 +1,8 @@
+v1 ozeti      : 8d7116f4039ba281
+kopya ayni mi : True
+depoda nesne  : 1
+v2 ozeti      : ce70d463373fa119
+depoda nesne  : 2
+isaretci      : telemetri.csv 36 8d7116f4039ba281...
+v1 dogrula    : False
+getir hatasi  : nesne bozulmus: 8d7116f4039b

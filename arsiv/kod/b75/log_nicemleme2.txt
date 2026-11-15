@@ -1,0 +1,63 @@
+katman 0 girdi olcegi: max=0.0079 p99.9=0.0079 oran=1.0
+katman 2 girdi olcegi: max=0.0187 p99.9=0.0154 oran=1.2
+katman 4 girdi olcegi: max=0.0731 p99.9=0.0610 oran=1.2
+tohum 0  fp32                   acc=0.9722  bayt=203304
+tohum 0  PTQ_w8_kanal           acc=0.9704  bayt=52008
+tohum 0  PTQ_w8a8_tensor_max    acc=0.9704  bayt=52008
+tohum 0  PTQ_w8a8_tensor_p999   acc=0.9704  bayt=52008
+tohum 0  PTQ_w4_tensor          acc=0.9704  bayt=26792
+tohum 0  PTQ_w4_kanal           acc=0.9685  bayt=26792
+tohum 0  QAT_w4_kanal           acc=0.9722  bayt=26792
+tohum 0  PTQ_w3_kanal           acc=0.9685  bayt=20488
+tohum 0  QAT_w3_kanal           acc=0.9648  bayt=20488
+tohum 0  PTQ_w2_kanal           acc=0.7259  bayt=14184
+tohum 0  QAT_w2_kanal           acc=0.9630  bayt=14184
+tohum 0  PTQ_w4a8_kanal_p999    acc=0.9704  bayt=26792
+tohum 0  QAT_w4a8_kanal         acc=0.9722  bayt=26792
+tohum 0  PyTorch_dinamik_int8   acc=0.9704  bayt=56242
+tohum 1  fp32                   acc=0.9741  bayt=203304
+tohum 1  PTQ_w8_kanal           acc=0.9741  bayt=52008
+tohum 1  PTQ_w8a8_tensor_max    acc=0.9741  bayt=52008
+tohum 1  PTQ_w8a8_tensor_p999   acc=0.9741  bayt=52008
+tohum 1  PTQ_w4_tensor          acc=0.9685  bayt=26792
+tohum 1  PTQ_w4_kanal           acc=0.9741  bayt=26792
+tohum 1  QAT_w4_kanal           acc=0.9722  bayt=26792
+tohum 1  PTQ_w3_kanal           acc=0.9667  bayt=20488
+tohum 1  QAT_w3_kanal           acc=0.9704  bayt=20488
+tohum 1  PTQ_w2_kanal           acc=0.8537  bayt=14184
+tohum 1  QAT_w2_kanal           acc=0.9648  bayt=14184
+tohum 1  PTQ_w4a8_kanal_p999    acc=0.9741  bayt=26792
+tohum 1  QAT_w4a8_kanal         acc=0.9722  bayt=26792
+tohum 1  PyTorch_dinamik_int8   acc=0.9741  bayt=56242
+tohum 2  fp32                   acc=0.9722  bayt=203304
+tohum 2  PTQ_w8_kanal           acc=0.9741  bayt=52008
+tohum 2  PTQ_w8a8_tensor_max    acc=0.9759  bayt=52008
+tohum 2  PTQ_w8a8_tensor_p999   acc=0.9759  bayt=52008
+tohum 2  PTQ_w4_tensor          acc=0.9685  bayt=26792
+tohum 2  PTQ_w4_kanal           acc=0.9722  bayt=26792
+tohum 2  QAT_w4_kanal           acc=0.9722  bayt=26792
+tohum 2  PTQ_w3_kanal           acc=0.9593  bayt=20488
+tohum 2  QAT_w3_kanal           acc=0.9722  bayt=20488
+tohum 2  PTQ_w2_kanal           acc=0.8167  bayt=14184
+tohum 2  QAT_w2_kanal           acc=0.9593  bayt=14184
+tohum 2  PTQ_w4a8_kanal_p999    acc=0.9722  bayt=26792
+tohum 2  QAT_w4a8_kanal         acc=0.9722  bayt=26792
+tohum 2  PyTorch_dinamik_int8   acc=0.9741  bayt=56242
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri/b75_bit_dogruluk.csv
+
+Ozet (ortalama +- sapma, 3 tohum):
+fp32                   0.9728 +- 0.0009  bayt=203304
+PTQ_w8_kanal           0.9729 +- 0.0017  bayt=52008
+PTQ_w8a8_tensor_max    0.9735 +- 0.0023  bayt=52008
+PTQ_w8a8_tensor_p999   0.9735 +- 0.0023  bayt=52008
+PTQ_w4_tensor          0.9691 +- 0.0009  bayt=26792
+PTQ_w4_kanal           0.9716 +- 0.0023  bayt=26792
+QAT_w4_kanal           0.9722 +- 0.0000  bayt=26792
+PTQ_w3_kanal           0.9648 +- 0.0040  bayt=20488
+QAT_w3_kanal           0.9691 +- 0.0032  bayt=20488
+PTQ_w2_kanal           0.7988 +- 0.0537  bayt=14184
+QAT_w2_kanal           0.9624 +- 0.0023  bayt=14184
+PTQ_w4a8_kanal_p999    0.9722 +- 0.0015  bayt=26792
+QAT_w4a8_kanal         0.9722 +- 0.0000  bayt=26792
+PyTorch_dinamik_int8   0.9729 +- 0.0017  bayt=56242
+sure: 37.7 s

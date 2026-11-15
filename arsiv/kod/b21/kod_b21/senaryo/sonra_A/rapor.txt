@@ -1,0 +1,3 @@
+termistor     70.00 C
+gerilim        0.97 V
+ORT 35.48

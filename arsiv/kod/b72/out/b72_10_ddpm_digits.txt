@@ -1,0 +1,15 @@
+abar_T (kosinus, T=200) = 6.072e-08
+U-Net parametre sayisi: 228161
+== DDPM egitimi: kosinus takvimi, T=200, 6000 iterasyon ==
+kayip ort. ilk 500: 0.2157  son 500: 0.1279
+
+== Ornekleme yontemi ve adim sayisi (N=1000) ==
+yontem      adim  mini-FID  kesin.  geri-c.  entropi  ezber  ms/ornek
+DDPM        200      2.80  0.912   0.875   3.299  0.954   13.661
+DDIM          5      5.16  0.870   0.795   3.288  1.023    0.533
+DDIM         10      3.16  0.848   0.866   3.304  1.011    0.840
+DDIM         20      2.43  0.847   0.914   3.304  1.033    1.993
+DDIM         50      1.92  0.807   0.939   3.303  1.104    4.727
+DDIM        100      2.12  0.757   0.949   3.306  1.196    7.908
+DDIM        200      3.39  0.681   0.969   3.298  1.312   17.098
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri/b72_adim_kalite.csv

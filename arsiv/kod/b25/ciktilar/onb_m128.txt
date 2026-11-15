@@ -1,0 +1,2 @@
+N=128 satir erisim=16384 isabet=15360 kacirma=1024 oran=0.062
+N=128 sutun erisim=16384 isabet=0 kacirma=16384 oran=1.000

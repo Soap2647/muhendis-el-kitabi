@@ -1,0 +1,50 @@
+Karisiklik matrisi (satir=gercek, sutun=tahmin)
+           tahmin:0  tahmin:1
+gercek:0       104         3
+gercek:1         4        60
+TP=60 FP=3 FN=4 TN=104
+
+Scratch metrikler (ikili):
+dogruluk   0.9591
+kesinlik   0.9524
+duyarlilik 0.9375
+ozgulluk   0.9720
+F1         0.9449  F2 0.9404  F0.5 0.9494
+MCC        0.9124
+kappa      0.9123
+
+sklearn ile karsilastirma:
+dogruluk    bizim 0.959064  sklearn 0.959064
+kesinlik    bizim 0.952381  sklearn 0.952381
+duyarlilik  bizim 0.937500  sklearn 0.937500
+ozgulluk    bizim 0.971963  sklearn 0.971963
+F1          bizim 0.944882  sklearn 0.944882
+F2          bizim 0.940439  sklearn 0.940439
+F0.5        bizim 0.949367  sklearn 0.949367
+MCC         bizim 0.912399  sklearn 0.912399
+kappa       bizim 0.912327  sklearn 0.912327
+en buyuk fark: 1.11e-16
+
+Her zaman 'iyi huylu' diyen tahminci:
+dogruluk = 0.6257  MCC = 0.0000  kappa = 0.0000
+
+Cok sinifli (10 rakam): makro/mikro/agirlikli
+makro_kesinlik       0.9782
+mikro_kesinlik       0.9778
+agirlikli_kesinlik   0.9781
+makro_F1             0.9779
+mikro_F1             0.9778
+agirlikli_F1         0.9778
+dogruluk             0.9778
+kappa                0.9753
+MCC (cok sinif)      0.9753
+
+sklearn makro/mikro/agirlikli F1 ile birebir eslesti.
+Mikro F1 = dogruluk (tek etiketli cok sinifta).
+En zayif 3 sinif (F1): [(3, 0.954), (9, 0.955), (5, 0.964)]
+
+Oyuncak 3 sinif (satir=gercek):
+makro_F1       0.7180
+mikro_F1       0.9143
+agirlikli_F1   0.9232
+Dogruluk = 0.9143 (mikro F1 ile ayni)

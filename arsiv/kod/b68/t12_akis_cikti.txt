@@ -1,0 +1,10 @@
+GRU  toplu ve adim farki = 8.94e-08
+TCN  t<60 en buyuk fark   = 1.87e-01
+TCN  t>=60 en buyuk fark  = 0.00e+00  (RF=61)
+adim basi sure (us, medyan):
+  GRU  H=16 :   105.5
+  GRU  H=32 :   106.7
+  LSTM H=32 :   207.9
+  TCN  tampon(RF=61):  1716.7
+GRU(I=4,H=16) parametre = 1056; float32=4224 B, int8~1056 B
+TCN tampon bellegi (RF x C float32) = 976 B

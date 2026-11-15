@@ -1,0 +1,20 @@
+(a) el ornegi, dagilmis kume
+hizalama   = 0.4000
+tekduzelik = -1.6617
+ikili uzakliklar kare (ust ucgen): [2.  0.4 3.2 0.8 0.4 2. ]
+
+(a') cokmus kume: tum noktalar (1, 0)
+hizalama   = 0.0000
+tekduzelik = 0.0000
+
+(b) 3x3 benzerlik matrisi, sicaklik tau = 0.5
+logit matrisi:
+[[1.8 0.2 0.4]
+ [0.6 1.4 0.2]
+ [0.4 1.4 1.2]]
+goruntu->metin kayiplari: [0.3705 0.5599 0.9824] ortalama = 0.6376
+metin->goruntu kayiplari: [0.4368 0.8334 0.5973] ortalama = 0.6225
+simetrik kayip = 0.6301
+
+sifir atis: her goruntu icin en yuksek benzerlik
+tahmin (goruntu -> sinif): [0 1 1]

@@ -1,0 +1,21 @@
+SQLite sürümü: 3.49.1
+
+-- 1. Alan okuma (şema yok, yol ifadesi var)
+Ali    sehir=Ankara
+Ayşe   sehir=None
+Mert   sehir=İzmir
+Can    sehir=Ankara
+
+-- 2. Tutarı 1000'i aşan siparişi olan müşteriler
+Ali
+
+-- 3. Şema evrimi: eksik alan NULL döner, hata vermez
+Ali    telefon=None
+Ayşe   telefon=0555
+Mert   telefon=None
+Can    telefon=None
+
+-- 4. Gömülü veride aynı ürünü içeren belge sayısı
+'kablo' geçen sipariş sayısı: 2
+Ürün adı değişirse güncellenecek belge (gömülü): 2
+Aynı ürün ayrı bir 'urun' tablosunda olsaydı: 1 satır

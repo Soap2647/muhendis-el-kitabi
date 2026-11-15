@@ -1,0 +1,2 @@
+[('Ayse', 1), ('Zeynep', 1), ('Ali', 3), ('Mert', 3)]
+[('Ali', 3), ('Mert', 3), ('Ayse', 1), ('Zeynep', 1)]

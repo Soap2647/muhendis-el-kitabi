@@ -1,0 +1,10 @@
+B=   1  tr(Cov)=94.8806  B*tr(Cov)=94.88
+B=   8  tr(Cov)=11.3602  B*tr(Cov)=90.88
+B=  64  tr(Cov)=1.4032  B*tr(Cov)=89.81
+B= 512  tr(Cov)=0.1359  B*tr(Cov)=69.58
+
+B  guncelleme  artik kayip (5 tohum ortalamasi)
+   1     40000       0.01957
+  16      2500       0.00038
+ 256       160       0.00000
+2000        20       0.97422

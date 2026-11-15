@@ -1,0 +1,6 @@
+n=4  taban'dan uzaklik=0 bayt
+n=3  taban'dan uzaklik=80 bayt
+n=2  taban'dan uzaklik=160 bayt
+n=1  taban'dan uzaklik=240 bayt
+faktoriyel(4) = 24
+cikis=0

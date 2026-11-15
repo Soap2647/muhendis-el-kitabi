@@ -1,0 +1,44 @@
+Öğrenme oranı seçimi (doğrulama kaybı, tohum 0):
+  MLP lr=0.01  en iyi dogrulama kaybi=0.0918
+  MLP lr=0.03  en iyi dogrulama kaybi=0.0620
+  MLP lr=0.10  en iyi dogrulama kaybi=0.0529
+  MLP lr=0.30  en iyi dogrulama kaybi=0.0352
+  seçilen MLP lr = 0.30
+  lambda=0e+00  en iyi dogrulama kaybi=0.0352
+  lambda=1e-04  en iyi dogrulama kaybi=0.0384
+  lambda=1e-03  en iyi dogrulama kaybi=0.0418
+  lambda=1e-02  en iyi dogrulama kaybi=0.1518
+  L2 satırı için sıfır dışı en iyi lambda = 0.0001
+
+Sonuçlar (5 tohum; test kümesi, ortalama +- sapma):
+model                                egitim acc     test acc      
+lojistik (baseline)                  0.995+-0.000  0.972+-0.001
+MLP, düzenlileştirme yok (200 epoch) 1.000+-0.000  0.975+-0.003
+MLP, erken durdurma                  1.000+-0.000  0.973+-0.003
+MLP, L2 + erken durdurma             1.000+-0.000  0.972+-0.002
+Tohum bazında test doğruluğu (0..4):
+  lojistik (baseline)                  0.972 0.972 0.969 0.972 0.972
+  MLP, düzenlileştirme yok (200 epoch) 0.981 0.975 0.972 0.975 0.972
+  MLP, erken durdurma                  0.978 0.969 0.972 0.972 0.975
+  MLP, L2 + erken durdurma             0.975 0.969 0.972 0.969 0.975
+Egri (tohum 0, MLP): en dusuk dogrulama kaybi epoch=28 deger=0.0352
+200. epoch: eğitim kaybı=0.00027, doğrulama kaybı=0.0376
+Erken durdurma seçilen epoch (tohum 0..4): [28, 25, 30, 23, 28]
+
+Test karışıklık matrisi (satır=gerçek):
+[[35  0  0  0  0  0  0  0  0  0]
+ [ 0 34  0  0  0  0  0  0  3  0]
+ [ 0  0 35  0  0  0  0  0  0  0]
+ [ 0  0  0 35  0  1  0  1  0  0]
+ [ 0  0  0  0 35  0  0  0  1  0]
+ [ 0  0  0  0  0 36  1  0  0  0]
+ [ 0  0  0  0  0  0 36  0  0  0]
+ [ 0  0  0  0  0  0  0 36  0  0]
+ [ 0  1  0  0  0  0  0  0 34  0]
+ [ 0  0  0  0  0  1  0  0  0 35]]
+  gerçek 1 -> tahmin 8 : 3
+  gerçek 9 -> tahmin 5 : 1
+  gerçek 8 -> tahmin 1 : 1
+  gerçek 5 -> tahmin 6 : 1
+
+PCA: ilk iki bileşenin oranı = [0.22  0.166]

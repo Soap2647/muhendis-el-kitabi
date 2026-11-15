@@ -1,0 +1,4 @@
+gorev      periyot is_suresi calisma max_gecikme
+A_hizli        10         1      40          24
+B_orta         25         2      16          10
+C_uzun         50        30       8           3

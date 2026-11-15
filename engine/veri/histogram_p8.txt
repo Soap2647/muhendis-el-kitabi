@@ -1,0 +1,7 @@
+# N=20000000 kova=16 thread=8 tekrar=3
+surum,medyan_s,kova_toplami,yanlis_kova
+sirali,0.0057,20000000,0
+yaris,0.0782,10667496,16
+atomik,0.1977,20000000,0
+yerel,0.0014,20000000,0
+referans_toplam=20000000

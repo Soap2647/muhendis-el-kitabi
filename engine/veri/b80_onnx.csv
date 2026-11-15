@@ -1,0 +1,10 @@
+yontem,kume,map50,map5095,boyut_bayt
+pytorch,test,0.9390,0.6386,255304
+onnx_fp32,test,0.9390,0.6386,246582
+onnx_int8,test,0.9276,0.5433,71173
+pytorch,drift,0.8725,0.5474,255304
+onnx_fp32,drift,0.8725,0.5474,246582
+onnx_int8,drift,0.8358,0.4719,71173
+pytorch,ood,0.8952,0.6052,255304
+onnx_fp32,ood,0.8952,0.6052,246582
+onnx_int8,ood,0.8869,0.5161,71173

@@ -1,0 +1,24 @@
+$ g++ -O0 -g -std=c++17 -Wall -Wextra yikici.cpp -o yikici_sizinti
+yikici.cpp: In function ‘int main()’:
+yikici.cpp:28:5: warning: deleting object of polymorphic class type ‘Taban’ which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+   28 |     delete p;                   // ~Tureyen calisir mi?
+      |     ^~~~~~~~
+$ ./yikici_sizinti
+Tureyen::calis
+Taban yikici
+$ g++ -O0 -g -std=c++17 -fsanitize=address yikici.cpp -o yikici_asan
+$ ASAN_OPTIONS=new_delete_type_mismatch=0 ./yikici_asan 2>&1 | head -n 9
+
+=================================================================
+==2149==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 4000 byte(s) in 1 object(s) allocated from:
+    #0 0x7e25154fe6c8 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:98
+    #1 0x5d335c4b44d7 in Tureyen::Tureyen() /mnt/c/Users/merty/AppData/Local/Temp/b20/yikici.cpp:17
+    #2 0x5d335c4b42d4 in main /mnt/c/Users/merty/AppData/Local/Temp/b20/yikici.cpp:26
+    #3 0x7e2514c2a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+$ g++ -O0 -g -std=c++17 -fsanitize=address -DSANAL_YIKICI yikici.cpp -o yikici_sanal
+$ ./yikici_sanal
+Tureyen::calis
+Tureyen yikici
+Taban yikici

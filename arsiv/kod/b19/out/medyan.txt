@@ -1,0 +1,3 @@
+300 rastgele dizi, tum k: sec == sorted()[k] (tekrarli)
+n = 10^5 medyan: sec 0.042 s, sorted 0.012 s
+ayni deger: True

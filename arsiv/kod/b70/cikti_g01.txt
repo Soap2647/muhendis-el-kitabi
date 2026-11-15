@@ -1,0 +1,7 @@
+paragraf: 10738
+egitim     paragraf=  7716 karakter=  2419957
+dogrulama  paragraf=  1509 karakter=   465070
+test       paragraf=  1513 karakter=   481105
+kısım dağılımı (paragraf):
+[444, 217, 495, 1155, 652, 906, 674, 544, 422, 913, 655, 980,
+ 311, 1479, 891]

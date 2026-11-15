@@ -1,0 +1,7 @@
+$ gcc -O2 -Wall -Wextra -std=c11 c_vtable.c -o c_vtable
+$ ./c_vtable
+Daire r=2.0
+Dikdortgen 3.0x4.0
+toplam alan = 24.566
+sizeof(Sekil)=8 sizeof(Daire)=16
+offsetof(Daire,r)=8

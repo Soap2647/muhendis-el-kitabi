@@ -1,0 +1,8 @@
+ornek: w=[2,3] v=[3,4] W=4
+0/1 ters  : 4
+0/1 ileri : 6
+sinirsiz  : 6
+300 rastgele ornek, 0/1 ve sinirsiz hata: 0
+W=0: 0 0
+bos: 0 0
+0/1 W=7 en iyi: 9 secilen: [1, 2]

@@ -1,0 +1,20 @@
+Ortalama istek/s : 2315
+Tepe istek/s     : 6944
+
+İHA filosu telemetrisi
+Paket/s (filo)        : 4000
+Ham bayt/s            : 1024000 (1.024 MB/s)
+Ham bit/s             : 8.19 Mbit/s
+Tepe (2x) bit/s       : 16.38 Mbit/s
+Ham depolama / gün    : 88.5 GB
+Sıkıştırılmış / gün   : 17.7 GB
+Sıkıştırılmış / yıl   : 6.5 TB
+Tek bir paket başına  : 250.0 us (4000 paket/s için pay)
+
+Bir paketin yol üzerindeki kabaca maliyeti:
+  bellek (DRAM)       : 120 ns
+  NVMe diske yazma    : 100 us
+  ağ turu (aynı DC)   : 0.5 ms
+Tek bağlantıda sıralı (her paket bir tur) en fazla: 2000 paket/s
+Filo gereksinimi                        : 4000 paket/s
+Bağlantı sayısı (en az, tur başına)     : 2

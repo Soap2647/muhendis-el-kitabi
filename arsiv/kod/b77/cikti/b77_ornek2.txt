@@ -1,0 +1,8 @@
+deneyler v1 turevi ile kaydedildi: 2b89f8a9
+ham veri: e648480f -> 8314eb06
+turev   : 2b89f8a9 -> 3c79b170
+v1 turevinin kaynagi hala guncel mi: False
+guncel veriyle gecersiz deneyler:
+   deney 1 (lojistik) veri=2b89f8a9
+   deney 2 (lojistik) veri=2b89f8a9
+   deney 3 (lojistik) veri=2b89f8a9

@@ -1,0 +1,6 @@
+# M=512 BIRIM=2000 thread=8 tekrar=5
+# tek_is_parcacigi_s=0.1833 ideal_s=0.0229
+zamanlama,medyan_s,hizlanma
+statik,0.0453,4.04
+dinamik8,0.0281,6.53
+guided,0.0251,7.29

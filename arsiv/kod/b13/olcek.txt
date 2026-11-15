@@ -1,0 +1,11 @@
+O(n^2) grup, rastgele girdi (ms)
+n=   2000 kabarcik      1.81 secmeli      3.08 eklemeli     0.46
+n=   4000 kabarcik      6.97 secmeli     12.40 eklemeli     1.80
+n=   8000 kabarcik     29.17 secmeli     48.95 eklemeli     7.17
+n=  16000 kabarcik    129.87 secmeli    196.73 eklemeli    28.68
+n log n grubu, rastgele girdi (ms)
+n=  65536 birlestirme    3.61 hizli     3.21 yigin     3.04 radix    0.60
+n= 131072 birlestirme    7.78 hizli     6.74 yigin     7.42 radix    0.95
+n= 262144 birlestirme   16.48 hizli    14.35 yigin    19.10 radix    2.38
+n= 524288 birlestirme   34.40 hizli    29.88 yigin    46.82 radix    4.66
+n=1048576 birlestirme   73.24 hizli    62.31 yigin   115.25 radix   11.28

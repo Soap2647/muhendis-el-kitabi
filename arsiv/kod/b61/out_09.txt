@@ -1,0 +1,6 @@
+ham gurultu siluet(k=8) = 0.0181
+perp= 5 KL=2.3486 siluet(k=8)=0.3504
+perp=15 KL=2.3563 siluet(k=8)=0.3286
+perp=30 KL=2.0781 siluet(k=8)=0.3198
+perp=50 KL=1.7364 siluet(k=8)=0.3303
+etiketli CSV yazildi, siluet=0.3198

@@ -1,0 +1,10 @@
+kitp -> kitap: mesafe 1
+kitp -> kitle: mesafe 2
+kitp -> kapi: mesafe 3
+islemler: ['ekle a']
+tablo (en iyi aday):
+ 0  1  2  3  4  5
+ 1  0  1  2  3  4
+ 2  1  0  1  2  3
+ 3  2  1  0  1  2
+ 4  3  2  1  1  1

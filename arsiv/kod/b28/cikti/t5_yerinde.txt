@@ -1,0 +1,1 @@
+yöntem=yerinde deneme=500 eski=0 yeni=400 bozuk=100

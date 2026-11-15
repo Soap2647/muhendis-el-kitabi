@@ -1,0 +1,11 @@
+mu = [4.]  var (N'e bolunmus) = [5.]
+xhat = [-1.3416 -0.4472  0.4472  1.3416]
+y    = [-1.6833  0.1056  1.8944  3.6833]
+
+BN'li MLP (2 gizli katman), 20 epoch, 5 tohum:
+  batch=   2  test = 0.8683 +- 0.0315
+  batch=   8  test = 0.9811 +- 0.0093
+  batch=  32  test = 0.9856 +- 0.0030
+  batch= 128  test = 0.9833 +- 0.0056
+
+Ayni 64 dogrulama orneginde tahmin farki (eval vs train modu): 2 / 64

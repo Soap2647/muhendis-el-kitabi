@@ -1,0 +1,18 @@
+sim s=0.018898 q=[-53, -19, 0, 32, 127]
+sim hata=[-0.00157, -0.00906, 0.0, 0.00472, 0.0]
+asim s=0.013333 z=-53 q=[-128, -79, -53, -8, 127]
+asim hata=[0.0, 0.00333, 0.0, 0.0, 0.0]
+sim MSE=2.136e-05 asim MSE=2.222e-06
+s=9.998750 W'=4.999375 b'=-1.299875
+BN=5.199313 katli=5.199313 fark=8.88e-16
+esik AI=2.50
+B=1  FLOP=524288 bayt=1052672 AI=0.498 bellek
+B=4  FLOP=2097152 bayt=1064960 AI=1.969 bellek
+B=5  FLOP=2621440 bayt=1069056 AI=2.452 bellek
+B=6  FLOP=3145728 bayt=1073152 AI=2.931 hesap
+B=16 FLOP=8388608 bayt=1114112 AI=7.529 hesap
+butce cevrim=840000 MAC_tavan=420000
+ogretmen fp32                4687.5 KB   1200000 MAC  14.29 ms hayir
+ogretmen int8                1171.9 KB   1200000 MAC  14.29 ms hayir
+budama %70 + int8 (yogun)    1171.9 KB    360000 MAC   4.29 ms hayir
+yapisal %50 + damitma int8    117.2 KB    120000 MAC   1.43 ms evet

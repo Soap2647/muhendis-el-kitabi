@@ -1,0 +1,5 @@
+yontem,adim,modes,hq
+DDPM,100,8,0.9800
+DDIM,10,8,0.7690
+DDIM,20,8,0.9025
+DDIM,100,8,0.9635

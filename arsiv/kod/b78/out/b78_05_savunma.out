@@ -1,0 +1,23 @@
+A) Rastgele duzgunlestirme (sigma = 0.25, 100 test ornegi)
+  tohum 0: sertifikali = 0.91 0.85 0.77 0.67 0.56 0.36  cekimser = 5
+  tohum 1: sertifikali = 0.91 0.88 0.79 0.69 0.55 0.36  cekimser = 4
+  tohum 2: sertifikali = 0.89 0.85 0.78 0.69 0.51 0.40  cekimser = 5
+  r sirasi: 0.0 0.1 0.2 0.3 0.4 0.5
+
+B1) Sifirdan IBP: el ornegi ag (2 girdi, 2 gizli, 2 cikti)
+  eps=0.10  IBP alt marj=+0.0250  kaba kuvvet min marj=+0.2750
+  eps=0.15  IBP alt marj=-0.0875  kaba kuvvet min marj=+0.2376
+
+B2) Dogrulama: sinirlar gercek cikislari kapsiyor mu?
+  20 ornek x 5000 rastgele nokta: sinir ihlali = 0
+  ortalama kutu genisligi (logit): 21.495
+  torch ve numpy IBP en buyuk fark = 6.80e-06
+
+B3) IBP egitimi (eps_egitim = 0.03) ve sertifikali dogruluk
+tohum model     temiz c0.005 c0.010 c0.020 c0.030 PGD0.02
+    0 standart  0.950  0.667     0.136     0.000     0.000   0.919
+    0 IBP       0.956  0.944     0.936     0.886     0.825   0.939
+    1 standart  0.950  0.675     0.147     0.000     0.000   0.903
+    1 IBP       0.953  0.939     0.925     0.889     0.800   0.933
+    2 standart  0.950  0.700     0.133     0.000     0.000   0.914
+    2 IBP       0.953  0.944     0.936     0.881     0.811   0.942

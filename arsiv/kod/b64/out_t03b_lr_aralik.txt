@@ -1,0 +1,4 @@
+LR aralik testi: adim sayisi=264
+  en dusuk EMA kayip: lr=6.649e-01  kayip=1.5565
+  onerilen (en dusuk / 10): lr=6.649e-02
+  son adimlarda lr=1.088e+00 kayip=42.6557

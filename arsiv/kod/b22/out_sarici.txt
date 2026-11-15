@@ -1,0 +1,4 @@
+yeniden: 23.0 ham cagri: 3
+topla: 5 sayac: 1
+ad: topla | __wrapped__: topla
+nesne katmani: BufferedReader -> FileIO

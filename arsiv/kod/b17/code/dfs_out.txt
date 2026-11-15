@@ -1,0 +1,22 @@
+Kenar siniflandirmasi (ozyinelemeli DFS):
+  0 -> 1 : agac
+  1 -> 2 : agac
+  2 -> 0 : geri
+  0 -> 3 : agac
+  3 -> 2 : capraz
+  0 -> 2 : ileri
+  4 -> 5 : agac
+Dugum  d  f
+  0     1  8
+  1     2  5
+  2     3  4
+  3     6  7
+  4     9 12
+  5    10 11
+Sayim: agac=4 geri=1 ileri=1 capraz=1
+Ozyinelemeli ziyaret: 0 1 2 3 4 5 
+Naif ziyaret       : 0 2 3 1 4 5 
+
+Rastgele 200 graf (n=40, tohum 42):
+  yinelemeli == ozyinelemeli (d ve f): 200/200
+  naif sira ozyinelemeliden farkli   : 200/200

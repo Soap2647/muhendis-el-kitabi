@@ -1,0 +1,5 @@
+dokunmadan once : 0000000000000000
+4. sayfaya yazma: 0001000000000000
+kucuk hata (1 yazma): 1
+kalan 15 sayfa      : 15 kucuk hata
+hepsi dokundu    : 1111111111111111

@@ -1,0 +1,4 @@
+worker yok + item (yavas)        medyan = 1.933 s
+worker=4 + item                  medyan = 0.504 s
+worker yok + senkronsuz          medyan = 1.908 s
+worker=4 + senkronsuz (hizli)    medyan = 0.515 s

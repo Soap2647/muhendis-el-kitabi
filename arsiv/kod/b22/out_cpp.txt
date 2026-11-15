@@ -1,0 +1,53 @@
+=== factory.cpp
+termistor 23.5
+nem 61
+hata: bilinmeyen sensor: basinc
+[exit 0]
+=== ayar.cpp
+hiz=12 irtifa=120 kayit=1
+reddedildi: hiz 0..30 m/s olmali
+[exit 0]
+=== tekil.cpp
+kurulum sayisi: 1
+ayni ornek: true
+[exit 0]
+=== adaptor.cpp
+82.5201 C
+165.04 C
+241.758 C
+[exit 0]
+=== sarici.cpp
+1. yeniden: 21 ham cagri: 1
+2. yeniden: 23 ham cagri: 3
+onbellek: 21 21
+[exit 0]
+=== fasad.cpp
+yollandi: ARAC7;23.5
+reddedildi
+[exit 0]
+=== strateji.cpp
+ortalama 43.6667 44.3333 44.3333 22 22 
+medyan   21 22 22 22 22 
+5 4 3 1 1 
+[exit 0]
+=== gozlemci.cpp
+  ALARM gecici 10
+abone sayisi: 2
+  ALARM kritik 85
+abone sayisi: 1
+[exit 0]
+=== komut.cpp
+ekle metin="Merhaba" geri=1 ileri=0
+sil5 metin="Merhaba " geri=3 ileri=0
+geri metin="Merhaba dunya" geri=2 ileri=1
+geri metin="Merhaba" geri=1 ileri=2
+yinele metin="Merhaba dunya" geri=2 ileri=1
+ekle! metin="Merhaba dunya!" geri=3 ileri=0
+yinele: hayir
+[exit 0]
+=== durum.cpp
+gecerli: 4 reddedilen: 12
+kalkis sonrasi: KALKIS
+hata: KALKIS durumunda olay yok
+hata sonrasi durum: KALKIS
+[exit 0]

@@ -1,0 +1,8 @@
+n=1048576 tekrar=50
+yontem,dagitim,ms
+etiketli,tek_tur,0.952
+sanal,tek_tur,3.014
+# sonuc_farki=0
+etiketli,karisik,3.313
+sanal,karisik,5.165
+# sonuc_farki=0

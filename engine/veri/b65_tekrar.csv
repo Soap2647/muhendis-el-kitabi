@@ -1,0 +1,8 @@
+olcum,deger
+index_add_ varsayilan,6
+index_add_ deterministic,1
+conv deterministic bit-aynı,1
+fp32 egitim_dogruluk,0.9928
+fp32 test_dogruluk,0.9685+-0.0013
+fp16-AMP egitim_dogruluk,0.9928
+fp16-AMP test_dogruluk,0.9685+-0.0013

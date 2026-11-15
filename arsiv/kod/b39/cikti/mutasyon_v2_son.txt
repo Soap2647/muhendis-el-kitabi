@@ -1,0 +1,2 @@
+$ python mutasyon.py tarih.py mutasyon/test_guclu_v2.py | tail -1
+Toplam: 36, öldürülen: 36, skor: 100.0%

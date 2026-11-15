@@ -1,0 +1,7 @@
+yanit : A5 01 90 08 02 0B 00 00 74 B3 03 6A DF
+toplama dogru: True
+yer degisimi, toplama dogru: True
+  gerilim = 281.8 V
+0x95 yanit: A5 01 95 08 01 0C E4 0C D7 0C F0 00 13
+  main.c hucre = 0.268 V
+  dogru hucre1 = 3.300 V

@@ -1,0 +1,15 @@
+
+Newton hatasi (sqrt2):
+0 4.142e-01
+1 8.579e-02
+2 2.453e-03
+3 2.124e-06
+4 1.595e-12
+5 0.000e+00
+6 2.220e-16
+GD(eta=0.1) adim 10,30,59 hata: ['1.840e-02', '2.405e-05', '1.563e-09']
+
+Newton Rosenbrock: adim=7  x=[1. 1.]  f=0.000e+00
+
+LM: a=2.0109 b=-0.7057 maliyet=0.003928 adim=6
+scipy lm: a=2.0109 b=-0.7057 maliyet=0.003928 nfev=6

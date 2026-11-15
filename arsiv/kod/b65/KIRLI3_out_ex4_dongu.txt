@@ -1,0 +1,3 @@
+yavas  medyan epoch = 2.157 s  (tekrarlar: 1.976, 2.157, 2.434)
+hizli  medyan epoch = 0.500 s  (tekrarlar: 0.483, 0.519, 0.500)
+oran yavas/hizli = 4.31

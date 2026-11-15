@@ -1,0 +1,5 @@
+gecerli: 4 reddedilen: 12
+kalkis_emri -> KALKIS
+irtifa_ulasti -> SEYIR
+inis_emri -> INIS
+pist_temas -> YERDE

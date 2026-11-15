@@ -1,0 +1,6 @@
+senaryo,bit_nokta,ham,oran
+mükemmel periyodik (1 Hz),1.0047,64,63.70
+"1 Hz, ±3 ms titreme",7.8835,64,8.12
+"1 Hz, ±40 ms titreme",9.0400,64,7.08
+"1 Hz, ±3 ms, %1 boşluk",8.4474,64,7.58
+"10 Hz, ±1 ms, %5 boşluk",8.2398,64,7.77

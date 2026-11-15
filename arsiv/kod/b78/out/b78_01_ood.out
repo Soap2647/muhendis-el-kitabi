@@ -1,0 +1,21 @@
+tohum  test_dogruluk
+    0         0.9472
+    1         0.9500
+    2         0.9556
+
+OOD ayrisma (birlesik, 3 tohum ortalama +- sapma)
+yontem        AUROC          FPR@95
+MSP           0.795 +- 0.028   0.716 +- 0.028
+Enerji        0.696 +- 0.015   0.819 +- 0.004
+Mahalanobis   0.982 +- 0.005   0.073 +- 0.023
+
+OOD turu bazinda AUROC (3 tohum ortalama):
+gurultu   MSP          0.828
+gurultu   Enerji       0.731
+gurultu   Mahalanobis  0.987
+leke      MSP          0.763
+leke      Enerji       0.661
+leke      Mahalanobis  0.978
+birlesik  MSP          0.795
+birlesik  Enerji       0.696
+birlesik  Mahalanobis  0.982

@@ -1,0 +1,13 @@
+deney,parametre,tekrar,sure_s
+kurulum,8 surec,3,0.500810
+seri,100000,3,0.008201
+chunksize,1,3,42.943064
+chunksize,10,3,1.862333
+chunksize,100,3,0.195833
+chunksize,1000,3,0.039973
+chunksize,10000,3,0.024387
+chunksize,3125,3,0.025850
+agir_seri,200x200000,3,2.339698
+agir_surec,200x200000,3,0.406557
+arg_dizi,50x8MB,3,0.305323
+surec_uret,50 tohum,3,0.049996

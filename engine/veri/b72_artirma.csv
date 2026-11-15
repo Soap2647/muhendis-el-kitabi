@@ -1,0 +1,5 @@
+kosul,dogruluk,sd
+A: yalniz gercek (%10),0.8796,0.0293
+"B: + cVAE (500, etiketli)",0.9213,0.0086
+"C: + DDPM (etiketlenmis, guven>0,9)",0.8824,0.0198
+"D: tam egitim (%100, referans)",0.9694,0.0023

@@ -1,0 +1,33 @@
+1) Ornekler (test): indeks, gercek sinif, tahmin
+     19  gercek=0  tahmin=0
+     34  gercek=3  tahmin=3
+     18  gercek=5  tahmin=5
+      3  gercek=8  tahmin=8
+
+2) Entegre gradyan tamlik kontrolu (ornek 19)
+   z(x) - z(0) = 9.62186
+   m=  5  sum(IG) = 9.57520  hata = 4.67e-02
+   m= 20  sum(IG) = 9.63345  hata = 1.16e-02
+   m= 50  sum(IG) = 9.63809  hata = 1.62e-02
+   m=200  sum(IG) = 9.62219  hata = 3.31e-04
+
+3) Ornekler uzerinde yontemler
+   ornek   19: GxI en buyuk pikseller [21 18 26 10]
+   ornek   34: GxI en buyuk pikseller [45 28  4 53]
+   ornek   18: GxI en buyuk pikseller [ 4  5 10 11]
+   ornek    3: GxI en buyuk pikseller [35 27 58 50]
+
+4) Shapley: tam hesap (256 koalisyon) ve ornekleme
+   phi (satir gruplari): 0.337 0.242 1.584 3.700 3.612 1.358 1.255 0.361
+   verimlilik: sum(phi) = 12.4496, v(N)-v({}) = 12.4496
+   m   hata_ort   hata_sd   (5 tohum, ornekleme)
+     5   0.1903    0.0853
+    20   0.0868    0.0362
+    50   0.0669    0.0263
+   200   0.0336    0.0086
+
+5) Sanity: rastgele agirliklarla aciklama degisiyor mu?
+   katman  Spearman(ort)  sd
+   1       +0.079        0.340
+   2       +0.036        0.296
+   3       +0.057        0.078

@@ -1,0 +1,19 @@
+Gradyan gurultusu (init, 300 tekrar):
+  batch=   8  E||g_b - g||^2 = 0.386054
+  batch=  32  E||g_b - g||^2 = 0.091766
+  batch= 128  E||g_b - g||^2 = 0.020654
+  batch= 512  E||g_b - g||^2 = 0.003085
+  batch=   8  oran (8'e gore) = 1.000
+  batch=  32  oran (8'e gore) = 0.238
+  batch= 128  oran (8'e gore) = 0.054
+  batch= 512  oran (8'e gore) = 0.008
+
+Epoch=30, SGD (momentum yok), 5 tohum:
+  sabit_lr=0.1     batch=   8 adim= 4050  test=0.9767 +- 0.0032
+  sabit_lr=0.1     batch=  32 adim= 1020  test=0.9633 +- 0.0036
+  sabit_lr=0.1     batch= 128 adim=  270  test=0.9356 +- 0.0036
+  sabit_lr=0.1     batch= 512 adim=   90  test=0.7744 +- 0.0865
+  dogrusal_olcek   batch=   8 adim= 4050  test=0.9656 +- 0.0058
+  dogrusal_olcek   batch=  32 adim= 1020  test=0.9633 +- 0.0036
+  dogrusal_olcek   batch= 128 adim=  270  test=0.9672 +- 0.0063
+  dogrusal_olcek   batch= 512 adim=   90  test=0.1639 +- 0.0844

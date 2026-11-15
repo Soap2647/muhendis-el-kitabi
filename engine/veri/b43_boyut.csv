@@ -1,0 +1,8 @@
+ad,text,data,bss
+app -O0,464,0,4
+app -O2,320,0,4
+app -Os,300,0,4
+app -Os + gc,192,0,4
+printf yok (nano -Os),192,0,4
+printf var (nano -Os),5688,92,344
+printf var (nano -Os + gc),4152,92,340

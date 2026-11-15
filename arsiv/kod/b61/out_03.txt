@@ -1,0 +1,28 @@
+A) digits (1797 x 64): kovaryans, SVD, sklearn
+   max|ozdeger_cov - sigma^2/(n-1)| = 4.26e-13
+   max|oran_cov - sklearn oran| = 8.33e-17
+   ilk 5 bilesen |cos| (sklearn): [1. 1. 1. 1. 1.]
+   ilk 1 bilesen = 0.1489, ilk 2 = 0.2851
+   90% icin k = 21, 95% icin k = 29
+   k= 2 kum.varyans=0.2851 MSE=13.4210
+   k= 8 kum.varyans=0.6739 MSE=6.1218
+   k=16 kum.varyans=0.8494 MSE=2.8272
+   k=32 kum.varyans=0.9664 MSE=0.6316
+   CSV yazildi
+B) merkezlemenin onemi (digits + 3 ofset)
+   merkezli PC1 - merkezsiz SVD-1: |cos| = 0.0081
+   merkezli PC1 - orijinal PC1:    |cos| = 1.0000
+   merkezsiz SVD-1 - orijinal PC1: |cos| = 0.0081
+   sentetik (ort=(20,0)), dogru yon:
+   merkezli PC1 |cos| = 1.0000
+   merkezsiz SVD-1 |cos| = 0.9236
+   wine ham: PC1 orani=0.9981
+   en buyuk yuk: proline
+   wine olcekli: PC1 orani=0.3620
+C) whitening: ilk 5 bilesenin varyansi (1'e yakin)
+   diag = [1. 1. 1. 1. 1.]
+D) halka: lojistik regresyon, test dogrulugu
+   dogrusal PCA (2 bilesen): 0.4833
+   RBF kernel PCA gamma=1.0 : 0.4917
+   RBF kernel PCA gamma=4.0 : 1.0000
+   RBF kernel PCA gamma=10.0: 0.8250

@@ -1,0 +1,10 @@
+n=      1  cpu      1.87 us/işlem
+n=      1  gpu     13.83 us/işlem
+n=     64  cpu      2.01 us/işlem
+n=     64  gpu     14.79 us/işlem
+n=   1024  cpu      2.02 us/işlem
+n=   1024  gpu     14.73 us/işlem
+n=  16384  cpu      4.10 us/işlem
+n=  16384  gpu     14.32 us/işlem
+n= 262144  cpu     11.84 us/işlem
+n= 262144  gpu     16.44 us/işlem

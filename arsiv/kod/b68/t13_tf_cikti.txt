@@ -1,0 +1,4 @@
+egitim / test               tohum11  tohum12  tohum13
+TF egitim, serbest test      0.1820   0.1836   0.1843
+TF egitim, TF test (iyimser)   0.1766   0.1772   0.1769
+serbest egitim, serbest test   0.1823   0.1837   0.1835

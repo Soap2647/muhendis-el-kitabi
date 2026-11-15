@@ -1,0 +1,11 @@
+A) digits alt kumesi (500 x 64): perplexity etkisi
+   perp= 5 KL=0.5978 guven(k=10)=0.9819
+   perp=30 KL=0.5117 guven(k=10)=0.9883
+   perp=50 KL=0.5062 guven(k=10)=0.9870
+B) yontem karsilastirmasi (guvenilirlik, k=10)
+   PCA-2:    0.8342
+   t-SNE-30: 0.9883
+   UMAP-15:  0.9828 (umap-learn 0.5.12)
+C) gurultuda sahte kume: 500 x 50 saf Gauss
+   ham uzayda siluet (k=8) = 0.0181
+   t-SNE uzayinda siluet (k=8) = 0.3198

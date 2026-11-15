@@ -1,0 +1,4 @@
+esit: True
+UcusAyar(hiz=12.0, irtifa=120.0, batarya=80.0, gps=True, kayit=False)
+reddedildi: hiz 0..30 m/s olmali
+reddedildi: hiz 0..30 m/s olmali

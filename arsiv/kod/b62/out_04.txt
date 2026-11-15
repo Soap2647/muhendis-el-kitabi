@@ -1,0 +1,27 @@
+== 1B ornek izi ==
+adim    x-      P-      K       nu      x^      P
+1   0.0000 10.1000  0.9099  2.0000  1.8198  0.9099
+2   1.8198  1.0099  0.5025 -0.3198  1.6591  0.5025
+3   1.6591  0.6025  0.3760  1.3409  2.1632  0.3760
+
+== 2B takip ve tutarlilik ==
+
+[Takip] ham olcum RMS = 6.777 m
+[Takip] filtre RMS    = 4.623 m
+[Eksik] 20 adim olcum yok: pozisyon belirsizligi (iz P)
+   k=39  sqrt(trP_konum)=4.54  hata=1.55
+   k=45  sqrt(trP_konum)=16.61  hata=3.81
+   k=55  sqrt(trP_konum)=49.00  hata=13.45
+   k=59  sqrt(trP_konum)=64.96  hata=20.16
+   k=65  sqrt(trP_konum)=4.76  hata=8.21
+[Tutarlilik] dogru    NEES=4.289 (4)  NIS=2.031 (2)
+[Tutarlilik] kucuk_q  NEES=177.371 (4)  NIS=8.798 (2)
+
+[Ayar] ort. RMS (m); satir q, sutun R olcegi 0.25 / 1 / 4
+q=  0.005  7.519  11.607  18.268
+q=  0.050  4.793  5.924  8.710
+q=  0.500  4.879  4.627  5.116
+q=  5.000  5.735  5.186  4.820
+q= 50.000  6.515  6.073  5.579
+
+[filterpy 1.4.5] en buyuk fark (kendi - filterpy): 0.00e+00

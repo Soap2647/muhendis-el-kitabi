@@ -1,0 +1,14 @@
+python 3.12.10
+n=10 naif=     6142 re_ms=0.030
+n=12 naif=    24574 re_ms=0.113
+n=14 naif=    98302 re_ms=0.456
+n=16 naif=   393214 re_ms=1.826
+n=18 naif=  1572862 re_ms=7.372
+n=20 naif=  6291454 re_ms=30.702
+n=22 naif= 25165822 re_ms=122.989
+n=24 naif=100663294 re_ms=480.764
+thompson n=  1000 ms=1.54
+thompson n=  2000 ms=3.08
+thompson n=  4000 ms=6.18
+thompson n=  8000 ms=12.62
+thompson n= 16000 ms=25.22

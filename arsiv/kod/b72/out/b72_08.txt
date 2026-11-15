@@ -1,0 +1,25 @@
+== A. Gurultu takvimleri: abar_t = prod(1 - beta_s) ==
+t     lineer abar_t   kosinus abar_t
+1     0.999900      0.999369
+10    0.911686      0.972093
+25    0.538718      0.847012
+50    0.076876      0.493844
+75    0.002697      0.144272
+100   0.000021      0.000000
+beta_1..beta_T araligi (lineer): 0.0001 .. 0.2000
+abar_T lineer = 2.14e-05  (sinyal neredeyse yok)
+
+== Kapali form kontrolu: t=50, x0=[2.0, 0.0] ==
+ortalama: MC=[0.5558000206947327, -0.0008999999845400453]  kapali=[0.5544999837875366, 0.0]
+varyans : MC=[0.9261999726295471, 0.9251000285148621]  kapali=0.9231
+
+== B. Gurultu tahmincisi egitimi: 15000 iterasyon ==
+kayip ort. ilk 500: 0.3462  son 500: 0.1923
+
+== C. Ornekleme (2000 ornek; mod = merkeze 0,2 icinde >=%1) ==
+yontem            adim   modes   hq (merkeze 0,2 icinde)
+DDPM (ancestral)   100     8     0.980
+DDIM (eta=0)        10     8     0.767
+DDIM (eta=0)        20     8     0.902
+DDIM (eta=0)       100     8     0.963
+Ciktilar yazildi.

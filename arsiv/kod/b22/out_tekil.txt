@@ -1,0 +1,3 @@
+modul onbellegi: True
+test_b basarisiz: gizli durum sizdi
+test_c gecti

@@ -1,0 +1,26 @@
+=== TM_KULLAN_DSP=0 ===
+-- tinyml.o:
+   text	   data	    bss	    dec	    hex	filename
+   1064	      0	      0	   1064	    428	tinyml_dsp0.o
+-- firmware (fw_dsp0.elf):
+   text	   data	    bss	    dec	    hex	filename
+   3284	      0	     44	   3328	    d00	fw_dsp0.elf
+-- komut sayimi (tinyml.o, disassembly):
+  smlad    0
+  smlabb   2
+  mla      1
+  ldrsb    6
+  ldr      15
+=== TM_KULLAN_DSP=1 ===
+-- tinyml.o:
+   text	   data	    bss	    dec	    hex	filename
+   1104	      0	      0	   1104	    450	tinyml_dsp1.o
+-- firmware (fw_dsp1.elf):
+   text	   data	    bss	    dec	    hex	filename
+   3324	      0	     44	   3368	    d28	fw_dsp1.elf
+-- komut sayimi (tinyml.o, disassembly):
+  smlad    10
+  smlabb   0
+  mla      0
+  ldrsb    0
+  ldr      20

@@ -1,0 +1,19 @@
+Katman 1 / 10 / 20 icin aktivasyon std ve gradyan normu:
+  kucuk      act: 2.37e-02 1.00e-10 5.14e-20
+  kucuk      grad W1=5.01e-20 W10=4.92e-20 W20=4.94e-20 cikis=4.71e-20
+  kucuk+BN   act: 5.71e-01 5.94e-01 5.99e-01
+  kucuk+BN   grad W1=1.81e+01 W10=2.93e+00 W20=5.07e-01 cikis=4.89e-01
+  xavier     act: 1.88e-01 1.15e-02 5.38e-04
+  xavier     grad W1=5.75e-04 W10=7.14e-04 W20=7.16e-04 cikis=4.92e-04
+  xavier+BN  act: 5.78e-01 5.95e-01 5.99e-01
+  xavier+BN  grad W1=2.03e+01 W10=4.26e+00 W20=8.49e-01 cikis=1.49e+00
+  he         act: 4.20e-01 5.84e-01 8.71e-01
+  he         grad W1=1.94e+00 W10=7.41e+00 W20=8.40e+00 cikis=9.54e+00
+  he+BN      act: 5.78e-01 5.95e-01 5.99e-01
+  he+BN      grad W1=9.32e+00 W10=3.08e+00 W20=6.13e-01 cikis=1.51e+00
+
+Egitim (20 katman, SGD lr=0.05, 20 epoch, 3 tohum):
+  kucuk      test = 0.1028 +- 0.0000
+  xavier     test = 0.3306 +- 0.1302
+  he         test = 0.7426 +- 0.1998
+  he+BN      test = 0.9648 +- 0.0042

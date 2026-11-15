@@ -1,0 +1,9 @@
+sigmoid'in en büyük türevi = 0.25
+GELU(1)=0.8412  GELU(-1)=-0.1588  GELU(0)=0.0000
+Doğrusal 3 katman farkı (maks) = 1.6e-13
+Üç katmanın parametresi = 2720, tek katman = 640
+ReLU'lu iki katmanın çıktı şekli: (5, 16)
+Ölü ReLU deneyi (64-64-10, 5 epoch, tohum 0):
+  lr=0.05  ölü birim= 3 / 64  test doğruluğu=0.897
+  lr=0.50  ölü birim= 5 / 64  test doğruluğu=0.944
+  lr=2.00  ölü birim=63 / 64  test doğruluğu=0.100

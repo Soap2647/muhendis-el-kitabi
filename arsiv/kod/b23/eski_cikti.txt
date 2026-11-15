@@ -1,0 +1,4 @@
+iyi.bin    -> 0, adet=3
+sihir.bin  -> -2
+kesik.bin  -> -5
+yok.bin    -> -1

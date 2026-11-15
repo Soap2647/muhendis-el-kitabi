@@ -1,0 +1,7 @@
+eşleme boyutu: 256
+'ğ'     bayt=[196, 159] simge=ÄŁ
+'ı'     bayt=[196, 177] simge=Ä±
+'ü'     bayt=[195, 188] simge=Ã¼
+'a'     bayt=[97] simge=a
+' '     bayt=[32] simge=Ġ
+'çözüm' bayt=[195, 167, 195, 182, 122, 195, 188, 109] simge=Ã§Ã¶zÃ¼m

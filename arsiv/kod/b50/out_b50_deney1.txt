@@ -1,0 +1,12 @@
+analitik gradyan: [-215.6  -88. ]
+float64 en iyi ileri h = 1e-08 hata=7.741e-06
+float64 en iyi merk h = 1e-06 hata=2.244e-08
+float32 en iyi ileri h = 1e-04 hata=1.078e-01
+float32 en iyi merk h = 1e-03 hata=1.049e-02
+h=1e-02 ileri=6.602e+00 merkezi=4.800e-02
+h=1e-04 ileri=6.650e-02 merkezi=4.800e-06
+h=1e-06 ileri=6.650e-04 merkezi=2.244e-08
+h=1e-08 ileri=7.741e-06 merkezi=9.906e-07
+h=1e-10 ileri=1.784e-05 merkezi=1.784e-05
+h=1e-12 ileri=2.485e-02 merkezi=1.597e-02
+h=1e-14 ileri=3.056e-01 merkezi=3.056e-01

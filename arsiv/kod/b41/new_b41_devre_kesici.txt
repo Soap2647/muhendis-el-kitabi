@@ -1,0 +1,21 @@
+tick  önce        çağrı  sonuç         sonra
+0     KAPALI        B      BAŞARI         KAPALI
+1     KAPALI        H      HATA           KAPALI
+2     KAPALI        H      HATA           KAPALI
+3     KAPALI        H      HATA           AÇIK
+4     AÇIK          H      REDDEDİLDİ     AÇIK
+5     AÇIK          B      REDDEDİLDİ     AÇIK
+6     AÇIK          H      REDDEDİLDİ     AÇIK
+7     AÇIK          H      REDDEDİLDİ     AÇIK
+8     AÇIK          H      DENEME HATA    AÇIK
+9     AÇIK          B      REDDEDİLDİ     AÇIK
+10    AÇIK          B      REDDEDİLDİ     AÇIK
+11    AÇIK          B      REDDEDİLDİ     AÇIK
+12    AÇIK          B      REDDEDİLDİ     AÇIK
+13    AÇIK          B      DENEME BAŞARI  KAPALI
+14    KAPALI        B      BAŞARI         KAPALI
+15    KAPALI        H      HATA           KAPALI
+16    KAPALI        H      HATA           KAPALI
+17    KAPALI        B      BAŞARI         KAPALI
+18    KAPALI        B      BAŞARI         KAPALI
+19    KAPALI        B      BAŞARI         KAPALI

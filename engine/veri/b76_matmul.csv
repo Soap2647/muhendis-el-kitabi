@@ -1,0 +1,4 @@
+varyant,ms,gflops,bagil_hata,ai
+naif,63.271,271.5,2.28e-06,0.25
+tiled (T=16),22.653,758.4,2.28e-06,4.0
+torch.matmul (cuBLAS),2.78,6180.6,2.28e-06,-

@@ -1,0 +1,6 @@
+duzen    sayfa  ns/erisim  kucuk_hata
+sikli      256      9.14        256
+seyrek   16384     20.60      16384
+buyuk       32     17.65         32
+buyuk icin /proc/self/smaps_rollup:
+  AnonHugePages:     65536 kB

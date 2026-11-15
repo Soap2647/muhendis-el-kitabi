@@ -1,0 +1,4 @@
+1:1	ONDALIK_LIT	[1e]
+1:4	TAM_SAYI_LIT	[0x]
+2:1	DOSYA_SONU	[]
+hata var mi: hayir

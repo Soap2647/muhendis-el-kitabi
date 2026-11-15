@@ -1,0 +1,7 @@
+$ python mutasyon.py tarih.py mutasyon/test_guclu_v1.py | grep HAYATTA
+satır 3: 31 -> 32            HAYATTA
+satır 3: 31 -> 32            HAYATTA
+satır 4: 31 -> 32            HAYATTA
+satır 4: 31 -> 32            HAYATTA
+satır 4: 31 -> 32            HAYATTA
+satır 4: 31 -> 32            HAYATTA

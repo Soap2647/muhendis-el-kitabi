@@ -1,0 +1,36 @@
+== Ornek 3 (iki durum, T=3) ==
+delta (log):
+ [[-2.8134 -1.1394]
+ [-2.1611 -3.2597]
+ [-2.6231 -4.9745]]
+psi:
+ [[0 0]
+ [1 1]
+ [0 0]]
+en iyi yol: [1, 0, 0]
+olasilik (dogru): 0.072576
+kaba kuvvet en iyi yol: [1, 0, 0]  P(x) toplam: 0.12573
+
+== IHA ucus modu HMM ==
+
+[IHA] egitim: T=3000 tohum 62, test: T=600 tohum 63
+[dogrulama T=8] log P ileri: -8.3535052841
+[dogrulama T=8] log P kaba: -8.3535052841
+[dogrulama T=8] viterbi: [0, 0, 1, 1, 1, 1, 1, 1]
+[dogrulama T=8] kaba kuvvet: [0, 0, 1, 1, 1, 1, 1, 1]
+[dogrulama T=8] gercek: [0, 1, 1, 1, 1, 1, 1, 1]
+[Dogruluk] Viterbi: 0.7833  gozlem basina en iyi durum (naif): 0.6483
+[BW] egitim: T=3000, 150 iterasyon, baslangic: A0, B0
+[BW] log P(x) iterasyon boyunca (ilk 6 ve son):
+    [-2902.248, -2718.253, -2716.359, -2714.188] ... -2700.904
+[BW] monoton artis: True
+[BW] ogrenilen A:
+ [[0.337 0.663 0.   ]
+ [0.    0.927 0.073]
+ [0.286 0.    0.714]]
+[BW] ogrenilen B:
+ [[0.017 0.427 0.556]
+ [0.146 0.731 0.123]
+ [0.464 0.351 0.185]]
+[BW] gercek dogruluk (gercek parametreler): 0.7833
+[BW] test dogrulugu (ogrenilen parametreler): 0.81

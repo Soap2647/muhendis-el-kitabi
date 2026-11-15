@@ -1,0 +1,14 @@
+oznitelik,safsizlik_onemi,permutasyon_onemi,permutasyon_ss
+titresim_rms,0.22562,0.16398,0.01341
+motor_sicaklik,0.14169,0.05478,0.01367
+ucus_saati,0.12087,0.01688,0.00741
+batarya_dongu,0.11120,0.00330,0.00787
+seri_no,0.10944,0.00155,0.00439
+akim_ort,0.10656,-0.00465,0.00487
+gerilim_dusum,0.10581,-0.00819,0.00520
+ortam_tozlu,0.01720,0.00272,0.00172
+gorev_tasima,0.01490,0.00113,0.00519
+ortam_ilimli,0.01376,-0.00033,0.00192
+ortam_sicak,0.01194,-0.00032,0.00170
+gorev_gozetleme,0.01088,0.00015,0.00176
+gorev_kesif,0.01012,-0.00051,0.00235

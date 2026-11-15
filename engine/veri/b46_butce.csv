@@ -1,0 +1,5 @@
+katman,parametre,bayt_f32,bayt_int8,mac,cikti_bayt
+normalizasyon,40,160,160,0,80
+katman1_20x8,168,672,256,160,8
+katman2_8x2,18,72,24,16,8
+toplam,226,904,440,176,96

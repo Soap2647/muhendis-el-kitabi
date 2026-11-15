@@ -1,0 +1,3 @@
+yazilan=64 reddedilen=6
+ilk okunan=0
+bosaltildi, yeni okuma=-1

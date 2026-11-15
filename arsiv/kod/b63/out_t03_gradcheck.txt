@@ -1,0 +1,18 @@
+Ağ: dogru
+  katman 0 W (4, 5)   maks. göreli hata = 6.71e-10
+  katman 0 b (5,)     maks. göreli hata = 6.69e-11
+  katman 1 W (5, 6)   maks. göreli hata = 1.62e-10
+  katman 1 b (6,)     maks. göreli hata = 3.08e-10
+  katman 2 W (6, 3)   maks. göreli hata = 1.03e-09
+  katman 2 b (3,)     maks. göreli hata = 3.65e-11
+  EN BÜYÜK = 1.03e-09
+  durum: GEÇTİ
+Ağ: bozuk
+  katman 0 W (4, 5)   maks. göreli hata = 1.00e+00
+  katman 0 b (5,)     maks. göreli hata = 1.00e+00
+  katman 1 W (5, 6)   maks. göreli hata = 1.00e+00
+  katman 1 b (6,)     maks. göreli hata = 1.00e+00
+  katman 2 W (6, 3)   maks. göreli hata = 1.03e-09
+  katman 2 b (3,)     maks. göreli hata = 3.65e-11
+  EN BÜYÜK = 1.00e+00
+  durum: BAŞARISIZ

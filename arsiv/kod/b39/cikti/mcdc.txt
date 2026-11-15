@@ -1,0 +1,19 @@
+$ python mcdc.py
+El ile türetilen küme:
+test kümesi: TTF FTF TFF TFT
+  A: TTF -> FTF  (sonuç T -> F)
+  B: TTF -> TFF  (sonuç T -> F)
+  C: TFF -> TFT  (sonuç F -> T)
+  MC/DC: TAM
+
+Eksik küme (TFT çıkarıldı):
+test kümesi: TTF FTF TFF
+  A: TTF -> FTF  (sonuç T -> F)
+  B: TTF -> TFF  (sonuç T -> F)
+  C: KAPSANMADI
+  MC/DC: EKSİK
+
+En küçük MC/DC kümesi boyutu: 4
+Bu boyutta bulunan küme sayısı: 2
+   TTF TFT TFF FTF
+   TTF TFF FTT FTF

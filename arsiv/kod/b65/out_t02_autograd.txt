@@ -1,0 +1,18 @@
+f = 0.664037
+f.grad_fn: TanhBackward0
+f.grad_fn.next_functions:
+   ['DivBackward0']
+c.grad_fn: AddBackward0
+a.is_leaf: True  c.is_leaf: False
+
+birinci geçiş: a.grad = 0.223622  b.grad = 0.111811
+ikinci geçiş (sıfırlamadan): a.grad = 3.223622
+sıfırlandıktan sonra:        a.grad = 3.0
+
+yaprak olmayan u.is_leaf: False
+retain_grad sonrası u2.grad: 8.0
+
+no_grad içinde requires_grad: False
+detach requires_grad: False
+
+in-place hatası: one of the variables needed for gradient com ...

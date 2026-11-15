@@ -1,0 +1,4 @@
+300 rastgele cift: FFT == dogrudan == numpy.convolve
+n=  512 direkt=0.018s fft=0.006s
+n= 1024 direkt=0.077s fft=0.013s
+n= 2048 direkt=0.316s fft=0.028s

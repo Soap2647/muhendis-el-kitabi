@@ -1,0 +1,9 @@
+bolge    sanal adres      PML4 PDPT   PD   PT
+kod     00005ad974c53460 181  357  422   83
+rodata  00005ad974c540cd 181  357  422   84
+data    00005ad974c56010 181  357  422   86
+bss     00005ad974c56024 181  357  422   86
+heap    00005ad9861362a0 181  358   48  310
+mmap    0000751cadc47010 234  114  366   71
+yigin   00007ffe197bd564 255  504  203  445
+

@@ -1,0 +1,12 @@
+t00_gorsel exit 0
+t01_konv_np exit 0
+t02_cnn_digits exit 0
+t03_kayma exit 0
+kontrol_b66 exit 0
+t05_artirma exit 0
+t07_bozulma exit 0
+t08_verim exit 0
+t09_gradcam exit 0
+t06_transfer exit 0
+t04_artik exit 0
+ALLDONE

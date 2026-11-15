@@ -1,0 +1,5 @@
+kutu 1: (a-e) ln(a/e) = +0.0705
+kutu 2: (a-e) ln(a/e) = +0.0091
+kutu 3: (a-e) ln(a/e) = +0.0112
+kutu 4: (a-e) ln(a/e) = +0.1374
+PSI = 0.2282

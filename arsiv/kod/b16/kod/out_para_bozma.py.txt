@@ -1,0 +1,6 @@
+tutar= 0 en_az= 0 kombinasyon= 1 permutasyon= 1
+tutar= 3 en_az= 2 kombinasyon= 2 permutasyon= 3
+tutar= 5 en_az= 1 kombinasyon= 4 permutasyon= 9
+tutar=11 en_az= 3 kombinasyon=11 permutasyon=218
+paralar [2], tutar 3 -> en_az = -1
+200 rastgele ornek, hata: 0

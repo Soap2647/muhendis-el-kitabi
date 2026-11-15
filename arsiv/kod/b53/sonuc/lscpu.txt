@@ -1,0 +1,4 @@
+CPU(s): 16
+Model name: AMD Ryzen 7 6800H with Radeon Graphics
+Thread(s) per core: 2
+Core(s) per socket: 8

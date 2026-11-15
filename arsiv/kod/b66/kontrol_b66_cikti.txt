@@ -1,0 +1,6 @@
+Temiz test doğruluğu: 0.9083
+gürültü sigma=0.02: doğruluk 0.8875
+gürültü sigma=0.05: doğruluk 0.6758
+gürültü sigma=0.10: doğruluk 0.3458
+BN katlı model, en büyük logit farkı: 2.51e-03
+BN katlı model doğruluğu: 0.9092

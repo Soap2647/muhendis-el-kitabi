@@ -1,0 +1,4 @@
+başlangıç GPU: 0 %, 1143 MiB
+eğitim adımı (batch 32 x ctx 128, AMP): ms = [17.59, 17.37, 17.39], medyan=17.39
+üretim (KV önbelleksiz, bağlam<=128): 3.81 ms/token = 262.7 token/s
+bitiş GPU: 12 %, 1609 MiB

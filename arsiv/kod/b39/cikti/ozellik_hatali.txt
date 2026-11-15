@@ -1,0 +1,17 @@
+$ python -m pytest -q test_ozellik.py -k hatali --tb=short
+F                                                                [100%]
+============================== FAILURES ===============================
+__________________ test_hatali_ikili_arama_ozelligi ___________________
+test_ozellik.py:24: in test_hatali_ikili_arama_ozelligi
+    @given(st.lists(st.integers(), unique=True).map(sorted),
+                   ^^^
+test_ozellik.py:29: in test_hatali_ikili_arama_ozelligi
+    assert hedef not in xs
+E   assert 0 not in [0]
+E   Failing test case: test_hatali_ikili_arama_ozelligi(
+E       xs=[0],
+E       hedef=0,
+E   )
+======================= short test summary info =======================
+FAILED test_ozellik.py::test_hatali_ikili_arama_ozelligi - assert 0 n...
+1 failed, 3 deselected in 1.20s

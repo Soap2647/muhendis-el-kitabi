@@ -1,0 +1,22 @@
+== EKF vs PF ==
+
+[EKF vs PF] 30 kosu, N=1000, n=60 adim
+EKF konum RMS: ort 3.033  medyan 3.081  en kotu 3.866
+PF  konum RMS: ort 3.057  medyan 3.100  en kotu 3.942
+PF kosu suresi ort: 0.02 s
+
+[EKF vs PF] 30 kosu, N=1000, n=60 adim
+EKF konum RMS: ort 5.711  medyan 5.440  en kotu 8.954
+PF  konum RMS: ort 5.708  medyan 5.307  en kotu 9.469
+PF kosu suresi ort: 0.02 s
+
+== Parcacik sayisi ==
+
+[N etkisi] PF konum RMS, ESS ort.
+N=   10  RMS 39.190 (ss 39.482)  ESS ort 3.7
+N=   50  RMS 7.236 (ss 6.829)  ESS ort 20.4
+N=  200  RMS 3.381 (ss 0.610)  ESS ort 81.1
+N= 1000  RMS 3.061 (ss 0.474)  ESS ort 400.9
+N= 5000  RMS 3.000 (ss 0.454)  ESS ort 1990.6
+
+[Tek kosu] EKF RMS 2.901, PF RMS 3.095

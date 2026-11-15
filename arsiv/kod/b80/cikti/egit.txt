@@ -1,0 +1,31 @@
+GPU: NVIDIA GeForce RTX 3060 Laptop GPU
+klasik val    mAP@0.5=0.5969  mAP@[.5:.95]=0.5103
+klasik test   mAP@0.5=0.6005  mAP@[.5:.95]=0.5228
+klasik drift  mAP@0.5=0.2016  mAP@[.5:.95]=0.0910
+klasik agir   mAP@0.5=0.0039  mAP@[.5:.95]=0.0015
+klasik ood    mAP@0.5=0.4428  mAP@[.5:.95]=0.3841
+tohum 1 val    mAP@0.5=0.9286  mAP@[.5:.95]=0.6477
+tohum 1 test   mAP@0.5=0.9390  mAP@[.5:.95]=0.6387
+tohum 1 drift  mAP@0.5=0.8725  mAP@[.5:.95]=0.5474
+tohum 1 agir   mAP@0.5=0.0710  mAP@[.5:.95]=0.0324
+tohum 1 ood    mAP@0.5=0.8952  mAP@[.5:.95]=0.6053
+tohum 1 egitim suresi: 20 s
+tohum 2 val    mAP@0.5=0.9392  mAP@[.5:.95]=0.6386
+tohum 2 test   mAP@0.5=0.9407  mAP@[.5:.95]=0.6400
+tohum 2 drift  mAP@0.5=0.8820  mAP@[.5:.95]=0.5462
+tohum 2 agir   mAP@0.5=0.0708  mAP@[.5:.95]=0.0310
+tohum 2 ood    mAP@0.5=0.8662  mAP@[.5:.95]=0.5917
+tohum 2 egitim suresi: 20 s
+tohum 3 val    mAP@0.5=0.9404  mAP@[.5:.95]=0.6340
+tohum 3 test   mAP@0.5=0.9325  mAP@[.5:.95]=0.6366
+tohum 3 drift  mAP@0.5=0.8699  mAP@[.5:.95]=0.5367
+tohum 3 agir   mAP@0.5=0.0585  mAP@[.5:.95]=0.0271
+tohum 3 ood    mAP@0.5=0.8869  mAP@[.5:.95]=0.6002
+tohum 3 egitim suresi: 20 s
+
+Ozet (cnn: 3 tohum ort. +- ss):
+val    mAP@0.5 = 0.9361 +- 0.0065 | mAP@[.5:.95] = 0.6401
+test   mAP@0.5 = 0.9374 +- 0.0043 | mAP@[.5:.95] = 0.6384
+drift  mAP@0.5 = 0.8748 +- 0.0064 | mAP@[.5:.95] = 0.5434
+agir   mAP@0.5 = 0.0668 +- 0.0072 | mAP@[.5:.95] = 0.0302
+ood    mAP@0.5 = 0.8828 +- 0.0150 | mAP@[.5:.95] = 0.5991

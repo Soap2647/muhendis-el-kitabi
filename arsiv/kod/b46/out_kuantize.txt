@@ -1,0 +1,20 @@
+float32 test dogrulugu:      0.9930
+int8 (kanal basina, minmax    ) dogruluk: 0.9930
+int8 (katman basina, minmax   ) dogruluk: 0.9930
+int8 (kanal basina, yuzdelik  ) dogruluk: 0.9930
+max |logit_int8 - logit_f32|: 0.5661
+ortalama |fark|:              0.1100
+argmax uyumu (int8 vs f32):   1.0000
+int8 anomali: kesinlik 1.0000, duyarlilik 0.9777
+karisiklik (tn, fp, fn, tp): (1373, 0, 14, 613)
+rastgele vektor: 1000 logit araligi: -45319 66391
+C dosyalari yazildi: model_int8.h, test_*.bin
+S_in=0.0819739 Z_in=7 S_a1=0.0522158 Z_a1=-128
+kanal 0: M0 = 1362398346, rs = 37
+kanal 1: M0 = 1111630342, rs = 37
+kanal 2: M0 = 1950243921, rs = 37
+kanal 3: M0 = 1974131210, rs = 37
+kanal 4: M0 = 1375567070, rs = 37
+kanal 5: M0 = 1455104087, rs = 38
+kanal 6: M0 = 1921711117, rs = 37
+kanal 7: M0 = 1710252355, rs = 37

@@ -1,0 +1,25 @@
+1) Kucuk CNN: parametre 23668, FLOP (tek görüntü) 5014016 (5.01 M)
+   MLP: parametre 295812, FLOP 590848 (0.59 M)
+
+2) 64->128, 3x3:
+   standart  : parametre  73728
+   ayrılabilir: parametre   8768 (derinlemesine 576 + noktasal 8192)
+   oran: 8.41 kat
+
+3) fp32 test doğruluğu: 0.9083
+
+4) Çıkarım süresi (medyan):
+   cuda batch    1:    0.558 ms  (      1793 görüntü/s)
+   cuda batch   16:    0.836 ms  (     19132 görüntü/s)
+   cuda batch  128:    0.567 ms  (    225730 görüntü/s)
+   cuda batch 1024:    3.356 ms  (    305121 görüntü/s)
+   cpu  batch    1:    0.249 ms  (      4022 görüntü/s)
+   cpu  batch   16:    1.250 ms  (     12797 görüntü/s)
+   cpu  batch  128:    7.107 ms  (     18011 görüntü/s)
+   cpu  batch 1024:   62.494 ms  (     16386 görüntü/s)
+
+5) int8 simülasyonu (BN katlı, per-tensor simetrik):
+   fp32 doğruluk      : 0.9083
+   int8-sim doğruluk  : 0.9408
+   fp32 ile tahmin uyumu: 0.9583
+   ağırlık: fp32 94672 bayt, int8 23668 bayt (sapma/ölçek hariç)

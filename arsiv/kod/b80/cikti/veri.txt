@@ -1,0 +1,4 @@
+sahne: (200, 1, 96, 96) ort. nesne: 2.68
+sinif: [170, 191, 175]
+drift ort. piksel: 0.391
+nominal ort. piksel: 0.298

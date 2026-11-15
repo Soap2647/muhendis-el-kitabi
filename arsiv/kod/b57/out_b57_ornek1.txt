@@ -1,0 +1,11 @@
+N = 200, gercek pozitif = 24
+dogruluk   = 0.9250
+kesinlik   = 0.6667
+duyarlilik = 0.7500
+ozgulluk   = 0.9489
+F1         = 0.7059
+F2         = 0.7317
+MCC        = 0.6646
+kappa      = 0.6631
+hep 0 diyen dogruluk = 0.8800
+sklearn ile birebir eslesti.

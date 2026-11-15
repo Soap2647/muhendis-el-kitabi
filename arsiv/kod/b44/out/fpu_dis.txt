@@ -1,0 +1,25 @@
+
+out/fpu_isr.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <SysTick_Handler>:
+   0:	b510      	push	{r4, lr}
+   2:	4c0e      	ldr	r4, [pc, #56]	@ (3c <SysTick_Handler+0x3c>)
+   4:	ed2d 8b02 	vpush	{d8}
+   8:	ed94 8a00 	vldr	s16, [r4]
+   c:	edd4 8a01 	vldr	s17, [r4, #4]
+  10:	edd4 7a02 	vldr	s15, [r4, #8]
+  14:	ed94 7a03 	vldr	s14, [r4, #12]
+  18:	ee28 0a28 	vmul.f32	s0, s16, s17
+  1c:	ee67 7a87 	vmul.f32	s15, s15, s14
+  20:	ee30 0a27 	vadd.f32	s0, s0, s15
+  24:	f7ff fffe 	bl	0 <yavas_hesap>
+  28:	ee28 8a00 	vmul.f32	s16, s16, s0
+  2c:	ee38 8a68 	vsub.f32	s16, s16, s17
+  30:	ed84 8a04 	vstr	s16, [r4, #16]
+  34:	ecbd 8b02 	vpop	{d8}
+  38:	bd10      	pop	{r4, pc}
+  3a:	bf00      	nop
+  3c:	00000000 	.word	0x00000000

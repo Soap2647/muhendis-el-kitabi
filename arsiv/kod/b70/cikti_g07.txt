@@ -1,0 +1,7 @@
+sözlük: sıfırdan=33597 sklearn=33597
+eğitim matrisi maks. mutlak fark = 3.33e-16
+sınama  matrisi maks. mutlak fark = 2.22e-16
+seyreklik (sıfır oranı, eğitim) = 0.9989
+çoğunluk sınıfı baseline: test doğruluk=0.1038
+TF-IDF + lojistik (C=10): test doğruluk=0.2987  makro-F1=0.2015
+eğitim doğruluğu (bilgi amaçlı, eğitim skoru)=0.9988

@@ -1,0 +1,4 @@
+kayit sayisi: 3
+id=2 ad=b80_yolo_t2 test_map50=0.9407
+id=1 ad=b80_yolo_t1 test_map50=0.9390
+id=3 ad=b80_yolo_t3 test_map50=0.9325

@@ -1,0 +1,30 @@
+taban n=10 tamam
+taban n=50 tamam
+taban n=100 tamam
+taban n=500 tamam
+rastgele tohum 0 tamam
+simclr tohum 0 tamam
+vicreg tohum 0 tamam
+simsiam tohum 0 tamam
+tohum 0 denetimli ve ince ayar tamam
+rastgele tohum 1 tamam
+simclr tohum 1 tamam
+vicreg tohum 1 tamam
+simsiam tohum 1 tamam
+tohum 1 denetimli ve ince ayar tamam
+rastgele tohum 2 tamam
+simclr tohum 2 tamam
+vicreg tohum 2 tamam
+simsiam tohum 2 tamam
+tohum 2 denetimli ve ince ayar tamam
+
+Test dogrulugu, ortalama +- sapma (tohum sayisi 3; piksel/PCA tek)
+piksel      0.273        0.307        0.330        0.387      
+pca         0.286        0.310        0.338        0.360      
+rastgele    0.291+-0.013  0.313+-0.011  0.323+-0.006  0.390+-0.017
+simclr      0.494+-0.036  0.733+-0.035  0.814+-0.035  0.909+-0.019
+vicreg      0.348+-0.005  0.454+-0.026  0.535+-0.024  0.647+-0.024
+simsiam     0.336+-0.028  0.445+-0.048  0.518+-0.060  0.643+-0.080
+simclr_ince 0.503+-0.017  0.824+-0.014  0.933+-0.006  0.956+-0.004
+denetimli   0.378+-0.016  0.834+-0.023  0.958+-0.014  0.981+-0.002
+sutunlar: n = 10, 50, 100, 500 (sinif basina)

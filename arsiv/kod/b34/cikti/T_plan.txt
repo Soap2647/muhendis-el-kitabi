@@ -1,0 +1,20 @@
+$ python b34_plan.py iha.db
+WHERE ucus_id = 5 AND zaman_sn > 600
+     SEARCH telemetri USING INDEX ix_tel_uz (ucus_id=? AND zaman_sn>?)
+WHERE zaman_sn = 600
+     SCAN telemetri
+WHERE ucus_id + 0 = 5
+     SCAN telemetri
+WHERE ucus_id BETWEEN 5 AND 9 ORDER BY zaman_sn
+     SEARCH telemetri USING INDEX ix_tel_uz (ucus_id>? AND ucus_id<?)
+     USE TEMP B-TREE FOR ORDER BY
+WHERE ucus_id = 5 ORDER BY zaman_sn
+     SEARCH telemetri USING INDEX ix_tel_uz (ucus_id=?)
+ucak WHERE kuyruk = 'UA-001'
+     SEARCH ucak USING INDEX sqlite_autoindex_ucak_1 (kuyruk=?)
+ucak WHERE kuyruk LIKE 'UA-00%'
+     SCAN ucak
+ucak WHERE kuyruk LIKE '%001'
+     SCAN ucak
+case_sensitive_like = ON, ucak LIKE 'UA-00%':
+     SEARCH ucak USING INDEX ix_uk (kuyruk>? AND kuyruk<?)

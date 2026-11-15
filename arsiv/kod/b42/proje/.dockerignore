@@ -1,0 +1,10 @@
+.git
+dist
+api/__pycache__
+*.gcda
+*.gcno
+*.gcov
+*.o
+crc32_kapsa
+crc32_test
+secrets

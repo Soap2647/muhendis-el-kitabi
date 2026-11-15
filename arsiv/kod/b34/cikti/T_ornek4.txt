@@ -1,0 +1,29 @@
+$ python b34_ornek4.py iha.db
+-- geniş sorgu, indeks yokken
+   SCAN t
+   SEARCH x USING INTEGER PRIMARY KEY (rowid=?)
+   SEARCH g USING INTEGER PRIMARY KEY (rowid=?)
+   USE TEMP B-TREE FOR GROUP BY
+   USE TEMP B-TREE FOR ORDER BY
+medyan: 52.470 ms
+-- dar sorgu, indeks yokken
+   SCAN t
+   SEARCH x USING INTEGER PRIMARY KEY (rowid=?)
+   SEARCH g USING INTEGER PRIMARY KEY (rowid=?)
+medyan: 20.795 ms
+-- geniş sorgu, indeksler sonrası
+   SEARCH g USING INDEX ix_gorev_durum (durum=? AND baslangic>?)
+   SEARCH x USING COVERING INDEX ix_ucus_gorev (gorev_id=?)
+   SEARCH t USING INDEX ix_tel_ucus (ucus_id=?)
+   USE TEMP B-TREE FOR GROUP BY
+   USE TEMP B-TREE FOR ORDER BY
+medyan: 58.687 ms
+sonuç aynı mı: True
+-- dar sorgu, indeksler sonrası
+   SEARCH g USING COVERING INDEX ix_gorev_ucak_bas (ucak_id=? AND
+       baslangic>? AND baslangic<?)
+   SEARCH x USING COVERING INDEX ix_ucus_gorev (gorev_id=?)
+   SEARCH t USING INDEX ix_tel_ucus (ucus_id=?)
+medyan: 0.082 ms
+sonuç aynı mı: True
+dar sonuç: [(98, 23.718, 27)]

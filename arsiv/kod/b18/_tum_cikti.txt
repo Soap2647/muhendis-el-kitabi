@@ -1,0 +1,102 @@
+=== etkinlik_kurallar.py
+elle ornek: [(0, 10), (1, 2), (3, 4)] optimum 2
+   bitis       -> [(1, 2), (3, 4)]
+   baslangic   -> [(0, 10)]
+   en kisa     -> [(1, 2), (3, 4)]
+   az cakisma  -> [(1, 2), (3, 4)]
+elle ornek: [(0, 3), (2, 4), (3, 5)] optimum 2
+   bitis       -> [(0, 3), (3, 5)]
+   baslangic   -> [(0, 3), (3, 5)]
+   en kisa     -> [(2, 4)]
+   az cakisma  -> [(0, 3), (3, 5)]
+bitis       hata:   0 / 500
+baslangic   hata:  49 / 500
+   ilk karsi ornek: [(9, 10), (6, 10), (9, 13), (8, 11), (8, 9), (10, 11), (10, 15)] -> secilen 2 optimum 3
+en kisa     hata:   7 / 500
+   ilk karsi ornek: [(1, 6), (3, 5), (14, 17), (13, 15), (1, 2), (2, 5), (9, 14)] -> secilen 3 optimum 4
+az cakisma  hata:   0 / 500
+az cakisma, genis arama ilk karsi ornek (n=12):
+   kucultulmus: [(2, 8), (3, 10), (6, 11), (8, 13), (11, 15), (14, 20), (18, 27), (20, 24), (22, 27)] secilen 3 optimum 4
+=== karsi_ornek_avcisi.py
+kanonik mi [1, 5, 10, 25]                   True
+kanonik mi [1, 2, 5, 10, 20, 50, 100, 200]  True
+kanonik mi [1, 3, 4]                        False
+para: en kucuk karsi ornek: [1, 4, 6] tutar 9
+   acgozlu: 4 optimum: 3
+sirt: en kucuk karsi ornek: [(3, 6), (1, 3)] W 3
+   acgozlu: 3 optimum: 6
+=== fraksiyonel_sirt.py
+ornek (agirlik, deger): [(10, 60), (20, 100), (30, 120)] W = 50
+kesirli acgozlu: 240
+kesirli kaba   : 240
+0/1 optimum    : 220
+300 rastgele ornek, kesirli hata: 0
+=== huffman.py
+frekanslar: {'a': 5, 'b': 2, 'c': 1, 'd': 1, 'r': 2}
+adim 1: c(1) + d(1)
+adim 2: b(2) + r(2)
+adim 3: (cd)(2) + (br)(4)
+adim 4: a(5) + ((cd)(br))(6)
+  a -> 0
+  b -> 110
+  c -> 100
+  d -> 101
+  r -> 111
+bit sayisi: 23 (sabit uzunluk: 3*11 = 33)
+ortalama: 2.0909 entropi: 2.0404
+geri cozum dogru: True
+=== huffman_dogrula.py
+300 rastgele frekans vektoru, uyusmayan: 0
+f = [5, 2, 2, 1, 1] huffman: 23 kaba: 23
+f = [1, 1, 2, 4, 8] huffman: 30 kaba: 30
+=== huffman_metin.py
+dosya: bolum_16.md boyut: 99098 bayt
+sha256: 3aca772785323232 ...
+zlib surumu: 1.3.1
+farkli bayt sayisi: 119
+entropi        : 5.1203 bit/bayt
+huffman (veri) : 5.1659 bit/bayt
+gzip -9 (tum)  : 2.7050 bit/bayt
+sikistirma: huffman 64.6%, gzip 33.8%
+=== mst_kesme.py
+kesim testi (en hafif kenar): 6060
+ihlal (hicbir MST'de yok): 0
+minimum olmayan kenar, MST'de yok: 6080
+=== dijkstra_negatif.py
+Dijkstra     : [0, 5, 6]
+Bellman-Ford : [0, 3, 6]
+300 DAG, pozitif kenar, hata: 0
+300 DAG, negatif kenar, hata: 8
+=== belady.py
+k=3 FIFO:9 LRU:10 Belady:7
+k=4 FIFO:10 LRU:8 Belady:6
+300 dizi: Belady optimumdan farkli: 0
+300 dizi: LRU optimumdan farkli   : 155
+=== ornek1_toplanti.py
+toplantilar: [(1, 4), (3, 5), (0, 6), (5, 7), (3, 9), (5, 9), (6, 10), (8, 11)]
+  (1, 4) son= -inf -> secildi
+  (3, 5) son=    4 -> cakisiyor
+  (0, 6) son=    4 -> cakisiyor
+  (5, 7) son=    4 -> secildi
+  (3, 9) son=    7 -> cakisiyor
+  (5, 9) son=    7 -> cakisiyor
+  (6,10) son=    7 -> cakisiyor
+  (8,11) son=    7 -> secildi
+secilen    : [(1, 4), (5, 7), (8, 11)]
+kaba kuvvet: 3
+300 rastgele ornek, optimumdan farkli: 0
+300 rastgele ornek, onde kalma ihlali: 0
+=== ornek3_sicrama.py
+dizi: [2, 3, 1, 1, 4]
+izleme:
+i=0 a=2 en_uzak=2 sicrama=1 son=2
+i=1 a=3 en_uzak=4 sicrama=1 son=2
+i=2 a=1 en_uzak=4 sicrama=2 son=4
+en az sicrama: 2 | BFS: 2
+300 dizi (ulasilamayan atlanan): 74 hata: 0
+=== gorev_zamanlayici.py
+gorevler=AAABBBCC n=2
+  simulasyon: 8 formul: 8 tam arama: 8
+gorevler=AAABBBCC n=3
+  simulasyon: 10 formul: 10 tam arama: 10
+300 rastgele ornek, uc yontem uyusmuyor: 0

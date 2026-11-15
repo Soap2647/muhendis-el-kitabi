@@ -1,0 +1,13 @@
+Grup basina n = 3840.9  (yukari yuvarla: 3841)
+
+Bakis sayisi K    yanlis pozitif orani (hedef 0.05)
+  1              0.048
+  2              0.080
+  5              0.140
+ 10              0.188
+ 20              0.243
+ 50              0.321
+100              0.374
+
+Son bakis z std = 0.981 (N(0,1) icin 1.000)
+Erken bakma verisi yazildi: b57_erken_bakma.csv

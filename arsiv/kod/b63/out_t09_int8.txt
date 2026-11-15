@@ -1,0 +1,6 @@
+Test doğruluğu float32 = 0.975
+Test doğruluğu int8    = 0.975
+Tahmin uyumu (float vs int8) = 1.000
+Ağırlık sayısı = 17024, bias sayısı = 202
+float32 ağırlık+bias bellek = 68904 bayt
+int8 ağırlık + int32 bias = 17832 bayt

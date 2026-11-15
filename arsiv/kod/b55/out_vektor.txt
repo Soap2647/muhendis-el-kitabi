@@ -1,0 +1,8 @@
+ilk kayip: vektor 0.9965468155, skaler 0.9965468155
+gradyan en buyuk fark: 1.39e-16
+son kayip: vektor 0.069071, skaler 0.069071
+600 donem sonunda en buyuk agirlik farki: 1.22e-15
+skaler donem suresi  : 0.1390 s
+vektor donem suresi  : 0.000062 s
+hiz orani            : 2238 kat
+vektor modelin dogrulugu: 0.988

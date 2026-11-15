@@ -1,0 +1,18 @@
+Deterministik 4x4, V(0) = -4.095100, kapali bicim = -4.095100
+Dogrusal ve yinelemeli eslesme farki: 8.50e-10 (219 yineleme)
+gamma=0.90 PI: 4 it, VI: 26 it
+  max|V_PI-V_VI|=2.38e-09 Bellman=1.60e-09
+gamma=0.99 PI: 4 it, VI: 28 it
+  max|V_PI-V_VI|=4.67e-09 Bellman=2.96e-09
+izgara gamma=0.50 it=17 son 10 oran ort=0.2532
+izgara gamma=0.90 it=26 son 10 oran ort=0.3708
+izgara gamma=0.99 it=28 son 10 oran ort=0.4056
+dongu gamma=0.50 it=28 oran=[0.5 0.5]
+dongu gamma=0.90 it=176 oran=[0.9 0.9]
+dongu gamma=0.99 it=1834 oran=[0.99 0.99]
+V* (5x5):
+[[-5.556 -5.037 -4.442 -3.776 -3.069]
+ [-5.037 -4.467 -3.79  -3.029 -2.217]
+ [-4.442 -3.79  -3.028 -2.173 -1.237]
+ [-3.776 -3.029 -2.173 -1.212 -0.133]
+ [-3.069 -2.217 -1.237 -0.133  0.   ]]

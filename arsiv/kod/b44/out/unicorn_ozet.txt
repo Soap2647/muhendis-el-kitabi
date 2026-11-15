@@ -1,0 +1,6 @@
+16 yazma sonucu: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+bas, kuyruk, dusen = 0 15 1
+tohum=1 hata=0 dusen=338
+tohum=2 hata=0 dusen=340
+tohum=3 hata=0 dusen=364
+kritik_artir(1000) -> 1000

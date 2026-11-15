@@ -1,0 +1,6 @@
+n            eager ms   fused ms   hizlanma   eager GB/s  fused GB/s
+2^14      0.3820     0.1219     3.13x        1.7        1.1
+2^18      0.1587     0.0698     2.27x       66.1       30.0
+2^22      0.5786     0.1710     3.38x      290.0      196.2
+2^25      4.3469     0.9155     4.75x      308.8      293.2
+max fark (tum boyutlar): 4.8e-07

@@ -1,0 +1,49 @@
+
+yuksek sapma
+  n_egitim  egitim   dogrulama  (std)
+     143    0.171    0.137      0.034
+     402    0.565    0.497      0.061
+     661    0.712    0.666      0.033
+     919    0.810    0.779      0.038
+    1178    0.846    0.821      0.035
+    1437    0.849    0.839      0.015
+  son boy: egitim-dogrulama farki = 0.010
+
+yuksek varyans
+  n_egitim  egitim   dogrulama  (std)
+     143    1.000    0.553      0.025
+     402    1.000    0.701      0.037
+     661    1.000    0.782      0.020
+     919    1.000    0.791      0.011
+    1178    1.000    0.846      0.024
+    1437    1.000    0.851      0.008
+  son boy: egitim-dogrulama farki = 0.149
+
+dengeli
+  n_egitim  egitim   dogrulama  (std)
+     143    0.994    0.790      0.011
+     402    0.993    0.915      0.014
+     661    0.994    0.946      0.004
+     919    0.993    0.955      0.008
+    1178    0.992    0.958      0.011
+    1437    0.989    0.965      0.011
+  son boy: egitim-dogrulama farki = 0.023
+
+1-NN, 200 ornek: egitim = 1.000
+
+Genel: dogruluk 0.9591, duyarlilik 0.9375
+
+Dilim (mean radius ceyreklerine gore) - test:
+dilim  sinir-aralik          n   dogruluk  duyarlilik  pozitif
+0     < 11.82              43   0.9535     0.0000        2
+1     [11.82, 13.43)       42   0.9762     0.8000        5
+2     [13.43, 15.75)       43   0.9302     1.0000       16
+3     >= 15.75             43   0.9767     0.9756       41
+
+En kotu dilim: 0. Karisiklik (satir=gercek, sutun=tahmin):
+[[41  0]
+ [ 2  0]]
+
+Kacan 3 pozitif (en dusuk olasilik): p = [0.001 0.085 0.284]
+
+Ogrenme egrisi verisi yazildi: b57_ogrenme_egrisi.csv

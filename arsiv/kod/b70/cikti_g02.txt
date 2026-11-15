@@ -1,0 +1,37 @@
+== 1. Karakter ve sözcük istatistikleri (eşit boyut 500000) ==
+Türkçe     karakter=500000 sözcük=74646 tekil=12766 alfabe=145  bayt/karakter=1.1020
+İngilizce  karakter=500000 sözcük=73334 tekil=5635 alfabe=141  bayt/karakter=1.0023
+
+== 2. Sözcük düzeyi: sözlük büyümesi ve OOV (sınama: test bölümleri) ==
+eğitim % 10  sözcük=  36142  sözlük=  8476  OOV=%23.46
+eğitim % 20  sözcük=  72285  sözlük= 12488  OOV=%18.27
+eğitim % 40  sözcük= 144571  sözlük= 19553  OOV=%12.94
+eğitim % 60  sözcük= 216857  sözlük= 24947  OOV=%10.46
+eğitim % 80  sözcük= 289143  sözlük= 29815  OOV=%8.21
+eğitim %100  sözcük= 361429  sözlük= 33687  OOV=%7.24
+
+== 3. Alt-sözcük (BPE) takası: eğitim derlemi üzerinde öğrenildi ==
+birleştirme=   0 sözlük=  146 token= 482617 kar/token=1.000 unk=%0.036 geri-dönüş=True (0.1 sn)
+birleştirme= 250 sözlük=  396 token= 258682 kar/token=1.866 unk=%0.068 geri-dönüş=True (0.7 sn)
+birleştirme= 500 sözlük=  646 token= 218268 kar/token=2.211 unk=%0.081 geri-dönüş=True (1.1 sn)
+birleştirme=1000 sözlük= 1146 token= 185441 kar/token=2.603 unk=%0.095 geri-dönüş=True (2.0 sn)
+birleştirme=1500 sözlük= 1646 token= 169106 kar/token=2.854 unk=%0.104 geri-dönüş=True (3.4 sn)
+birleştirme=2000 sözlük= 2146 token= 159409 kar/token=3.028 unk=%0.110 geri-dönüş=True (4.7 sn)
+birleştirme=3000 sözlük= 3146 token= 147682 kar/token=3.268 unk=%0.119 geri-dönüş=True (8.2 sn)
+
+== 4. Dil karşılaştırması: 300 bin karakterle eğitilmiş tokenizer ==
+TR tok. / TR metin   sözlük= 1142 kar/token=2.594 token/sözcük=2.581 unk=%0.112
+EN tok. / EN metin   sözlük= 1131 kar/token=2.145 token/sözcük=3.157 unk=%0.039
+EN tok. / TR metin   sözlük= 1131 kar/token=1.490 token/sözcük=4.494 unk=%9.287
+TR tok. / EN metin   sözlük= 1142 kar/token=1.541 token/sözcük=4.395 unk=%0.043
+
+== 5. Bayt düzeyi (UTF-8): Türkçe karakterlerin bayt maliyeti ==
+a U+0061 -> 1 bayt
+ı U+0131 -> 2 bayt
+ğ U+011F -> 2 bayt
+ü U+00FC -> 2 bayt
+ş U+015F -> 2 bayt
+ö U+00F6 -> 2 bayt
+ç U+00E7 -> 2 bayt
+ı U+0131 -> 2 bayt
+İ U+0130 -> 2 bayt

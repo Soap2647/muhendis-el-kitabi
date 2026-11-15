@@ -1,0 +1,7 @@
+n+n*n belirsiz: 2 tek: 1
+n+n belirsiz: 1 tek: 1
+n*n+n*n belirsiz: 5 tek: 1
+asılı else: 2
+('E', (('E', ('n',)), '+', ('E', (('E', ('n',)), '*', ('E', ('n',))))))
+('E', (('E', (('E', ('n',)), '+', ('E', ('n',)))), '*', ('E', ('n',))))
+dogrulanan: 3000

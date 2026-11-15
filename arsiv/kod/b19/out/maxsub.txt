@@ -1,0 +1,3 @@
+500 rastgele dizi: D&C = Kadane = O(n^2)
+n = 10^5: D&C 0.157 s, Kadane 0.006 s
+ayni toplam: True | toplam = 255405595

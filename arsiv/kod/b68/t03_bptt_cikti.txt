@@ -1,0 +1,12 @@
+h_1 = tanh(0.5*1.0 + 0.8*0.0000) = 0.4621
+h_2 = tanh(0.5*0.0 + 0.8*0.4621) = 0.3537
+h_3 = tanh(0.5*-1.0 + 0.8*0.3537) = -0.2137
+dL/dwh = -0.461209   dL/dwx = 0.381173
+sayisal dL/dwh = -0.461209   dL/dwx = 0.381173
+bagil hata wh: 3.28e-11  wx: 9.71e-11
+Wx   en büyük bağıl hata = 4.07e-09
+Wh   en büyük bağıl hata = 4.03e-09
+b    en büyük bağıl hata = 1.18e-10
+Wy   en büyük bağıl hata = 6.42e-10
+by   en büyük bağıl hata = 4.51e-11
+GENEL en büyük bağıl hata = 4.07e-09

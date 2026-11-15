@@ -1,0 +1,3 @@
+$ gcc -O1 -g -std=c11 -o ub_demo ub_demo.c tarih.c
+$ ./ub_demo
+sonuc (tanimsiz): 990059265

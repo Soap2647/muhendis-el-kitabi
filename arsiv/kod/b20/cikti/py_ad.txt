@@ -1,0 +1,4 @@
+$ python py_ad.py
+['_Hesap__gizli', '_ic']
+2
+False

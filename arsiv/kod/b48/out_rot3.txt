@@ -1,0 +1,5 @@
+R^T R == I ? True
+det(R)     = 1.0
+dunya koordinati = [100.      51.7321  29.    ]
+geri donus    = [2. 0. 0.]
+ters dogru ?   True

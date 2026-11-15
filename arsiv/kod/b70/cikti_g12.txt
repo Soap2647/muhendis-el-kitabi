@@ -1,0 +1,12 @@
+W x            = [1.0, 4.0, 0.0, -0.5]
+A x            = [0.5]
+olcek=alpha/r  = 2.0
+delta          = [2.0, 0.0, 0.0, 1.0]
+y (adaptor)    = [3.0, 4.0, 0.0, 0.5]
+eğitilebilir: LoRA=8, tam matris=16
+W' = W+olcek*BA satırları:
+[[3.0, 0.0, 4.0, 0.0], [0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [1.0, 0.0, 2.0, 0.5]]
+y (birleşik)   = [3.0, 4.0, 0.0, 0.5]
+maks fark (birleşik - adaptör) = 0.000e+00
+1000 rastgele girdide maks fark = 1.776e-15
+adaptör kapalı y = [1.0, 4.0, 0.0, -0.5]

@@ -1,0 +1,12 @@
+workers=0 pin=False tur=  0.95 s  veri_bekleme=  0.78 s
+  gpu_adim= 0.18 s  adim=64
+workers=1 pin=False tur=  0.83 s  veri_bekleme=  0.51 s
+  gpu_adim= 0.31 s  adim=64
+workers=2 pin=False tur=  0.42 s  veri_bekleme=  0.26 s
+  gpu_adim= 0.16 s  adim=64
+workers=4 pin=False tur=  0.23 s  veri_bekleme=  0.09 s
+  gpu_adim= 0.14 s  adim=64
+workers=4 pin=True  tur=  0.23 s  veri_bekleme=  0.10 s
+  gpu_adim= 0.13 s  adim=64
+workers=8 pin=True  tur=  0.15 s  veri_bekleme=  0.02 s
+  gpu_adim= 0.13 s  adim=64

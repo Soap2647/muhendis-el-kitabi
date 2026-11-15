@@ -1,0 +1,16 @@
+$ python -m pytest -v test_halka.py
+========================= test session starts =========================
+platform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\merty\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: C:\Users\merty\AppData\Local\Temp\b39
+plugins: anyio-4.13.0, hypothesis-6.170.2, cov-7.1.0, typeguard-4.5.2
+collecting ... collected 5 items
+
+test_halka.py::test_yeni_tampon_bostur PASSED                    [ 20%]
+test_halka.py::test_fifo_sirasi PASSED                           [ 40%]
+test_halka.py::test_bosken_al_hata_verir PASSED                  [ 60%]
+test_halka.py::test_dolu_iken_ekle_hata_verir PASSED             [ 80%]
+test_halka.py::test_sarma_kapasite_asilmadan_yeniden_kullanilir PASSED [100%]
+
+========================== 5 passed in 0.68s ==========================

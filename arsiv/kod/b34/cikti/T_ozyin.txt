@@ -1,0 +1,18 @@
+$ python b34_ozyin.py iha.db
+Fibonacci (n, F(n), tür):
+   (2, 1, 'integer')
+   (10, 55, 'integer')
+   (92, 7540113804746346429, 'integer')
+   (93, 1.2200160415121877e+19, 'real')
+Ana Üs'ten erişilebilen üs: 11
+Kapalı Üs'ten erişilebilen: 12
+Ana Üs'ten en az adım (ilk 4):
+   (1, 0)
+   (3, 1)
+   (9, 1)
+   (10, 1)
+Alt ağaç toplam bakım maliyeti (TL, ilk 4):
+   ('İHA', 20453812.46)
+   ('Güç', 5257166.62)
+   ('Aviyonik', 4015674.3)
+   ('Batarya', 3527945.54)

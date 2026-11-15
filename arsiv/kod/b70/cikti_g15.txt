@@ -1,0 +1,8 @@
+ön işleme parçaları: {'kod': 1, ' kodu': 1, ' koda': 1, ' kod': 1}
+adım 1: en sık çift ('o', 'd') sayı=4 | sayımlar: [(('k', 'o'), 4), (('o', 'd'), 4), ((' ', 'k'), 3), (('d', 'a'), 1), (('d', 'u'), 1)]
+   durum: {'kod': ['k', 'od'], ' kodu': [' ', 'k', 'od', 'u'], ' koda': [' ', 'k', 'od', 'a'], ' kod': [' ', 'k', 'od']}
+adım 2: en sık çift ('k', 'od') sayı=4 | sayımlar: [(('k', 'od'), 4), ((' ', 'k'), 3), (('od', 'a'), 1), (('od', 'u'), 1)]
+   durum: {'kod': ['kod'], ' kodu': [' ', 'kod', 'u'], ' koda': [' ', 'kod', 'a'], ' kod': [' ', 'kod']}
+adım 3: en sık çift (' ', 'kod') sayı=3 | sayımlar: [((' ', 'kod'), 3), (('kod', 'a'), 1), (('kod', 'u'), 1)]
+   durum: {'kod': ['kod'], ' kodu': [' kod', 'u'], ' koda': [' kod', 'a'], ' kod': [' kod']}
+egit(…,3) = [('o', 'd'), ('k', 'od'), (' ', 'kod')]

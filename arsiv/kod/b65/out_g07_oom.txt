@@ -1,0 +1,7 @@
+(a) sınır yok, kart 6143 MB:
+  batch= 16384 tepe=    1803 MB süre=  0.50 s sığdı
+  batch= 65536 tepe=    6804 MB süre=  4.01 s sığdı
+  batch=131072 tepe=   13492 MB süre= 35.23 s sığdı
+(b) bellek sınırı %25 (~1536 MB):
+  batch=  4096 tepe=     555 MB süre=  0.10 s sığdı
+  batch= 16384 tepe=     nan MB süre=   nan s OOM

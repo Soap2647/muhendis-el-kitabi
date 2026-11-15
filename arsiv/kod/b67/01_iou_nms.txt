@@ -1,0 +1,23 @@
+== Kenar durumlari (IoU) ==
+ayni kutu                IoU=1.0000  GIoU=1.0000
+hic ortusmuyor           IoU=0.0000  GIoU=-0.7778
+yalnizca kenar temas     IoU=0.0000  GIoU=0.0000
+ic ice (1 / 4 kare)      IoU=0.2500  GIoU=0.2500
+dejenere (genislik 0)    IoU=0.0000  GIoU=0.0000
+iki dejenere             IoU=0.0000  GIoU=0.0000
+
+== torchvision karsilastirmasi (rastgele, tohum 0) ==
+maks |fark| IoU: 6.54e-07
+IoU > 0 olan cift sayisi: 9450
+
+== NMS ornegi (altı kutu) ==
+IoU(1,2) = 0.8223  IoU(3,4) = 0.8223
+esik=0.5 tutulan indisler: [0, 2, 4, 5]
+esik=0.1 tutulan indisler: [0, 2, 4]
+torchvision nms(0.5): [0, 2, 4, 5]
+soft-NMS sirasi: [0, 2, 4, 5, 1, 3]
+soft-NMS skorlari: [0.9, 0.8, 0.7, 0.6205, 0.2063, 0.1931]
+
+== NMS ve sinif-NMS: torchvision ile birebir mi? ==
+tek sinif: 600 / 600 koşu birebir ayni
+sinif-NMS: 100 / 100 koşu birebir ayni

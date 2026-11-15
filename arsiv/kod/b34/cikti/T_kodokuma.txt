@@ -1,0 +1,11 @@
+$ python b34_kodokuma.py
+WHERE a=5 AND b IN (1,2,3) AND d='hello'
+   -> SEARCH ex1 USING INDEX idx_ex1 (a=? AND b=?)
+WHERE a=5 AND b=1 AND c=2 AND d='x'
+   -> SEARCH ex1 USING INDEX idx_ex1 (a=? AND b=? AND c=? AND d=?)
+WHERE b IN (1,2,3) AND c NOT NULL AND d='hello'
+   -> SCAN ex1
+WHERE a=5 OR b IN (1,2,3) OR c NOT NULL OR d='hello'
+   -> SCAN ex1
+WHERE a>5 AND b=1
+   -> SEARCH ex1 USING INDEX idx_ex1 (a>?)

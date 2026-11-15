@@ -1,0 +1,36 @@
+modül ağacı (ad, sınıf):
+  (kök)        Ag
+  ust          Sequential
+  ust.0        Linear
+  ust.1        BatchNorm1d
+  ust.2        ReLU
+  ust.3        Dropout
+  cikis        Linear
+
+parametreler:
+  ust.0.weight           (32, 64)    
+  ust.0.bias             (32,)       
+  ust.1.weight           (32,)       
+  ust.1.bias             (32,)       
+  cikis.weight           (10, 32)    
+  cikis.bias             (10,)       
+buffer'lar:
+   ust.1.running_mean
+   ust.1.running_var
+   ust.1.num_batches_tracked
+state_dict anahtarları:
+   ust.0.weight
+   ust.0.bias
+   ust.1.weight
+   ust.1.bias
+   ust.1.running_mean
+   ust.1.running_var
+   ust.1.num_batches_tracked
+   cikis.weight
+   cikis.bias
+toplam parametre: 2474
+
+train modu: dropout = True  bn = True
+eval modu : dropout = False  bn = False
+
+relu aktivasyonu (train): {'relu': (0.4, 0.5871)}

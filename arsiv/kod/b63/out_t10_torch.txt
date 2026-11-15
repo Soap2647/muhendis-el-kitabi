@@ -1,0 +1,5 @@
+Kayıp  NumPy = 0.008927349120
+Kayıp  Torch = 0.008927349120
+Ağırlık gradyanı göreli fark = 4.53e-15
+Ağırlık gradyanı göreli fark = 4.79e-15
+Ağırlık gradyanı göreli fark = 7.85e-15

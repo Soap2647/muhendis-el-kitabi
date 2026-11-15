@@ -1,0 +1,8 @@
+    taban n=2 d=5.831
+    taban n=2 d=5.385
+  n=4 xm=6 dL=5.831 dR=5.385 delta=5.385 serit=4
+    taban n=2 d=7.616
+    taban n=2 d=3.606
+  n=4 xm=13 dL=7.616 dR=3.606 delta=3.606 serit=3
+n=8 xm=9 dL=4.472 dR=3.606 delta=3.606 serit=4
+en yakin: ((9, 1), (8, 4)) mesafe = 3.162

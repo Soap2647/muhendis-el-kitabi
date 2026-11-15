@@ -1,0 +1,14 @@
+Ön eğitim süresi: 12.2 s
+Kaynak alan test doğruluğu: 0.8031
+sınıf başına  10 ->  sifirdan 0.576  ozellik 0.852  ince_ayar 0.783
+sınıf başına  25 ->  sifirdan 0.660  ozellik 0.897  ince_ayar 0.896
+sınıf başına  50 ->  sifirdan 0.672  ozellik 0.913  ince_ayar 0.937
+sınıf başına 100 ->  sifirdan 0.706  ozellik 0.924  ince_ayar 0.954
+sınıf başına 300 ->  sifirdan 0.892  ozellik 0.920  ince_ayar 0.967
+
+Test doğruluğu, ortalama ± sapma (5 tohum):
+n= 10  sifirdan 0.576±0.044  ozellik 0.852±0.014  ince_ayar 0.783±0.042
+n= 25  sifirdan 0.660±0.048  ozellik 0.897±0.020  ince_ayar 0.896±0.020
+n= 50  sifirdan 0.672±0.078  ozellik 0.913±0.009  ince_ayar 0.937±0.009
+n=100  sifirdan 0.706±0.124  ozellik 0.924±0.005  ince_ayar 0.954±0.009
+n=300  sifirdan 0.892±0.042  ozellik 0.920±0.008  ince_ayar 0.967±0.001

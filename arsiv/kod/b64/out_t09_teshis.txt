@@ -1,0 +1,11 @@
+Sifir cikis agirligi ile baslangic kaybi = 2.302585  (ln10 = 2.302585)
+Varsayilan init baslangic kaybi = 2.3073
+A_yuksek_lr        tr=2.321 va=2.316 acc=0.0975 nan=None
+B_dusuk_lr         tr=2.304 va=2.304 acc=0.0780 nan=None
+C_asiri_uydurma    tr=0.01127 va=0.3032 acc=0.8914 nan=None
+D_yetersiz         tr=1.694 va=1.706 acc=0.2423 nan=None
+E_sizinti          tr=0.0001602 va=0.0003869 acc=1.0000 nan=None
+   sizinti: dogrulama=1.0000  TEST=0.9611
+F_etiket_karisik   tr=0.9745 va=0.5544 acc=0.9192 nan=None
+   etiket karisik: 31.5% etiket degistirildi
+G_nan_adam_lr1e3   tr=485.8 va=508.2 acc=0.1003 nan=None

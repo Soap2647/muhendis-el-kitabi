@@ -1,0 +1,18 @@
+== Model karşılaştırması (dict modeline karşı) ==
+tohum 1: kontrol=5371 hata=0 son_tablo=35
+tohum 2: kontrol=5308 hata=0 son_tablo=36
+tohum 3: kontrol=5369 hata=0 son_tablo=36
+tohum 4: kontrol=5406 hata=0 son_tablo=35
+tohum 5: kontrol=5401 hata=0 son_tablo=36
+Toplam hata: 0
+
+== Yazma yükseltmesi ==
+kullanıcı bayt      : 520000
+flush ile diske     : 680960  (tablo=76)
+birleştirme sonrası : 855295  (tablo=1)
+yazma yük. (önce)   : 1.31
+yazma yük. (sonra)  : 1.64
+
+== Okuma yükseltmesi: var olmayan anahtar ==
+bloom=1  sorgu başına disk okuma=1.683  tablo=77  bloom_red=150633
+bloom=0  sorgu başına disk okuma=77.000  tablo=77  bloom_red=0

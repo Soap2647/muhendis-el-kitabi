@@ -1,0 +1,8 @@
+toplam eleman = 33554432, parca = 8, akis = 3
+max fark (seri - ortusen) = 0.0e+00
+parca H2D kopya :  1.353 ms
+parca hesap     :  1.475 ms
+seri            :    23.97 ms
+ortusen (3 akis):    14.08 ms
+hizlanma        :   1.70x
+yalniz hesap    :    11.80 ms

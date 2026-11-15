@@ -1,0 +1,3 @@
+sikistirilmis bayt: 18
+geri acildi: ARAC7;23.5
+gecersiz: None

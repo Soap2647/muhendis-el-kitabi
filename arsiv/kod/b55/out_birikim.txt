@@ -1,0 +1,18 @@
+beklenen: df/da = b + 1 = 4, df/db = a = 2
+
+BIRIKIR = True
+dugum      veri     grad
++          8.00     1.00
+*          6.00     1.00
+girdi      3.00     2.00
+girdi      2.00     4.00
+
+dogru   : a.grad = 4.0, b.grad = 2.0
+BIRIKIR = False
+dugum      veri     grad
++          8.00     1.00
+*          6.00     1.00
+girdi      3.00     2.00
+girdi      2.00     3.00
+
+hatali  : a.grad = 3.0, b.grad = 2.0

@@ -1,0 +1,6 @@
+torch: 2.6.0+cu124
+torch CUDA: True
+numba GPU: NVIDIA GeForce RTX 3060 Laptop GPU
+compute capability: (8, 6)
+n = 1048576 dogru: True
+ilk 4 deger: [1. 2. 3. 4.]

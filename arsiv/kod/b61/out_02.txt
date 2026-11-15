@@ -1,0 +1,31 @@
+A) DBSCAN (sifirdan) eps ve minPts taramasi
+   eps=0.08 kume=5 gurultu= 12 ARI(gercek)=0.8273
+   ARI(sklearn ile)=1.0000
+   eps=0.12 kume=2 gurultu=  0 ARI(gercek)=1.0000
+   ARI(sklearn ile)=1.0000
+   eps=0.15 kume=2 gurultu=  0 ARI(gercek)=1.0000
+   ARI(sklearn ile)=1.0000
+   eps=0.25 kume=2 gurultu=  0 ARI(gercek)=1.0000
+   ARI(sklearn ile)=1.0000
+   CSV yazildi
+B) EM (sifirdan), 2B, 3 bilesen
+   llh ilk = -2314.9358 son = -2302.8645 iter = 60
+   llh hic azalmadi mi: True
+   en buyuk artis = 9.3323
+   sklearn ortalama llh = -3.838108
+   scratch  ortalama llh = -3.838108
+   mu(scratch):
+ [[ 5.19   1.528]
+ [-0.128  0.133]
+ [ 6.026 -1.716]]
+   mu(sklearn):
+ [[ 5.19   1.528]
+ [-0.128  0.133]
+ [ 6.025 -1.716]]
+C) BIC ile bilesen sayisi (sklearn, n_init=5)
+   k=1 BIC=  5303.80 formul=  5303.80 p=5
+   k=2 BIC=  4955.56 formul=  4955.56 p=11
+   k=3 BIC=  4714.66 formul=  4714.66 p=17
+   k=4 BIC=  4737.65 formul=  4737.65 p=23
+   k=5 BIC=  4763.38 formul=  4763.38 p=29
+   k=6 BIC=  4801.28 formul=  4801.28 p=35

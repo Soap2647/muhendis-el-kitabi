@@ -1,0 +1,6 @@
+silmeden önce:    ino=44293 nlink=1 boyut=15
+ad var mı?        hayır
+unlink sonrası:   ino=44293 nlink=0 boyut=15
+fd hâlâ okuyor:   15 bayt -> "silinecek veri"
+yazdıktan sonra:  ino=44293 nlink=0 boyut=20
+close sonrası ad yok: evet

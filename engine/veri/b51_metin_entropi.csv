@@ -1,0 +1,6 @@
+alfabe,model,bit_per_simge
+harf,H0 (bagimsiz),4.4102
+harf,H(X2|X1),3.7807
+harf,H(X3|X1X2),3.1128
+bayt,H0 (bagimsiz),5.1051
+bayt,H(X2|X1),3.5316

@@ -1,0 +1,6 @@
+varyant,ms,bagil_hata
+naif (ayrismali),0.939,5.98e-08
+sirali adresleme,0.9011,5.98e-08
+warp shuffle,0.5151,5.98e-08
+torch.sum (kutuphane),0.256,5.98e-08
+CPU sirali float32,,1.45e-05

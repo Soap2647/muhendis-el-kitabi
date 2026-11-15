@@ -1,0 +1,74 @@
+ornek,algoritma,surec,bas,son
+kitap,FCFS,P1,0,24
+kitap,FCFS,P2,24,27
+kitap,FCFS,P3,27,30
+kitap,SJF,P2,0,3
+kitap,SJF,P3,3,6
+kitap,SJF,P1,6,30
+kitap,RR q=4,P1,0,4
+kitap,RR q=4,P2,4,7
+kitap,RR q=4,P3,7,10
+kitap,RR q=4,P1,10,30
+altili,FCFS,A,0,5
+altili,FCFS,B,5,8
+altili,FCFS,C,8,16
+altili,FCFS,D,16,18
+altili,FCFS,E,18,22
+altili,FCFS,F,22,28
+altili,SJF,A,0,5
+altili,SJF,D,5,7
+altili,SJF,B,7,10
+altili,SJF,E,10,14
+altili,SJF,F,14,20
+altili,SJF,C,20,28
+altili,SRTF,A,0,1
+altili,SRTF,B,1,4
+altili,SRTF,D,4,6
+altili,SRTF,A,6,10
+altili,SRTF,E,10,14
+altili,SRTF,F,14,20
+altili,SRTF,C,20,28
+altili,Öncelik,A,0,5
+altili,Öncelik,B,5,8
+altili,Öncelik,D,8,10
+altili,Öncelik,E,10,14
+altili,Öncelik,C,14,22
+altili,Öncelik,F,22,28
+altili,RR q=2,A,0,2
+altili,RR q=2,B,2,4
+altili,RR q=2,C,4,6
+altili,RR q=2,A,6,8
+altili,RR q=2,D,8,10
+altili,RR q=2,B,10,11
+altili,RR q=2,C,11,13
+altili,RR q=2,A,13,14
+altili,RR q=2,E,14,16
+altili,RR q=2,F,16,18
+altili,RR q=2,C,18,20
+altili,RR q=2,E,20,22
+altili,RR q=2,F,22,24
+altili,RR q=2,C,24,26
+altili,RR q=2,F,26,28
+altili,RR q=4,A,0,4
+altili,RR q=4,B,4,7
+altili,RR q=4,C,7,11
+altili,RR q=4,D,11,13
+altili,RR q=4,A,13,14
+altili,RR q=4,E,14,18
+altili,RR q=4,F,18,22
+altili,RR q=4,C,22,26
+altili,RR q=4,F,26,28
+altili,MLFQ,A,0,2
+altili,MLFQ,B,2,4
+altili,MLFQ,C,4,6
+altili,MLFQ,D,6,8
+altili,MLFQ,A,8,9
+altili,MLFQ,E,9,11
+altili,MLFQ,F,11,13
+altili,MLFQ,B,13,14
+altili,MLFQ,C,14,18
+altili,MLFQ,A,18,20
+altili,MLFQ,E,20,22
+altili,MLFQ,F,22,24
+altili,MLFQ,C,24,26
+altili,MLFQ,F,26,28

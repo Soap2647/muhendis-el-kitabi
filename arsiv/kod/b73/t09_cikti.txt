@@ -1,0 +1,30 @@
+piksel temiz 0.0 0.330
+piksel gurultu 0.1 0.314
+piksel gurultu 0.2 0.288
+piksel gurultu 0.3 0.290
+piksel kontrast 0.3 0.325
+piksel kontrast 0.6 0.323
+piksel bulaniklik 1 0.326
+piksel bulaniklik 2 0.328
+rastgele temiz 0.0 0.326
+rastgele gurultu 0.1 0.280
+rastgele gurultu 0.2 0.279
+rastgele gurultu 0.3 0.254
+rastgele kontrast 0.3 0.316
+rastgele kontrast 0.6 0.272
+rastgele bulaniklik 1 0.333
+rastgele bulaniklik 2 0.336
+simclr temiz 0.0 0.846
+simclr gurultu 0.1 0.241
+simclr gurultu 0.2 0.240
+simclr gurultu 0.3 0.240
+simclr kontrast 0.3 0.763
+simclr kontrast 0.6 0.488
+simclr bulaniklik 1 0.670
+simclr bulaniklik 2 0.484
+kopya piksel gurultu 0.2 1.000
+kopya piksel kontrast 0.5 0.822
+kopya rastgele gurultu 0.2 0.590
+kopya rastgele kontrast 0.5 0.406
+kopya simclr gurultu 0.2 0.006
+kopya simclr kontrast 0.5 0.942

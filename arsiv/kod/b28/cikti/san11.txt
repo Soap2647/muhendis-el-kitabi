@@ -1,0 +1,3 @@
+mod=O_APPEND
+boyut=800000 (beklenen 800000)
+dogru=8000 bozuk=0 eksik/fazla=0

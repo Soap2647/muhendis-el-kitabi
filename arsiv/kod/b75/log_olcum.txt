@@ -1,0 +1,14 @@
+tepe (olculen, yaklasik): 149.8 GFLOP/s
+bellek bant genisligi (olculen, kopya): 22.9 GB/s
+B=1     AI=  0.500 FLOP/bayt  olculen=   11.49 GFLOP/s  tavan=   11.43 (bellek)
+B=4     AI=  1.992 FLOP/bayt  olculen=   23.58 GFLOP/s  tavan=   45.58 (bellek)
+B=16    AI=  7.877 FLOP/bayt  olculen=   95.12 GFLOP/s  tavan=  149.76 (hesap)
+B=64    AI= 30.118 FLOP/bayt  olculen=  142.96 GFLOP/s  tavan=  149.76 (hesap)
+B=256   AI=102.400 FLOP/bayt  olculen=  171.29 GFLOP/s  tavan=  149.76 (hesap)
+B=1024  AI=256.000 FLOP/bayt  olculen=  165.04 GFLOP/s  tavan=  149.76 (hesap)
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri\b75_roofline.csv
+fp32          B=1   medyan=1.0366 ms  p95=1.3858 ms
+dinamik_int8  B=1   medyan=0.5769 ms  p95=0.9299 ms
+fp32          B=32  medyan=2.9490 ms  p95=3.8973 ms
+dinamik_int8  B=32  medyan=1.6037 ms  p95=2.4918 ms
+CSV yazildi: D:/Mevcut Projeler/Kitap/engine/veri\b75_dinamik_gecikme.csv

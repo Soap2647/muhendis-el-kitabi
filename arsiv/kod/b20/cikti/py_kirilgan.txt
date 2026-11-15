@@ -1,0 +1,4 @@
+$ python py_kirilgan.py
+add ile: 1
+update sonrasi eklenen: 1 | kume: [1, 2, 3, 4]
+bilesik eklenen: 4

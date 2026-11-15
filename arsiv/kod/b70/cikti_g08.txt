@@ -1,0 +1,18 @@
+(a) logit = [ 2.   1.   0.5 -1.   0. ]
+  T=1.0 p= [0.563  0.2071 0.1256 0.028  0.0762]
+  T=0.5 p= [0.8292 0.1122 0.0413 0.0021 0.0152]
+  T=2.0 p= [0.3745 0.2272 0.1769 0.0836 0.1378]
+  top-k=2 p= [0.7311 0.2689 0.     0.     0.    ]
+  top-p=0.9 çekirdek boyutu=4 p= [0.5793 0.2131 0.1293 0.     0.0784]
+
+(b) üretim (300 token), baslangic: 'Bölüm 70: dil modelleri'
+  açgözlü        distinct-2=0.070  metin: , bir sensöründen biridir. Bu bölümde gördüğümüz gibi bir sensöründen bir sensöründen biri...
+  sıcaklık 0.8   distinct-2=0.793  metin: , 4 ve 58'de anlatük şekilde göreceğiz. Ölçüm, dört yöntemi ve iki hatayı sınır üzerinde (...
+  top-k 40       distinct-2=0.853  metin: , Linux'ta sertOSIG, LSONCBAG (RF) ile yapıldı (GPICEYICEOAYEREMERT) ve WCTLSET baytı, bir...
+  top-p 0.9      distinct-2=0.973  metin: , 48 bitten sonra fark, her segmentin de aynı döngünün bir düştüğüyoruz. Türü süreyi gecik...
+  not: sıcaklık satırı p=1.0 top-p ile yalnız sıcaklık etkisini ölçer
+
+(c) ezberleme (8-token dizi, eğitimde birebir geçen oranı)
+  doğrulama (taban örtüşme)  = 0.0270
+  üretim (top-p 0.9, 3000 token)   = 0.0027
+  rastgele (ilklenmemiş) model     = 0.0000

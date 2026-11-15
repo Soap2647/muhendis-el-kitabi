@@ -1,0 +1,10 @@
+$ g++ -O2 -Wall -Wextra -std=c++17 sanal_olcum.cpp -o sanal_olcum
+$ ./sanal_olcum 1048576
+n=1048576 tekrar=50
+yontem,dagitim,ms
+etiketli,tek_tur,1.216
+sanal,tek_tur,3.055
+# sonuc_farki=0
+etiketli,karisik,3.218
+sanal,karisik,4.985
+# sonuc_farki=0

@@ -1,0 +1,11 @@
+kosu,olcum,deger
+1,add_zinciri_en_az_s,0.2089
+1,frekans_tahmini_GHz,4.788
+1,tsc_hizi_GHz,3.413
+1,syscall_getppid_ns,197.98
+1,dogrudan_cagri_ns,1.05
+2,add_zinciri_en_az_s,0.2093
+2,frekans_tahmini_GHz,4.777
+2,tsc_hizi_GHz,3.343
+2,syscall_getppid_ns,200.96
+2,dogrudan_cagri_ns,1.07

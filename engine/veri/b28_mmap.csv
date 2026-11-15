@@ -1,0 +1,4 @@
+yontem,sure_ms,minflt
+read_64K,0.40,0
+mmap,0.92,128
+MAP_SHARED: read() görünümü = "Zerhaba"

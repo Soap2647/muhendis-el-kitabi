@@ -1,0 +1,7 @@
+crc15 = 0x6fcc
+kalan sifir: True
+girdi     0000011111000001
+doldurulm 0000011111010000011
+bit  2  hat=0  kaybeden=0x3F0
+bit  3  hat=0  kaybeden=0x123
+kazanan = 0x0A5

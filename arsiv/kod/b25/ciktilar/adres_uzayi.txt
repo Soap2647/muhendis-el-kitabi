@@ -1,0 +1,32 @@
+bolge    sanal adres      PML4 PDPT   PD   PT
+kod     00005ad974c53460 181  357  422   83
+rodata  00005ad974c540cd 181  357  422   84
+data    00005ad974c56010 181  357  422   86
+bss     00005ad974c56024 181  357  422   86
+heap    00005ad9861362a0 181  358   48  310
+mmap    0000751cadc47010 234  114  366   71
+yigin   00007ffe197bd564 255  504  203  445
+
+/proc/self/maps:
+5ad974c52000-5ad974c53000 r--p adr
+5ad974c53000-5ad974c54000 r-xp adr
+5ad974c54000-5ad974c55000 r--p adr
+5ad974c55000-5ad974c56000 r--p adr
+5ad974c56000-5ad974c57000 rw-p adr
+5ad986136000-5ad986157000 rw-p [heap]
+751cada00000-751cada28000 r--p libc.so.6
+751cada28000-751cadbb0000 r-xp libc.so.6
+751cadbb0000-751cadbff000 r--p libc.so.6
+751cadbff000-751cadc03000 r--p libc.so.6
+751cadc03000-751cadc05000 rw-p libc.so.6
+751cadc05000-751cadc12000 rw-p (anonim)
+751cadc47000-751cadd4b000 rw-p (anonim)
+751cadd52000-751cadd54000 rw-p (anonim)
+751cadd54000-751cadd55000 r--p ld-linux-x86-64.so.2
+751cadd55000-751cadd80000 r-xp ld-linux-x86-64.so.2
+751cadd80000-751cadd8a000 r--p ld-linux-x86-64.so.2
+751cadd8a000-751cadd8c000 r--p ld-linux-x86-64.so.2
+751cadd8c000-751cadd8e000 rw-p ld-linux-x86-64.so.2
+7ffe1979f000-7ffe197c0000 rw-p [stack]
+7ffe197d1000-7ffe197d5000 r--p [vvar]
+7ffe197d5000-7ffe197d7000 r-xp [vdso]

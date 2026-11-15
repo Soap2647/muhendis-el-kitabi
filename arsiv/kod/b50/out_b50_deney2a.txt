@@ -1,0 +1,4 @@
+kararli esik 2/lambda_max = 0.1
+eta=0.005  f(50)=3.663e-01  f(200)=1.795e-02  adim(f<1e-6)=None
+eta=0.080  f(50)=2.679e-08  f(200)=5.149e-31  adim(f<1e-6)=40
+eta=0.110  f(50)=8.282e+08  f(200)=4.704e+32  adim(f<1e-6)=None

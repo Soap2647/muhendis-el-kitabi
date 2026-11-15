@@ -1,0 +1,23 @@
+A) 2B, ayni marjinal, ters korelasyon anomalisi
+   egitim: 2000 normal (rho=0,9)
+   test: 1000 normal + 60 anomali
+   AUC tek-degiskenli max|z| = 0.5067
+   AUC Oklid uzakligi        = 0.5018
+   AUC Mahalanobis           = 0.8464
+   AUC PCA artigi (1 bilesen) = 0.9120
+   AUC LOF (novelty)         = 0.8700
+   AUC Gauss (GMM k=1) -llh  = 0.8464
+   Mahalanobis: normal ort=1.228, anomali ort=3.353
+B) Isolation Forest: sklearn ve sifirdan
+   AUC sklearn IF  = 0.7627
+   AUC sifirdan IF = 0.7657
+   AP sklearn = 0.1700, sifirdan = 0.1811
+   normal ort skor = 0.4619
+   anomali ort skor = 0.5304
+C) esik ve yanlis alarm butcesi (%99 normal)
+   Mahalanobis^2 esigi = 9.4068
+   (ki-kare 2 serb., %99 = 9,2103)
+   normal test: yanlis alarm = 0.0110
+   anomali tespit            = 0.4500
+   kacan anomali = 33 / 60
+   CSV yazildi

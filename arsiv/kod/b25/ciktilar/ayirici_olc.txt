@@ -1,0 +1,2 @@
+havuz :   5.39 ns/islem
+malloc:   9.23 ns/islem

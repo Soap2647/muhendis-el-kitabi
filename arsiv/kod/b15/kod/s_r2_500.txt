@@ -1,0 +1,2 @@
+n=500 doldu=250000 en_derin=250000
+cikis=0

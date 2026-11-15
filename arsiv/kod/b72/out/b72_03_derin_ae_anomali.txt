@@ -1,0 +1,16 @@
+== (a) Derin AE (64-128-8-128-64) vs PCA k=8, test MSE ==
+PCA k=8        : 0.02465
+Derin AE (ort) : 0.01328 +- 0.00040  (3 tohum)
+
+== (b) Gurultu giderici AE: gurultulu test -> temiz test ==
+Normal AE (gurultulu girdi): 0.04273 +- 0.00101
+Gurultu giderici AE        : 0.01939 +- 0.00010
+Gurultulu girdinin kendisi : 0.09014
+
+== (c) Sensor anomalisi: esik = normal dogrulamanin %99'u ==
+Egitim: 2000 normal pencere; test: 500 normal + 500 anomali
+tur: 0 spike, 1 frekans kaymasi, 2 kayma
+model        AUC    prec   recall  F1    tur0  tur1  tur2
+AE           0.993  0.984  0.803   0.885  0.45  1.00  1.00
+PCA          0.900  0.976  0.648   0.779  0.01  1.00  1.00
+(degerler 3 tohumun ortalamasi; tur-x sutunu: o turun tespit orani)

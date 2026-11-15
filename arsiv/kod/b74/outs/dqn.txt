@@ -1,0 +1,5 @@
+tam        ort=364.7 sd=179.4 tohumlar=[499, 173, 488, 163, 500]
+hedef_yok  ort=9.2 sd=0.2 tohumlar=[9, 9, 9, 9, 9]
+replay_yok ort=25.5 sd=36.4 tohumlar=[91, 9, 9, 9, 9]
+double     ort=366.2 sd=154.1 tohumlar=[121, 390, 490, 500, 330]
+sure (ort, sn): 62.6

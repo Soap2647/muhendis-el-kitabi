@@ -1,0 +1,2 @@
+b'Wikipedia in\r\n\r\nchunks.' kalan: b''
+hata: parca sonunda CRLF bekleniyordu

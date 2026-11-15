@@ -1,0 +1,7 @@
+guc yineleme: lambda = 3.0  v = [-0.707107 -0.707107]
+eigh        : lambda = [1. 3.]  vektorler (sutun):
+[[-0.707107  0.707107]
+ [ 0.707107  0.707107]]
+V^T V == I ? True
+PageRank (guc yineleme): [0.3725 0.1958 0.3941 0.0375]
+PageRank (eig, lambda=1): [0.3725 0.1958 0.3941 0.0375]

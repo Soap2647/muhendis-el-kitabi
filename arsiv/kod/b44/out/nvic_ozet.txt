@@ -1,0 +1,20 @@
+== Senaryolar (ENTRY=12 EXIT=10 TAIL=6) ==
+-- ic_ice --
+  UART   kabul gecikmesi =  12 cevrim
+  ADC    kabul gecikmesi =  12 cevrim
+-- kuyruk_zinciri --
+  TIM    kabul gecikmesi =  12 cevrim
+  UART   kabul gecikmesi =  23 cevrim
+-- gec_gelen --
+  ADC    kabul gecikmesi =   8 cevrim
+  UART   kabul gecikmesi =  24 cevrim
+== Kuyruk zinciri kapali (B) ==
+  TIM    gecikme =  12 cevrim
+  UART   gecikme =  39 cevrim
+== Gec gelen kapali (C) ==
+  UART   gecikme =  12 cevrim
+  ADC    gecikme =  20 cevrim
+== Rastgele yuk: 300000 cevrim, tohum=44 ==
+kesme ADC            n=  723 ort=  14.0 p95=  30 max=  65
+kesme tum            n= 2208 ort=  23.3 p95=  71 max= 538
+yoklama ADC (P=200)  n=  723 ort= 100.4 p95= 190 max= 199

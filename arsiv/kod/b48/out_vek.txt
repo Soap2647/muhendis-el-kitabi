@@ -1,0 +1,10 @@
+u + v   = [7. 1.]
+2 * u   = [6. 8.]
+u . v   = 0.0
+|u|_2   = 5.0
+|u|_1   = 7.0
+|u|_inf = 4.0
+izdusum(u, e1)  = [3. 0.]
+kosinus(u, v)   = 0.0
+kosinus(a, 2a)  = 1.0
+kosinus(a, c)   = 0.534522

@@ -1,0 +1,8 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==582==ERROR: AddressSanitizer: stack-overflow on address 0xADRES (pc 0xADRES bp 0xADRES sp 0xADRES T0)
+    #0 0xADRES in faktoriyel /mnt/c/Users/merty/AppData/Local/Temp/b15/kod/tabansiz.c:5
+    #1 0xADRES in faktoriyel /mnt/c/Users/merty/AppData/Local/Temp/b15/kod/tabansiz.c:6
+    #2 0xADRES in faktoriyel /mnt/c/Users/merty/AppData/Local/Temp/b15/kod/tabansiz.c:6
+    #3 0xADRES in faktoriyel /mnt/c/Users/merty/AppData/Local/Temp/b15/kod/tabansiz.c:6
+    #4 0xADRES in faktoriyel /mnt/c/Users/merty/AppData/Local/Temp/b15/kod/tabansiz.c:6

@@ -1,0 +1,11 @@
+mesafe: 3
+   DEGISTIR k->s
+   ESLE i
+   ESLE t
+   ESLE t
+   DEGISTIR e->i
+   ESLE n
+   EKLE g
+uygula: sitting
+150 rastgele ornek (BFS ve uygulama), hata: 0
+bos-bos: 0 bos-abc: 3

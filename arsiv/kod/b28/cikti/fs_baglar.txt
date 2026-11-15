@@ -1,0 +1,3 @@
+44341 -rw-r--r-- 2 merty merty 14 Oct 19 01:12 a.txt
+44341 -rw-r--r-- 2 merty merty 14 Oct 19 01:12 b.txt
+44345 lrwxrwxrwx 1 merty merty  5 Oct 19 01:12 s.txt -> a.txt

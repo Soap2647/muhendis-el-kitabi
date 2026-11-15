@@ -1,0 +1,7 @@
+127.0.0.1 GET /ornek/not.txt
+127.0.0.1 GET /ornek/not.txt
+127.0.0.1 GET /yok.html
+127.0.0.1 POST /
+127.0.0.1 GET /../b30_4_http_sunucu.py
+127.0.0.1 GET /ornek/not.txt
+127.0.0.1 GET /index.html

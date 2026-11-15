@@ -1,0 +1,4 @@
+kanal 0 -> 82.5 C
+kanal 1 -> 165.0 C
+kanal 2 -> 241.8 C
+TextIOWrapper: merhaba

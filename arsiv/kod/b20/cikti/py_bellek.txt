@@ -1,0 +1,8 @@
+$ python py_bellek.py
+n = 100000 nesne
+__dict__  : 120.0 bayt/nesne (olcum)
+__slots__ : 87.9 bayt/nesne (olcum)
+sys.getsizeof(Nokta) ornek  : 48 + __dict__: 88
+sys.getsizeof(NoktaS) ornek : 48
+__dict__ var mi? False
+AttributeError: 'NoktaS' object has no attribute 'z'

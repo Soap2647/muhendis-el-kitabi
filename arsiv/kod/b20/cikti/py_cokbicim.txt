@@ -1,0 +1,6 @@
+$ python py_cokbicim.py
+TypeError: Can't instantiate abstract class Surucu without an implementation for abstract method 'oku'
+surucu:KlavyeSurucusu 28
+84 56
+True True
+Olcum(zaman=1.0, deger=5.0, etiketler=[])

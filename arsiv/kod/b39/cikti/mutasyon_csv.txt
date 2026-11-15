@@ -1,0 +1,6 @@
+$ cat veri/b39_mutasyon.csv
+paket,mutant,oldurulen,skor_yuzde
+zayif,36,14,38.9
+orta,36,26,72.2
+guclu_v1,36,30,83.3
+guclu_v2,36,36,100.0

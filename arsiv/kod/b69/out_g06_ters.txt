@@ -1,0 +1,38 @@
+Transformer sinüzoidal   tohum=0 son_kayip=0.0007 sure=58s
+Transformer sinüzoidal   tohum=1 son_kayip=0.0002 sure=56s
+Transformer sinüzoidal   tohum=2 son_kayip=0.0284 sure=60s
+Transformer öğrenilen    tohum=0 son_kayip=0.0002 sure=60s
+Transformer öğrenilen    tohum=1 son_kayip=0.0002 sure=57s
+Transformer öğrenilen    tohum=2 son_kayip=0.0005 sure=50s
+Transformer RoPE         tohum=0 son_kayip=0.0174 sure=65s
+Transformer RoPE         tohum=1 son_kayip=0.0021 sure=66s
+Transformer RoPE         tohum=2 son_kayip=0.0377 sure=64s
+Transformer konumsuz     tohum=0 son_kayip=0.8824 sure=62s
+Transformer konumsuz     tohum=1 son_kayip=0.8902 sure=55s
+Transformer konumsuz     tohum=2 son_kayip=1.4780 sure=55s
+LSTM (dikkatsiz)         tohum=0 son_kayip=0.0104 sure=21s
+LSTM (dikkatsiz)         tohum=1 son_kayip=0.0091 sure=22s
+LSTM (dikkatsiz)         tohum=2 son_kayip=0.2326 sure=20s
+
+Parametre sayisi ve sure ortalamasi:
+Transformer sinüzoidal    236048     58s
+Transformer öğrenilen     238096     56s
+Transformer RoPE          236048     65s
+Transformer konumsuz      236048     57s
+LSTM (dikkatsiz)          201744     21s
+
+Dizi düzeyi doğruluk (ortalama±sapma, 3 tohum)
+L    sin         ogr         RoPE        yok         LSTM       
+4    0.994±0.005 1.000±0.000 0.986±0.008 0.049±0.018 1.000±0.000
+8    0.993±0.006 1.000±0.000 0.984±0.011 0.000±0.000 0.963±0.015
+12   0.948±0.048 1.000±0.000 0.848±0.015 0.000±0.000 0.257±0.140
+16   0.000±0.000 0.000±0.000 0.013±0.010 0.000±0.000 0.006±0.007
+20   0.000±0.000 0.000±0.000 0.000±0.000 0.000±0.000 0.000±0.000
+24   0.000±0.000 0.000±0.000 0.000±0.000 0.000±0.000 0.000±0.000
+
+Dikkat analizi (sinüzoidal, tohum 0, L=10):
+baş | enc:önceki | enc:kendisi | çapraz:ters köşegen
+  0 |       0.095 |       0.155 |               0.556
+  1 |       0.096 |       0.169 |               0.528
+  2 |       0.098 |       0.093 |               0.657
+  3 |       0.093 |       0.131 |               0.556

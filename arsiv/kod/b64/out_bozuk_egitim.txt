@@ -1,0 +1,16 @@
+ep  1  kayip=2.1490  dogrulama=0.3451
+ep  2  kayip=2.4869  dogrulama=0.2004
+ep  3  kayip=2.4335  dogrulama=0.2022
+ep  4  kayip=2.7738  dogrulama=0.1104
+ep  5  kayip=2.4035  dogrulama=0.1011
+ep  6  kayip=2.4348  dogrulama=0.1058
+ep  7  kayip=2.4438  dogrulama=0.1011
+ep  8  kayip=2.4546  dogrulama=0.1011
+ep  9  kayip=2.4319  dogrulama=0.1002
+ep 10  kayip=2.4683  dogrulama=0.0993
+ep 11  kayip=2.5498  dogrulama=0.1020
+ep 12  kayip=2.5597  dogrulama=0.0965
+ep 13  kayip=2.4764  dogrulama=0.1011
+ep 14  kayip=2.4695  dogrulama=0.0993
+ep 15  kayip=2.5592  dogrulama=0.0993
+son test dogrulugu = 0.0972

@@ -1,0 +1,6 @@
+hesap: 12.0
+reddedildi: izin verilmeyen ifade
+temiz    savunmali=False dogru_kanit=20/34 yan_etki= 0
+temiz    savunmali=True  dogru_kanit=20/34 yan_etki= 0
+zehirli  savunmali=False dogru_kanit=18/34 yan_etki=26
+zehirli  savunmali=True  dogru_kanit=18/34 yan_etki= 0

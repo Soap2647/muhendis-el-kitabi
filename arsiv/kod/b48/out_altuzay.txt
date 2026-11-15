@@ -1,0 +1,8 @@
+rank(A) = 2  m = 3  n = 3
+N(A) boyutu = 1
+N(A) tabani (sutun): [-0.5774 -0.5774  0.5774]
+A N = 0 ? True
+N(A^T) boyutu = 1  A^T y = 0 ? True
+C(A) ile N(A^T) dik ? True
+b_iyi cozulebilir mi ? True
+b_kotu cozulebilir mi ? False

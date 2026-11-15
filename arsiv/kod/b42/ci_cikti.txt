@@ -1,0 +1,24 @@
+$ ./ci.sh tum
+[lint] C: uyarılar hataya dönüşür
+[lint] Python: derleme denetimi
+[testler] Python birim testleri
+Ran 5 tests in 2.532s
+
+OK
+[testler] C denetim değerleri
+[testler] tamam
+[kapsama] gcov ile C satır kapsaması, eşik %80
+satır kapsaması: %100.00
+[derle] sürüm: v1.2.0
+total 776
+-rw-r--r-- 1 merty merty    149 Oct 21 22:05 SHA256SUMS
+-rw-r--r-- 1 merty merty      7 Oct 21 22:05 SURUM
+-rwxr-xr-x 1 merty merty 785496 Oct 21 22:05 crc32_arac
+[imaj] docker kullanılamıyor: adım yerelde atlandı
+tum_rc=0
+$ ./ci.sh imaj (IMAJ_ZORUNLU=1)
+[imaj] docker yok, IMAJ_ZORUNLU=1: BAŞARISIZ
+imaj_rc=1
+$ ./ci.sh bilinmeyen
+kullanım: ci.sh [lint|testler|kapsama|derle|imaj|tum]
+bilinmeyen_rc=2

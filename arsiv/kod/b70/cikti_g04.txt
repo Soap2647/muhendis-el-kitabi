@@ -1,0 +1,5 @@
+n=1  add-k en iyi k=1  doğrulama ppl=827.25  test ppl=827.76
+n=1 Laplace (k=1) doğrulama ppl=827.25
+n=2  add-k en iyi k=0.1  doğrulama ppl=123.46  test ppl=126.82
+n=3  add-k en iyi k=0.01  doğrulama ppl=239.77  test ppl=246.13
+n=3 Laplace (k=1) doğrulama ppl=844.18

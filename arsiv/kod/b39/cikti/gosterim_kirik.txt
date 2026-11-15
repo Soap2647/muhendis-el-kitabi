@@ -1,0 +1,13 @@
+$ python -m pytest -q gosterim/test_kirik.py --tb=short
+F                                                                [100%]
+============================== FAILURES ===============================
+_______________________ test_siralama_beklenen ________________________
+gosterim\test_kirik.py:2: in test_siralama_beklenen
+    assert sorted([3, 1, 2]) == [1, 2, 4]
+E   assert [1, 2, 3] == [1, 2, 4]
+E     
+E     At index 2 diff: 3 != 4
+E     Use -v to get more diff
+======================= short test summary info =======================
+FAILED gosterim/test_kirik.py::test_siralama_beklenen - assert [1, 2,...
+1 failed in 0.83s

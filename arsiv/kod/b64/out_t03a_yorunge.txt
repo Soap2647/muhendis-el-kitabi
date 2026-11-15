@@ -1,0 +1,3 @@
+SGD       son nokta=(-0.0139, 0.0000)  f=9.73e-05
+Momentum  son nokta=(-0.1411, 0.0066)  f=1.02e-02
+Adam      son nokta=(-0.0158, 0.0135)  f=1.04e-03

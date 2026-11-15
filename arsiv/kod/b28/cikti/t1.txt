@@ -1,0 +1,6 @@
+ilk fd = 3
+write -> 7
+lseek(SEEK_CUR) -> 7
+read -> 13, içerik="merhaba dunya"
+EOF'ta read -> 0
+kapalı fd: errno=9 (Bad file descriptor)

@@ -1,0 +1,13 @@
+00000000 <alan_yaz>:
+   0:	6803      	ldr	r3, [r0, #0]
+   2:	225a      	movs	r2, #90	@ 0x5a
+   4:	f362 130b 	bfi	r3, r2, #4, #8
+   8:	6003      	str	r3, [r0, #0]
+   a:	4770      	bx	lr
+0000000c <maske_yaz>:
+   c:	6803      	ldr	r3, [r0, #0]
+   e:	f423 637f 	bic.w	r3, r3, #4080	@ 0xff0
+  12:	f443 63b4 	orr.w	r3, r3, #1440	@ 0x5a0
+  16:	6003      	str	r3, [r0, #0]
+  18:	4770      	bx	lr
+  1a:	bf00      	nop

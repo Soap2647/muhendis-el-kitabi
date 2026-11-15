@@ -1,0 +1,10 @@
+piksel  hiz=0.2736 tek=-0.8227
+rastgele hiz=0.0483 tek=-0.1542
+simclr   hiz=0.4187 tek=-2.0816
+vicreg   hiz=0.4529 tek=-2.1858
+simsiam  hiz=0.4056 tek=-1.7747
+tsne piksel tamam
+tsne rastgele tamam
+tsne simclr tamam
+tsne vicreg tamam
+tsne simsiam tamam

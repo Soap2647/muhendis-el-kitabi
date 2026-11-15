@@ -1,0 +1,7 @@
+epoch   1  kayip 0.1115  egitim dogrulugu 0.9765
+epoch  20  kayip 0.0338  egitim dogrulugu 0.9932
+epoch  40  kayip 0.0317  egitim dogrulugu 0.9932
+epoch  60  kayip 0.0305  egitim dogrulugu 0.9940
+epoch  80  kayip 0.0300  egitim dogrulugu 0.9940
+test dogrulugu (float64): 0.9930
+model_f32.npz yazildi

@@ -1,0 +1,13 @@
+Test (son %20), H=1, hedef: akım (A). Periyot=600
+Model                       MAE ort+-sd     RMSE ort+-sd
+naif                     0.2345+-0.0024   0.2929+-0.0032
+mevsimsel naif           0.2500+-0.0023   0.3145+-0.0050
+hareketli ort. (10)      0.1819+-0.0003   0.2275+-0.0012
+AR(40)                   0.1777+-0.0002   0.2221+-0.0009
+AR derece seçimi (tohum 11, doğrulama MAE):
+  p= 1  MAE=0.2323
+  p= 2  MAE=0.2047
+  p= 5  MAE=0.1844
+  p=10  MAE=0.1799
+  p=20  MAE=0.1797
+  p=40  MAE=0.1780

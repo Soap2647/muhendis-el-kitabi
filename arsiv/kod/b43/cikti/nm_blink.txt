@@ -1,0 +1,16 @@
+08000000 R vektor_tablosu
+08000040 T Varsayilan_Isleyici
+08000044 T Reset_Handler
+080000b0 T menzil_hesapla
+080000c8 T main
+08000160 T _etext
+08000160 R kademe
+08000164 A _sidata
+20000000 D _sdata
+20000000 D acilis_degeri
+20000004 D _edata
+20000004 B _sbss
+20000004 B sonuc_menzil
+20000008 B dongu_sayaci
+2000000c B _ebss
+20020000 R _estack

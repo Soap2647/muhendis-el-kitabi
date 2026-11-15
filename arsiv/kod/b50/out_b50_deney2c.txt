@@ -1,0 +1,7 @@
+Rosenbrock, Adam, N = 20000, x0 = (-1.2, 1.0)
+takvim              adim(f<1e-6)   son f         en iyi f
+sabit 3e-4          18399          4.462e-13     4.462e-13
+sabit 3e-3          19761          3.742e-15     1.233e-32
+adim (x0.3 / 5000)  9435           3.244e-17     1.972e-31
+kosinus             7972           7.889e-31     7.889e-31
+isinma + kosinus    10379          4.930e-30     4.930e-30

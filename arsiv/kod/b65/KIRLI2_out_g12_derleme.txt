@@ -1,0 +1,16 @@
+C:\Users\merty\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\compile_fx.py:194: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+W1022 18:05:57.558000 13028 site-packages\torch\_inductor\utils.py:1137] [0/0] Not enough SMs to use max_autotune_gemm mode
+eager: 324.8 us/çağrı
+torch.compile BAŞARISIZ: BackendCompilerFailed backend='inductor' raised:
+
+torch.export grafiği (ilk düğümler):
+   placeholder p_fn_0_weight
+   placeholder p_fn_0_bias
+   placeholder p_fn_2_weight
+   placeholder p_fn_2_bias
+   placeholder input
+   call_function aten.linear.default
+export/eager fark: 0.0
+jit trace yükle farkı: 0.0
+model.pt bayt: 7755

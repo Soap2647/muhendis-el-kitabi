@@ -1,0 +1,10 @@
+gecerli TC ornegi: 12345678950 True
+Adım: Ali Veli, TC: [TC].                      -> ['TC']
+Rapor 12345678901 numaralı kayda aittir.       -> []
+İletişim: [EPOSTA]                             -> ['EPOSTA']
+Telefon [TEL] olarak kaydedildi.               -> ['TEL']
+Hesap [IBAN] üzerinden ödendi.                 -> ['IBAN']
+Sıcaklık 36 derece, nem %45.                   -> []
+Sayı 2024123456789 bir seri numarasıdır.       -> []
+Kullanıcı [TC] ve mail: [EPOSTA]               -> ['EPOSTA', 'TC']
+kesinlik=1.000 duyarlilik=1.000 (tur-bazli, 8 ornek)

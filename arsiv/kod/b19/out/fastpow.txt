@@ -1,0 +1,6 @@
+n = 0..300: matris ve fast doubling tam sayi ile esit
+300 rastgele (n <= 10^4, m <= 10^9): mod sonucu esit
+200 rastgele us: us_ozyineli == pow(x, n, m)
+us_ozyineli cagri sayisi (n = 10^18): 61
+F(10^18) mod (10^9+7), matris : 209783453
+F(10^18) mod (10^9+7), cift   : 209783453

@@ -1,0 +1,10 @@
+tohum 0: SA=286.1888  kesin=286.1888
+tohum 1: SA=311.9198  kesin=311.9198
+tohum 2: SA=310.2522  kesin=310.2522
+tohum 3: SA=315.2664  kesin=315.2664
+tohum 4: SA=235.4114  kesin=235.4114
+9 sehir, 5 tohum: kesin optimumu bulan SA sayisi = 5
+30 sehir: SA maliyeti=460.768
+
+izgara (10x10) en iyi f=24.9979
+rastgele (100) en iyi f: ort=5.5788  en kotu=10.5674  en iyi=0.9295

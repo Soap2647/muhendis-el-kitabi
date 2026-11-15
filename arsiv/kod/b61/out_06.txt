@@ -1,0 +1,28 @@
+A) sentetik telemetri: 4000 normal pencere, 4 mod
+   k-means k=4  ARI(mod)=1.0000 siluet=0.7231
+   GMM k=4      ARI(mod)=1.0000 siluet=0.7231
+   (siluet, gercek mod etiketi kullanilmadan hesaplanir)
+B) anomali tespiti: egitim = yalnizca normal ucuslar
+   test: 1000 normal + 60 anomali (3 tur)
+   AUC Mahalanobis (MCD, tek Gauss) = 0.5660
+   AUC GMM(k=4) -llh                = 0.8095
+   AUC Isolation Forest             = 0.5098
+   AUC PCA artigi (4 bilesen)       = 0.7629
+   esik: egitimin %99'u; tur bazinda tespit orani:
+   Mahal normal=0.008  motor=0.000  kanat=0.000  donma=0.000
+   GMM   normal=0.013  motor=1.000  kanat=0.800  donma=0.000
+   IF    normal=0.015  motor=0.000  kanat=0.000  donma=0.000
+C) yanlis alarm butcesi: GMM, 2 s pencere, 1 saat=1800
+   hedef 0.010: esik=5.627 normal alarm=0.01300
+   saatte yanlis alarm=23.40 tespit=0.600
+   hedef 0.001: esik=8.018 normal alarm=0.00500
+   saatte yanlis alarm=9.00 tespit=0.567
+D) sentetik batarya modulu: 96 hucre (V, R, T)
+   robust z en yuksek 3: [17 62 55] [19.47 13.48  3.35]
+   MCD Mahalanobis^2 en yuksek 3: [17 62  2] [577.3 248.4  19.6]
+   gercek anomali indeksleri: 17 ve 62
+E) renk paleti: 640x427 piksel, k=16
+   PSNR = 27.48 dB
+   piksel basina: 24 bit -> 4 bit (+ palet 16x24 bit)
+   toplam bit: 6558720 -> 1093504
+   oran = 6.00

@@ -1,0 +1,14 @@
+v1 kaydedildi ve uretime alindi (C=1.0)
+v2 kaydedildi ve uretime alindi (C=0.1)
+v3 kaydedildi ve uretime alindi (C=10.0)
+--- durum (geri alma oncesi)
+  v1  arsiv        deney=1 veri=23397e5e
+  v2  arsiv        deney=2 veri=23397e5e
+  v3  production   deney=3 veri=23397e5e
+geri alinan surum: 2
+--- durum (geri alma sonrasi)
+  v1  arsiv        deney=1 veri=23397e5e
+  v2  production   deney=2 veri=23397e5e
+  v3  geri_alindi  deney=3 veri=23397e5e
+uretim modeli yuklendi: Pipeline
+yukleme reddedildi: batarya v2 bozulmus

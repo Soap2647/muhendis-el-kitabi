@@ -1,0 +1,2 @@
+startup.c:60:6:Varsayilan_Isleyici	0	static
+startup.c:39:6:Reset_Handler	8	static

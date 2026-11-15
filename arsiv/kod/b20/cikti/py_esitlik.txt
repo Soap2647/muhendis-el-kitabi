@@ -1,0 +1,9 @@
+$ python py_esitlik.py
+TypeError: unhashable type: 'Nokta'
+__hash__ = None
+esit: True  ayni hash: True
+b kumede mi: True
+eski degere bakinca: False | iceriden: False
+ic: [[1, 2, 3], [1, 2, 3]]
+s: [[1, 9], [2]]
+s (derin sonrasi): [[1, 9], [2]]  derin: [[1, 9, 7], [2]]

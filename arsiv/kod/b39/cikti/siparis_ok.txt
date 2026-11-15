@@ -1,0 +1,3 @@
+$ python -m pytest -q test_siparis.py
+........                                                         [100%]
+8 passed in 0.75s

@@ -1,0 +1,4 @@
+sınıf başına  50, artırma False: test 0.6892 ± 0.0447
+sınıf başına  50, artırma True : test 0.8880 ± 0.0381
+sınıf başına 500, artırma False: test 0.9150 ± 0.0253
+sınıf başına 500, artırma True : test 0.8983 ± 0.1362

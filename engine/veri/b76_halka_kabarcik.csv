@@ -1,0 +1,9 @@
+tur,a,b,c,d
+halka,2,True,1200,1200.0
+halka,4,True,1800,1800.0
+halka,8,True,2100,2100.0
+kabarcik,4,1,0.75,0.75
+kabarcik,4,4,0.4286,0.4286
+kabarcik,4,8,0.2727,0.2727
+kabarcik,4,16,0.1579,0.1579
+kabarcik,4,32,0.0857,0.0857

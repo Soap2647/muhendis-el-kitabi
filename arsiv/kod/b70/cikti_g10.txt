@@ -1,0 +1,15 @@
+sözcük=361429 sözlük(min5)=8276 boyut=100
+epoch 1  ortalama kayıp/çift=3.4461  (lr=0.0100)
+epoch 2  ortalama kayıp/çift=2.7165  (lr=0.0080)
+epoch 3  ortalama kayıp/çift=2.5789  (lr=0.0060)
+epoch 4  ortalama kayıp/çift=2.5259  (lr=0.0040)
+epoch 5  ortalama kayıp/çift=2.5000  (lr=0.0020)
+model          -> [('kümesinde', 0.806), ('koşulu', 0.797), ('sınıfta', 0.79), ('neredeyse', 0.763), ('kümesi', 0.76), ('su', 0.758)]
+gömme          -> [('tutarsızlık', 0.993), ('dolu_degil', 0.992), ('vektörleştirilmiş', 0.992), ('saldırıya', 0.992), ('denetleyicisi', 0.991), ('downsampling', 0.991)]
+kayıp          -> [('tehdit', 0.938), ('simetrik', 0.938), ('ortalama', 0.932), ('üstel', 0.926), ('pay', 0.923), ('aralık', 0.92)]
+dikkat         -> [('kodun', 0.88), ('sorunun', 0.874), ('indeksin', 0.872), ('biz', 0.867), ('çıkacak', 0.864), ('ilke', 0.862)]
+tokenizasyon   sözlükte yok
+kelime         -> [('gizli', 0.939), ('deneme', 0.925), ('matrisin', 0.922), ('gradyanını', 0.919), ('geldiğinde', 0.918), ('kur', 0.916)]
+sinir          -> [('uygulamasıdır', 0.939), ('veritabanı', 0.938), ('dag', 0.923), ('cümleyle', 0.92), ('ekip', 0.919), ('gidiş', 0.912)]
+eğitim         -> [('doğruluğu', 0.833), ('test', 0.826), ('doğruluk', 0.821), ('kümesinde', 0.779), ('kaybı', 0.765), ('öğrenme', 0.763)]
+PCA ilk iki bileşen açıklanan varyans = 0.378

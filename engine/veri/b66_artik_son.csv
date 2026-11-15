@@ -1,0 +1,13 @@
+varyant,tohum,egitim_dogruluk,test_dogruluk,sure_s
+duz_BN,0,0.9967,0.9967,184.5
+duz_BN,1,0.9973,0.9983,184.5
+duz_BN,2,1.0000,0.9908,186.0
+artik_BN,0,0.9853,0.9983,164.1
+artik_BN,1,0.9633,0.9008,112.9
+artik_BN,2,0.9987,0.9742,72.0
+duz_BNsiz,0,1.0000,0.2500,59.1
+duz_BNsiz,1,0.0000,0.2500,58.8
+duz_BNsiz,2,0.0000,0.2500,58.9
+artik_BNsiz,0,0.9973,0.9942,62.7
+artik_BNsiz,1,1.0000,0.9858,62.6
+artik_BNsiz,2,0.9953,0.9917,62.3

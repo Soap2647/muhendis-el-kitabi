@@ -1,0 +1,9 @@
+operatör                           GPU us/adım CPU us/adım  çağrı
+aten::convolution_backward             3049.8      347.4      2
+aten::threshold_backward               1283.2       91.5      3
+aten::max_pool2d_with_indices_back     1106.6       73.8      2
+aten::add_                             1010.4       73.3     10
+aten::_local_scalar_dense               855.6        8.1     16
+aten::sum                               793.6      169.7      4
+aten::cudnn_convolution                 773.6      153.1      2
+aten::result_type                       572.4        7.2     40

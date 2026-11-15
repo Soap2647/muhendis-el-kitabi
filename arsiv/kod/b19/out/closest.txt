@@ -1,0 +1,4 @@
+300 rastgele kume: bol-fethet == kaba kuvvet
+serit icinde bir noktanin en fazla komsu sayisi: 2
+n=  500 kaba=0.019s bol-fethet=0.002s
+n= 2000 kaba=0.275s bol-fethet=0.009s

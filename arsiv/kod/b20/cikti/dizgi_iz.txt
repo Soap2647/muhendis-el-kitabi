@@ -1,0 +1,7 @@
+$ g++ -O1 -g -Wall -Wextra -std=c++17 -fsanitize=address,undefined dizgi_iz.cpp -o dizgi_iz
+$ ./dizgi_iz
+a = "MertOS" (uzunluk 6)
+b = "Mert" (uzunluk 4)
+a = "" (uzunluk 0)
+c = "MertOS" (uzunluk 6)
+c = "Mert" (uzunluk 4)

@@ -1,0 +1,14 @@
+artirma tam 0.620 0.760 0.400
+artirma kirpma_yok 0.639 0.802 0.858
+artirma renk_yok 0.402 0.501 0.300
+artirma gri_yok 0.385 0.513 0.303
+artirma aynalama_yok 0.605 0.741 0.372
+artirma hicbiri 0.493 0.615 0.500
+tau 0.05 0.729 0.859 0.485
+tau 0.1 0.739 0.833 0.432
+tau 0.5 0.491 0.607 0.360
+tau 1.0 0.479 0.598 0.361
+tau 0.2 0.620 0.760 0.400
+batch 64 0.418 0.543 0.362
+batch 512 0.760 0.867 0.441
+batch 256 0.620 0.760 0.400

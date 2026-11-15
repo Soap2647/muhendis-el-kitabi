@@ -1,0 +1,6 @@
+p= 1 medyan=0.3192 s  gflops=   53.8  ozet=1.514080575280e+08
+p= 2 medyan=0.1667 s  gflops=  103.0  ozet=1.514080575280e+08
+p= 4 medyan=0.0909 s  gflops=  188.9  ozet=1.514080575280e+08
+p= 8 medyan=0.0717 s  gflops=  239.5  ozet=1.514080575280e+08
+p=16 medyan=0.0617 s  gflops=  278.5  ozet=1.514080575280e+08
+CSV: b53_blas.csv

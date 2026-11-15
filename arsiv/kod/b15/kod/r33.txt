@@ -1,0 +1,8 @@
+0000000000001189 <derin>:
+    1189:	endbr64
+    118d:	push   %rbp
+    118e:	mov    %rsp,%rbp
+    1191:	add    $0xffffffffffffff80,%rsp
+    1195:	mov    %rdi,-0x78(%rbp)
+    1199:	mov    %fs:0x28,%rax
+    11a2:	mov    %rax,-0x8(%rbp)

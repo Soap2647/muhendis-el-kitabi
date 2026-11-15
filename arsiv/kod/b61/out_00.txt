@@ -1,0 +1,46 @@
+== 1B k-means (k=2), X = [1, 2, 4, 8, 9, 11]
+iter 1: merkez=[1. 4.] atama=[1 1 2 2 2 2] J=91.00
+   guncelleme sonrasi merkez=[1.5 8. ] J=26.5000
+iter 2: merkez=[1.5 8. ] atama=[1 1 1 2 2 2] J=16.75
+   guncelleme sonrasi merkez=[2.3333 9.3333] J=9.3333
+iter 3: merkez=[2.3333 9.3333] atama=[1 1 1 2 2 2] J=9.33
+  yakinsadi, merkez=[2.3333 9.3333] J=9.3333
+== 1B iki bilesenli GMM, bir EM iterasyonu
+log-olabilirlik (E oncesi) = -14.994135
+x      pi1*N1        pi2*N2        r1       r2
+1.0    0.088016      0.000033      0.9996   0.0004  
+2.0    0.099736      0.000218      0.9978   0.0022  
+4.0    0.060493      0.004382      0.9325   0.0675  
+8.0    0.001108      0.088016      0.0124   0.9876  
+9.0    0.000218      0.099736      0.0022   0.9978  
+11.0   0.000004      0.060493      0.0001   0.9999  
+Nk = [2.9446 3.0554]
+yeni pi = [0.4908 0.5092]
+yeni mu = [2.3246 9.2148]
+yeni sigma^2 = [1.6909 2.1818]
+log-olabilirlik (M sonrasi) = -14.086545
+== 2x2 kovaryans ile PCA
+ortalama = [3. 4.]
+merkezlenmis Z:
+ [[-2. -2.]
+ [-1. -1.]
+ [ 0.  1.]
+ [ 1.  0.]
+ [ 2.  2.]]
+kovaryans S:
+ [[2.5  2.25]
+ [2.25 2.5 ]]
+ozdegerler = [4.75 0.25]
+ozvektorler (sutun):
+ [[ 0.7071 -0.7071]
+ [ 0.7071  0.7071]]
+aciklanan oran = [0.95 0.05]
+SVD: sigma^2/(n-1) = [4.75 0.25]
+SVD ana yon (Vt[0]) = [0.7071 0.7071]
+merkezlenmemis SVD ana yon: [-0.6141 -0.7893]
+== Mahalanobis ile iki aday
+A x=[2. 2.] Oklid=2.8284 Mahalanobis=2.0520
+B x=[ 2.  -1.5] Oklid=2.5000 Mahalanobis=7.8304
+Sigma^-1 =
+ [[ 5.2632 -4.7368]
+ [-4.7368  5.2632]]

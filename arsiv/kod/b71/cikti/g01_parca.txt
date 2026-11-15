@@ -1,0 +1,4 @@
+kanit eksik: 0
+sabit400     parca=10004 ort=  393 maks= 399
+sabit400_80  parca=12521 ort=  394 maks= 399
+baslik600    parca= 8029 ort=  534 maks= 688

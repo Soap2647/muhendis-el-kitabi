@@ -1,0 +1,11 @@
+tohum 0 bitti (temiz test 0.908)
+tohum 1 bitti (temiz test 0.963)
+tohum 2 bitti (temiz test 0.947)
+tohum 3 bitti (temiz test 0.918)
+tohum 4 bitti (temiz test 0.894)
+
+Ortalama doğruluk (5 tohum), şiddet 0..4:
+gurultu     0.926  0.296  0.250  0.250  0.250
+bulaniklik  0.926  0.678  0.490  0.399  0.344
+karanlik    0.926  0.836  0.666  0.354  0.244
+kontrast    0.926  0.679  0.281  0.250  0.250

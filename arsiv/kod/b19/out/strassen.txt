@@ -1,0 +1,4 @@
+n=   8 maks_fark=0.000e+00
+n=  64 maks_fark=1.799e-14
+n= 128 maks_fark=6.928e-14
+n=512 naif=0.041 s strassen(esik=64)=0.041 s

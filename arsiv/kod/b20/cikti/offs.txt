@@ -1,0 +1,5 @@
+$ g++ -O2 -Wall -Wextra -std=c++17 offs.cpp -o offs
+$ ./offs
+kimlik ofset=8
+ek ofset=12
+sizeof(Tureyen)=16

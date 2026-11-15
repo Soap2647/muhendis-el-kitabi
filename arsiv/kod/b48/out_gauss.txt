@@ -1,0 +1,6 @@
+eps=0.0001 pivotsuz: x=1.0001     pivotlu: x=1.0001
+eps=1e-08  pivotsuz: x=1          pivotlu: x=1
+eps=1e-12  pivotsuz: x=0.999978   pivotlu: x=1
+eps=1e-16  pivotsuz: x=2.22045    pivotlu: x=1
+eps=1e-20  pivotsuz: x=0          pivotlu: x=1
+200 rastgele sistem, en buyuk fark: 6.20e-10

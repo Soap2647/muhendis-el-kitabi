@@ -1,0 +1,26 @@
+== (1) Tumleyen filtre ve Kalman ==
+[Fuzyon] Kalman K (son adim) = 0.02469, K_ss = 0.02469
+[Fuzyon] tumleyen alpha = 1 - K_ss = 0.97531
+[Fuzyon] RMS  ham GPS  = 2.071 m
+[Fuzyon] RMS  Kalman   = 0.887 m
+[Fuzyon] RMS  tumleyen = 0.906 m
+[Fuzyon] tumleyen-Kalman, 400. adimdan sonra fark: 4.98e-05
+
+[Cok sensor] sirali ve yigin farki (x): 1.11e-16, (P): 5.55e-17
+
+== (3) Bayesci dogrusal regresyon ==
+N= 2  m_N=(0.599, 0.395)  tahmin belirsizligi x=0,9: 0.504
+N=10  m_N=(0.600, 1.054)  tahmin belirsizligi x=0,9: 0.337
+N=50  m_N=(0.497, 1.169)  tahmin belirsizligi x=0,9: 0.310
+
+[MAP=Ridge] lambda = alpha/beta = 0.18000
+  sonsal ortalama m_N     : [0.490076 1.205965]
+  Ridge kapali form       : [0.490076 1.205965]
+  sklearn Ridge           : [0.490076 1.205965]
+
+== (4) MCMC dogrulama ==
+
+[MH] kabul orani = 0.264, ornek sayisi = 18000
+  MH ort       : [0.4901 1.2034]  kapali form: [0.4901 1.206 ]
+  MH kovaryans : [[0.00176, -0.0003], [-0.0003, 0.00533]]
+  kapali S_N   : [[0.00181, -0.00032], [-0.00032, 0.00561]]

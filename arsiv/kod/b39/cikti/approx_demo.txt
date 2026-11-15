@@ -1,0 +1,5 @@
+$ python approx_demo.py
+True
+True
+True
+False

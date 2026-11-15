@@ -1,0 +1,4 @@
+PML4=254 PDPT=232 PD=150 PT=75 ofset=1512
+geri birlestirme dogru: True
+tablo girdisi: 512 girdi boyutu: 8 bayt
+tablo boyutu: 4096 bayt

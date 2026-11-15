@@ -1,0 +1,3 @@
+mod=lseek+write
+boyut=316000 (beklenen 800000)
+dogru=3160 bozuk=0 eksik/fazla=4840

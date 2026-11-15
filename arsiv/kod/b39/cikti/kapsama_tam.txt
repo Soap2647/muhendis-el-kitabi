@@ -1,0 +1,12 @@
+$ python -m pytest -q --cov=kapsama_ornek --cov-branch \
+      --cov-report=term-missing test_kapsama_tam.py
+....                                                             [100%]
+=========================== tests coverage ============================
+__________ coverage: platform win32, python 3.12.10-final-0 ___________
+
+Name               Stmts   Miss Branch BrPart  Cover   Missing
+--------------------------------------------------------------
+kapsama_ornek.py       9      0      4      0   100%
+--------------------------------------------------------------
+TOTAL                  9      0      4      0   100%
+4 passed in 0.73s

@@ -1,0 +1,37 @@
+Ornek 1: GD, f=x^2+10y^2, eta=0.08, x0=(1,1)
+k=0 x=1.0000 y=1.0000 gx=2.0000 gy=20.0000 f=11.0000
+k=1 x=0.8400 y=-0.6000 gx=1.6800 gy=-12.0000 f=4.3056
+k=2 x=0.7056 y=0.3600 gx=1.4112 gy=7.2000 f=1.7939
+k=3 x=0.5927 y=-0.2160 gx=1.1854 gy=-4.3200 f=0.8179
+k=4 x=0.4979 y=0.1296 gx=0.9957 gy=2.5920 f=0.4158
+k=5 x=0.4182 y=-0.0778 gx=0.8364 gy=-1.5552 f=0.2354
+
+Ornek 2: dikdortgen, 2x+2y=20 (y=10-x)
+x=1 y=9 alan=9
+x=2 y=8 alan=16
+x=3 y=7 alan=21
+x=4 y=6 alan=24
+x=5 y=5 alan=25
+x=6 y=4 alan=24
+x=7 y=3 alan=21
+x=8 y=2 alan=16
+x=9 y=1 alan=9
+
+Ornek 3: Newton sqrt2, x0=1
+k=0 x=1.000000000000 hata=4.142e-01 dogru_basamak=0.38
+k=1 x=1.500000000000 hata=8.579e-02 dogru_basamak=1.07
+k=2 x=1.416666666667 hata=2.453e-03 dogru_basamak=2.61
+k=3 x=1.414215686275 hata=2.124e-06 dogru_basamak=5.67
+k=4 x=1.414213562375 hata=1.595e-12 dogru_basamak=11.80
+k=5 x=1.414213562373 hata=0.000e+00 dogru_basamak=inf
+
+Ornek 4: Adam, f=(t-3)^2, t0=0, eta=0.1
+t1 g=-6.00000 m=-0.60000 v=0.036000 mh=-6.00000 vh=36.00000
+   duzeltmeli adim=-0.100000  duzeltmesiz adim=-0.316228
+   yeni t=0.100000
+t2 g=-5.80000 m=-1.12000 v=0.069604 mh=-5.89474 vh=34.81941
+   duzeltmeli adim=-0.099897  duzeltmesiz adim=-0.424523
+   yeni t=0.199897
+t3 g=-5.60021 m=-1.56802 v=0.100897 mh=-5.78605 vh=33.66589
+   duzeltmeli adim=-0.099721  duzeltmesiz adim=-0.493643
+   yeni t=0.299618

@@ -1,0 +1,5 @@
+tokenizer_metin,sozluk,kar_token,token_sozcuk,unk_yuzde
+TR tok. / TR metin,1142,2.594,2.5806,0.1118
+EN tok. / EN metin,1131,2.1447,3.157,0.0387
+EN tok. / TR metin,1131,1.4896,4.4937,9.2875
+TR tok. / EN metin,1142,1.5406,4.3951,0.0431

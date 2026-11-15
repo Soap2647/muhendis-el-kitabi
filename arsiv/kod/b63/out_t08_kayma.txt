@@ -1,0 +1,11 @@
+naif softmax (küçük z): [0.09003057 0.24472847 0.66524096]
+naif softmax (z=1000): [nan nan nan]
+kararlı log_softmax (z=1000): [0.24472847 0.66524096 0.09003057]
+naif çapraz entropi, p=0: inf
+kararlı kayıp, z=[-800, 800]: 1600.0
+
+Öğrenme oranı taraması (MLP 64-128-64-10, 3 epoch):
+  lr=  0.1  maks|W|= 7.80e-01  test acc=0.917  sorun yok
+  lr=  1.0  maks|W|= 1.78e+00  test acc=0.292  sorun yok
+  lr=  5.0  maks|W|= 1.27e+04  test acc=0.097  sorun yok
+  lr= 20.0  maks|W|= 1.02e+07  test acc=0.097  sorun yok

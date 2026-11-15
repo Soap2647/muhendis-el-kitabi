@@ -1,0 +1,6 @@
+tekil degerler: [81.2404  4.899   0.      0.      0.      0.    ]
+rank(A) = 2
+k=1  ||A-Ak||_F = 4.8990  (sqrt toplam s^2 = 4.8990)
+     sikistirma orani = 1*(8+6+1)/(8*6) = 0.3125
+k=2  ||A-Ak||_F = 0.0000  (sqrt toplam s^2 = 0.0000)
+     sikistirma orani = 2*(8+6+1)/(8*6) = 0.6250

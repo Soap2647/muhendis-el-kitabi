@@ -1,0 +1,8 @@
+  A aldi: 1
+NaifKonu -> B kayitlari: []
+  A aldi: 1
+  ALARM B 1
+Konu -> B kayitlari: [1]
+  ALARM gecici 10
+  ALARM kritik 85
+abone sayisi: 1

@@ -1,0 +1,9 @@
+uzunluk 1: gelir 1
+uzunluk 2: gelir 5
+uzunluk 3: gelir 8
+uzunluk 4: gelir 10
+uzunluk 5: gelir 13
+uzunluk 6: gelir 17
+uzunluk 7: gelir 18
+uzunluk 8: gelir 22
+200 rastgele ornek, hata: 0

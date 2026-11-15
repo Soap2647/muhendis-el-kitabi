@@ -1,0 +1,12 @@
+karakteristik: det(A - lam I) = lam^2 - 6 lam + 8
+kokler: lam1 = 4, lam2 = 2
+A v1 = [2.828427 2.828427]  4 v1 = [2.828427 2.828427]
+A v2 = [ 1.414214 -1.414214]  2 v2 = [ 1.414214 -1.414214]
+numpy lambda = [2. 4.]
+V Lam V^T == A ? True
+A^5 (kopegel.) =
+[[528. 496.]
+ [496. 528.]]
+A^5 (matris_power) =
+[[528. 496.]
+ [496. 528.]]
